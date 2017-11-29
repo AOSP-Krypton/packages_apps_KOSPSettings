@@ -86,5 +86,12 @@
             android:summary="@string/status_bar_notif_count_summary"
             settings:controller="com.krypton.settings.statusbar.NotificationCountPreferenceController" />
 
+       <!-- 4G icon  -->
+       <com.krypton.settings.preference.SystemSettingSwitchPreference
+            android:key="show_fourg_icon"
+            android:title="@string/show_fourg_icon_title"
+            android:summary="@string/show_fourg_icon_summary"
+            android:defaultValue="false"/>
+
     </PreferenceCategory>
 </PreferenceScreen>

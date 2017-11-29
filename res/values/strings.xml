@@ -78,6 +78,10 @@
     <string name="combined_status_bar_signal_icons">Combined signal icons</string>
     <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons in status bar. Needs SystemUI restart or reboot</string>
 
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">4G icon</string>
+    <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
+
     <!-- QS Panel -->
     <string name="qs_settings_title">QS Panel</string>
     <string name="qs_settings_summary">Brightness slider, Media artwork, Footer text</string>
@@ -184,5 +188,4 @@
 
     <!-- NavBar Inverse -->
     <string name="navigation_bar_inverse_title">Invert 3 button navigation bar</string>
-
 </resources>
