@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.yasp.settings.preference;
+package com.krypton.settings.preference;
 
 import android.content.ContentResolver;
 import android.preference.PreferenceDataStore;

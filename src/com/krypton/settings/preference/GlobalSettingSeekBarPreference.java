@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 AICP
+ * Copyright (C) 2016-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,39 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.krypton.settings.preference;
 
 import android.content.Context;
 import android.util.AttributeSet;
 
-import androidx.preference.SwitchPreference;
+public class GlobalSettingSeekBarPreference extends CustomSeekBarPreference {
 
-public class GlobalSettingSwitchPreference extends SwitchPreference {
-
-    public GlobalSettingSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
+    public GlobalSettingSeekBarPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         setPreferenceDataStore(new GlobalSettingsStore(context.getContentResolver()));
     }
 
-    public GlobalSettingSwitchPreference(Context context, AttributeSet attrs) {
+    public GlobalSettingSeekBarPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         setPreferenceDataStore(new GlobalSettingsStore(context.getContentResolver()));
     }
 
-    public GlobalSettingSwitchPreference(Context context) {
-        super(context);
+    public GlobalSettingSeekBarPreference(Context context) {
+        super(context, null);
         setPreferenceDataStore(new GlobalSettingsStore(context.getContentResolver()));
-    }
-
-    @Override
-    protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
-        // This is what default TwoStatePreference implementation is doing without respecting
-        // real default value:
-        //setChecked(restoreValue ? getPersistedBoolean(mChecked)
-        //        : (Boolean) defaultValue);
-        // Instead, we better do
-        setChecked(restoreValue ? getPersistedBoolean((Boolean) defaultValue)
-                : (Boolean) defaultValue);
     }
 }
