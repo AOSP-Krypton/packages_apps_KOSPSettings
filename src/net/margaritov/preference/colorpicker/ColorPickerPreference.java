@@ -269,6 +269,8 @@ public class ColorPickerPreference extends Preference implements
 
     public void setDefaultColor(int color) {
         mDefValue = color;
+        mUsesDefaultButton = true;
+        setDefaultButton();
     }
 
     /**
