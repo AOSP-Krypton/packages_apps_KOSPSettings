@@ -19,7 +19,7 @@
 
     <!-- Gaming Mode -->
     <Preference
-        android:fragment="com.krypton.settings.fragments.GamingModeSettings"
+        android:fragment="com.krypton.settings.fragment.GamingModeFragment"
         android:icon="@drawable/ic_gamingmode"
         android:key="gamingmode"
         android:title="@string/gamingmode_settings_title"

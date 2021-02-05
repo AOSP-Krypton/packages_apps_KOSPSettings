@@ -19,43 +19,85 @@ package com.krypton.settings.controller;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.widget.Toast;
+import android.util.Log;
 
-import com.android.settings.core.TogglePreferenceController;
+import androidx.preference.Preference;
+import androidx.preference.SwitchPreference;
+import androidx.preference.PreferenceGroup;
 
-public class GamingModeController extends TogglePreferenceController {
+import java.util.ArrayList;
+
+public class GamingModeController {
     private static final String TAG = "GamingModeController";
-    private static String KEY;
-
-    private SharedPreferences mPreferences;
+    private static final String masterSwitchKey = "gamingmode_switch_preference";
+    private SharedPreferences sharedPrefs;
     private Editor mEditor;
+    private Context mContext;
+    private SwitchPreference masterSwitch;
+    private ArrayList<Preference> prefList;
+    private String key;
 
-    public GamingModeController(Context context, String preferenceKey) {
-        super(context, preferenceKey);
-        KEY = context.getPackageName();
-        mPreferences = context.getSharedPreferences(KEY, Context.MODE_PRIVATE);
+    public GamingModeController(Context context, PreferenceGroup preferenceGroup) {
+        mContext = context;
+        prefList = new ArrayList<>();
+        key = mContext.getPackageName();
+        sharedPrefs = mContext.getSharedPreferences(key, Context.MODE_PRIVATE);
+        mEditor = sharedPrefs.edit();
+        setPreferenceListeners(preferenceGroup);
+        disableViewIfNeeded();
+        updateSwitch(masterSwitch);
     }
 
-    @Override
-    public boolean isChecked() {
-        return mPreferences.getInt(KEY, -1) == 1;
-    }
-
-    @Override
-    public boolean setChecked(boolean isChecked) {
-        mEditor = mPreferences.edit();
-        if (isChecked) {
-            mEditor.putInt(KEY, 1);
+    private void setPreferenceListeners(PreferenceGroup preferenceGroup) {
+        if (preferenceGroup != null) {
+            for (int i=0; i < preferenceGroup.getPreferenceCount(); i++) {
+                Preference preference = preferenceGroup.getPreference(i);
+                if (preference instanceof SwitchPreference) {
+                    if (preference.getKey() != null) {
+                        preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                            @Override
+                            public boolean onPreferenceClick(Preference preference) {
+                                mEditor.putBoolean(getCustomKey(preference), ((SwitchPreference) preference).isChecked()).apply();
+                                if(preference.getKey().equals(masterSwitchKey)) {
+                                    disableViewIfNeeded();
+                                }
+                                return true;
+                            }
+                        });
+                        if (preference.getKey().equals(masterSwitchKey)) {
+                            masterSwitch = (SwitchPreference) preference;
+                        }
+                        else {
+                            prefList.add(preference);
+                        }
+                    }
+                }
+                else if (preference instanceof PreferenceGroup) {
+                    setPreferenceListeners((PreferenceGroup) preference);
+                }
+            }
         }
         else {
-            mEditor.putInt(KEY, 0);
+            Log.d(TAG, "PreferenceGroup is null");
         }
-        mEditor.apply();
-        return true;
     }
 
-    @Override
-    public int getAvailabilityStatus() {
-        return AVAILABLE;
+    private void disableViewIfNeeded() {
+        for(Preference preference: prefList) {
+            updateSwitch(preference);
+            preference.setEnabled(getBoolean(masterSwitch));
+        }
+    }
+
+    private void updateSwitch(Preference preference) {
+        ((SwitchPreference) preference).setChecked(getBoolean(preference));
+    }
+
+    private boolean getBoolean(Preference preference) {
+        return sharedPrefs.getBoolean(getCustomKey(preference),false);
+    }
+
+    private String getCustomKey(Preference preference) {
+        return key.concat(".").concat(preference.getKey());
     }
 }

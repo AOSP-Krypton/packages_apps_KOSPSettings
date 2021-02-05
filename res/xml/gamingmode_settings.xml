@@ -29,10 +29,13 @@
         <SwitchPreference
             android:key="gamingmode_switch_preference"
             android:title="@string/gamingmode_status"
-            android:persistent="false"
             android:summaryOn="@string/gamingmode_enabled"
-            android:summaryOff="@string/gamingmode_disabled"
-            settings:controller="com.krypton.settings.controller.GamingModeController" />
+            android:summaryOff="@string/gamingmode_disabled" />
+
+        <SwitchPreference
+            android:key="block_notifications_preference"
+            android:title="@string/block_notifications_title"
+            android:summary="@string/block_notifications_summary" />
     </PreferenceCategory>
 
 </PreferenceScreen>

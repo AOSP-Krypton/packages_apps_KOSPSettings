@@ -13,35 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.krypton.settings.fragments;
+package com.krypton.settings.fragment;
 
 import android.os.Bundle;
-import com.android.settings.R;
+import android.content.Context;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 
-public class GamingModeSettings extends DashboardFragment {
+import com.krypton.settings.controller.GamingModeController;
+
+public class GamingModeFragment extends SettingsPreferenceFragment {
 
     private static final String TAG = "GamingMode";
+    private GamingModeController mController;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        addPreferencesFromResource(R.xml.gamingmode_settings);
+        mController = new GamingModeController(getContext(), getPreferenceScreen());
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.KRYPTON;
-    }
-
-    @Override
-    protected int getPreferenceScreenResId() {
-        return R.xml.gamingmode_settings;
-    }
-
-    @Override
-    protected String getLogTag() {
-        return TAG;
     }
 }

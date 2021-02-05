@@ -23,5 +23,7 @@
     <string name="gamingmode_status">Gaming Mode</string>
     <string name="gamingmode_enabled">Enabled</string>
     <string name="gamingmode_disabled">Disabled</string>
+    <string name="block_notifications_title">Disable notifications</string>
+    <string name="block_notifications_summary">Blocks all notifications except calls</string>
 
 </resources>
