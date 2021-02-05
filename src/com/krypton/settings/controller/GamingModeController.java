@@ -58,7 +58,7 @@ public class GamingModeController {
                             @Override
                             public boolean onPreferenceClick(Preference preference) {
                                 mEditor.putBoolean(getCustomKey(preference), ((SwitchPreference) preference).isChecked()).apply();
-                                if(preference.getKey().equals(masterSwitchKey)) {
+                                if (preference.getKey().equals(masterSwitchKey)) {
                                     disableViewIfNeeded();
                                 }
                                 return true;
@@ -75,6 +75,9 @@ public class GamingModeController {
                 else if (preference instanceof PreferenceGroup) {
                     setPreferenceListeners((PreferenceGroup) preference);
                 }
+                else {
+                    prefList.add(preference);
+                }
             }
         }
         else {
@@ -83,8 +86,10 @@ public class GamingModeController {
     }
 
     private void disableViewIfNeeded() {
-        for(Preference preference: prefList) {
-            updateSwitch(preference);
+        for (Preference preference: prefList) {
+            if (preference instanceof SwitchPreference) {
+                updateSwitch(preference);
+            }
             preference.setEnabled(getBoolean(masterSwitch));
         }
     }
@@ -98,6 +103,6 @@ public class GamingModeController {
     }
 
     private String getCustomKey(Preference preference) {
-        return key.concat(".").concat(preference.getKey());
+        return key + "." + preference.getKey();
     }
 }

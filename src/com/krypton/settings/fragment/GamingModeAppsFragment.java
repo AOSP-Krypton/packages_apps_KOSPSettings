@@ -16,23 +16,22 @@
 package com.krypton.settings.fragment;
 
 import android.os.Bundle;
-import android.content.Context;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.krypton.settings.controller.GamingModeController;
+import com.krypton.settings.controller.GamingModeAppsController;
 
-public class GamingModeFragment extends SettingsPreferenceFragment {
+public class GamingModeAppsFragment extends SettingsPreferenceFragment {
 
-    private GamingModeController mController;
+    private GamingModeAppsController mController;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.gamingmode_settings);
-        mController = new GamingModeController(getContext(), getPreferenceScreen());
+        addPreferencesFromResource(R.xml.gamingmode_apps_screen);
+        mController = new GamingModeAppsController(getContext(), getPreferenceScreen());
     }
 
     @Override
