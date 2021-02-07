@@ -15,27 +15,104 @@
  */
 package com.krypton.settings.fragment;
 
+import static android.provider.Settings.System.GAMINGMODE_APPS;
+
 import android.os.Bundle;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ApplicationInfo;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.provider.Settings;
+
+import androidx.preference.CheckBoxPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.krypton.settings.controller.GamingModeAppsController;
+import java.util.List;
+import java.util.ArrayList;
 
 public class GamingModeAppsFragment extends SettingsPreferenceFragment {
-
-    private GamingModeAppsController mController;
+    private static String TAG = "GamingModeAppsFragment";
+    private Context mContext;
+    private ContentResolver mResolver;
+    private ArrayList<PackageInfo> userApps;
+    private PackageManager pm;
+    private PreferenceScreen mScreen;
+    private SharedPreferences sharedPrefs;
+    private Editor mEditor;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.gamingmode_apps_screen);
-        mController = new GamingModeAppsController(getContext(), getPreferenceScreen());
+        mContext = getContext();
+        mResolver = mContext.getContentResolver();
+        mScreen = getPreferenceScreen();
+        sharedPrefs = mContext.getSharedPreferences(mContext.getPackageName(), Context.MODE_PRIVATE);
+        mEditor = sharedPrefs.edit();
+        pm = mContext.getPackageManager();
+        userApps = new ArrayList<>();
+        fetchAppsList();
+        setView();
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.KRYPTON;
+    }
+
+    private void fetchAppsList() {
+        for (PackageInfo packageInfo: pm.getInstalledPackages(0)) {
+            if ((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
+                userApps.add(packageInfo);
+            }
+        }
+    }
+
+    private void setView() {
+        for (PackageInfo packageInfo: userApps) {
+            CheckBoxPreference checkBox = new CheckBoxPreference(mContext);
+            checkBox.setIcon(packageInfo.applicationInfo.loadIcon(pm));
+            checkBox.setTitle(packageInfo.applicationInfo.loadLabel(pm));
+            checkBox.setKey(packageInfo.packageName);
+            checkBox.setChecked(sharedPrefs.getBoolean(checkBox.getKey(), false));
+            checkBox.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    mEditor.putBoolean(preference.getKey(), ((CheckBoxPreference) preference).isChecked()).apply();
+                    updateAppPrefs((CheckBoxPreference) preference);
+                    return true;
+                }
+            });
+            mScreen.addPreference(checkBox);
+        }
+    }
+
+    private void updateAppPrefs(CheckBoxPreference preference) {
+        String mList = Settings.System.getString(mResolver, GAMINGMODE_APPS);
+        String newList = "";
+        if (mList != null) {
+            if (!preference.isChecked()) {
+                for (String packageName: mList.split(" ")) {
+                    if (!preference.getKey().equals(packageName)) {
+                        newList += packageName;
+                    }
+                }
+            }
+            else {
+                newList += mList + " " + preference.getKey();
+            }
+        }
+        else {
+            newList += preference.getKey();
+        }
+        Settings.System.putString(mResolver, GAMINGMODE_APPS, newList);
     }
 }
