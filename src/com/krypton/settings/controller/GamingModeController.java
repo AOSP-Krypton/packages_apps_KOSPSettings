@@ -49,7 +49,6 @@ public class GamingModeController {
         String list = Settings.System.getString(mResolver, GAMINGMODE_APPS);
         if (list != null) {
             for (String packageName: list.split(" ")) {
-                Log.d(TAG, packageName);
                 mList.add(packageName);
             }
         }

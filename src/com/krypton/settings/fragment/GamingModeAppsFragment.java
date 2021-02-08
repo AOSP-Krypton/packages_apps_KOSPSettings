@@ -43,6 +43,7 @@ public class GamingModeAppsFragment extends SettingsPreferenceFragment {
     private Context mContext;
     private ContentResolver mResolver;
     private ArrayList<PackageInfo> userApps;
+    private ArrayList<CheckBoxPreference> checkBoxes;
     private PackageManager pm;
     private PreferenceScreen mScreen;
     private SharedPreferences sharedPrefs;
@@ -59,6 +60,7 @@ public class GamingModeAppsFragment extends SettingsPreferenceFragment {
         mEditor = sharedPrefs.edit();
         pm = mContext.getPackageManager();
         userApps = new ArrayList<>();
+        checkBoxes = new ArrayList<>();
         fetchAppsList();
         setView();
     }
@@ -77,6 +79,17 @@ public class GamingModeAppsFragment extends SettingsPreferenceFragment {
     }
 
     private void setView() {
+        Preference resetButton = new Preference(mContext);
+    	resetButton.setTitle("Reset");
+    	resetButton.setKey(mContext.getPackageName() + ".reset_button");
+    	resetButton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+    		@Override
+    		public boolean onPreferenceClick(Preference preference) {
+    			resetPrefs();
+    			return true;
+    		}
+    	});
+    	mScreen.addPreference(resetButton);
         for (PackageInfo packageInfo: userApps) {
             CheckBoxPreference checkBox = new CheckBoxPreference(mContext);
             checkBox.setIcon(packageInfo.applicationInfo.loadIcon(pm));
@@ -91,28 +104,35 @@ public class GamingModeAppsFragment extends SettingsPreferenceFragment {
                     return true;
                 }
             });
+            checkBoxes.add(checkBox);
             mScreen.addPreference(checkBox);
         }
     }
 
     private void updateAppPrefs(CheckBoxPreference preference) {
-        String mList = Settings.System.getString(mResolver, GAMINGMODE_APPS);
-        String newList = "";
-        if (mList != null) {
-            if (!preference.isChecked()) {
-                for (String packageName: mList.split(" ")) {
-                    if (!preference.getKey().equals(packageName)) {
-                        newList += packageName;
-                    }
+        String prefPackageName = preference.getKey();
+        String appsList = Settings.System.getString(mResolver, GAMINGMODE_APPS);
+        if (appsList != null) {
+            if (preference.isChecked()) {
+                if (!appsList.contains(prefPackageName)) {
+                	appsList += prefPackageName + " ";
                 }
             }
             else {
-                newList += mList + " " + preference.getKey();
+            	appsList = appsList.replace(prefPackageName + " ", "");
             }
         }
         else {
-            newList += preference.getKey();
+            appsList += prefPackageName + " ";
         }
-        Settings.System.putString(mResolver, GAMINGMODE_APPS, newList);
+        Settings.System.putString(mResolver, GAMINGMODE_APPS, appsList);
+    }
+
+    private void resetPrefs() {
+    	for(CheckBoxPreference checkBox: checkBoxes) {
+    		checkBox.setChecked(false);
+    		mEditor.putBoolean(checkBox.getKey(), false).apply();
+        }
+        Settings.System.putString(mResolver, GAMINGMODE_APPS, "");
     }
 }
