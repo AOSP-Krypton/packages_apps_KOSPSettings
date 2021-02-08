@@ -16,8 +16,9 @@
 
 package com.krypton.settings.controller;
 
-import static android.provider.Settings.System.GAMINGMODE_ENABLED;
+import static android.provider.Settings.System.GAMINGMODE_ACTIVE;
 import static android.provider.Settings.System.GAMINGMODE_APPS;
+import static android.provider.Settings.System.GAMINGMODE_ENABLED;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -40,7 +41,12 @@ public class GamingModeController {
 
     public void notifyAppOpened(String packageName) {
         if (isActivatedForApp(packageName)) {
+            Settings.System.putInt(mResolver, GAMINGMODE_ACTIVE, 1);
             Toast.makeText(mContext, "Gaming Mode Enabled", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(mContext, "Gaming Mode Disabled", Toast.LENGTH_SHORT).show();
+            Settings.System.putInt(mResolver, GAMINGMODE_ACTIVE, 0);
         }
     }
 
