@@ -80,16 +80,17 @@ public class GamingModeAppsFragment extends SettingsPreferenceFragment {
 
     private void setView() {
         Preference resetButton = new Preference(mContext);
-    	resetButton.setTitle("Reset");
-    	resetButton.setKey(mContext.getPackageName() + ".reset_button");
-    	resetButton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-    		@Override
-    		public boolean onPreferenceClick(Preference preference) {
-    			resetPrefs();
-    			return true;
-    		}
-    	});
-    	mScreen.addPreference(resetButton);
+        resetButton.setTitle("Reset");
+        resetButton.setSummary("Click here to reset all preferences");
+        resetButton.setKey(mContext.getPackageName() + ".reset_button");
+        resetButton.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                resetPrefs();
+                return true;
+            }
+        });
+        mScreen.addPreference(resetButton);
         for (PackageInfo packageInfo: userApps) {
             CheckBoxPreference checkBox = new CheckBoxPreference(mContext);
             checkBox.setIcon(packageInfo.applicationInfo.loadIcon(pm));

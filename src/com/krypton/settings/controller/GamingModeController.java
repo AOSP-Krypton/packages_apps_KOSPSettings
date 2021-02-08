@@ -23,39 +23,23 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.provider.Settings;
-import android.util.Log;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class GamingModeController {
 
-    private static String TAG = "GamingModeController";
     private Context mContext;
-    private ArrayList<String> mList;
     private ContentResolver mResolver;
 
     public GamingModeController(Context context) {
         mContext = context;
-        mList = new ArrayList<>();
         mResolver = mContext.getContentResolver();
         if (Settings.System.getInt(mResolver, GAMINGMODE_ENABLED, -1) == -1) {
             Settings.System.putInt(mResolver, GAMINGMODE_ENABLED, 0);
         }
-        getEnabledAppsList();
-    }
-
-    private void getEnabledAppsList() {
-        String list = Settings.System.getString(mResolver, GAMINGMODE_APPS);
-        if (list != null) {
-            for (String packageName: list.split(" ")) {
-                mList.add(packageName);
-            }
-        }
     }
 
     public void notifyAppOpened(String packageName) {
-        if (isAppInEnabledList(packageName)) {
+        if (isActivatedForApp(packageName)) {
             Toast.makeText(mContext, "Gaming Mode Enabled", Toast.LENGTH_SHORT).show();
         }
     }
@@ -64,17 +48,7 @@ public class GamingModeController {
         return Settings.System.getInt(mResolver, GAMINGMODE_ENABLED, -1) == 1 ? true : false;
     }
 
-    public boolean isAppInEnabledList(String packageName) {
-        if (mList != null) {
-            for (String name: mList) {
-                if (packageName.equals(name)) {
-                    return true;
-                }
-            }
-        }
-        else {
-            Log.d(TAG, "Enabled apps list is null");
-        }
-        return false;
+    public boolean isActivatedForApp(String packageName) {
+        return Settings.System.getString(mResolver, GAMINGMODE_APPS).contains(packageName);
     }
 }
