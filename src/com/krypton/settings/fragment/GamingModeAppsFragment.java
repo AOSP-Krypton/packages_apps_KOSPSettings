@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class GamingModeAppsFragment extends SettingsPreferenceFragment {
-    private static String TAG = "GamingModeAppsFragment";
+    
     private Context mContext;
     private ContentResolver mResolver;
     private ArrayList<PackageInfo> userApps;

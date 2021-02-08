@@ -22,7 +22,6 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.util.Log;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceGroup;
@@ -36,7 +35,6 @@ import java.util.ArrayList;
 
 public class GamingModeFragment extends SettingsPreferenceFragment {
 
-    private static final String TAG = "GamingMode";
     private static final String masterSwitchKey = "gamingmode_switch_preference";
     private SharedPreferences sharedPrefs;
     private Editor mEditor;
@@ -97,9 +95,6 @@ public class GamingModeFragment extends SettingsPreferenceFragment {
                     mList.add(preference);
                 }
             }
-        }
-        else {
-            Log.d(TAG, "PreferenceGroup is null");
         }
     }
 
