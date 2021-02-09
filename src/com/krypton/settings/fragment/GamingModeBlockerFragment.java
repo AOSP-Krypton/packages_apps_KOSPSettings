@@ -110,6 +110,9 @@ public class GamingModeBlockerFragment extends SettingsPreferenceFragment {
 
     private void updateSwitch(Preference preference) {
         ((SwitchPreference) preference).setChecked(getBoolean(preference));
+        if (preference.getKey().equals(KEY_SILENT)) {
+            ((SwitchPreference) findPreference(KEY_VIBRATE)).setEnabled(!getBoolean(preference));
+        }
     }
 
     private boolean getBoolean(Preference preference) {
