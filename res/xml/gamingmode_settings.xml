@@ -32,8 +32,9 @@
             android:summaryOn="@string/gamingmode_enabled"
             android:summaryOff="@string/gamingmode_disabled" />
 
-        <SwitchPreference
+        <Preference
             android:key="block_notifications_preference"
+            android:fragment="com.krypton.settings.fragment.GamingModeBlockerFragment"
             android:title="@string/block_notifications_title"
             android:summary="@string/block_notifications_summary" />
 
