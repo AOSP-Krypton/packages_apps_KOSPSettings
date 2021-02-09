@@ -36,4 +36,8 @@
     <string name="lock_brightness_title">Lock brightness</string>
     <string name="lock_brightness_summary">Disable adaptive brightness</string>
 
+    <!-- StatusBar Settings -->
+    <string name="statusbar_settings_title">Status Bar</string>
+    <string name="statusbar_settings_summary">Customisation for status bar</string>
+
 </resources>

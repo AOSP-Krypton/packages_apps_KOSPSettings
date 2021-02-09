@@ -15,21 +15,6 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:title="@string/krypton_page_title">
-
-    <!-- Gaming Mode -->
-    <Preference
-        android:fragment="com.krypton.settings.fragment.GamingModeFragment"
-        android:icon="@drawable/ic_gamingmode"
-        android:key="gamingmode"
-        android:title="@string/gamingmode_settings_title"
-        android:summary="@string/gamingmode_settings_summary" />
-
-    <!-- Status Bar -->
-    <Preference
-        android:fragment="com.krypton.settings.fragment.StatusBarFragment"
-        android:key="statusbar"
-        android:title="@string/statusbar_settings_title"
-        android:summary="@string/statusbar_settings_summary" />
+    android:title="@string/statusbar_settings_title">
 
 </PreferenceScreen>
