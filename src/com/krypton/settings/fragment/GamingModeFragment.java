@@ -15,6 +15,7 @@
  */
 package com.krypton.settings.fragment;
 
+import static android.provider.Settings.System.GAMINGMODE_BRIGHTNESS;
 import static android.provider.Settings.System.GAMINGMODE_ENABLED;
 
 import android.content.Context;
@@ -36,6 +37,7 @@ import java.util.ArrayList;
 public class GamingModeFragment extends SettingsPreferenceFragment {
 
     private static final String masterSwitchKey = "gamingmode_switch_preference";
+    private static final String brightnessLockKey = "brightness_lock_preference";
     private SharedPreferences sharedPrefs;
     private Editor mEditor;
     private Context mContext;
@@ -76,6 +78,10 @@ public class GamingModeFragment extends SettingsPreferenceFragment {
                                     Settings.System.putInt(mContext.getContentResolver(), GAMINGMODE_ENABLED,
                                      ((SwitchPreference) preference).isChecked() == true ? 1 : 0);
                                     disableViewIfNeeded();
+                                }
+                                else if (preference.getKey().equals(brightnessLockKey)) {
+                                    Settings.System.putInt(mContext.getContentResolver(), GAMINGMODE_BRIGHTNESS,
+                                     ((SwitchPreference) preference).isChecked() == true ? 1 : 0);
                                 }
                                 return true;
                             }

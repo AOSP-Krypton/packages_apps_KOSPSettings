@@ -43,6 +43,11 @@
             android:key="select_apps_preference"
             android:title="@string/select_apps_title"
             android:summary="@string/select_apps_summary" />
+
+        <SwitchPreference
+            android:key="brightness_lock_preference"
+            android:title="@string/lock_brightness_title"
+            android:summary="@string/lock_brightness_summary" />
     </PreferenceCategory>
 
 </PreferenceScreen>
