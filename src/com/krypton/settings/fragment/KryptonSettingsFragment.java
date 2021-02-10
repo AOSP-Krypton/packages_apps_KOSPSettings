@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.krypton.settings;
+package com.krypton.settings.fragment;
 
 import android.os.Bundle;
 import com.android.settings.R;
@@ -21,7 +21,7 @@ import com.android.settings.R;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class KryptonSettings extends SettingsPreferenceFragment {
+public class KryptonSettingsFragment extends SettingsPreferenceFragment {
 
     @Override
     public void onCreate(Bundle icicle) {
