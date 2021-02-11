@@ -89,22 +89,16 @@ public class GamingModeBlockerFragment extends SettingsPreferenceFragment {
             Settings.System.putInt(mResolver, GAMINGMODE_DISABLE_HEADSUP, getBoolean(preference) == true ? 1 : 0);
         }
         else if (preference.getKey().equals(KEY_VIBRATE)) {
-            if (getBoolean(preference)) {
-                Settings.System.putInt(mResolver, GAMINGMODE_RINGERMODE, 1);
-            }
-            else {
-                Settings.System.putInt(mResolver, GAMINGMODE_RINGERMODE, 0);
-            }
+                Settings.System.putInt(mResolver, GAMINGMODE_RINGERMODE, getBoolean(preference) == true ? 1 : 0);
         }
         else if (preference.getKey().equals(KEY_SILENT)) {
             if (getBoolean(preference)) {
                 Settings.System.putInt(mResolver, GAMINGMODE_RINGERMODE, 2);
-                ((SwitchPreference) findPreference(KEY_VIBRATE)).setEnabled(false);
             }
             else {
-                Settings.System.putInt(mResolver, GAMINGMODE_RINGERMODE, 0);
-                ((SwitchPreference) findPreference(KEY_VIBRATE)).setEnabled(true);
+                Settings.System.putInt(mResolver, GAMINGMODE_RINGERMODE, getBoolean(findPreference(KEY_VIBRATE)) == true ? 1 : 0);
             }
+            ((SwitchPreference) findPreference(KEY_VIBRATE)).setEnabled(!getBoolean(preference));
         }
     }
 
