@@ -21,13 +21,13 @@ import static android.provider.Settings.System.GAMINGMODE_APPS;
 import static android.provider.Settings.System.GAMINGMODE_BRIGHTNESS;
 import static android.provider.Settings.System.GAMINGMODE_ENABLED;
 import static android.provider.Settings.System.GAMINGMODE_RINGERMODE;
+import static android.provider.Settings.System.GAMINGMODE_TOAST;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
 
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
 import android.media.AudioManager;
 import android.provider.Settings;
 import android.widget.Toast;
@@ -62,7 +62,7 @@ public class GamingModeController {
                     Settings.System.putInt(mResolver, GAMINGMODE_BRIGHTNESS, 2);
                 }
             }
-            Toast.makeText(mContext, "Gaming Mode Enabled", Toast.LENGTH_SHORT).show();
+            if (showToast()) Toast.makeText(mContext, "Gaming Mode Enabled", Toast.LENGTH_SHORT).show();
         }
         else if (!isActivatedForApp(packageName) && isActive()){
             setActive(0);
@@ -73,8 +73,12 @@ public class GamingModeController {
                 Settings.System.putInt(mResolver, SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
                 Settings.System.putInt(mResolver, GAMINGMODE_BRIGHTNESS, 1);
             }
-            Toast.makeText(mContext, "Gaming Mode Disabled", Toast.LENGTH_SHORT).show();
+            if (showToast()) Toast.makeText(mContext, "Gaming Mode Disabled", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private boolean showToast() {
+        return Settings.System.getInt(mResolver, GAMINGMODE_TOAST, -1) == 1 ? true : false;
     }
 
     public boolean isEnabled() {
@@ -114,6 +118,9 @@ public class GamingModeController {
         }
         if (Settings.System.getInt(mResolver, GAMINGMODE_BRIGHTNESS, -1) == -1) {
             Settings.System.putInt(mResolver, GAMINGMODE_BRIGHTNESS, 0);
+        }
+        if (Settings.System.getInt(mResolver, GAMINGMODE_TOAST, -1) == -1) {
+            Settings.System.putInt(mResolver, GAMINGMODE_TOAST, 0);
         }
         if (getRingerMode() == -1) {
             setRingerMode(0);
