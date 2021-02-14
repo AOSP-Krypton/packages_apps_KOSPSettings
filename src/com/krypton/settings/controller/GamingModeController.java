@@ -42,7 +42,6 @@ public class GamingModeController {
         mContext = context;
         mResolver = mContext.getContentResolver();
         mAudioManager = mContext.getSystemService(AudioManager.class);
-        setDefaults();
     }
 
     public void notifyAppOpened(String packageName) {
@@ -107,23 +106,5 @@ public class GamingModeController {
 
     private boolean isActivatedForApp(String packageName) {
         return Settings.System.getString(mResolver, GAMINGMODE_APPS).contains(packageName);
-    }
-
-    private void setDefaults() {
-        if (Settings.System.getInt(mResolver, GAMINGMODE_ACTIVE, -1) == -1) {
-            setActive(0);
-        }
-        if (Settings.System.getInt(mResolver, GAMINGMODE_ENABLED, -1) == -1) {
-            setEnabled(0);
-        }
-        if (Settings.System.getInt(mResolver, GAMINGMODE_BRIGHTNESS, -1) == -1) {
-            Settings.System.putInt(mResolver, GAMINGMODE_BRIGHTNESS, 0);
-        }
-        if (Settings.System.getInt(mResolver, GAMINGMODE_TOAST, -1) == -1) {
-            Settings.System.putInt(mResolver, GAMINGMODE_TOAST, 0);
-        }
-        if (getRingerMode() == -1) {
-            setRingerMode(0);
-        }
     }
 }
