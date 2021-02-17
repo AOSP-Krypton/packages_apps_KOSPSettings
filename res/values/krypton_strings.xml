@@ -42,4 +42,8 @@
     <string name="statusbar_settings_title">Status Bar</string>
     <string name="statusbar_settings_summary">Customisation for status bar</string>
 
+    <!-- Device Settings -->
+    <string name="device_settings_title">Device Settings</string>
+    <string name="device_settings_summary">Settings for device specific parts</string>
+
 </resources>

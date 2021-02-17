@@ -27,6 +27,14 @@ public class KryptonSettingsFragment extends SettingsPreferenceFragment {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.krypton_settings);
+        boolean installed = false;
+        try {
+            getPackageManager().getPackageInfo("com.krypton.settings.device", 0);
+            installed = true;
+        } catch (Exception e) {}
+        if (!installed) {
+            getPreferenceScreen().removePreference(findPreference("device_settings"));
+        }
     }
 
     @Override

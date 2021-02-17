@@ -32,4 +32,15 @@
         android:title="@string/statusbar_settings_title"
         android:summary="@string/statusbar_settings_summary" />
 
+    <!-- Device Settings -->
+    <Preference
+        android:key="device_settings"
+        android:title="@string/device_settings_title"
+        android:icon="@drawable/ic_device_settings"
+        android:summary="@string/device_settings_summary">
+        <intent android:action="com.android.settings.action.EXTRA_SETTINGS"
+                android:targetPackage="com.krypton.settings.device"
+                android:targetClass="com.krypton.settings.device.DeviceSettingsActivity" />
+    </Preference>
+
 </PreferenceScreen>
