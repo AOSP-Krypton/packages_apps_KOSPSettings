@@ -37,6 +37,7 @@ public class GamingModeController {
     private Context mContext;
     private ContentResolver mResolver;
     private AudioManager mAudioManager;
+    private String list;
 
     public GamingModeController(Context context) {
         mContext = context;
@@ -105,12 +106,19 @@ public class GamingModeController {
     }
 
     private boolean isActivatedForApp(String packageName) {
-        return Settings.System.getString(mResolver, GAMINGMODE_APPS).contains(packageName);
+        updateList();
+        return list != null && list.contains(packageName);
     }
 
     public void notifyPackageRemoved(String packageName) {
-        String list = Settings.System.getString(mResolver, GAMINGMODE_APPS);
-        if (list.contains(packageName)) list.replace(packageName + " ", "");
-        Settings.System.putString(mResolver, GAMINGMODE_APPS, list);
+        if (isActivatedForApp(packageName)) removePackage(packageName);
+    }
+
+    private void removePackage(String packageName) {
+        Settings.System.putString(mResolver, GAMINGMODE_APPS, list.replace(packageName + " ", ""));
+    }
+
+    private void updateList() {
+        list = Settings.System.getString(mResolver, GAMINGMODE_APPS);
     }
 }
