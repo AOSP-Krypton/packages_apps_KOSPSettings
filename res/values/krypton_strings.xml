@@ -35,6 +35,8 @@
     <string name="select_apps_title">Select Apps</string>
     <string name="select_apps_summary">Enable gaming mode per app</string>
     <string name="gamingmode_apps_settings_title">Apps</string>
+    <string name="gamingmode_apps_reset_string">Reset preferences</string>
+    <string name="string_search_app">Search</string>
     <string name="lock_brightness_title">Lock brightness</string>
     <string name="lock_brightness_summary">Disable adaptive brightness</string>
 
