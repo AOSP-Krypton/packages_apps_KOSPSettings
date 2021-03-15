@@ -19,36 +19,82 @@ package com.krypton.settings.controller;
 import static android.provider.Settings.System.GAMINGMODE_ACTIVE;
 import static android.provider.Settings.System.GAMINGMODE_APPS;
 import static android.provider.Settings.System.GAMINGMODE_BRIGHTNESS;
+import static android.provider.Settings.System.GAMINGMODE_LOCK_BRIGHTNESS;
+import static android.provider.Settings.System.GAMINGMODE_RESTORE_BRIGHTNESS;
 import static android.provider.Settings.System.GAMINGMODE_ENABLED;
 import static android.provider.Settings.System.GAMINGMODE_RINGERMODE;
 import static android.provider.Settings.System.GAMINGMODE_TOAST;
+import static android.provider.Settings.System.SCREEN_BRIGHTNESS;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.database.ContentObserver;
 import android.media.AudioManager;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.widget.Toast;
 
 public class GamingModeController {
-
     private Context mContext;
     private ContentResolver mResolver;
     private AudioManager mAudioManager;
-    private String list;
+    private BrightnessObserver mBrightnessObserver;
+    private Handler mHandler;
+    private String mList;
+    private boolean mIsActive = false;
+    private boolean mRestoredBrightness = false;
+    private boolean mChangedBrightnessMode = false;
+    private int mOldBrightness = -1;
+    private int mPrevRingerMode;
 
     public GamingModeController(Context context) {
         mContext = context;
         mResolver = mContext.getContentResolver();
+        mHandler = new Handler(Looper.getMainLooper());
+        mBrightnessObserver = new BrightnessObserver(mHandler);
+        mBrightnessObserver.observe();
         mAudioManager = mContext.getSystemService(AudioManager.class);
+    }
+
+    private class BrightnessObserver extends ContentObserver {
+        BrightnessObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            mResolver.registerContentObserver(Settings.System.getUriFor(SCREEN_BRIGHTNESS),
+                false, this, UserHandle.USER_ALL);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            updateBrightness();
+        }
+
+        public void updateBrightness() {
+            if (mIsActive) {
+                if (mRestoredBrightness) {
+                    mRestoredBrightness = false;
+                } else {
+                    int brightness = getInt(SCREEN_BRIGHTNESS, 100);
+                    putInt(GAMINGMODE_BRIGHTNESS, brightness);
+                }
+            }
+        }
     }
 
     public void notifyAppOpened(String packageName) {
         if (isActivatedForApp(packageName)) {
-            setActive(1);
-            switch (getRingerMode()) {
+            putInt(GAMINGMODE_ACTIVE, 1);
+            mIsActive = true;
+            mPrevRingerMode = mAudioManager.getRingerModeInternal();
+            switch (getInt(GAMINGMODE_RINGERMODE)) {
                 case 1:
                     mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_VIBRATE);
                     break;
@@ -56,58 +102,39 @@ public class GamingModeController {
                     mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_SILENT);
                     break;
             }
-            if (Settings.System.getInt(mResolver, GAMINGMODE_BRIGHTNESS, -1) == 1) {
-                if (Settings.System.getInt(mResolver, SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL) == SCREEN_BRIGHTNESS_MODE_AUTOMATIC) {
-                    Settings.System.putInt(mResolver, SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL);
-                    Settings.System.putInt(mResolver, GAMINGMODE_BRIGHTNESS, 2);
-                }
+            if (getBool(GAMINGMODE_LOCK_BRIGHTNESS) &&
+                    (getInt(SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL) ==
+                        SCREEN_BRIGHTNESS_MODE_AUTOMATIC)) {
+                putInt(SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_MANUAL);
+                mChangedBrightnessMode = true;
             }
-            if (showToast()) Toast.makeText(mContext, "Gaming Mode Enabled", Toast.LENGTH_SHORT).show();
+            if (getBool(GAMINGMODE_TOAST))
+                Toast.makeText(mContext, "Gaming Mode Enabled", Toast.LENGTH_SHORT).show();
+            adjustBrightness();
         }
-        else if (!isActivatedForApp(packageName) && isActive()){
-            setActive(0);
-            if (getRingerMode() != 0) {
-                mAudioManager.setRingerModeInternal(AudioManager.RINGER_MODE_NORMAL);
+        else if (!isActivatedForApp(packageName) && mIsActive){
+            putInt(GAMINGMODE_ACTIVE, 0);
+            mIsActive = false;
+            if (getInt(GAMINGMODE_RINGERMODE) != 0) {
+                mAudioManager.setRingerModeInternal(mPrevRingerMode);
             }
-            if (Settings.System.getInt(mResolver, GAMINGMODE_BRIGHTNESS, -1) == 2) {
-                Settings.System.putInt(mResolver, SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
-                Settings.System.putInt(mResolver, GAMINGMODE_BRIGHTNESS, 1);
+            if (mChangedBrightnessMode) {
+                putInt(SCREEN_BRIGHTNESS_MODE, SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
+                mChangedBrightnessMode = false;
             }
-            if (showToast()) Toast.makeText(mContext, "Gaming Mode Disabled", Toast.LENGTH_SHORT).show();
+            if (getBool(GAMINGMODE_TOAST))
+                Toast.makeText(mContext, "Gaming Mode Disabled", Toast.LENGTH_SHORT).show();
+            adjustBrightness();
         }
-    }
-
-    private boolean showToast() {
-        return Settings.System.getInt(mResolver, GAMINGMODE_TOAST, -1) == 1 ? true : false;
     }
 
     public boolean isEnabled() {
-        return Settings.System.getInt(mResolver, GAMINGMODE_ENABLED, -1) == 1 ? true : false;
-    }
-
-    private void setEnabled(int status) {
-        Settings.System.putInt(mResolver, GAMINGMODE_ENABLED, status);
-    }
-
-    private boolean isActive() {
-        return Settings.System.getInt(mResolver, GAMINGMODE_ACTIVE, -1) == 1 ? true : false;
-    }
-
-    private void setActive(int status) {
-        Settings.System.putInt(mResolver, GAMINGMODE_ACTIVE, status);
-    }
-
-    private int getRingerMode() {
-        return Settings.System.getInt(mResolver, GAMINGMODE_RINGERMODE, -1);
-    }
-
-    private void setRingerMode(int mode) {
-        Settings.System.putInt(mResolver, GAMINGMODE_RINGERMODE, mode);
+        return getBool(GAMINGMODE_ENABLED);
     }
 
     private boolean isActivatedForApp(String packageName) {
         updateList();
-        return list != null && list.contains(packageName);
+        return mList != null && mList.contains(packageName);
     }
 
     public void notifyPackageRemoved(String packageName) {
@@ -115,10 +142,45 @@ public class GamingModeController {
     }
 
     private void removePackage(String packageName) {
-        Settings.System.putString(mResolver, GAMINGMODE_APPS, list.replace(packageName + " ", ""));
+        Settings.System.putString(mResolver,
+            GAMINGMODE_APPS, mList.replace(packageName + " ", ""));
     }
 
     private void updateList() {
-        list = Settings.System.getString(mResolver, GAMINGMODE_APPS);
+        mList = Settings.System.getString(mResolver, GAMINGMODE_APPS);
+    }
+
+    private void adjustBrightness() {
+        if (getBool(GAMINGMODE_RESTORE_BRIGHTNESS)) {
+            if (mIsActive) {
+                if (!mRestoredBrightness) {
+                    int storedBrightness = getInt(GAMINGMODE_BRIGHTNESS);
+                    if (storedBrightness != -1) {
+                        mRestoredBrightness = true;
+                        mOldBrightness = getInt(SCREEN_BRIGHTNESS, 100);
+                        putInt(SCREEN_BRIGHTNESS, storedBrightness);
+                    }
+                }
+            } else if (mOldBrightness != -1) {
+                putInt(SCREEN_BRIGHTNESS, mOldBrightness);
+                mOldBrightness = -1;
+            }
+        }
+    }
+
+    private int getInt(String key, int def) {
+        return Settings.System.getInt(mResolver, key, def);
+    }
+
+    private int getInt(String key) {
+        return getInt(key, -1);
+    }
+
+    private boolean getBool(String key) {
+        return getInt(key) == 1 ? true : false;
+    }
+
+    private void putInt(String key, int value) {
+        Settings.System.putInt(mResolver, key, value);
     }
 }

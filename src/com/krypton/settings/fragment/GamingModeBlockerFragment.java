@@ -18,7 +18,6 @@ package com.krypton.settings.fragment;
 import static android.provider.Settings.System.GAMINGMODE_DISABLE_HEADSUP;
 import static android.provider.Settings.System.GAMINGMODE_RINGERMODE;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -38,7 +37,6 @@ public class GamingModeBlockerFragment extends SettingsPreferenceFragment {
     private static final String KEY_VIBRATE = "set_ringermode_vibrate";
     private static final String KEY_SILENT = "set_ringermode_silent";
     private Context mContext;
-    private ContentResolver mResolver;
     private SharedPreferences sharedPrefs;
     private Editor mEditor;
     private String key;
@@ -48,7 +46,6 @@ public class GamingModeBlockerFragment extends SettingsPreferenceFragment {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.gamingmode_blocker_settings);
         mContext = getContext();
-        mResolver = mContext.getContentResolver();
         key = mContext.getPackageName();
         sharedPrefs = mContext.getSharedPreferences(key, Context.MODE_PRIVATE);
         mEditor = sharedPrefs.edit();
@@ -70,7 +67,8 @@ public class GamingModeBlockerFragment extends SettingsPreferenceFragment {
                         preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                             @Override
                             public boolean onPreferenceClick(Preference preference) {
-                                mEditor.putBoolean(getCustomKey(preference), ((SwitchPreference) preference).isChecked()).apply();
+                                mEditor.putBoolean(getCustomKey(preference),
+                                    ((SwitchPreference) preference).isChecked()).apply();
                                 updateStatus(preference);
                                 return true;
                             }
@@ -86,17 +84,17 @@ public class GamingModeBlockerFragment extends SettingsPreferenceFragment {
 
     private void updateStatus(Preference preference) {
         if (preference.getKey().equals(KEY_HEADSUP)) {
-            Settings.System.putInt(mResolver, GAMINGMODE_DISABLE_HEADSUP, getBoolean(preference) == true ? 1 : 0);
+            putInt(GAMINGMODE_DISABLE_HEADSUP, getInt(preference));
         }
         else if (preference.getKey().equals(KEY_VIBRATE)) {
-                Settings.System.putInt(mResolver, GAMINGMODE_RINGERMODE, getBoolean(preference) == true ? 1 : 0);
+            putInt(GAMINGMODE_RINGERMODE, getInt(preference));
         }
         else if (preference.getKey().equals(KEY_SILENT)) {
             if (getBoolean(preference)) {
-                Settings.System.putInt(mResolver, GAMINGMODE_RINGERMODE, 2);
+                putInt(GAMINGMODE_RINGERMODE, 2);
             }
             else {
-                Settings.System.putInt(mResolver, GAMINGMODE_RINGERMODE, getBoolean(findPreference(KEY_VIBRATE)) == true ? 1 : 0);
+                putInt(GAMINGMODE_RINGERMODE, getInt(findPreference(KEY_VIBRATE)));
             }
             ((SwitchPreference) findPreference(KEY_VIBRATE)).setEnabled(!getBoolean(preference));
         }
@@ -115,6 +113,14 @@ public class GamingModeBlockerFragment extends SettingsPreferenceFragment {
 
     private String getCustomKey(Preference preference) {
         return key + "." + preference.getKey();
+    }
+
+    private void putInt(String key, int value) {
+        Settings.System.putInt(mContext.getContentResolver(), key, value);
+    }
+
+    private int getInt(Preference pref) {
+        return getBoolean(pref) ? 1 : 0;
     }
 
 }

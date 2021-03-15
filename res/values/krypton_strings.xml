@@ -39,6 +39,8 @@
     <string name="string_search_app">Search</string>
     <string name="lock_brightness_title">Lock brightness</string>
     <string name="lock_brightness_summary">Disable adaptive brightness</string>
+    <string name="restore_brightness_title">Restore brightness</string>
+    <string name="restore_brightness_summary">Enable to restore brightness set in previous gaming session</string>
 
     <!-- Device Settings -->
     <string name="device_settings_title">Device Settings</string>

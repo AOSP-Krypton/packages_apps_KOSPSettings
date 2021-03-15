@@ -15,7 +15,8 @@
  */
 package com.krypton.settings.fragment;
 
-import static android.provider.Settings.System.GAMINGMODE_BRIGHTNESS;
+import static android.provider.Settings.System.GAMINGMODE_LOCK_BRIGHTNESS;
+import static android.provider.Settings.System.GAMINGMODE_RESTORE_BRIGHTNESS;
 import static android.provider.Settings.System.GAMINGMODE_ENABLED;
 import static android.provider.Settings.System.GAMINGMODE_TOAST;
 
@@ -39,6 +40,7 @@ public class GamingModeFragment extends SettingsPreferenceFragment {
 
     private static final String masterSwitchKey = "gamingmode_switch_preference";
     private static final String brightnessLockKey = "brightness_lock_preference";
+    private static final String brightnessRestoreKey = "brightness_restore_preference";
     private static final String showToastKey = "show_toast_preference";
     private SharedPreferences sharedPrefs;
     private Editor mEditor;
@@ -75,19 +77,20 @@ public class GamingModeFragment extends SettingsPreferenceFragment {
                         preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                             @Override
                             public boolean onPreferenceClick(Preference preference) {
-                                mEditor.putBoolean(getCustomKey(preference), ((SwitchPreference) preference).isChecked()).apply();
+                                boolean checked = ((SwitchPreference) preference).isChecked();
+                                mEditor.putBoolean(getCustomKey(preference), checked).apply();
                                 if (preference.getKey().equals(masterSwitchKey)) {
-                                    Settings.System.putInt(mContext.getContentResolver(), GAMINGMODE_ENABLED,
-                                     ((SwitchPreference) preference).isChecked() == true ? 1 : 0);
+                                    putInt(GAMINGMODE_ENABLED, checked);
                                     disableViewIfNeeded();
                                 }
                                 else if (preference.getKey().equals(brightnessLockKey)) {
-                                    Settings.System.putInt(mContext.getContentResolver(), GAMINGMODE_BRIGHTNESS,
-                                     ((SwitchPreference) preference).isChecked() == true ? 1 : 0);
+                                    putInt(GAMINGMODE_LOCK_BRIGHTNESS, checked);
+                                }
+                                else if (preference.getKey().equals(brightnessRestoreKey)) {
+                                    putInt(GAMINGMODE_RESTORE_BRIGHTNESS, checked);
                                 }
                                 else if (preference.getKey().equals(showToastKey)) {
-                                    Settings.System.putInt(mContext.getContentResolver(), GAMINGMODE_TOAST,
-                                     ((SwitchPreference) preference).isChecked() == true ? 1 : 0);
+                                    putInt(GAMINGMODE_TOAST, checked);
                                 }
                                 return true;
                             }
@@ -129,5 +132,9 @@ public class GamingModeFragment extends SettingsPreferenceFragment {
 
     private String getCustomKey(Preference preference) {
         return key + "." + preference.getKey();
+    }
+
+    private void putInt(String key, boolean value) {
+        Settings.System.putInt(mContext.getContentResolver(), key, value ? 1 : 0);
     }
 }

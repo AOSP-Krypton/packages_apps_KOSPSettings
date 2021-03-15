@@ -53,6 +53,11 @@
             android:key="brightness_lock_preference"
             android:title="@string/lock_brightness_title"
             android:summary="@string/lock_brightness_summary" />
+
+        <SwitchPreference
+            android:key="brightness_restore_preference"
+            android:title="@string/restore_brightness_title"
+            android:summary="@string/restore_brightness_summary" />
     </PreferenceCategory>
 
 </PreferenceScreen>
