@@ -15,6 +15,12 @@
  */
 package com.krypton.settings.fragment;
 
+import static com.krypton.settings.fragment.AmbientDisplaySettingsFragment.MODE_DISABLED;
+import static com.krypton.settings.fragment.AmbientDisplaySettingsFragment.MODE_NIGHT;
+import static com.krypton.settings.fragment.AmbientDisplaySettingsFragment.MODE_TIME;
+import static com.krypton.settings.fragment.AmbientDisplaySettingsFragment.MODE_MIXED_SUNSET;
+import static com.krypton.settings.fragment.AmbientDisplaySettingsFragment.MODE_MIXED_SUNRISE;
+
 import android.app.TimePickerDialog;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -59,13 +65,13 @@ public class AODSchedule extends SettingsPreferenceFragment implements
         mTillPref.setOnPreferenceClickListener(this);
 
         int mode = Settings.Secure.getIntForUser(resolver,
-                MODE_KEY, 0, UserHandle.USER_CURRENT);
+                MODE_KEY, MODE_DISABLED, UserHandle.USER_CURRENT);
         mModePref = (ListPreference) findPreference(MODE_KEY);
         mModePref.setValue(String.valueOf(mode));
         mModePref.setSummary(mModePref.getEntry());
         mModePref.setOnPreferenceChangeListener(this);
 
-        updateTimeEnablement(mode == 2);
+        updateTimeEnablement(mode);
         updateTimeSummary(mode);
     }
 
@@ -76,7 +82,7 @@ public class AODSchedule extends SettingsPreferenceFragment implements
         mModePref.setSummary(mModePref.getEntries()[index]);
         Settings.Secure.putIntForUser(getActivity().getContentResolver(),
                 MODE_KEY, value, UserHandle.USER_CURRENT);
-        updateTimeEnablement(value == 2);
+        updateTimeEnablement(value);
         updateTimeSummary(value);
         return true;
     }
@@ -114,9 +120,9 @@ public class AODSchedule extends SettingsPreferenceFragment implements
         return value.split(",", 0);
     }
 
-    private void updateTimeEnablement(boolean enabled) {
-        mSincePref.setEnabled(enabled);
-        mTillPref.setEnabled(enabled);
+    private void updateTimeEnablement(int mode) {
+        mSincePref.setEnabled(mode == MODE_TIME || mode == MODE_MIXED_SUNRISE);
+        mTillPref.setEnabled(mode == MODE_TIME || mode == MODE_MIXED_SUNSET);
     }
 
     private void updateTimeSummary(int mode) {
@@ -124,19 +130,24 @@ public class AODSchedule extends SettingsPreferenceFragment implements
     }
 
     private void updateTimeSummary(String[] times, int mode) {
-        if (mode == 0) {
+        if (mode == MODE_DISABLED) {
             mSincePref.setSummary("-");
             mTillPref.setSummary("-");
             return;
         }
-        if (mode == 1) {
+        if (mode == MODE_NIGHT) {
             mSincePref.setSummary(R.string.always_on_display_schedule_sunset);
             mTillPref.setSummary(R.string.always_on_display_schedule_sunrise);
             return;
         }
+        if (mode == MODE_MIXED_SUNSET) {
+            mSincePref.setSummary(R.string.always_on_display_schedule_sunset);
+        } else if (mode == MODE_MIXED_SUNRISE) {
+            mTillPref.setSummary(R.string.always_on_display_schedule_sunrise);
+        }
         if (DateFormat.is24HourFormat(getContext())) {
-            mSincePref.setSummary(times[0]);
-            mTillPref.setSummary(times[1]);
+            if (mode != MODE_MIXED_SUNSET) mSincePref.setSummary(times[0]);
+            if (mode != MODE_MIXED_SUNRISE) mTillPref.setSummary(times[1]);
             return;
         }
         String[] sinceValues = times[0].split(":", 0);
@@ -157,8 +168,8 @@ public class AODSchedule extends SettingsPreferenceFragment implements
         } else {
             tillSummary = times[0].substring(1) + " AM";
         }
-        mSincePref.setSummary(sinceSummary);
-        mTillPref.setSummary(tillSummary);
+        if (mode != MODE_MIXED_SUNSET) mSincePref.setSummary(sinceSummary);
+        if (mode != MODE_MIXED_SUNRISE) mTillPref.setSummary(tillSummary);
     }
 
     private void updateTimeSetting(boolean since, int hour, int minute) {
@@ -173,7 +184,7 @@ public class AODSchedule extends SettingsPreferenceFragment implements
         Settings.Secure.putStringForUser(getActivity().getContentResolver(),
                 Settings.Secure.DOZE_ALWAYS_ON_AUTO_TIME,
                 times[0] + "," + times[1], UserHandle.USER_CURRENT);
-        updateTimeSummary(times, 2);
+        updateTimeSummary(times, Integer.parseInt(mModePref.getValue()));
     }
 
     @Override
