@@ -17,15 +17,6 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/gamingmode_settings_title">
 
-    <PreferenceCategory
-        android:key="gaminglogo">
-        <Preference
-            android:layout="@layout/gamingmode_logo" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="gamingoptions">
-
         <SwitchPreference
             android:key="gamingmode_switch_preference"
             android:title="@string/gamingmode_status"
@@ -58,6 +49,5 @@
             android:key="brightness_restore_preference"
             android:title="@string/restore_brightness_title"
             android:summary="@string/restore_brightness_summary" />
-    </PreferenceCategory>
 
 </PreferenceScreen>

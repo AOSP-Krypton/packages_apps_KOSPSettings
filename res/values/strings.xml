@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
     <!-- Krypton Settings Page Title -->
     <string name="krypton_page_title">Krypton Settings</string>
 
@@ -41,6 +41,11 @@
     <string name="lock_brightness_summary">Disable adaptive brightness</string>
     <string name="restore_brightness_title">Restore brightness</string>
     <string name="restore_brightness_summary">Enable to restore brightness set in previous gaming session</string>
+
+    <!-- Miscellaneous Settings -->
+    <string name="miscellaneous_settings_title">Miscellaneous</string>
+    <string name="fod_icon_settings_title">FOD Icon</string>
+    <string name="fod_icon_settings_page_title">Select FOD Icon</string>
 
     <!-- Device Settings -->
     <string name="device_settings_title">Device Settings</string>

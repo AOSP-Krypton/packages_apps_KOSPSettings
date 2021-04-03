@@ -49,7 +49,6 @@ import java.util.concurrent.Executors;
 
 public class GamingModeAppsFragment extends SettingsPreferenceFragment {
 
-    private static final String TAG = "GamingModeAppsFragment";
     private ArrayList<Pair<String, String>> mList;
     private Context mContext;
     private ContentResolver mResolver;

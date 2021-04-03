@@ -13,15 +13,14 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_gaminglogo" />
+    <solid android:color="?android:attr/colorPrimaryDark" />
 
-</LinearLayout>
+    <corners android:radius="@dimen/default_rounded_corner_radius" />
+
+    <stroke android:width="@dimen/default_stroke_width"
+            android:color="@color/color_cyan" />
+
+</shape>

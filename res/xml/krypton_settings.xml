@@ -25,6 +25,13 @@
         android:title="@string/gamingmode_settings_title"
         android:summary="@string/gamingmode_settings_summary" />
 
+    <!-- Miscellaneous -->
+    <Preference
+        android:fragment="com.krypton.settings.fragment.MiscellaneousFragment"
+        android:icon="@drawable/ic_miscellaneous"
+        android:key="miscellaneous"
+        android:title="@string/miscellaneous_settings_title" />
+
     <!-- Device Settings -->
     <Preference
         android:key="device_settings"
