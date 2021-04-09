@@ -44,8 +44,11 @@
 
     <!-- Miscellaneous Settings -->
     <string name="miscellaneous_settings_title">Miscellaneous</string>
-    <string name="fod_icon_settings_title">FOD Icon</string>
-    <string name="fod_icon_settings_page_title">Select FOD Icon</string>
+    <string name="fod_settings_title">FOD Settings</string>
+    <string name="fod_settings_summary">Customise FOD icon and animations</string>
+    <string name="fod_icon_settings_title">Select FOD Icon</string>
+    <string name="fod_animation_switch_title">FOD Animation</string>
+    <string name="fod_animation_settings_title">Select FOD Animation</string>
 
     <!-- Device Settings -->
     <string name="device_settings_title">Device Settings</string>

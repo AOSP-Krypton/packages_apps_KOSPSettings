@@ -17,4 +17,5 @@
     <color name="color_white">#FFFFFF</color>
     <color name="color_cyan">#00FFFF</color>
     <color name="color_grey">#A9A9A9</color>
+    <color name="color_black">#000000</color>
 </resources>

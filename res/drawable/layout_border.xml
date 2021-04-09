@@ -18,9 +18,9 @@
 
     <solid android:color="?android:attr/colorPrimaryDark" />
 
-    <corners android:radius="@dimen/default_rounded_corner_radius" />
+    <corners android:radius="@dimen/rounded_corner_radius" />
 
-    <stroke android:width="@dimen/default_stroke_width"
-            android:color="@color/color_cyan" />
+    <stroke android:color="@color/color_grey"
+        android:width="@dimen/stroke_width" />
 
 </shape>

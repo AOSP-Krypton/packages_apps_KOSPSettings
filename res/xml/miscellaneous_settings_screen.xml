@@ -17,13 +17,14 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/miscellaneous_settings_title">
 
-    <!-- FOD Icon -->
+    <!-- FOD Settings -->
     <Preference
-        android:key="fodicon"
         android:icon="@drawable/ic_fod_icon"
-        android:title="@string/fod_icon_settings_title">
+        android:key="fod_settings"
+        android:title="@string/fod_settings_title"
+        android:summary="@string/fod_settings_summary">
         <intent android:targetPackage="com.android.settings"
-                android:targetClass="com.krypton.settings.miscellaneous.FODIconPicker" />
+                android:targetClass="com.krypton.settings.miscellaneous.FODSettingsActivity" />
     </Preference>
 
 </PreferenceScreen>

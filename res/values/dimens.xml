@@ -14,7 +14,15 @@
      limitations under the License.
 -->
 <resources>
-    <dimen name="default_button_padding">20dp</dimen>
-    <dimen name="default_rounded_corner_radius">12dp</dimen>
-    <dimen name="default_stroke_width">2dp</dimen>
+    <dimen name="button_padding">10dp</dimen>
+    <dimen name="rounded_corner_radius">12dp</dimen>
+    <dimen name="stroke_width">2dp</dimen>
+    <dimen name="button_padding_anim">5dp</dimen>
+    <dimen name="preview_margin">80dp</dimen>
+    <dimen name="selector_container_margin_bottom">20dp</dimen>
+    <dimen name="switch_padding_start">60dp</dimen>
+    <dimen name="switch_padding_end">30dp</dimen>
+    <dimen name="switch_text_size">16sp</dimen>
+    <dimen name="fod_icon_preview_size">55dp</dimen>
+    <dimen name="fod_anim_preview_size">200dp</dimen>
 </resources>

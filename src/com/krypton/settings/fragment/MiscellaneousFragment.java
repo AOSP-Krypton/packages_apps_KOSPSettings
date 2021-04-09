@@ -30,7 +30,7 @@ public class MiscellaneousFragment extends SettingsPreferenceFragment {
         boolean hasFod = getContext().getResources().getBoolean(
             com.android.internal.R.bool.config_needCustomFODView);
         if (!hasFod) {
-            getPreferenceScreen().removePreference(findPreference("fodicon"));
+            getPreferenceScreen().removePreference(findPreference("fod_settings"));
         }
     }
 
