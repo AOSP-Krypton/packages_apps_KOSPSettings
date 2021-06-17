@@ -15,6 +15,8 @@
  */
 package com.krypton.settings.fragment;
 
+import static android.content.Context.MODE_PRIVATE;
+import static android.content.pm.ApplicationInfo.FLAG_SYSTEM;
 import static android.provider.Settings.System.GAMINGMODE_APPS;
 import static com.android.settings.search.actionbar.SearchMenuController.MENU_SEARCH;
 
@@ -25,18 +27,19 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.ApplicationInfo;
+
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.provider.Settings;
-import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.SearchView;
+import android.widget.SearchView.OnQueryTextListener;
 
 import androidx.preference.CheckBoxPreference;
 import androidx.preference.Preference;
+import androidx.preference.Preference.OnPreferenceClickListener;
 import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -46,19 +49,35 @@ import com.android.settings.SettingsPreferenceFragment;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
 
 public class GamingModeAppsFragment extends SettingsPreferenceFragment {
-
-    private ArrayList<Pair<String, String>> mList;
+    private static final String mSeparator = "|";
+    private HashMap<String, String> mList;
     private Context mContext;
     private ContentResolver mResolver;
-    private PackageManager pm;
+    private PackageManager mPm;
     private PreferenceScreen mScreen;
-    private SharedPreferences sharedPrefs;
+    private SharedPreferences mSharedPrefs;
     private Editor mEditor;
     private ExecutorService mExecutor;
     private Handler mHandler;
     private SearchView mSearchView;
+    private String mEnabledApps;
+
+    private final OnPreferenceClickListener mListener = preference -> {
+        String key = preference.getKey();
+        if (key != null) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            putBoolean(key, checked);
+            updateAppPrefs(key, checked);
+            return true;
+        } else {
+            return false;
+        }
+    };
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -69,10 +88,11 @@ public class GamingModeAppsFragment extends SettingsPreferenceFragment {
         mHandler = new Handler(Looper.getMainLooper());
         mExecutor = Executors.newSingleThreadExecutor();
         mScreen = getPreferenceScreen();
-        sharedPrefs = mContext.getSharedPreferences(mContext.getPackageName(), Context.MODE_PRIVATE);
-        mEditor = sharedPrefs.edit();
-        pm = mContext.getPackageManager();
-        mList = new ArrayList<>();
+        mSharedPrefs = mContext.getSharedPreferences(mContext.getPackageName(), MODE_PRIVATE);
+        mEditor = mSharedPrefs.edit();
+        mPm = mContext.getPackageManager();
+        mList = new HashMap<>();
+        mEnabledApps = getString(GAMINGMODE_APPS);
         setView();
     }
 
@@ -100,7 +120,7 @@ public class GamingModeAppsFragment extends SettingsPreferenceFragment {
     }
 
     private void handleSearch() {
-        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        mSearchView.setOnQueryTextListener(new OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
@@ -116,76 +136,70 @@ public class GamingModeAppsFragment extends SettingsPreferenceFragment {
 
     private void setView() {
         mExecutor.execute(() -> {
-            for (PackageInfo packageInfo: getSortedList()) {
-                CheckBoxPreference checkBox = new CheckBoxPreference(mContext);
-                checkBox.setIcon(packageInfo.applicationInfo.loadIcon(pm));
-                checkBox.setTitle(packageInfo.applicationInfo.loadLabel(pm));
-                checkBox.setKey(packageInfo.packageName);
-                checkBox.setChecked(sharedPrefs.getBoolean(checkBox.getKey(), false));
-                checkBox.setOnPreferenceClickListener(preference -> {
-                    putBoolean(preference.getKey(), ((CheckBoxPreference) preference).isChecked());
-                    updateAppPrefs((CheckBoxPreference) preference);
-                    return true;
-                });
-                mList.add(new Pair(checkBox.getKey(), checkBox.getTitle()));
+            final List<PackageInfo> list = mPm.getInstalledPackages(0);
+            for (int i = 0, size = list.size(); i < size;) {
+                if ((list.get(i).applicationInfo.flags & FLAG_SYSTEM) != 0) {
+                    list.remove(i);
+                    size--;
+                } else {
+                    i++;
+                }
+            }
+            list.sort(new Comparator<PackageInfo>() {
+                @Override
+                public int compare(PackageInfo pInfo1, PackageInfo pInfo2) {
+                    return pInfo1.applicationInfo.loadLabel(mPm).toString()
+                        .compareToIgnoreCase(pInfo2.applicationInfo.loadLabel(mPm).toString());
+                }
+            });
+            for (PackageInfo pInfo: list) {
+                String key = pInfo.packageName;
+                String name = pInfo.applicationInfo.loadLabel(mPm).toString();
+                final CheckBoxPreference checkBox = new CheckBoxPreference(mContext);
+                checkBox.setIcon(pInfo.applicationInfo.loadIcon(mPm));
+                checkBox.setTitle(name);
+                checkBox.setKey(key);
+                checkBox.setChecked(mSharedPrefs.getBoolean(key, false));
+                checkBox.setOnPreferenceClickListener(mListener);
                 mHandler.post(() -> {
                     mScreen.addPreference(checkBox);
                 });
+                mList.put(key, name);
             }
         });
     }
 
-    private ArrayList<PackageInfo> getSortedList() {
-        ArrayList<PackageInfo> list = new ArrayList<>();
-        for (PackageInfo pInfo: pm.getInstalledPackages(0)) {
-            if ((pInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0) continue;
-            list.add(pInfo);
-        }
-        for (int i=0; i < list.size(); i++) {
-            for (int j=0; j < list.size(); j++) {
-                String first = list.get(i).applicationInfo.loadLabel(pm).toString();
-                String second = list.get(j).applicationInfo.loadLabel(pm).toString();
-                if (first.compareToIgnoreCase(second) < 0) {
-                    PackageInfo temp = list.get(i);
-                    list.set(i, list.get(j));
-                    list.set(j, temp);
-                }
+    private void updateAppPrefs(String key, boolean checked) {
+        if (mEnabledApps != null) {
+            if (checked && !mEnabledApps.contains(key)) {
+                mEnabledApps += key + mSeparator;
+            } else if (!checked && mEnabledApps.contains(key)) {
+                mEnabledApps = mEnabledApps.replace(key + mSeparator, "");
             }
+        } else if (checked) {
+            mEnabledApps = key + mSeparator;
         }
-        return list;
-    }
-
-    private void updateAppPrefs(CheckBoxPreference preference) {
-        String prefPackageName = preference.getKey();
-        String appsList = getList();
-        if (appsList != null) {
-            if (preference.isChecked())
-                if (!appsList.contains(prefPackageName)) appsList += prefPackageName + " ";
-            else appsList = appsList.replace(prefPackageName + " ", "");
-        }
-        else appsList = prefPackageName + " ";
-        amendList(appsList);
+        putString(GAMINGMODE_APPS, mEnabledApps);
     }
 
     private void filterApps(String query) {
         if (query != null) {
             mExecutor.execute(() -> {
-                for (Pair<String, String> pkg: mList) {
-                    mHandler.post(() -> {
-                        Preference pref = findPreference(pkg.first);
-                        if (pref != null) pref.setVisible(query.isEmpty() ||
-                            pkg.second.toLowerCase().contains(query.toLowerCase()));
-                    });
+                for (String key: mList.keySet()) {
+                    Preference pref = findPreference(key);
+                    if (pref != null) {
+                        boolean match = query.isEmpty() ||
+                            mList.get(key).toLowerCase().contains(query.toLowerCase());
+                        mHandler.post(() -> pref.setVisible(match));
+                    }
                 }
             });
         }
     }
 
     private void resetPrefs() {
-        String appsList = getList();
-        if(appsList != null) {
-            amendList(null);
-            for (String key: appsList.split(" ")) {
+        if (mEnabledApps != null) {
+            for (String key: mEnabledApps.split(mSeparator)) {
                 CheckBoxPreference checkBox = (CheckBoxPreference) findPreference(key);
                 if (checkBox != null) {
                     checkBox.setChecked(false);
@@ -193,17 +207,18 @@ public class GamingModeAppsFragment extends SettingsPreferenceFragment {
                 }
             }
         }
-    }
-
-    private String getList() {
-        return Settings.System.getString(mResolver, GAMINGMODE_APPS);
-    }
-
-    private void amendList(String newList) {
-        Settings.System.putString(mResolver, GAMINGMODE_APPS, newList);
+        putString(GAMINGMODE_APPS, null);
     }
 
     private void putBoolean(String key, boolean state) {
         mEditor.putBoolean(key, state).apply();
+    }
+
+    private String getString(String key) {
+        return Settings.System.getString(mResolver, key);
+    }
+
+    private void putString(String key, String value) {
+        Settings.System.putString(mResolver, key, value);
     }
 }

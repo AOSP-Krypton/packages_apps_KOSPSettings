@@ -1,7 +1,0 @@
-android_library {
-    name: "KryptonControllers",
-    optimize: {
-        enabled: false,
-    },
-    srcs: ["src/com/krypton/settings/controller/*.java"],
-}
