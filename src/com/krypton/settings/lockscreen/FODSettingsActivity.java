@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package com.krypton.settings.miscellaneous;
+package com.krypton.settings.lockscreen;
 
 import android.app.ActionBar;
 import android.app.Activity;

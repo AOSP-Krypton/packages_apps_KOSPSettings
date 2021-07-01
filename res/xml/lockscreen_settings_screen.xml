@@ -15,7 +15,7 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:title="@string/miscellaneous_settings_title">
+    android:title="@string/lockscreen_settings_title">
 
     <!-- FOD Settings -->
     <Preference
@@ -24,7 +24,7 @@
         android:title="@string/fod_settings_title"
         android:summary="@string/fod_settings_summary">
         <intent android:targetPackage="com.android.settings"
-                android:targetClass="com.krypton.settings.miscellaneous.FODSettingsActivity" />
+                android:targetClass="com.krypton.settings.lockscreen.FODSettingsActivity" />
     </Preference>
 
 </PreferenceScreen>

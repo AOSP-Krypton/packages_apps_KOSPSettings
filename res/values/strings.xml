@@ -44,6 +44,11 @@
 
     <!-- Miscellaneous Settings -->
     <string name="miscellaneous_settings_title">Miscellaneous</string>
+
+    <!-- Lockscreen Settings -->
+    <string name="lockscreen_settings_title">Lockscreen</string>
+
+    <!-- FOD Settings -->
     <string name="fod_settings_title">FOD Settings</string>
     <string name="fod_settings_summary">Customise FOD icon and animations</string>
     <string name="fod_icon_settings_title">Select FOD Icon</string>

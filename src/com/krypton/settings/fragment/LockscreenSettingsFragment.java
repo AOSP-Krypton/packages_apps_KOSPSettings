@@ -21,12 +21,12 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class MiscellaneousFragment extends SettingsPreferenceFragment {
+public class LockscreenSettingsFragment extends SettingsPreferenceFragment {
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.miscellaneous_settings_screen);
+        addPreferencesFromResource(R.xml.lockscreen_settings_screen);
         boolean hasFod = getContext().getResources().getBoolean(
             com.android.internal.R.bool.config_needCustomFODView);
         if (!hasFod) {

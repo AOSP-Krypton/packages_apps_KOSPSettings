@@ -27,10 +27,10 @@
 
     <!-- Miscellaneous -->
     <Preference
-        android:fragment="com.krypton.settings.fragment.MiscellaneousFragment"
-        android:icon="@drawable/ic_miscellaneous"
+        android:fragment="com.krypton.settings.fragment.LockscreenSettingsFragment"
+        android:icon="@drawable/ic_lockscreen"
         android:key="miscellaneous"
-        android:title="@string/miscellaneous_settings_title" />
+        android:title="@string/lockscreen_settings_title" />
 
     <!-- Device Settings -->
     <Preference
