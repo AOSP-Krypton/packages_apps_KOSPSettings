@@ -17,8 +17,10 @@
 package com.krypton.settings.lockscreen;
 
 import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
-import static android.provider.Settings.System.FOD_RECOGNIZING_ANIMATION;
+import static android.provider.Settings.System.FOD_ANIM;
 import static android.provider.Settings.System.FOD_ANIM_ALWAYS_ON;
+import static android.provider.Settings.System.FOD_ICON;
+import static android.provider.Settings.System.FOD_RECOGNIZING_ANIMATION;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -47,15 +49,15 @@ import com.krypton.settings.Utils;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class FODSettingsActivity extends Activity {
-
     private ImageView mFODIconPreview, mFODAnimPreview;
     private AnimationDrawable mAnimationDrawable;
     private ExecutorService mExecutor;
     private Handler mHandler;
     private LinearLayout mFODIconsGrid, mFODAnimsGrid;
-    private HorizontalScrollView mFODAnimsContainer;
+    private HorizontalScrollView mFODIconsContainer, mFODAnimsContainer;
     private Switch mFODAnimSwitch, mFODAnimAlwaysOnSwitch;
     private int width, columnCount;
     private int strokeWidth, cyan, black;
@@ -102,10 +104,10 @@ public class FODSettingsActivity extends Activity {
 
         mFODIconsGrid = (LinearLayout) findViewById(R.id.fod_icons_preview);
         mFODAnimsGrid = (LinearLayout) findViewById(R.id.fod_anims_preview);
+        mFODIconsContainer = (HorizontalScrollView) findViewById(R.id.fod_icons_container);
         mFODAnimsContainer = (HorizontalScrollView) findViewById(R.id.fod_anims_container);
 
-        boolean animsEnabled = Utils.getSettingBoolean(this, Utils.TYPE_SYSTEM, FOD_RECOGNIZING_ANIMATION);
-        if (animsEnabled) {
+        if (Utils.getSettingBoolean(this, Utils.TYPE_SYSTEM, FOD_RECOGNIZING_ANIMATION)) {
             mFODAnimSwitch.setChecked(true);
         } else {
             mFODAnimAlwaysOnSwitch.setEnabled(false);
@@ -121,8 +123,21 @@ public class FODSettingsActivity extends Activity {
         black = res.getColor(R.color.color_black);
         cyan = res.getColor(R.color.color_cyan);
 
-        mExecutor.execute(() -> setFODIconGrid());
-        mExecutor.execute(() -> setFODAnimGrid());
+        final Future iconsSet = mExecutor.submit(() -> setFODIconGrid());
+        final Future animsSet = mExecutor.submit(() -> setFODAnimGrid());
+        mExecutor.execute(() -> {
+            while (!(iconsSet.isDone() && animsSet.isDone())) {
+                Utils.sleepThread(10);
+            }
+            int iconIndex = Utils.getSettingInt(this, Utils.TYPE_SYSTEM, FOD_ICON);
+            if (iconIndex > columnCount) {
+                mHandler.post(() -> mFODIconsContainer.smoothScrollTo(iconIndex * width, 0));
+            }
+            int animIndex = Utils.getSettingInt(this, Utils.TYPE_SYSTEM, FOD_ANIM);
+            if (animIndex > columnCount) {
+                mHandler.post(() -> mFODAnimsContainer.smoothScrollTo(animIndex * width, 0));
+            }
+        });
     }
 
     private void setFODIconGrid() {
@@ -222,7 +237,7 @@ public class FODSettingsActivity extends Activity {
 
         @Override
         String getKey() {
-            return Settings.System.FOD_ICON;
+            return FOD_ICON;
         }
 
         @Override
@@ -248,7 +263,7 @@ public class FODSettingsActivity extends Activity {
 
         @Override
         String getKey() {
-            return Settings.System.FOD_ANIM;
+            return FOD_ANIM;
         }
 
         @Override

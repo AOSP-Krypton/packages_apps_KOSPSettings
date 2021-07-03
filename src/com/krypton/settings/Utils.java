@@ -78,4 +78,12 @@ public class Utils {
             return 0;
         }
     }
+
+    public static void sleepThread(long duration) {
+        try {
+            Thread.sleep(1);
+        } catch (InterruptedException e) {
+            Log.e(TAG, "thread interrupted while sleep", e);
+        }
+    }
 }
