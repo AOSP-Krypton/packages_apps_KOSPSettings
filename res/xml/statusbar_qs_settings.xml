@@ -32,6 +32,13 @@
         settings:settingDefault="1" />
 
     <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="qs_show_auto_brightness_icon_switch_preference"
+        android:title="@string/qs_show_auto_brightness_icon_title"
+        android:dependency="qs_show_slider_switch_preference"
+        settings:settingKey="qs_show_auto_brightness_icon"
+        settings:settingNamespace="system" />
+
+    <com.krypton.settings.preference.SettingSwitchPreference
         android:key="qs_show_slider_bottom_switch_preference"
         android:title="@string/qs_show_slider_bottom_title"
         android:dependency="qs_show_slider_switch_preference"

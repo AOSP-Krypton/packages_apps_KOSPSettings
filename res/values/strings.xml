@@ -61,6 +61,7 @@
     <string name="statusbar_qs_settings_summary">Customisations and gestures for statusbar and qs</string>
     <string name="statusbar_dt2s_title">Double tap on statusbar to sleep</string>
     <string name="qs_show_slider_title">Show brightness slider in qs</string>
+    <string name="qs_show_auto_brightness_icon_title">Show auto brightness icon in qs</string>
     <string name="qs_show_slider_bottom_title">Keep brightness slider at the bottom</string>
     <string name="qs_show_slider_above_footer_title">Keep brightness slider above qs footer</string>
 
