@@ -113,6 +113,9 @@ public class FODSettingsActivity extends Activity {
             mFODAnimAlwaysOnSwitch.setEnabled(false);
             mFODAnimsContainer.removeView(mFODAnimsGrid);
         }
+        if (Utils.getSettingBoolean(this, Utils.TYPE_SYSTEM, FOD_ANIM_ALWAYS_ON)) {
+            mFODAnimAlwaysOnSwitch.setChecked(true);
+        }
 
         final Point size = new Point();
         columnCount = res.getInteger(R.integer.config_fodSettingsColumns);
