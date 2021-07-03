@@ -27,4 +27,19 @@
                 android:targetClass="com.krypton.settings.lockscreen.FODSettingsActivity" />
     </Preference>
 
+    <!-- DT2S -->
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="lockscreen_dt2s_switch_preference"
+        android:title="@string/lockscreen_dt2s_title"
+        settings:settingKey="double_tap_sleep_lockscreen"
+        settings:settingNamespace="system" />
+
+    <!-- LockScreen battery info -->
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="lockscreen_charging_info_switch_preference"
+        android:title="@string/lockscreen_charging_info_title"
+        settings:settingKey="lockscreen_battery_info"
+        settings:settingNamespace="system"
+        settings:settingDefault="1" />
+
 </PreferenceScreen>

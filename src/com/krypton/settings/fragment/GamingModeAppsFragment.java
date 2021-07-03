@@ -72,7 +72,7 @@ public class GamingModeAppsFragment extends SettingsPreferenceFragment {
         if (key != null) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             putBoolean(key, checked);
-            updateAppPrefs(key, checked);
+            updateAppsList(key, checked);
             return true;
         } else {
             return false;
@@ -161,15 +161,13 @@ public class GamingModeAppsFragment extends SettingsPreferenceFragment {
                 checkBox.setKey(key);
                 checkBox.setChecked(mSharedPrefs.getBoolean(key, false));
                 checkBox.setOnPreferenceClickListener(mListener);
-                mHandler.post(() -> {
-                    mScreen.addPreference(checkBox);
-                });
+                mHandler.post(() -> mScreen.addPreference(checkBox));
                 mList.put(key, name);
             }
         });
     }
 
-    private void updateAppPrefs(String key, boolean checked) {
+    private void updateAppsList(String key, boolean checked) {
         if (mEnabledApps != null) {
             if (checked && !mEnabledApps.contains(key)) {
                 mEnabledApps += key + mSeparator;

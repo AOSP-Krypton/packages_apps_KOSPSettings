@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2021 AOSP-Krypton Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/statusbar_qs_settings_title">
+
+    <!-- DT2S -->
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="statusbar_dt2s_switch_preference"
+        android:title="@string/statusbar_dt2s_title"
+        settings:settingKey="double_tap_sleep_gesture"
+        settings:settingNamespace="system" />
+
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="qs_show_slider_switch_preference"
+        android:title="@string/qs_show_slider_title"
+        settings:settingKey="qs_show_brightness"
+        settings:settingNamespace="system"
+        settings:settingDefault="1" />
+
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="qs_show_slider_bottom_switch_preference"
+        android:title="@string/qs_show_slider_bottom_title"
+        android:dependency="qs_show_slider_switch_preference"
+        settings:settingKey="qs_brightness_position_bottom"
+        settings:settingNamespace="system" />
+
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="qs_show_slider_above_footer_switch_preference"
+        android:title="@string/qs_show_slider_above_footer_title"
+        android:dependency="qs_show_slider_bottom_switch_preference"
+        settings:settingKey="qs_show_brightness_above_footer"
+        settings:settingNamespace="system" />
+
+</PreferenceScreen>

@@ -25,13 +25,12 @@
     <string name="gamingmode_disabled">Disabled</string>
     <string name="show_toast_title">Toasts</string>
     <string name="show_toast_summary">Show a toast when entering gaming mode</string>
-    <string name="block_notifications_title">Notifications</string>
-    <string name="block_notifications_summary">Click to configure</string>
     <string name="disable_headsup">Disable heads-up</string>
     <string name="disable_headsup_summary">Block peaking notifications</string>
-    <string name="ringermode_silent">Mute notifications</string>
-    <string name="ringermode_silent_summary">Will not even vibrate if set</string>
-    <string name="ringermode_vibrate">Vibrate for notifications</string>
+    <string name="ringermode_title">Ringer mode</string>
+    <string name="ringermode_silent">Silent</string>
+    <string name="ringermode_vibrate">Vibrate</string>
+    <string name="ringermode_normal">Normal</string>
     <string name="select_apps_title">Select Apps</string>
     <string name="select_apps_summary">Enable gaming mode per app</string>
     <string name="gamingmode_apps_settings_title">Apps</string>
@@ -47,13 +46,26 @@
 
     <!-- Lockscreen Settings -->
     <string name="lockscreen_settings_title">Lockscreen</string>
-
-    <!-- FOD Settings -->
+    <string name="lockscreen_settings_summary">Customisations and gestures for lockscreen</string>
+    <string name="lockscreen_dt2s_title">Double tap on lockscreen to sleep</string>
+    <string name="lockscreen_charging_info_title">Show charging info in lockscreen</string>
     <string name="fod_settings_title">FOD Settings</string>
     <string name="fod_settings_summary">Customise FOD icon and animations</string>
     <string name="fod_icon_settings_title">Select FOD Icon</string>
     <string name="fod_animation_switch_title">FOD Animation</string>
     <string name="fod_animation_settings_title">Select FOD Animation</string>
+    <string name="fod_animation_always_on_switch_title">Enable FOD Animation for all use cases</string>
+
+    <!-- StatusBar-QS Settings -->
+    <string name="statusbar_qs_settings_title">StatusBar and QS</string>
+    <string name="statusbar_qs_settings_summary">Customisations and gestures for statusbar and qs</string>
+    <string name="statusbar_dt2s_title">Double tap on statusbar to sleep</string>
+    <string name="qs_show_slider_title">Show brightness slider in qs</string>
+    <string name="qs_show_slider_bottom_title">Keep brightness slider at the bottom</string>
+    <string name="qs_show_slider_above_footer_title">Keep brightness slider above qs footer</string>
+
+    <!-- FOD Settings -->
+
 
     <!-- Device Settings -->
     <string name="device_settings_title">Device Settings</string>

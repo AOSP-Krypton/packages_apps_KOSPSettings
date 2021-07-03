@@ -21,12 +21,12 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class GamingModeFragment extends SettingsPreferenceFragment {
+public class StatusBarQSSettingsFragment extends SettingsPreferenceFragment {
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.gamingmode_settings);
+        addPreferencesFromResource(R.xml.statusbar_qs_settings);
     }
 
     @Override

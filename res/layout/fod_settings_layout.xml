@@ -74,7 +74,19 @@
             android:fontFamily="@*android:string/config_bodyFontFamily"
             android:paddingStart="@dimen/switch_padding_start"
             android:paddingEnd="@dimen/switch_padding_end"
-            android:onClick="toggleFodAnim" />
+            android:onClick="toggleFODAnim" />
+
+        <Switch
+            android:id="@+id/fod_animation_always_on_switch"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/fod_animation_always_on_switch_title"
+            android:textSize="@dimen/switch_text_size"
+            android:fontFamily="@*android:string/config_bodyFontFamily"
+            android:paddingStart="@dimen/switch_padding_start"
+            android:paddingEnd="@dimen/switch_padding_end"
+            android:onClick="setFODAnimationAlwaysOn" />
 
         <HorizontalScrollView
             android:id="@+id/fod_anims_container"

@@ -25,12 +25,21 @@
         android:title="@string/gamingmode_settings_title"
         android:summary="@string/gamingmode_settings_summary" />
 
-    <!-- Miscellaneous -->
+    <!-- LockScreen Settings -->
     <Preference
         android:fragment="com.krypton.settings.fragment.LockscreenSettingsFragment"
         android:icon="@drawable/ic_lockscreen"
-        android:key="miscellaneous"
-        android:title="@string/lockscreen_settings_title" />
+        android:key="lockscreen"
+        android:title="@string/lockscreen_settings_title"
+        android:summary="@string/lockscreen_settings_summary" />
+
+    <!-- StatusBar-QS Settings -->
+    <Preference
+        android:fragment="com.krypton.settings.fragment.StatusBarQSSettingsFragment"
+        android:icon="@drawable/ic_statusbar_qs_settings"
+        android:key="statusbar_qs"
+        android:title="@string/statusbar_qs_settings_title"
+        android:summary="@string/statusbar_qs_settings_summary" />
 
     <!-- Device Settings -->
     <Preference

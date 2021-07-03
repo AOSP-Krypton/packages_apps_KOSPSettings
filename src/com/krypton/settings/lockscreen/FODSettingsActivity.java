@@ -16,14 +16,16 @@
 
 package com.krypton.settings.lockscreen;
 
+import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
+import static android.provider.Settings.System.FOD_RECOGNIZING_ANIMATION;
+import static android.provider.Settings.System.FOD_ANIM_ALWAYS_ON;
+
 import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.AnimationDrawable;
@@ -41,38 +43,35 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 
 import com.android.settings.R;
+import com.krypton.settings.Utils;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class FODSettingsActivity extends Activity {
 
-    private ContentResolver mResolver;
-    private ImageView mFodIconPreview, mFodAnimPreview;
+    private ImageView mFODIconPreview, mFODAnimPreview;
     private AnimationDrawable mAnimationDrawable;
     private ExecutorService mExecutor;
     private Handler mHandler;
-    private Resources mResources;
-    private LinearLayout mFodIconsGrid, mFodAnimsGrid;
-    private HorizontalScrollView mFodAnimsContainer;
-    private boolean updatedAnim = false;
+    private LinearLayout mFODIconsGrid, mFODAnimsGrid;
+    private HorizontalScrollView mFODAnimsContainer;
+    private Switch mFODAnimSwitch, mFODAnimAlwaysOnSwitch;
     private int width, columnCount;
-    private int strokeWidth;
-    private int cyan, black;
+    private int strokeWidth, cyan, black;
 
-    private Runnable mStopAnimationRunnable = () -> {
+    private final Runnable mStopAnimationRunnable = () -> {
         if (mAnimationDrawable != null) {
             mAnimationDrawable.stop();
-            mFodAnimPreview.setBackground(null);
-            updatedAnim = false;
+            mFODAnimPreview.setBackground(null);
         }
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        mExecutor = Executors.newFixedThreadPool(2);
+        setRequestedOrientation(SCREEN_ORIENTATION_PORTRAIT);
+        mExecutor = Executors.newCachedThreadPool();
         mHandler = new Handler(Looper.getMainLooper());
         setContentView(R.layout.fod_settings_layout);
         updateLayout();
@@ -88,150 +87,179 @@ public class FODSettingsActivity extends Activity {
     }
 
     private void updateLayout() {
-        Point size = new Point();
-        ActionBar actionBar;
-        boolean animsEnabled;
-
-        mResources = getResources();
-        mResolver = getContentResolver();
-
-        animsEnabled = getInt(2) == 1;
-
-        actionBar = getActionBar();
+        final Resources res = getResources();
+        final ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle(mResources.getString(R.string.fod_settings_title));
+        actionBar.setTitle(res.getString(R.string.fod_settings_title));
 
-        black = mResources.getColor(R.color.color_black);
-        cyan = mResources.getColor(R.color.color_cyan);
+        mFODIconPreview = (ImageView) findViewById(R.id.fod_icon_preview);
+        mFODIconPreview.setScaleType(ScaleType.CENTER_INSIDE);
+        mFODAnimPreview = (ImageView) findViewById(R.id.fod_anim_preview);
+        mFODAnimPreview.setScaleType(ScaleType.CENTER_INSIDE);
 
-        mFodIconPreview = (ImageView) findViewById(R.id.fod_icon_preview);
-        mFodAnimPreview = (ImageView) findViewById(R.id.fod_anim_preview);
-        mFodIconPreview.setScaleType(ScaleType.CENTER_INSIDE);
-        mFodAnimPreview.setScaleType(ScaleType.CENTER_INSIDE);
+        mFODAnimSwitch = (Switch) findViewById(R.id.fod_animation_switch);
+        mFODAnimAlwaysOnSwitch = (Switch) findViewById(R.id.fod_animation_always_on_switch);
 
-        ((Switch) findViewById(R.id.fod_animation_switch)).setChecked(animsEnabled);
+        mFODIconsGrid = (LinearLayout) findViewById(R.id.fod_icons_preview);
+        mFODAnimsGrid = (LinearLayout) findViewById(R.id.fod_anims_preview);
+        mFODAnimsContainer = (HorizontalScrollView) findViewById(R.id.fod_anims_container);
 
-        mFodIconsGrid = (LinearLayout) findViewById(R.id.fod_icons_preview);
-        mFodAnimsGrid = (LinearLayout) findViewById(R.id.fod_anims_preview);
-        mFodAnimsContainer = (HorizontalScrollView) findViewById(R.id.fod_anims_container);
-        if (!animsEnabled) mFodAnimsContainer.removeView(mFodAnimsGrid);
-        columnCount = mResources.getInteger(R.integer.config_fodSettingsColumns);
+        boolean animsEnabled = Utils.getSettingBoolean(this, Utils.TYPE_SYSTEM, FOD_RECOGNIZING_ANIMATION);
+        if (animsEnabled) {
+            mFODAnimSwitch.setChecked(true);
+        } else {
+            mFODAnimAlwaysOnSwitch.setEnabled(false);
+            mFODAnimsContainer.removeView(mFODAnimsGrid);
+        }
+
+        final Point size = new Point();
+        columnCount = res.getInteger(R.integer.config_fodSettingsColumns);
         getDisplay().getRealSize(size);
         width = (size.x / columnCount);
 
-        strokeWidth = mResources.getDimensionPixelSize(R.dimen.stroke_width);
+        strokeWidth = res.getDimensionPixelSize(R.dimen.stroke_width);
+        black = res.getColor(R.color.color_black);
+        cyan = res.getColor(R.color.color_cyan);
 
-        mExecutor.execute(() ->
-            setGrid(com.krypton.settings.R.array.config_fodIcons, 0));
-        mExecutor.execute(() ->
-            setGrid(com.krypton.settings.R.array.config_fodAnimPreviews, 1));
+        mExecutor.execute(() -> setFODIconGrid());
+        mExecutor.execute(() -> setFODAnimGrid());
     }
 
-    private void setGrid(int arrayId, int type) {
-        int padding = mResources.getDimensionPixelSize(type == 0 ?
-            R.dimen.button_padding : R.dimen.button_padding_anim);
-        TypedArray array = mResources.obtainTypedArray(arrayId);
-        LinearLayout grid = type == 0 ? mFodIconsGrid : mFodAnimsGrid;
-        int savedIndex = getInt(type);
+    private void setFODIconGrid() {
+        int padding = getResources().getDimensionPixelSize(R.dimen.button_padding);
+        final TypedArray array = getResources().obtainTypedArray(com.krypton.settings.R.array.config_fodIcons);
         for (int i = 0; i < array.length(); i++) {
-            ImageButton button = new ImageButton(this);
-            Drawable img = array.getDrawable(i);
-            boolean enabled = (i == savedIndex);
-            setButtonPressed(button, enabled);
-            if (enabled && type == 0) {
-                setFodIcon(img);
-            }
-            button.setImageDrawable(img);
-            button.setScaleType(ScaleType.CENTER_CROP);
-            button.setPaddingRelative(padding, padding, padding, padding);
-            button.setOnClickListener((v) -> {
-                int prevIndex = getInt(type);
-                int currIndex = grid.indexOfChild(v);
-                if (currIndex != prevIndex) {
-                    putInt(type, currIndex);
-                    setButtonPressed(v, true);
-                    setButtonPressed(grid.getChildAt(prevIndex), false);
-                }
-                if (type == 0) {
-                    setFodIcon(((ImageButton) v).getDrawable());
-                } else {
-                    setFodAnim(grid.indexOfChild(v));
-                }
-            });
-            mHandler.post(() -> grid.addView(button, width, width));
+            FODIconButton button = new FODIconButton(i, padding, array.getDrawable(i));
+            mHandler.post(() -> mFODIconsGrid.addView(button, width, width));
         }
         array.recycle();
     }
 
-    private void setFodIcon(Drawable icon) {
-        mHandler.post(() -> {
-            mFodIconPreview.setImageDrawable(icon);
-        });
+    private void setFODAnimGrid() {
+        int padding = getResources().getDimensionPixelSize(R.dimen.button_padding_anim);
+        final TypedArray array = getResources().obtainTypedArray(com.krypton.settings.R.array.config_fodAnimPreviews);
+        for (int i = 0; i < array.length(); i++) {
+            FODAnimButton button = new FODAnimButton(i, padding, array.getDrawable(i));
+            mHandler.post(() -> mFODAnimsGrid.addView(button, width, width));
+        }
+        array.recycle();
     }
 
-    private void setFodAnim(int pos) {
+    private void previewFODAnim(int index) {
         if (mHandler.hasCallbacks(mStopAnimationRunnable)) {
             mHandler.removeCallbacks(mStopAnimationRunnable);
             mHandler.post(mStopAnimationRunnable);
         }
-
-        TypedArray array = mResources.obtainTypedArray(com.krypton.settings.R.array.config_fodAnims);
-        mHandler.post(() -> {
-            mFodAnimPreview.setBackgroundResource(array.getResourceId(pos, 0));
-            mAnimationDrawable = (AnimationDrawable) mFodAnimPreview.getBackground();
-            updatedAnim = true;
-        });
-
+        TypedArray array = getResources().obtainTypedArray(com.krypton.settings.R.array.config_fodAnims);
+        mFODAnimPreview.setBackgroundResource(array.getResourceId(index, 0));
+        array.recycle();
+        mAnimationDrawable = (AnimationDrawable) mFODAnimPreview.getBackground();
         mExecutor.execute(() -> {
-            while (!updatedAnim) {
-                try {
-                    Thread.sleep(1);
-                } catch (Exception e) {}
-            }
-
-            int dur = 0;
-            for (int k = 0; k < mAnimationDrawable.getNumberOfFrames(); k++) {
-                dur += mAnimationDrawable.getDuration(k);
-            }
-
+            // Assuming equal frame durations
+            int dur = mAnimationDrawable.getDuration(0) * mAnimationDrawable.getNumberOfFrames();
             mHandler.post(() -> mAnimationDrawable.start());
-            mHandler.postDelayed(mStopAnimationRunnable, 5*dur);
+            mHandler.postDelayed(mStopAnimationRunnable, 5 * dur);
         });
     }
 
-    public void toggleFodAnim(View view) {
+    public void toggleFODAnim(View view) {
         boolean checked = ((Switch) view).isChecked();
-        putInt(2, checked ? 1 : 0);
+        Utils.applySetting(this, Utils.TYPE_SYSTEM, FOD_RECOGNIZING_ANIMATION, checked);
         if (checked) {
-            mFodAnimsContainer.addView(mFodAnimsGrid);
-        } else if (mFodAnimsContainer.indexOfChild(mFodAnimsGrid) != -1) {
-            mFodAnimsContainer.removeView(mFodAnimsGrid);
+            mFODAnimsContainer.addView(mFODAnimsGrid);
+        } else if (mFODAnimsContainer.indexOfChild(mFODAnimsGrid) != -1) {
+            mFODAnimsContainer.removeView(mFODAnimsGrid);
+        }
+        mFODAnimAlwaysOnSwitch.setEnabled(checked);
+    }
+
+    public void setFODAnimationAlwaysOn(View view) {
+        Utils.applySetting(this, Utils.TYPE_SYSTEM,
+            FOD_ANIM_ALWAYS_ON, mFODAnimAlwaysOnSwitch.isChecked());
+    }
+
+    private abstract class CustomButton extends ImageButton {
+        final Context mContext = FODSettingsActivity.this;
+        final int mIndex;
+
+        CustomButton(int index, int padding, Drawable drawable) {
+            super(FODSettingsActivity.this);
+            mIndex = index;
+            setPadding(padding, padding, padding, padding);
+            setImageDrawable(drawable);
+            setScaleType(ScaleType.CENTER_CROP);
+        }
+
+        void setChecked(boolean checked) {
+            GradientDrawable bg = (GradientDrawable) mContext.getResources().getDrawable(R.drawable.rounded_rectangle, null);
+            bg.setStroke(strokeWidth, checked ? cyan : black);
+            setBackground(bg);
+        }
+
+        boolean onSelected() {
+            int prevIndex = Utils.getSettingInt(mContext, Utils.TYPE_SYSTEM, getKey());
+            if (mIndex != prevIndex) {
+                setChecked(true);
+                return true;
+            }
+            return false;
+        }
+
+        abstract String getKey();
+    }
+
+    private final class FODIconButton extends CustomButton {
+
+        FODIconButton(int index, int padding, Drawable drawable) {
+            super(index, padding, drawable);
+            setOnClickListener(v -> onSelected());
+            boolean isSelected = mIndex == Utils.getSettingInt(mContext, Utils.TYPE_SYSTEM, getKey());
+            setChecked(isSelected);
+            if (isSelected) {
+                mHandler.post(() -> mFODIconPreview.setImageDrawable(getDrawable()));
+            }
+        }
+
+        @Override
+        String getKey() {
+            return Settings.System.FOD_ICON;
+        }
+
+        @Override
+        boolean onSelected() {
+            if (super.onSelected()) {
+                int prevIndex = Utils.getSettingInt(mContext, Utils.TYPE_SYSTEM, getKey());
+                mFODIconPreview.setImageDrawable(getDrawable());
+                ((CustomButton) mFODIconsGrid.getChildAt(prevIndex)).setChecked(false);
+                Utils.applySetting(mContext, Utils.TYPE_SYSTEM, getKey(), mIndex);
+            }
+            return true;
         }
     }
 
-    private int getInt(int type) {
-        return Settings.System.getInt(mResolver, getKey(type), 0);
-    }
+    private final class FODAnimButton extends CustomButton {
 
-    private void putInt(int type, int value) {
-        Settings.System.putInt(mResolver, getKey(type), value);
-    }
-
-    private String getKey(int type) {
-        switch (type) {
-            case 0:
-                return Settings.System.FOD_ICON;
-            case 1:
-                return Settings.System.FOD_ANIM;
-            case 2:
-                return Settings.System.FOD_RECOGNIZING_ANIMATION;
+        FODAnimButton(int index, int padding, Drawable drawable) {
+            super(index, padding, drawable);
+            setOnClickListener(v -> onSelected());
+            setChecked(mIndex == Utils.getSettingInt(mContext,
+                Utils.TYPE_SYSTEM, getKey()));
         }
-        return null;
-    }
 
-    private void setButtonPressed(View button, boolean pressed) {
-        GradientDrawable bg = (GradientDrawable) mResources.getDrawable(R.drawable.rounded_rectangle, null);
-        bg.setStroke(strokeWidth, pressed ? cyan : black);
-        ((ImageButton) button).setBackground(bg);
+        @Override
+        String getKey() {
+            return Settings.System.FOD_ANIM;
+        }
+
+        @Override
+        boolean onSelected() {
+            if (super.onSelected()) {
+                int prevIndex = Utils.getSettingInt(mContext, Utils.TYPE_SYSTEM, getKey());
+                ((CustomButton) mFODAnimsGrid.getChildAt(prevIndex)).setChecked(false);
+                Utils.applySetting(mContext, Utils.TYPE_SYSTEM, getKey(), mIndex);
+            }
+            previewFODAnim(mIndex);
+            return true;
+        }
     }
 }
