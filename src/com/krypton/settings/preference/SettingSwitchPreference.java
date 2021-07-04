@@ -34,11 +34,10 @@ public class SettingSwitchPreference extends SwitchPreference {
     public SettingSwitchPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
-        final TypedArray typedArray = mContext.getTheme().obtainStyledAttributes(attrs,
-            R.styleable.SettingSwitchPreference, 0, 0);
-        mSettingKey = typedArray.getString(R.styleable.SettingSwitchPreference_settingKey);
-        mSettingNamespace = typedArray.getString(R.styleable.SettingSwitchPreference_settingNamespace);
-        mSettingDefault = typedArray.getInt(R.styleable.SettingSwitchPreference_settingDefault, 0);
+        final TypedArray typedArray = mContext.getResources().obtainAttributes(attrs, R.styleable.SettingPreferenceBaseAttrs);
+        mSettingKey = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingKey);
+        mSettingNamespace = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingNamespace);
+        mSettingDefault = typedArray.getInteger(R.styleable.SettingPreferenceBaseAttrs_settingDefault, 0);
         typedArray.recycle();
         setChecked(isChecked());
     }

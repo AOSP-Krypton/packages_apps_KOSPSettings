@@ -17,14 +17,6 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/krypton_page_title">
 
-    <!-- Gaming Mode -->
-    <Preference
-        android:fragment="com.krypton.settings.fragment.GamingModeFragment"
-        android:icon="@drawable/ic_gamingmode"
-        android:key="gamingmode"
-        android:title="@string/gamingmode_settings_title"
-        android:summary="@string/gamingmode_settings_summary" />
-
     <!-- LockScreen Settings -->
     <Preference
         android:fragment="com.krypton.settings.fragment.LockscreenSettingsFragment"
@@ -40,6 +32,22 @@
         android:key="statusbar_qs"
         android:title="@string/statusbar_qs_settings_title"
         android:summary="@string/statusbar_qs_settings_summary" />
+
+    <!-- Navigation Bar Settings -->
+    <Preference
+        android:fragment="com.krypton.settings.fragment.NavigationBarSettingsFragment"
+        android:icon="@drawable/ic_navbar_settings"
+        android:key="navigation_bar"
+        android:title="@string/navigation_bar_settings_title"
+        android:summary="@string/navigation_bar_settings_summary" />
+
+    <!-- Miscellaneous Settings -->
+    <Preference
+        android:fragment="com.krypton.settings.fragment.MiscellaneousSettingsFragment"
+        android:icon="@drawable/ic_miscellaneous"
+        android:key="miscellaneous"
+        android:title="@string/miscellaneous_settings_title"
+        android:summary="@string/miscellaneous_settings_summary" />
 
     <!-- Device Settings -->
     <Preference

@@ -41,9 +41,6 @@
     <string name="restore_brightness_title">Restore brightness</string>
     <string name="restore_brightness_summary">Enable to restore brightness set in previous gaming session</string>
 
-    <!-- Miscellaneous Settings -->
-    <string name="miscellaneous_settings_title">Miscellaneous</string>
-
     <!-- Lockscreen Settings -->
     <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="lockscreen_settings_summary">Customisations and gestures for lockscreen</string>
@@ -59,17 +56,44 @@
     <!-- StatusBar-QS Settings -->
     <string name="statusbar_qs_settings_title">StatusBar and QS</string>
     <string name="statusbar_qs_settings_summary">Customisations and gestures for statusbar and qs</string>
+    <string name="statusbar_gestures_category_title">Getsures</string>
     <string name="statusbar_dt2s_title">Double tap on statusbar to sleep</string>
+    <string name="brightness_slider_category_title">Brightness Slider</string>
     <string name="qs_show_slider_title">Show brightness slider in qs</string>
     <string name="qs_show_auto_brightness_icon_title">Show auto brightness icon in qs</string>
     <string name="qs_show_slider_bottom_title">Keep brightness slider at the bottom</string>
     <string name="qs_show_slider_above_footer_title">Keep brightness slider above qs footer</string>
+    <string name="network_traffic_category_title">Network Traffic</string>
+    <string name="statusbar_show_network_traffic_title">Show network traffic in statusbar</string>
+    <string name="statusbar_show_network_traffic_arrow_title">Show arrow indicators in statusbar</string>
+    <string name="statusbar_network_traffic_threshold_title">Auto-hide threshold</string>
+    <string name="statusbar_network_traffic_threshold_summary">Threshold value below which network traffic indicator will be hidden</string>
+    <string name="statusbar_network_traffic_threshold_dialog_title">Threshold value in KB/s</string>
+    <string name="statusbar_network_traffic_type_title">Network traffic type</string>
+    <string name="network_traffic_mode_up">Upload only</string>
+    <string name="network_traffic_mode_down">Download only</string>
+    <string name="network_traffic_mode_both">Both</string>
+    <string name="network_traffic_mode_combined">Combined</string>
+    <string name="network_traffic_mode_dynamic">Dynamic</string>
+    <string name="statusbar_network_traffic_location_title">Network traffic location</string>
+    <string name="network_traffic_in_statusbar">Only in statusbar</string>
+    <string name="network_traffic_in_qs_header">Only in qs header</string>
 
-    <!-- FOD Settings -->
-
+    <!-- Navigation Settings -->
+    <string name="navigation_bar_settings_title">Navigation Bar</string>
+    <string name="navigation_bar_settings_summary">Navigation bar settings and gestures</string>
+    <string name="system_navigation_summary">Choose navigation bar style and more</string>
 
     <!-- Device Settings -->
     <string name="device_settings_title">Device Settings</string>
     <string name="device_settings_summary">Settings for device specific parts</string>
+
+    <!-- Error messages -->
+    <string name="invalid_integer_value">Please input a valid integer!</string>
+
+    <!-- Miscellaneous Settings -->
+    <string name="miscellaneous_settings_title">Miscellaneous</string>
+    <string name="miscellaneous_settings_summary">Miscellaneous / general settings</string>
+    <string name="smart_space_setting_title">Enable smart space</string>
 
 </resources>

@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <resources>
-    <declare-styleable name="SettingSwitchPreference">
+    <declare-styleable name="SettingPreferenceBaseAttrs">
         <!-- Key to be uesd for saving setting with SettingsProvider -->
         <attr name="settingKey" format="string" />
 
@@ -26,9 +26,6 @@
     </declare-styleable>
 
     <declare-styleable name="SettingListPreference">
-        <attr name="settingKey" format="string" />
-        <attr name="settingNamespace" format="string" />
-
         <!-- If empty then android:entryValues will be used -->
         <attr name="settingValues" format="reference" />
     </declare-styleable>

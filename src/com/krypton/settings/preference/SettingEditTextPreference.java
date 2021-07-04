@@ -17,54 +17,45 @@
 package com.krypton.settings.preference;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.widget.Toast;
 
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.ListPreference;
+import androidx.preference.EditTextPreference;
 
 import com.android.settings.R;
 import com.krypton.settings.Utils;
 
-public class SettingListPreference extends ListPreference
+public class SettingEditTextPreference extends EditTextPreference
         implements OnPreferenceChangeListener {
 
     private final Context mContext;
     private final String mSettingKey, mSettingNamespace;
     private final int mSettingDefault;
-    private final int[] mSettingValues;
 
-    public SettingListPreference(Context context, AttributeSet attrs) {
+    public SettingEditTextPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
-        final Resources res = mContext.getResources();
-        TypedArray typedArray = res.obtainAttributes(attrs, R.styleable.SettingListPreference);
-        int arrayResourceId = typedArray.getInteger(R.styleable.SettingListPreference_settingValues, -1);
-        typedArray.recycle();
-        typedArray = res.obtainAttributes(attrs, R.styleable.SettingPreferenceBaseAttrs);
+        final TypedArray typedArray = mContext.getResources().obtainAttributes(attrs, R.styleable.SettingPreferenceBaseAttrs);
         mSettingKey = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingKey);
         mSettingNamespace = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingNamespace);
         mSettingDefault = typedArray.getInteger(R.styleable.SettingPreferenceBaseAttrs_settingDefault, 0);
         typedArray.recycle();
-        if (arrayResourceId != -1) {
-            mSettingValues = res.getIntArray(arrayResourceId);
-        } else {
-            final CharSequence[] arr = getEntryValues();
-            mSettingValues = new int[arr.length];
-            for (int i = 0; i < arr.length; i++) {
-                mSettingValues[i] = Integer.parseInt(arr[i].toString());
-            }
-        }
-        setDefaultValue(String.valueOf(Utils.getSettingInt(mContext,
+        setText(String.valueOf(Utils.getSettingInt(mContext,
             mSettingNamespace, mSettingKey, mSettingDefault)));
         setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return Utils.applySetting(mContext, mSettingNamespace,
-            mSettingKey, mSettingValues[findIndexOfValue((String) newValue)]);
+        try {
+            return Utils.applySetting(mContext, mSettingNamespace,
+                mSettingKey, Integer.parseInt((String) newValue));
+        } catch(NumberFormatException e) {
+            Toast.makeText(mContext, R.string.invalid_integer_value, Toast.LENGTH_LONG).show();
+            return false;
+        }
     }
 }
