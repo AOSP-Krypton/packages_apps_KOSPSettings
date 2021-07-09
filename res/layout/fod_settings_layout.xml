@@ -13,94 +13,79 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:layout_height="match_parent">
 
-    <FrameLayout
+    <View
+        android:id="@+id/fod_preview_border"
+        android:layout_width="265dp"
+        android:layout_height="468dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/rounded_rectangle_border"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/fod_anim_preview"
+        android:layout_width="@dimen/fod_anim_preview_size"
+        android:layout_height="@dimen/fod_anim_preview_size"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/fod_preview_border"
+        app:layout_constraintEnd_toEndOf="@+id/fod_preview_border"
+        app:layout_constraintStart_toStartOf="@+id/fod_preview_border"
+        app:layout_constraintTop_toTopOf="@+id/fod_preview_border" />
+
+    <ImageView
+        android:id="@+id/fod_icon_preview"
+        android:layout_width="@dimen/fod_icon_preview_size"
+        android:layout_height="@dimen/fod_icon_preview_size"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@+id/fod_anim_preview"
+        app:layout_constraintEnd_toEndOf="@+id/fod_anim_preview"
+        app:layout_constraintStart_toStartOf="@+id/fod_anim_preview"
+        app:layout_constraintTop_toTopOf="@+id/fod_anim_preview" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fod_icons_recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/preview_margin"
-        android:layout_marginEnd="@dimen/preview_margin"
-        android:layout_marginStart="@dimen/preview_margin"
-        android:layout_marginBottom="@dimen/preview_margin"
-        android:background="@drawable/layout_border"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        app:layout_constraintTop_toBottomOf="@+id/fod_preview_border" />
 
-        <ImageView
-            android:id="@+id/fod_anim_preview"
-            android:layout_width="@dimen/fod_anim_preview_size"
-            android:layout_height="@dimen/fod_anim_preview_size"
-            android:layout_gravity="center" />
-
-        <ImageView
-            android:id="@+id/fod_icon_preview"
-            android:layout_width="@dimen/fod_icon_preview_size"
-            android:layout_height="@dimen/fod_icon_preview_size"
-            android:layout_gravity="center" />
-    </FrameLayout>
-
-    <LinearLayout
+    <Switch
+        android:id="@+id/fod_animation_switch"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:layout_marginBottom="@dimen/selector_container_margin_bottom"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:onClick="toggleFODAnim"
+        android:paddingStart="@dimen/switch_padding_start"
+        android:paddingEnd="@dimen/switch_padding_end"
+        android:text="@string/fod_animation_switch_title"
+        android:textSize="@dimen/switch_text_size"
+        app:layout_constraintTop_toBottomOf="@+id/fod_icons_recyclerview"
+        app:layout_constraintBottom_toTopOf="@id/fod_animation_always_on_switch" />
 
-        <HorizontalScrollView
-            android:id="@+id/fod_icons_container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2">
+    <Switch
+        android:id="@+id/fod_animation_always_on_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="setFODAnimationAlwaysOn"
+        android:paddingStart="@dimen/switch_padding_start"
+        android:paddingEnd="@dimen/switch_padding_end"
+        android:text="@string/fod_animation_always_on_switch_title"
+        android:textSize="@dimen/switch_text_size"
+        app:layout_constraintTop_toBottomOf="@+id/fod_animation_switch"
+        app:layout_constraintBottom_toTopOf="@id/fod_anims_recyclerview" />
 
-            <LinearLayout
-                android:id="@+id/fod_icons_preview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal" />
-        </HorizontalScrollView>
-
-        <Switch
-            android:id="@+id/fod_animation_switch"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="@string/fod_animation_switch_title"
-            android:textSize="@dimen/switch_text_size"
-            android:fontFamily="@*android:string/config_bodyFontFamily"
-            android:paddingStart="@dimen/switch_padding_start"
-            android:paddingEnd="@dimen/switch_padding_end"
-            android:onClick="toggleFODAnim" />
-
-        <Switch
-            android:id="@+id/fod_animation_always_on_switch"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="@string/fod_animation_always_on_switch_title"
-            android:textSize="@dimen/switch_text_size"
-            android:fontFamily="@*android:string/config_bodyFontFamily"
-            android:paddingStart="@dimen/switch_padding_start"
-            android:paddingEnd="@dimen/switch_padding_end"
-            android:onClick="setFODAnimationAlwaysOn" />
-
-        <HorizontalScrollView
-            android:id="@+id/fod_anims_container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2">
-
-            <LinearLayout
-                android:id="@+id/fod_anims_preview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal" />
-        </HorizontalScrollView>
-    </LinearLayout>
-</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fod_anims_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fod_animation_always_on_switch" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -51,7 +51,8 @@
     <string name="fod_icon_settings_title">Select FOD Icon</string>
     <string name="fod_animation_switch_title">FOD Animation</string>
     <string name="fod_animation_settings_title">Select FOD Animation</string>
-    <string name="fod_animation_always_on_switch_title">Enable FOD Animation for all use cases</string>
+    <string name="fod_animation_always_on_switch_title">Show FOD animation in all use cases</string>
+    <string name="loading_animations">FOD animations are loading, please wait for preview</string>
 
     <!-- StatusBar-QS Settings -->
     <string name="statusbar_qs_settings_title">StatusBar and QS</string>

@@ -31,8 +31,16 @@ public class Utils {
         return str == null || str.equals("");
     }
 
+    public static boolean applySetting(Context context, String key, boolean value) {
+        return applySetting(context, TYPE_SYSTEM, key, value);
+    }
+
     public static boolean applySetting(Context context, String type, String key, boolean value) {
         return applySetting(context, type, key, value ? 1 : 0);
+    }
+
+    public static boolean applySetting(Context context, String key, int value) {
+        return applySetting(context, TYPE_SYSTEM, key, value);
     }
 
     public static boolean applySetting(Context context, String type, String key, int value) {
@@ -51,12 +59,28 @@ public class Utils {
         }
     }
 
+    public static boolean getSettingBoolean(Context context, String key) {
+        return getSettingBoolean(context, TYPE_SYSTEM, key);
+    }
+
+    public static boolean getSettingBoolean(Context context, String key, int def) {
+        return getSettingBoolean(context, TYPE_SYSTEM, key, def);
+    }
+
     public static boolean getSettingBoolean(Context context, String type, String key) {
         return getSettingInt(context, type, key) == 1;
     }
 
     public static boolean getSettingBoolean(Context context, String type, String key, int def) {
         return getSettingInt(context, type, key, def) == 1;
+    }
+
+    public static int getSettingInt(Context context, String key) {
+        return getSettingInt(context, TYPE_SYSTEM, key, 0);
+    }
+
+    public static int getSettingInt(Context context, String key, int def) {
+        return getSettingInt(context, TYPE_SYSTEM, key, def);
     }
 
     public static int getSettingInt(Context context, String type, String key) {
@@ -77,6 +101,14 @@ public class Utils {
         } else {
             return 0;
         }
+    }
+
+    public static String getStringFromSettings(Context context, String key) {
+        return Settings.System.getString(context.getContentResolver(), key);
+    }
+
+    public static void putStringInSettings(Context context, String key, String value) {
+        Settings.System.putString(context.getContentResolver(), key, value);
     }
 
     public static void sleepThread(long duration) {

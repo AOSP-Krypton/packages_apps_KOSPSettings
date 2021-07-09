@@ -26,8 +26,8 @@ public class LockscreenSettingsFragment extends SettingsPreferenceFragment {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.lockscreen_settings_screen);
-        boolean hasFod = getContext().getResources().getBoolean(
+        addPreferencesFromResource(R.xml.lockscreen_settings);
+        boolean hasFod = getResources().getBoolean(
             com.android.internal.R.bool.config_needCustomFODView);
         if (!hasFod) {
             getPreferenceScreen().removePreference(findPreference("fod_settings"));

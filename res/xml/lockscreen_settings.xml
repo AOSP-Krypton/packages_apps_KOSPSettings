@@ -22,10 +22,8 @@
         android:icon="@drawable/ic_fod_icon"
         android:key="fod_settings"
         android:title="@string/fod_settings_title"
-        android:summary="@string/fod_settings_summary">
-        <intent android:targetPackage="com.android.settings"
-                android:targetClass="com.krypton.settings.lockscreen.FODSettingsActivity" />
-    </Preference>
+        android:summary="@string/fod_settings_summary"
+        android:fragment="com.krypton.settings.fragment.FODSettingsFragment" />
 
     <!-- DT2S -->
     <com.krypton.settings.preference.SettingSwitchPreference
