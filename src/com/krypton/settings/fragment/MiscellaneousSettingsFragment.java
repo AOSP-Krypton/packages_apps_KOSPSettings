@@ -16,13 +16,50 @@
 package com.krypton.settings.fragment;
 
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.graphics.Color;
+import android.provider.Settings;
+import android.content.Context;
+
 
 import com.android.settings.R;
+import androidx.preference.*;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class MiscellaneousSettingsFragment extends BaseFragment {
+public class MiscellaneousSettingsFragment extends BaseFragment implements OnPreferenceChangeListener{
+    private static final String PREF_RGB_ACCENT_PICKER = "rgb_accent_picker";
+    private ColorPickerPreference rgbAccentPicker;
+    private Context mContext;
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        rgbAccentPicker = (ColorPickerPreference) findPreference(PREF_RGB_ACCENT_PICKER);
+        String colorVal = Settings.Secure.getStringForUser(mContext.getContentResolver(),
+                Settings.Secure.ACCENT_COLOR, UserHandle.USER_CURRENT);
+        int color = (colorVal == null)
+                ? Color.WHITE
+                : Color.parseColor("#" + colorVal);
+        rgbAccentPicker.setNewPreviewColor(color);
+        rgbAccentPicker.setOnPreferenceChangeListener(this);
         addPreferencesFromResource(R.xml.miscellaneous_settings);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if (preference == rgbAccentPicker) {
+            int color = (Integer) objValue;
+            String hexColor = String.format("%08X", (0xFFFFFFFF & color));
+            Settings.Secure.putStringForUser(mContext.getContentResolver(),
+                        Settings.Secure.ACCENT_COLOR,
+                        hexColor, UserHandle.USER_CURRENT);
+            try {
+                 mOverlayManager.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+                 mOverlayManager.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+             } catch (RemoteException ignored) {
+             }
+            return true;
+        }
+        return false;
     }
 }

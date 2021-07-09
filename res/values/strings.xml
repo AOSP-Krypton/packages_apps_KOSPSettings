@@ -199,4 +199,8 @@
     <string name="color_right_arrow" translatable="false">"→"</string>
     <string name="color_down_arrow" translatable="false">"↓"</string>
     <string name="longpress_info">Longpress box to save color</string>
+
+    <!-- RGB Accenter 3.0-->
+    <string name="rgb_accent_picker_title">RGB accent picker</string>
+    <string name="rgb_accent_picker_summary">Choose the accent color yourself</string>
 </resources>
