@@ -17,6 +17,7 @@
 package com.krypton.settings;
 
 import android.content.Context;
+import android.net.Uri;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -44,9 +45,12 @@ public class Utils {
     }
 
     public static boolean applySetting(Context context, String type, String key, int value) {
-        if (isEmpty(type) || Utils.isEmpty(key)) {
-            Log.e(TAG, "settingKey or settingNamespace attribute is empty, skipping");
+        if (isEmpty(key)) {
+            Log.e(TAG, "key is empty, skipping");
             return false;
+        }
+        if (isEmpty(type)) {
+            type = TYPE_SYSTEM;
         }
         if (type.equals(TYPE_SYSTEM)) {
             return Settings.System.putInt(context.getContentResolver(), key, value);
@@ -88,9 +92,12 @@ public class Utils {
     }
 
     public static int getSettingInt(Context context, String type, String key, int def) {
-        if (isEmpty(type) || isEmpty(key)) {
-            Log.e(TAG, "type or key is empty, returning default value");
+        if (isEmpty(key)) {
+            Log.e(TAG, "key is empty, returning default value");
             return 0;
+        }
+        if (isEmpty(type)) {
+            type = TYPE_SYSTEM;
         }
         if (type.equals(TYPE_SYSTEM)) {
             return Settings.System.getInt(context.getContentResolver(), key, def);
@@ -116,6 +123,25 @@ public class Utils {
             Thread.sleep(1);
         } catch (InterruptedException e) {
             Log.e(TAG, "thread interrupted while sleep", e);
+        }
+    }
+
+    public static Uri getUri(String type, String key) {
+        if (isEmpty(key)) {
+            Log.e(TAG, "key is empty, returning null");
+            return null;
+        }
+        if (isEmpty(type)) {
+            type = TYPE_SYSTEM;
+        }
+        if (type.equals(TYPE_SYSTEM)) {
+            return Settings.System.getUriFor(key);
+        } else if (type.equals(TYPE_SECURE)) {
+            return Settings.Secure.getUriFor(key);
+        } else if (type.equals(TYPE_GLOBAL)) {
+            return Settings.Global.getUriFor(key);
+        } else {
+            return null;
         }
     }
 }

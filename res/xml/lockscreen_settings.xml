@@ -40,4 +40,18 @@
         settings:settingNamespace="system"
         settings:settingDefault="1" />
 
+    <!-- Ambient Display -->
+    <Preference
+        android:fragment="com.krypton.settings.fragment.AmbientDisplaySettingsFragment"
+        android:key="ambient_display_settings"
+        android:title="@string/ambient_display_settings_title"
+        android:summary="@string/ambient_display_settings_summary" />
+
+    <!-- LockScreen media art -->
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="lockscreen_art_switch_preference"
+        android:title="@string/lockscreen_media_art_title"
+        settings:settingKey="keygaurd_media_art"
+        settings:settingNamespace="system" />
+
 </PreferenceScreen>

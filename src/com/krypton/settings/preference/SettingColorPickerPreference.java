@@ -23,27 +23,22 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.AttributeSet;
-import android.widget.Toast;
 
-import androidx.preference.Preference;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.EditTextPreference;
+import androidx.preference.DialogPreference;
 
 import com.android.settings.R;
 import com.krypton.settings.Utils;
 
-public class SettingEditTextPreference extends EditTextPreference
-        implements OnPreferenceChangeListener {
-
+public class SettingColorPickerPreference extends DialogPreference {
     private final Context mContext;
     private final Handler mHandler;
     private final String mSettingKey, mSettingNamespace,
         mSettingDependencyKey, mSettingDependencyNS;
     private final int mSettingDefault, mSettingDependencyValue;
-    private boolean mDependencyMet = true;
     private ContentObserver mSettingsObserver;
+    private boolean mDependencyMet = true;
 
-    public SettingEditTextPreference(Context context, AttributeSet attrs) {
+    public SettingColorPickerPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         mHandler = new Handler(Looper.getMainLooper());
@@ -55,9 +50,6 @@ public class SettingEditTextPreference extends EditTextPreference
         mSettingDefault = typedArray.getInteger(R.styleable.SettingPreferenceBaseAttrs_settingDefault, 0);
         mSettingDependencyValue = typedArray.getInteger(R.styleable.SettingPreferenceBaseAttrs_settingDependencyValue, 1);
         typedArray.recycle();
-        setText(String.valueOf(Utils.getSettingInt(mContext,
-            mSettingNamespace, mSettingKey, mSettingDefault)));
-        setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -91,15 +83,8 @@ public class SettingEditTextPreference extends EditTextPreference
         return super.isEnabled() && mDependencyMet;
     }
 
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        try {
-            return Utils.applySetting(mContext, mSettingNamespace,
-                mSettingKey, Integer.parseInt((String) newValue));
-        } catch(NumberFormatException e) {
-            Toast.makeText(mContext, R.string.invalid_integer_value, Toast.LENGTH_LONG).show();
-            return false;
-        }
+    public String[] getSettingAttrs() {
+        return new String[] { mSettingKey, mSettingNamespace, String.valueOf(mSettingDefault) };
     }
 
     private void updateIfDependencyMet() {

@@ -53,6 +53,31 @@
     <string name="fod_animation_settings_title">Select FOD Animation</string>
     <string name="fod_animation_always_on_switch_title">Show FOD animation in all use cases</string>
     <string name="loading_animations">FOD animations are loading, please wait for preview</string>
+    <string name="ambient_display_settings_title">Ambient Display</string>
+    <string name="ambient_display_settings_summary">Edge lighting and further customisations</string>
+    <string name="edge_lighting_category_title">Edge lighting</string>
+    <string name="notification_pulse_title">Enable edge lighting</string>
+    <string name="notification_pulse_summary">Show an animation along the edges of the ambient display upon receiving a notification</string>
+    <string name="aod_pulse_title">Enable edge lighting in AOD</string>
+    <string name="aod_pulse_summary">Enable to keep showing edge light after transitioning from ambient display</string>
+    <string name="aod_pulse_hide_content_title">Hide contents in AOD</string>
+    <string name="aod_pulse_hide_content_summary">Enable to hide contents of AOD when pulsing</string>
+    <string name="ambient_pulse_color_mode_title">Edge light color</string>
+    <string name="pulse_color_mode_accent">Accent </string>
+    <string name="pulse_color_mode_wallpaper">Wallpaper</string>
+    <string name="pulse_color_mode_notification">Notification</string>
+    <string name="pulse_color_mode_custom">Custom</string>
+    <string name="ambient_pulse_custom_color_mode_title">Custom color</string>
+    <string name="ambient_pulse_custom_color_mode_summary">Choose a custom color for edge light</string>
+    <string name="color_picker_title">Color picker</string>
+    <string name="select">Select</string>
+    <string name="ambient_pulse_repeat_count_title">Pulse repeat count</string>
+    <string name="ambient_pulse_repeat_count_summary">Choose how many times ambient pulse should repeat</string>
+    <string name="ambient_pulse_timeout_title">Edge light timeout</string>
+    <string name="ambient_pulse_timeout_summary">Timeout in seconds for edge light, a timeout of 0s means it will keep pulsing until the screen is off</string>
+    <string name="ambient_pulse_animation_duration_title">Edge light animation duration</string>
+    <string name="ambient_pulse_animation_duration_summary">Duration in secons for the edge light animaton, default is 2s</string>
+    <string name="lockscreen_media_art_title">Show media art</string>
 
     <!-- StatusBar-QS Settings -->
     <string name="statusbar_qs_settings_title">StatusBar and QS</string>
@@ -79,6 +104,12 @@
     <string name="statusbar_network_traffic_location_title">Network traffic location</string>
     <string name="network_traffic_in_statusbar">Only in statusbar</string>
     <string name="network_traffic_in_qs_header">Only in qs header</string>
+    <string name="statusbar_battery_category_title">Battery</string>
+    <string name="statusbar_battery_style_title">Battery icon style</string>
+    <string name="battery_style_portrait">Portrait</string>
+    <string name="battery_style_circle">Circle</string>
+    <string name="battery_style_text">Text</string>
+    <string name="statusbar_battery_show_percent_inside_title">Show battery percent inside icon</string>
 
     <!-- Navigation Settings -->
     <string name="navigation_bar_settings_title">Navigation Bar</string>

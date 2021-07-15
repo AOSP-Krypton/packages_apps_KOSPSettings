@@ -15,18 +15,47 @@
 -->
 <resources>
     <declare-styleable name="SettingPreferenceBaseAttrs">
-        <!-- Key to be uesd for saving setting with SettingsProvider -->
+        <!--
+            Key to be uesd for saving setting with SettingsProvider.
+            Cannot be empty
+        -->
         <attr name="settingKey" format="string" />
 
-        <!-- Setting namespace: global, system or secure -->
+        <!--
+            Setting namespace: global, system or secure
+            Default: system
+         -->
         <attr name="settingNamespace" format="string" />
 
-        <!-- Default value -->
+        <!--
+            Default value to return if there isn't any saved
+            Default: 0
+        -->
         <attr name="settingDefault" format="integer" />
+
+        <!--
+            Additional dependency on a setting key
+        -->
+        <attr name="settingDependencyKey" format="string" />
+
+        <!--
+            Setting dependency key namespace
+            Default: system
+        -->
+        <attr name="settingDependencyNS" format="string" />
+
+        <!--
+            Setting dependency key value to enable this preference
+            Default: 1
+        -->
+        <attr name="settingDependencyValue" format="integer" />
     </declare-styleable>
 
     <declare-styleable name="SettingListPreference">
-        <!-- If empty then android:entryValues will be used -->
+        <!--
+            Setting value to store corresponding to the list entry
+            Default: values from android:entryValues
+        -->
         <attr name="settingValues" format="reference" />
     </declare-styleable>
 </resources>

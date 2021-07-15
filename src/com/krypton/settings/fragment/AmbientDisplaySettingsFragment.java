@@ -17,27 +17,39 @@ package com.krypton.settings.fragment;
 
 import android.os.Bundle;
 
-import androidx.preference.PreferenceScreen;
+import androidx.fragment.app.DialogFragment;
+import androidx.preference.Preference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
 
-public class StatusBarQSSettingsFragment extends SettingsPreferenceFragment {
+import com.krypton.settings.preference.SettingColorPickerPreference;
+
+public class AmbientDisplaySettingsFragment extends SettingsPreferenceFragment {
+
+    private static final String TAG = "AmbientDisplaySettingsFragment";
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.statusbar_qs_settings);
-        if (!Utils.isBatteryPresent(getContext())) {
-            PreferenceScreen screen = getPreferenceScreen();
-            screen.removePreferenceRecursively("statusbar_battery_category_title");
-        }
+        addPreferencesFromResource(R.xml.ambient_display_settings);
     }
 
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.KRYPTON;
+    }
+
+    @Override
+    public void onDisplayPreferenceDialog(Preference preference) {
+        if (preference instanceof SettingColorPickerPreference) {
+            String[] attrs = ((SettingColorPickerPreference) preference).getSettingAttrs();
+            final DialogFragment fragment = new ColorPickerFragment(attrs[0], attrs[1], Integer.parseInt(attrs[2]));
+            fragment.setTargetFragment(this, 0);
+            fragment.show(getParentFragmentManager(), TAG);
+        } else {
+            super.onDisplayPreferenceDialog(preference);
+        }
     }
 }

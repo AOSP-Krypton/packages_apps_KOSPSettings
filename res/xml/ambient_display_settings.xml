@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2021 AOSP-Krypton Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/ambient_display_settings_title">
+
+    <PreferenceCategory
+        android:title="@string/edge_lighting_category_title">
+
+        <!-- Edge Light -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="notification_pulse_switch_preference"
+            android:title="@string/notification_pulse_title"
+            android:summary="@string/notification_pulse_summary"
+            settings:settingKey="pulse_ambient_light"
+            settings:settingNamespace="system" />
+
+        <!-- Edge Light AOD -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="aod_pulse_switch_preference"
+            android:title="@string/aod_pulse_title"
+            android:summary="@string/aod_pulse_summary"
+            android:dependency="notification_pulse_switch_preference"
+            settings:settingKey="ambient_notification_light_enabled"
+            settings:settingNamespace="system" />
+
+        <!-- Hide contents -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="aod_pulse_hide_content_switch_preference"
+            android:title="@string/aod_pulse_hide_content_title"
+            android:summary="@string/aod_pulse_hide_content_summary"
+            android:dependency="notification_pulse_switch_preference"
+            settings:settingKey="ambient_notification_light_hide_aod"
+            settings:settingNamespace="system" />
+
+        <!-- Edge light color -->
+        <com.krypton.settings.preference.SettingListPreference
+            android:key="ambient_pulse_color_mode_preference"
+            android:title="@string/ambient_pulse_color_mode_title"
+            android:summary="%s"
+            android:dependency="notification_pulse_switch_preference"
+            android:entries="@array/ambient_pulse_color_modes"
+            android:entryValues="@array/ambient_pulse_color_mode_values"
+            settings:settingKey="ambient_notification_color_mode"
+            settings:settingNamespace="system" />
+
+        <!-- Edge light custom color -->
+        <com.krypton.settings.preference.SettingColorPickerPreference
+            android:key="ambient_pulse_custom_color_mode_preference"
+            android:title="@string/ambient_pulse_custom_color_mode_title"
+            android:summary="@string/ambient_pulse_custom_color_mode_summary"
+            android:dependency="notification_pulse_switch_preference"
+            settings:settingKey="ambient_notification_light_color"
+            settings:settingNamespace="system"
+            settings:settingDependencyKey="ambient_notification_color_mode"
+            settings:settingDependencyNS="system"
+            settings:settingDependencyValue="3" />
+
+        <!-- Edge Light repeat count -->
+        <com.krypton.settings.preference.SettingEditTextPreference
+            android:key="ambient_pulse_repeat_count_preference"
+            android:title="@string/ambient_pulse_repeat_count_title"
+            android:summary="@string/ambient_pulse_repeat_count_summary"
+            android:dependency="notification_pulse_switch_preference"
+            settings:settingKey="ambient_notification_light_repeats"
+            settings:settingNamespace="system" />
+
+        <!-- Edge Light timeout -->
+        <com.krypton.settings.preference.SettingEditTextPreference
+            android:key="ambient_pulse_timeout_preference"
+            android:title="@string/ambient_pulse_timeout_title"
+            android:summary="@string/ambient_pulse_timeout_summary"
+            android:dependency="notification_pulse_switch_preference"
+            settings:settingKey="ambient_notification_light_timeout"
+            settings:settingNamespace="system" />
+
+        <!-- Edge Light duration -->
+        <com.krypton.settings.preference.SettingEditTextPreference
+            android:key="ambient_pulse_animation_duration_preference"
+            android:title="@string/ambient_pulse_animation_duration_title"
+            android:summary="@string/ambient_pulse_animation_duration_summary"
+            android:dependency="notification_pulse_switch_preference"
+            settings:settingKey="ambient_notification_light_duration"
+            settings:settingNamespace="system"
+            settings:settingDefault="2" />
+    </PreferenceCategory>
+</PreferenceScreen>

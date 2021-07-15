@@ -111,4 +111,34 @@
             settings:settingNamespace="system"
             settings:settingDefault="1" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/statusbar_battery_category_title">
+
+        <!-- Battery style -->
+        <com.krypton.settings.preference.SettingListPreference
+            android:key="statusbar_battery_style_preference"
+            android:title="@string/statusbar_battery_style_title"
+            android:summary="%s"
+            android:entries="@array/statusbar_battery_styles"
+            android:entryValues="@array/statusbar_battery_style_values"
+            android:defaultValue="0"
+            settings:settingKey="status_bar_battery_style"
+            settings:settingNamespace="system" />
+
+        <!-- Show battery percent -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="statusbar_battery_show_percent_switch_preference"
+            android:title="@string/battery_percentage_description"
+            settings:settingKey="status_bar_show_battery_percent"
+            settings:settingNamespace="system" />
+
+        <!-- Show battery percent inside -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="statusbar_battery_show_percent_inside_switch_preference"
+            android:title="@string/statusbar_battery_show_percent_inside_title"
+            android:dependency="statusbar_battery_show_percent_switch_preference"
+            settings:settingKey="status_bar_show_battery_percent_inside"
+            settings:settingNamespace="system" />
+    </PreferenceCategory>
 </PreferenceScreen>

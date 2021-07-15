@@ -19,6 +19,10 @@ package com.krypton.settings.preference;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.AttributeSet;
 
 import androidx.preference.Preference;
@@ -32,13 +36,18 @@ public class SettingListPreference extends ListPreference
         implements OnPreferenceChangeListener {
 
     private final Context mContext;
-    private final String mSettingKey, mSettingNamespace;
-    private final int mSettingDefault;
+    private final Handler mHandler;
+    private final String mSettingKey, mSettingNamespace,
+        mSettingDependencyKey, mSettingDependencyNS;
+    private final int mSettingDefault, mSettingDependencyValue;
     private final int[] mSettingValues;
+    private ContentObserver mSettingsObserver;
+    private boolean mDependencyMet = true;
 
     public SettingListPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
+        mHandler = new Handler(Looper.getMainLooper());
         final Resources res = mContext.getResources();
         TypedArray typedArray = res.obtainAttributes(attrs, R.styleable.SettingListPreference);
         int arrayResourceId = typedArray.getInteger(R.styleable.SettingListPreference_settingValues, -1);
@@ -46,7 +55,10 @@ public class SettingListPreference extends ListPreference
         typedArray = res.obtainAttributes(attrs, R.styleable.SettingPreferenceBaseAttrs);
         mSettingKey = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingKey);
         mSettingNamespace = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingNamespace);
+        mSettingDependencyKey = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingDependencyKey);
+        mSettingDependencyNS = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingDependencyNS);
         mSettingDefault = typedArray.getInteger(R.styleable.SettingPreferenceBaseAttrs_settingDefault, 0);
+        mSettingDependencyValue = typedArray.getInteger(R.styleable.SettingPreferenceBaseAttrs_settingDependencyValue, 1);
         typedArray.recycle();
         if (arrayResourceId != -1) {
             mSettingValues = res.getIntArray(arrayResourceId);
@@ -63,8 +75,45 @@ public class SettingListPreference extends ListPreference
     }
 
     @Override
+    public void onAttached() {
+        super.onAttached();
+        if (!Utils.isEmpty(mSettingDependencyKey)) {
+            updateIfDependencyMet();
+            Uri uri = Utils.getUri(mSettingDependencyNS, mSettingDependencyKey);
+            if (uri != null) {
+                mSettingsObserver = new ContentObserver(mHandler) {
+                    @Override
+                    public void onChange(boolean selfChange, Uri uri) {
+                        updateIfDependencyMet();
+                    }
+                };
+                mContext.getContentResolver().registerContentObserver(uri, false, mSettingsObserver);
+            }
+        }
+    }
+
+    @Override
+    public void onDetached() {
+        super.onDetached();
+        if (mSettingsObserver != null) {
+            mContext.getContentResolver().unregisterContentObserver(mSettingsObserver);
+        }
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return super.isEnabled() && mDependencyMet;
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return Utils.applySetting(mContext, mSettingNamespace,
             mSettingKey, mSettingValues[findIndexOfValue((String) newValue)]);
+    }
+
+    private void updateIfDependencyMet() {
+        mDependencyMet = Utils.getSettingInt(mContext, mSettingDependencyNS,
+            mSettingDependencyKey) == mSettingDependencyValue;
+        notifyChanged();
     }
 }
