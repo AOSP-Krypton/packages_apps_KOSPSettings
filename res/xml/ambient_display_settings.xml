@@ -35,6 +35,8 @@
             android:summary="@string/aod_pulse_summary"
             android:dependency="notification_pulse_switch_preference"
             settings:settingKey="ambient_notification_light_enabled"
+            settings:settingDependencyKey="doze_always_on"
+            settings:settingDependencyNS="secure"
             settings:settingNamespace="system" />
 
         <!-- Hide contents -->
@@ -42,7 +44,7 @@
             android:key="aod_pulse_hide_content_switch_preference"
             android:title="@string/aod_pulse_hide_content_title"
             android:summary="@string/aod_pulse_hide_content_summary"
-            android:dependency="notification_pulse_switch_preference"
+            android:dependency="aod_pulse_switch_preference"
             settings:settingKey="ambient_notification_light_hide_aod"
             settings:settingNamespace="system" />
 
@@ -83,9 +85,12 @@
             android:key="ambient_pulse_timeout_preference"
             android:title="@string/ambient_pulse_timeout_title"
             android:summary="@string/ambient_pulse_timeout_summary"
-            android:dependency="notification_pulse_switch_preference"
+            android:dependency="aod_pulse_switch_preference"
             settings:settingKey="ambient_notification_light_timeout"
-            settings:settingNamespace="system" />
+            settings:settingNamespace="system"
+            settings:settingDependencyKey="ambient_notification_light_repeats"
+            settings:settingDependencyNS="system"
+            settings:settingDependencyValue="0" />
 
         <!-- Edge Light duration -->
         <com.krypton.settings.preference.SettingEditTextPreference

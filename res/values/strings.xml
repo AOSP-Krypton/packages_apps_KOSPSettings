@@ -72,11 +72,12 @@
     <string name="color_picker_title">Color picker</string>
     <string name="select">Select</string>
     <string name="ambient_pulse_repeat_count_title">Pulse repeat count</string>
-    <string name="ambient_pulse_repeat_count_summary">Choose how many times ambient pulse should repeat</string>
+    <string name="ambient_pulse_repeat_count_summary">Choose how many times ambient pulse should repeat, a repeat count of 0
+            will cause the animation to run until timeout</string>
     <string name="ambient_pulse_timeout_title">Edge light timeout</string>
-    <string name="ambient_pulse_timeout_summary">Timeout in seconds for edge light, a timeout of 0s means it will keep pulsing until the screen is off</string>
+    <string name="ambient_pulse_timeout_summary">Timeout in seconds for pulse in AOD, a timeout of 0s means it will keep pulsing until display state is changed</string>
     <string name="ambient_pulse_animation_duration_title">Edge light animation duration</string>
-    <string name="ambient_pulse_animation_duration_summary">Duration in secons for the edge light animaton, default is 2s</string>
+    <string name="ambient_pulse_animation_duration_summary">Duration in seconds for the edge light animaton, default is 2s</string>
     <string name="lockscreen_media_art_title">Show media art</string>
 
     <!-- StatusBar-QS Settings -->
