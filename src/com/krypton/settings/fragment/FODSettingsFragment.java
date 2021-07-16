@@ -92,7 +92,9 @@ public class FODSettingsFragment extends Fragment
         mFODAnimPreview = (ImageView) view.findViewById(R.id.fod_anim_preview);
 
         mFODAnimSwitch = (Switch) view.findViewById(R.id.fod_animation_switch);
+        mFODAnimSwitch.setOnClickListener(v -> toggleFODAnim());
         mFODAnimAlwaysOnSwitch = (Switch) view.findViewById(R.id.fod_animation_always_on_switch);
+        mFODAnimAlwaysOnSwitch.setOnClickListener(v -> setFODAnimationAlwaysOn());
 
         mFODIconsRecyclerView = (RecyclerView) view.findViewById(R.id.fod_icons_recyclerview);
         mFODIconsAdapter = new FODItemAdapter(mContext, FOD_ICON, R.dimen.fod_icon_button_padding);
@@ -187,14 +189,14 @@ public class FODSettingsFragment extends Fragment
         mHandler.postDelayed(mStopAnimationRunnable, 5 * dur);
     }
 
-    public void toggleFODAnim(View view) {
-        boolean checked = ((Switch) view).isChecked();
+    public void toggleFODAnim() {
+        boolean checked = mFODAnimSwitch.isChecked();
         Utils.applySetting(mContext, FOD_RECOGNIZING_ANIMATION, checked);
         mFODAnimsRecyclerView.setVisibility(checked ? View.VISIBLE : View.GONE);
         mFODAnimAlwaysOnSwitch.setEnabled(checked);
     }
 
-    public void setFODAnimationAlwaysOn(View view) {
+    public void setFODAnimationAlwaysOn() {
         Utils.applySetting(mContext, FOD_ANIM_ALWAYS_ON, mFODAnimAlwaysOnSwitch.isChecked());
     }
 }
