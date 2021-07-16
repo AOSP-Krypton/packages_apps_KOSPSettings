@@ -24,12 +24,4 @@
         android:key="gamingmode"
         android:title="@string/gamingmode_settings_title"
         android:summary="@string/gamingmode_settings_summary" />
-
-    <com.krypton.settings.preference.SettingSwitchPreference
-        android:key="smart_space_switch_preference"
-        android:title="@string/smart_space_setting_title"
-        settings:settingKey="smart_space"
-        settings:settingNamespace="system"
-        settings:settingDefault="1" />
-
 </PreferenceScreen>

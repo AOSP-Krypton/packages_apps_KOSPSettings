@@ -127,6 +127,5 @@
     <!-- Miscellaneous Settings -->
     <string name="miscellaneous_settings_title">Miscellaneous</string>
     <string name="miscellaneous_settings_summary">Miscellaneous / general settings</string>
-    <string name="smart_space_setting_title">Enable smart space</string>
 
 </resources>
