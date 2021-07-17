@@ -110,6 +110,16 @@
             settings:settingKey="network_traffic_arrow"
             settings:settingNamespace="system"
             settings:settingDefault="1" />
+
+        <com.krypton.settings.preference.SettingSeekBarPreference
+            android:key="statusbar_network_traffic_font_size_preference"
+            android:title="@string/statusbar_network_traffic_font_size_title"
+            android:summary="@string/statusbar_network_traffic_font_size_summary"
+            android:dependency="statusbar_show_network_traffic_switch_preference"
+            settings:settingKey="network_traffic_font_size"
+            settings:settingNamespace="system"
+            settings:max="50"
+            settings:min="21" />
     </PreferenceCategory>
 
     <PreferenceCategory

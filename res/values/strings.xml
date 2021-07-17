@@ -103,6 +103,8 @@
     <string name="network_traffic_mode_combined">Combined</string>
     <string name="network_traffic_mode_dynamic">Dynamic</string>
     <string name="statusbar_network_traffic_location_title">Network traffic location</string>
+    <string name="statusbar_network_traffic_font_size_title">Single net font size</string>
+    <string name="statusbar_network_traffic_font_size_summary">Choose the font size for network traffic text when only one row is visible</string>
     <string name="network_traffic_in_statusbar">Only in statusbar</string>
     <string name="network_traffic_in_qs_header">Only in qs header</string>
     <string name="statusbar_battery_category_title">Battery</string>
