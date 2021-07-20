@@ -25,4 +25,11 @@
         settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController"
         settings:keywords="@string/keywords_system_navigation" />
 
+    <!-- Inverse navigation bar -->
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="navigation_bar_inverse_switch_preference"
+        android:title="@string/navigation_bar_inverse_title"
+        settings:settingKey="navigation_bar_inverse"
+        settings:settingNamespace="system" />
+
 </PreferenceScreen>

@@ -24,4 +24,12 @@
         android:key="gamingmode"
         android:title="@string/gamingmode_settings_title"
         android:summary="@string/gamingmode_settings_summary" />
+
+    <!-- Volume key music control -->
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="volume_button_music_control_switch_preference"
+        android:title="@string/volume_button_music_control_title"
+        android:summary="@string/volume_button_music_control_summary"
+        settings:settingKey="volume_button_music_control"
+        settings:settingNamespace="system" />
 </PreferenceScreen>

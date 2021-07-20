@@ -118,6 +118,7 @@
     <string name="navigation_bar_settings_title">Navigation Bar</string>
     <string name="navigation_bar_settings_summary">Navigation bar settings and gestures</string>
     <string name="system_navigation_summary">Choose navigation bar style and more</string>
+    <string name="navigation_bar_inverse_title">Inverse navigation bar layout</string>
 
     <!-- Device Settings -->
     <string name="device_settings_title">Device Settings</string>
@@ -129,5 +130,7 @@
     <!-- Miscellaneous Settings -->
     <string name="miscellaneous_settings_title">Miscellaneous</string>
     <string name="miscellaneous_settings_summary">Miscellaneous / general settings</string>
+    <string name="volume_button_music_control_title">Skip tracks with volume buttons</string>
+    <string name="volume_button_music_control_summary">Long press volume up for skipping to the next track and vice-versa</string>
 
 </resources>
