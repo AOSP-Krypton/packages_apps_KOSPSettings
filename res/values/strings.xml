@@ -79,6 +79,8 @@
     <string name="ambient_pulse_animation_duration_title">Edge light animation duration</string>
     <string name="ambient_pulse_animation_duration_summary">Duration in seconds for the edge light animaton, default is 2s</string>
     <string name="lockscreen_media_art_title">Show media art</string>
+    <string name="smart_space_setting_title">Enable smart space</string>
+    <string name="smart_space_setting_summary">Lockscreen weather and other stuff. Requires a system reboot</string>
 
     <!-- StatusBar-QS Settings -->
     <string name="statusbar_qs_settings_title">StatusBar and QS</string>
