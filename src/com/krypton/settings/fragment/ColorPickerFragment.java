@@ -25,7 +25,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
@@ -39,9 +38,7 @@ public class ColorPickerFragment extends DialogFragment implements OnSeekBarChan
     private final int mSettingDefault;
     private Context mContext;
     private ImageView mColorPreview;
-    private TextView mHexColor;
     private SeekBar mRedSeekBar, mGreenSeekBar, mBlueSeekBar;
-    private Button mSelectButton;
 
     public ColorPickerFragment(String key, String ns, int def) {
         super(R.layout.color_picker_layout);
@@ -61,30 +58,33 @@ public class ColorPickerFragment extends DialogFragment implements OnSeekBarChan
         final Dialog dialog = requireDialog();
         dialog.setTitle(R.string.color_picker_title);
         mColorPreview = view.findViewById(R.id.color_preview);
-        mHexColor = view.findViewById(R.id.hex_color);
         mRedSeekBar = view.findViewById(R.id.red_seekBar);
         mRedSeekBar.setOnSeekBarChangeListener(this);
         mGreenSeekBar = view.findViewById(R.id.green_seekBar);
         mGreenSeekBar.setOnSeekBarChangeListener(this);
         mBlueSeekBar = view.findViewById(R.id.blue_seekBar);
         mBlueSeekBar.setOnSeekBarChangeListener(this);
-        mSelectButton = view.findViewById(R.id.select_button);
-        mSelectButton.setOnClickListener(v -> {
+        Button resetButton = view.findViewById(R.id.reset_button);
+        resetButton.setOnClickListener(v -> {
             v.performHapticFeedback(KEYBOARD_PRESS);
-            Utils.applySetting(mContext, mSettingNamespace, mSettingKey, getColor());
+            Utils.applySetting(mContext, mSettingNamespace, mSettingKey, mSettingDefault);
+            updateFromSettings();
+        });
+        Button selectButton = view.findViewById(R.id.select_button);
+        selectButton.setOnClickListener(v -> {
+            v.performHapticFeedback(KEYBOARD_PRESS);
+            int color = getColor();
+            Utils.applySetting(mContext, mSettingNamespace, mSettingKey, color);
             dialog.dismiss();
         });
-        final int color = Utils.getSettingInt(mContext, mSettingNamespace,
-            mSettingKey, mSettingDefault);
-        updateColorPreviewAndHex(color);
-        mRedSeekBar.setProgress(Color.red(color));
-        mGreenSeekBar.setProgress(Color.green(color));
-        mBlueSeekBar.setProgress(Color.blue(color));
+        updateFromSettings();
     }
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        updateColorPreviewAndHex(getColor());
+        if (fromUser) {
+            updateColorPreview(getColor());
+        }
     }
 
     @Override
@@ -93,13 +93,21 @@ public class ColorPickerFragment extends DialogFragment implements OnSeekBarChan
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {}
 
-    private void updateColorPreviewAndHex(int color) {
+    private void updateColorPreview(int color) {
         mColorPreview.setColorFilter(color);
-        mHexColor.setText(Integer.toHexString(color));
     }
 
     private int getColor() {
         return Color.rgb(mRedSeekBar.getProgress(),
             mGreenSeekBar.getProgress(), mBlueSeekBar.getProgress());
+    }
+
+    private void updateFromSettings() {
+        int color = Math.min(Utils.getSettingInt(mContext, mSettingNamespace,
+            mSettingKey, mSettingDefault), -1);
+        updateColorPreview(color);
+        mRedSeekBar.setProgress(Color.red(color));
+        mGreenSeekBar.setProgress(Color.green(color));
+        mBlueSeekBar.setProgress(Color.blue(color));
     }
 }

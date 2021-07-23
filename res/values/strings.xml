@@ -17,42 +17,31 @@
     <!-- Krypton Settings Page Title -->
     <string name="krypton_page_title">Krypton Settings</string>
 
-    <!-- Gaming Mode Settings -->
-    <string name="gamingmode_settings_title">Gaming Mode</string>
-    <string name="gamingmode_settings_summary">Enhance your gaming experience</string>
-    <string name="gamingmode_status">Gaming Mode</string>
-    <string name="gamingmode_enabled">Enabled</string>
-    <string name="gamingmode_disabled">Disabled</string>
-    <string name="show_toast_title">Toasts</string>
-    <string name="show_toast_summary">Show a toast when entering gaming mode</string>
-    <string name="disable_headsup">Disable heads-up</string>
-    <string name="disable_headsup_summary">Block peaking notifications</string>
-    <string name="ringermode_title">Ringer mode</string>
-    <string name="ringermode_silent">Silent</string>
-    <string name="ringermode_vibrate">Vibrate</string>
-    <string name="ringermode_normal">Normal</string>
-    <string name="select_apps_title">Select Apps</string>
-    <string name="select_apps_summary">Enable gaming mode per app</string>
-    <string name="gamingmode_apps_settings_title">Apps</string>
-    <string name="gamingmode_apps_reset_string">Reset preferences</string>
-    <string name="string_search_app">Search</string>
-    <string name="lock_brightness_title">Lock brightness</string>
-    <string name="lock_brightness_summary">Disable adaptive brightness</string>
-    <string name="restore_brightness_title">Restore brightness</string>
-    <string name="restore_brightness_summary">Enable to restore brightness set in previous gaming session</string>
-
     <!-- Lockscreen Settings -->
     <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="lockscreen_settings_summary">Customisations and gestures for lockscreen</string>
     <string name="lockscreen_dt2s_title">Double tap on lockscreen to sleep</string>
     <string name="lockscreen_charging_info_title">Show charging info in lockscreen</string>
+    <string name="lockscreen_media_art_title">Show media art</string>
+    <string name="smart_space_setting_title">Enable smart space</string>
+    <string name="smart_space_setting_summary">Lockscreen weather and other stuff. Requires a system reboot</string>
+
+    <!-- FOD Settings -->
     <string name="fod_settings_title">FOD Settings</string>
-    <string name="fod_settings_summary">Customise FOD icon and animations</string>
-    <string name="fod_icon_settings_title">Select FOD Icon</string>
-    <string name="fod_animation_switch_title">FOD Animation</string>
-    <string name="fod_animation_settings_title">Select FOD Animation</string>
-    <string name="fod_animation_always_on_switch_title">Show FOD animation in all use cases</string>
-    <string name="loading_animations">FOD animations are loading, please wait for preview</string>
+    <string name="fod_settings_summary">Choose and customise FOD icon and animation</string>
+    <string name="fod_icon_category_title">FOD Icon</string>
+    <string name="fod_icon_picker_title">Select and preview FOD icon</string>
+    <string name="fod_item_picker_title">Select &amp; Preview</string>
+    <string name="fod_icon_tint_mode_title">Choose FOD icon tint</string>
+    <string name="fod_icon_tint_mode_summary">Note that this is only suitable for icons with only a single color</string>
+    <string name="fod_icon_custom_tint_title">Custom FOD icon tint color</string>
+    <string name="fod_anim_category_title">FOD Animation</string>
+    <string name="fod_anim_switch_title">Enable FOD animations</string>
+    <string name="fod_anim_always_on_title">Show FOD animation in all use cases</string>
+    <string name="fod_anim_picker_title">Select and preview FOD animations</string>
+    <string name="fod_anim_loading_text">FOD animations are loading, please wait</string>
+
+    <!-- Ambient Display Settings -->
     <string name="ambient_display_settings_title">Ambient Display</string>
     <string name="ambient_display_settings_summary">Edge lighting and further customisations</string>
     <string name="edge_lighting_category_title">Edge lighting</string>
@@ -63,14 +52,10 @@
     <string name="aod_pulse_hide_content_title">Hide contents in AOD</string>
     <string name="aod_pulse_hide_content_summary">Enable to hide contents of AOD when pulsing</string>
     <string name="ambient_pulse_color_mode_title">Edge light color</string>
-    <string name="pulse_color_mode_accent">Accent </string>
-    <string name="pulse_color_mode_wallpaper">Wallpaper</string>
-    <string name="pulse_color_mode_notification">Notification</string>
-    <string name="pulse_color_mode_custom">Custom</string>
+
     <string name="ambient_pulse_custom_color_mode_title">Custom color</string>
     <string name="ambient_pulse_custom_color_mode_summary">Choose a custom color for edge light</string>
     <string name="color_picker_title">Color picker</string>
-    <string name="select">Select</string>
     <string name="ambient_pulse_repeat_count_title">Pulse repeat count</string>
     <string name="ambient_pulse_repeat_count_summary">Choose how many times ambient pulse should repeat, a repeat count of 0
             will cause the animation to run until timeout</string>
@@ -78,9 +63,6 @@
     <string name="ambient_pulse_timeout_summary">Timeout in seconds for pulse in AOD, a timeout of 0s means it will keep pulsing until display state is changed</string>
     <string name="ambient_pulse_animation_duration_title">Edge light animation duration</string>
     <string name="ambient_pulse_animation_duration_summary">Duration in seconds for the edge light animaton, default is 2s</string>
-    <string name="lockscreen_media_art_title">Show media art</string>
-    <string name="smart_space_setting_title">Enable smart space</string>
-    <string name="smart_space_setting_summary">Lockscreen weather and other stuff. Requires a system reboot</string>
 
     <!-- StatusBar-QS Settings -->
     <string name="statusbar_qs_settings_title">StatusBar and QS</string>
@@ -92,6 +74,8 @@
     <string name="qs_show_auto_brightness_icon_title">Show auto brightness icon in qs</string>
     <string name="qs_show_slider_bottom_title">Keep brightness slider at the bottom</string>
     <string name="qs_show_slider_above_footer_title">Keep brightness slider above qs footer</string>
+
+    <!-- Network Traffic -->
     <string name="network_traffic_category_title">Network Traffic</string>
     <string name="statusbar_show_network_traffic_title">Show network traffic in statusbar</string>
     <string name="statusbar_show_network_traffic_arrow_title">Show arrow indicators in statusbar</string>
@@ -109,6 +93,8 @@
     <string name="statusbar_network_traffic_font_size_summary">Choose the font size for network traffic text when only one row is visible</string>
     <string name="network_traffic_in_statusbar">Only in statusbar</string>
     <string name="network_traffic_in_qs_header">Only in qs header</string>
+
+    <!-- Battery -->
     <string name="statusbar_battery_category_title">Battery</string>
     <string name="statusbar_battery_style_title">Battery icon style</string>
     <string name="battery_style_portrait">Portrait</string>
@@ -135,4 +121,35 @@
     <string name="volume_button_music_control_title">Skip tracks with volume buttons</string>
     <string name="volume_button_music_control_summary">Long press volume up for skipping to the next track and vice-versa</string>
 
+    <!-- Gaming Mode Settings -->
+    <string name="gamingmode_settings_title">Gaming Mode</string>
+    <string name="gamingmode_settings_summary">Enhance your gaming experience</string>
+    <string name="gamingmode_status">Gaming Mode</string>
+    <string name="gamingmode_enabled">Enabled</string>
+    <string name="gamingmode_disabled">Disabled</string>
+    <string name="show_toast_title">Toasts</string>
+    <string name="show_toast_summary">Show a toast when entering gaming mode</string>
+    <string name="disable_headsup">Disable heads-up</string>
+    <string name="disable_headsup_summary">Block peaking notifications</string>
+    <string name="ringermode_title">Ringer mode</string>
+    <string name="ringermode_silent">Silent</string>
+    <string name="ringermode_vibrate">Vibrate</string>
+    <string name="ringermode_normal">Normal</string>
+    <string name="select_apps_title">Select Apps</string>
+    <string name="select_apps_summary">Enable gaming mode per app</string>
+    <string name="gamingmode_apps_reset_string">Reset preferences</string>
+    <string name="string_search_app">Search</string>
+    <string name="lock_brightness_title">Lock brightness</string>
+    <string name="lock_brightness_summary">Disable adaptive brightness</string>
+    <string name="restore_brightness_title">Restore brightness</string>
+    <string name="restore_brightness_summary">Enable to restore brightness set in previous gaming session</string>
+
+    <!-- Some common strings -->
+    <string name="none">None</string>
+    <string name="accent">Accent </string>
+    <string name="wallpaper">Wallpaper</string>
+    <string name="notification">Notification</string>
+    <string name="custom">Custom</string>
+    <string name="select">Select</string>
+    <string name="reset">Reset</string>
 </resources>

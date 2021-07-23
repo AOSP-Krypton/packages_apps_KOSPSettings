@@ -17,20 +17,12 @@ package com.krypton.settings.fragment;
 
 import android.os.Bundle;
 
-import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 
-public class MiscellaneousSettingsFragment extends SettingsPreferenceFragment {
-
+public class MiscellaneousSettingsFragment extends BaseFragment {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.miscellaneous_settings);
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.KRYPTON;
     }
 }

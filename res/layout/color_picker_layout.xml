@@ -60,32 +60,33 @@
         android:progressBackgroundTint="@color/color_blue"
         android:progressTint="@color/color_blue"
         android:thumbTint="@color/color_blue"
-        settings:layout_constraintBottom_toTopOf="@id/hex_color"
+        settings:layout_constraintBottom_toTopOf="@id/select_button"
         settings:layout_constraintEnd_toEndOf="@+id/red_seekBar"
         settings:layout_constraintStart_toStartOf="@+id/red_seekBar"
         settings:layout_constraintTop_toBottomOf="@id/green_seekBar" />
-
-    <TextView
-        android:id="@+id/hex_color"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/hex_color_textview_margin_top"
-        android:textIsSelectable="true"
-        settings:layout_constraintBottom_toBottomOf="parent"
-        settings:layout_constraintEnd_toStartOf="@+id/select_button"
-        settings:layout_constraintStart_toStartOf="@+id/blue_seekBar"
-        settings:layout_constraintTop_toBottomOf="@+id/blue_seekBar" />
 
     <Button
         android:id="@+id/select_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginTop="@dimen/color_picker_button_margin_top"
         android:backgroundTint="?android:attr/colorAccent"
         android:text="@string/select"
         android:textColor="?android:attr/textColorPrimary"
-        settings:layout_constraintBottom_toBottomOf="@+id/hex_color"
-        settings:layout_constraintEnd_toEndOf="@+id/blue_seekBar"
-        settings:layout_constraintStart_toEndOf="@id/hex_color"
-        settings:layout_constraintTop_toTopOf="@+id/hex_color" />
+        settings:layout_constraintBottom_toBottomOf="parent"
+        settings:layout_constraintEnd_toEndOf="@+id/red_seekBar"
+        settings:layout_constraintStart_toEndOf="@+id/reset_button"
+        settings:layout_constraintTop_toBottomOf="@+id/blue_seekBar" />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:backgroundTint="?android:attr/colorAccent"
+        android:text="@string/reset"
+        android:textColor="?android:attr/textColorPrimary"
+        settings:layout_constraintBottom_toBottomOf="@+id/select_button"
+        settings:layout_constraintEnd_toStartOf="@+id/select_button"
+        settings:layout_constraintStart_toStartOf="@+id/red_seekBar"
+        settings:layout_constraintTop_toTopOf="@+id/select_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

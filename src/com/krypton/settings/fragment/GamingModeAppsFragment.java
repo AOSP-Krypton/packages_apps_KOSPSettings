@@ -18,17 +18,18 @@ package com.krypton.settings.fragment;
 
 import static android.provider.Settings.System.GAMINGMODE_APPS;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.SearchView;
 
 import androidx.fragment.app.Fragment;
@@ -43,7 +44,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.List;
 
-public class GamingModeAppsFragment extends Fragment {
+public class GamingModeAppsFragment extends BaseFragment {
     private Context mContext;
     private ExecutorService mExecutor;
     private Handler mHandler;
@@ -53,24 +54,26 @@ public class GamingModeAppsFragment extends Fragment {
     private SearchView mSearchView;
     private List<AppInfo> mSortedAppsList;
 
-    public GamingModeAppsFragment() {
-        super(R.layout.gamingmode_apps_picker);
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().getActionBar().setTitle(R.string.gamingmode_apps_settings_title);
         mContext = getContext();
         mPM = mContext.getPackageManager();
         mHandler = new Handler(Looper.getMainLooper());
         mExecutor = Executors.newFixedThreadPool(2);
         setHasOptionsMenu(true);
+        getActivity().setTitle(R.string.select_apps_title);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.gamingmode_apps_picker, container, false);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.gamingmode_apps_recyclerview);
+        mRecyclerView = view.findViewById(R.id.gamingmode_apps_recyclerview);
         mAdapter = new GamingModeAppsListAdapter(mContext);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));

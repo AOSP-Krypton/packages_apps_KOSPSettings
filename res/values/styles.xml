@@ -17,6 +17,7 @@
     <style name="ColorSeekBarStyle" parent="Widget.AppCompat.SeekBar">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">15dp</item>
         <item name="android:max">255</item>
         <item name="android:paddingStart">@dimen/color_preview_padding</item>
         <item name="android:paddingEnd">@dimen/color_preview_padding</item>

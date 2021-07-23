@@ -17,12 +17,9 @@ package com.krypton.settings.fragment;
 
 import android.os.Bundle;
 
-import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 
-public class LockscreenSettingsFragment extends SettingsPreferenceFragment {
-
+public class LockscreenSettingsFragment extends BaseFragment {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -32,10 +29,5 @@ public class LockscreenSettingsFragment extends SettingsPreferenceFragment {
         if (!hasFod) {
             getPreferenceScreen().removePreference(findPreference("fod_settings"));
         }
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.KRYPTON;
     }
 }

@@ -29,11 +29,13 @@
     <dimen name="switch_padding_start">60dp</dimen>
     <dimen name="switch_padding_end">30dp</dimen>
     <dimen name="switch_text_size">16sp</dimen>
-    <dimen name="fod_icon_preview_size">55dp</dimen>
+    <dimen name="fod_icon_preview_size">80dp</dimen>
     <dimen name="fod_anim_preview_size">200dp</dimen>
     <dimen name="fod_list_item_size">70dp</dimen>
 
     <dimen name="color_preview_size">200dp</dimen>
     <dimen name="color_preview_padding">9dp</dimen>
-    <dimen name="hex_color_textview_margin_top">12dp</dimen>
+    <dimen name="color_picker_button_margin_top">12dp</dimen>
+    <dimen name="radio_group_padding">18dp</dimen>
+    <dimen name="radio_button_spacing">6dp</dimen>
 </resources>

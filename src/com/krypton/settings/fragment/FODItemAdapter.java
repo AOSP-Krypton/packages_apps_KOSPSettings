@@ -34,7 +34,7 @@ public class FODItemAdapter extends Adapter<FODViewHolder> {
     private final Context mContext;
     private final String mSettingKey;
     private final int mItemPadding;
-    private SelectedItemChangeListener mListener;
+    private Callback mCallback;
     private List<Drawable> mDrawablesList;
     private int mSelectedIndex;
 
@@ -64,8 +64,8 @@ public class FODItemAdapter extends Adapter<FODViewHolder> {
         }
         imageView.setOnClickListener(v -> {
             mSelectedIndex = position;
-            if (mListener != null) {
-                mListener.onSelectedItemChanged(mSettingKey, mSelectedIndex);
+            if (mCallback != null) {
+                mCallback.onSelectedItemChanged(mSelectedIndex);
             }
             Utils.applySetting(mContext, mSettingKey, mSelectedIndex);
             notifyDataSetChanged();
@@ -81,15 +81,15 @@ public class FODItemAdapter extends Adapter<FODViewHolder> {
         mDrawablesList = list;
     }
 
-    public void registerSelectedItemChangedListener(SelectedItemChangeListener listener) {
-        mListener = listener;
+    public void registerCallback(Callback callback) {
+        mCallback = callback;
     }
 
-    public void unregisterSelectedItemChangedListener() {
-        mListener = null;
+    public void unregisterCallback() {
+        mCallback = null;
     }
 
-    public interface SelectedItemChangeListener {
-        public void onSelectedItemChanged(String key, int newIndex);
+    interface Callback {
+        void onSelectedItemChanged(int newIndex);
     }
 }

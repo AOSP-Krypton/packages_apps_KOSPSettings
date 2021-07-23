@@ -17,20 +17,13 @@ package com.krypton.settings.fragment;
 
 import android.os.Bundle;
 
+import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 
-public class KryptonSettingsFragment extends BaseFragment {
+public class BaseFragment extends SettingsPreferenceFragment {
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.krypton_settings);
-        boolean installed = false;
-        try {
-            getPackageManager().getPackageInfo("com.krypton.settings.device", 0);
-            installed = true;
-        } catch (Exception e) {}
-        if (!installed) {
-            getPreferenceScreen().removePreference(findPreference("device_settings"));
-        }
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.KRYPTON;
     }
 }

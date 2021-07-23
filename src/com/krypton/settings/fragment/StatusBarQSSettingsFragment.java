@@ -17,27 +17,17 @@ package com.krypton.settings.fragment;
 
 import android.os.Bundle;
 
-import androidx.preference.PreferenceScreen;
-
-import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class StatusBarQSSettingsFragment extends SettingsPreferenceFragment {
-
+public class StatusBarQSSettingsFragment extends BaseFragment {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.statusbar_qs_settings);
         if (!Utils.isBatteryPresent(getContext())) {
-            PreferenceScreen screen = getPreferenceScreen();
-            screen.removePreferenceRecursively("statusbar_battery_category_title");
+            getPreferenceScreen().removePreferenceRecursively(
+                "statusbar_battery_category_title");
         }
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.KRYPTON;
     }
 }

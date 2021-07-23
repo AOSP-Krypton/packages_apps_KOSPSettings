@@ -20,13 +20,11 @@ import android.os.Bundle;
 import androidx.fragment.app.DialogFragment;
 import androidx.preference.Preference;
 
-import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 
 import com.krypton.settings.preference.SettingColorPickerPreference;
 
-public class AmbientDisplaySettingsFragment extends SettingsPreferenceFragment {
+public class AmbientDisplaySettingsFragment extends BaseFragment {
 
     private static final String TAG = "AmbientDisplaySettingsFragment";
 
@@ -34,11 +32,6 @@ public class AmbientDisplaySettingsFragment extends SettingsPreferenceFragment {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.ambient_display_settings);
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.KRYPTON;
     }
 
     @Override
