@@ -36,14 +36,12 @@ public class FODItemAdapter extends Adapter<FODViewHolder> {
     private final int mItemPadding;
     private Callback mCallback;
     private List<Drawable> mDrawablesList;
-    private int mSelectedIndex;
 
     public FODItemAdapter(Context context, String key, int paddingResId) {
         super();
         mContext = context;
         mSettingKey = key;
         mItemPadding = mContext.getResources().getDimensionPixelSize(paddingResId);
-        mSelectedIndex = Utils.getSettingInt(mContext, mSettingKey);
     }
 
     @Override
@@ -57,19 +55,20 @@ public class FODItemAdapter extends Adapter<FODViewHolder> {
         final ImageView imageView = viewHolder.getImageView();
         imageView.setPaddingRelative(mItemPadding, mItemPadding, mItemPadding, mItemPadding);
         imageView.setImageDrawable(mDrawablesList.get(position));
-        if (mSelectedIndex == position) {
+        if (Utils.getSettingInt(mContext, mSettingKey) == position) {
             imageView.setBackgroundResource(R.drawable.btn_checked);
         } else {
             imageView.setBackground(null);
         }
         imageView.setOnClickListener(v -> {
-            mSelectedIndex = position;
             if (mCallback != null) {
-                mCallback.onSelectedItemChanged(mSelectedIndex);
+                mCallback.onSelectedItemChanged(position);
             }
-            Utils.applySetting(mContext, mSettingKey, mSelectedIndex);
+            Utils.applySetting(mContext, mSettingKey, position);
             notifyDataSetChanged();
         });
+        imageView.setOnLongClickListener(v -> mCallback != null ?
+            mCallback.onItemLongClicked(position) : false);
     }
 
     @Override
@@ -91,5 +90,8 @@ public class FODItemAdapter extends Adapter<FODViewHolder> {
 
     interface Callback {
         void onSelectedItemChanged(int newIndex);
+        default boolean onItemLongClicked(int index) {
+            return false;
+        }
     }
 }

@@ -79,7 +79,7 @@ public class FODAnimFragment extends BaseFragment implements FODItemAdapter.Call
         mAdapter = new FODItemAdapter(mContext, FOD_ANIM, R.dimen.fod_anim_button_padding);
         mAdapter.registerCallback(this);
         mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(mContext, 5, VERTICAL, false));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(mContext, 6, VERTICAL, false));
         loadAnimPreviewsAsync();
     }
 
@@ -87,6 +87,7 @@ public class FODAnimFragment extends BaseFragment implements FODItemAdapter.Call
     public void onStop() {
         if (mCurrAnimation != null) {
             mCurrAnimation.stop();
+            mPreview.setImageDrawable(null);
         }
         mExecutor.shutdownNow();
         super.onStop();

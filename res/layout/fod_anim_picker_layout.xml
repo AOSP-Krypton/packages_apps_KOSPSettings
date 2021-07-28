@@ -22,7 +22,7 @@
         android:id="@+id/preview"
         android:layout_width="@dimen/fod_anim_preview_size"
         android:layout_height="@dimen/fod_anim_preview_size"
-        android:scaleType="centerInside"
+        android:scaleType="centerCrop"
         settings:layout_constraintBottom_toTopOf="@id/guideline"
         settings:layout_constraintEnd_toEndOf="parent"
         settings:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        settings:layout_constraintGuide_percent="0.40" />
+        settings:layout_constraintGuide_percent="0.50" />
 
     <ProgressBar
         android:id="@+id/progress_bar"

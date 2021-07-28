@@ -40,6 +40,8 @@
     <string name="fod_anim_always_on_title">Show FOD animation in all use cases</string>
     <string name="fod_anim_picker_title">Select and preview FOD animations</string>
     <string name="fod_anim_loading_text">FOD animations are loading, please wait</string>
+    <string name="add_icon_title">Add icons</string>
+    <string name="clear_icons_title">Clear icons</string>
 
     <!-- Ambient Display Settings -->
     <string name="ambient_display_settings_title">Ambient Display</string>
@@ -112,9 +114,6 @@
     <string name="device_settings_title">Device Settings</string>
     <string name="device_settings_summary">Settings for device specific parts</string>
 
-    <!-- Error messages -->
-    <string name="invalid_integer_value">Please input a valid integer!</string>
-
     <!-- Miscellaneous Settings -->
     <string name="miscellaneous_settings_title">Miscellaneous</string>
     <string name="miscellaneous_settings_summary">Miscellaneous / general settings</string>
@@ -144,7 +143,7 @@
     <string name="restore_brightness_title">Restore brightness</string>
     <string name="restore_brightness_summary">Enable to restore brightness set in previous gaming session</string>
 
-    <!-- Some common strings -->
+    <!-- Some common strings & error messages-->
     <string name="none">None</string>
     <string name="accent">Accent </string>
     <string name="wallpaper">Wallpaper</string>
@@ -152,4 +151,6 @@
     <string name="custom">Custom</string>
     <string name="select">Select</string>
     <string name="reset">Reset</string>
+    <string name="invalid_integer_value">Please input a valid integer!</string>
+    <string name="cannot_resolve_activity">Unable to find a suitable activity to perform the action!</string>
 </resources>

@@ -120,7 +120,7 @@ public class Utils {
 
     public static void sleepThread(long duration) {
         try {
-            Thread.sleep(1);
+            Thread.sleep(duration);
         } catch (InterruptedException e) {
             Log.e(TAG, "thread interrupted while sleep", e);
         }
