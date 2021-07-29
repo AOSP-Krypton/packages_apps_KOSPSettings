@@ -101,5 +101,25 @@
             settings:settingKey="ambient_notification_light_duration"
             settings:settingNamespace="system"
             settings:settingDefault="2" />
+
+        <!-- Always on brightness mode -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="aod_brightness_mode_preference"
+            android:title="@string/aod_brightness_mode_title"
+            settings:settingKey="doze_custom_screen_brightness_mode"
+            settings:settingNamespace="secure"
+            settings:settingDependencyKey="doze_always_on"
+            settings:settingDependencyNS="secure" />
+
+        <!-- Always on brightness -->
+        <com.krypton.settings.preference.SettingSeekBarPreference
+            android:key="aod_brightness_preference"
+            android:title="@string/aod_brightness_title"
+            android:dependency="aod_brightness_mode_preference"
+            settings:settingKey="doze_screen_brightness"
+            settings:settingNamespace="secure"
+            settings:settingDefault="15"
+            settings:max="30"
+            settings:min="1" />
     </PreferenceCategory>
 </PreferenceScreen>

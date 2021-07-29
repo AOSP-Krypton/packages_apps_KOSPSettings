@@ -65,6 +65,8 @@
     <string name="ambient_pulse_timeout_summary">Timeout in seconds for pulse in AOD, a timeout of 0s means it will keep pulsing until display state is changed</string>
     <string name="ambient_pulse_animation_duration_title">Edge light animation duration</string>
     <string name="ambient_pulse_animation_duration_summary">Duration in seconds for the edge light animaton, default is 2s</string>
+    <string name="aod_brightness_mode_title">Custom AOD brightness</string>
+    <string name="aod_brightness_title">Brightness value</string>
 
     <!-- StatusBar-QS Settings -->
     <string name="statusbar_qs_settings_title">StatusBar and QS</string>
