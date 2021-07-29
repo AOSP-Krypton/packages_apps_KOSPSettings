@@ -16,8 +16,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/add_icon"
-        android:title="@string/add_icon_title" />
+        android:id="@+id/add_icons"
+        android:title="@string/add_icons_title" />
 
     <item
         android:id="@+id/clear_icons"

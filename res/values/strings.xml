@@ -40,7 +40,7 @@
     <string name="fod_anim_always_on_title">Show FOD animation in all use cases</string>
     <string name="fod_anim_picker_title">Select and preview FOD animations</string>
     <string name="fod_anim_loading_text">FOD animations are loading, please wait</string>
-    <string name="add_icon_title">Add icons</string>
+    <string name="add_icons_title">Add icons</string>
     <string name="clear_icons_title">Clear icons</string>
 
     <!-- Ambient Display Settings -->

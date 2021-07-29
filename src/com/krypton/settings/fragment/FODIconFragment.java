@@ -75,6 +75,7 @@ public class FODIconFragment extends BaseFragment implements FODItemAdapter.Call
         "image/png",
         "image/svg"
     };
+    private static final int COLUMNS = 6;
     private final ExecutorService mExecutor;
     private final Handler mHandler;
     private final ActivityResultLauncher<String[]> mActivityResultLauncher;
@@ -83,6 +84,7 @@ public class FODIconFragment extends BaseFragment implements FODItemAdapter.Call
     private ImageView mPreview;
     private FODItemAdapter mAdapter;
     private RecyclerView mRecyclerView;
+    private GridLayoutManager mLayoutManager;
     private int mInitialSize;
 
     public FODIconFragment() {
@@ -115,11 +117,12 @@ public class FODIconFragment extends BaseFragment implements FODItemAdapter.Call
             mPreview.setColorFilter(com.android.settingslib.Utils
                 .getColorAccentDefaultColor(mContext));
         }
+        mLayoutManager = new GridLayoutManager(mContext, COLUMNS, VERTICAL, false);
         mRecyclerView = view.findViewById(R.id.item_grid);
         mAdapter = new FODItemAdapter(mContext, FOD_ICON, R.dimen.fod_icon_button_padding);
         mAdapter.registerCallback(this);
         mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(mContext, 6, VERTICAL, false));
+        mRecyclerView.setLayoutManager(mLayoutManager);
         loadIconsListAsync();
     }
 
@@ -130,7 +133,7 @@ public class FODIconFragment extends BaseFragment implements FODItemAdapter.Call
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.add_icon) {
+        if (item.getItemId() == R.id.add_icons) {
             if (mActivityResultLauncher != null) {
                 try {
                     mActivityResultLauncher.launch(MIME_TYPES);
@@ -181,9 +184,7 @@ public class FODIconFragment extends BaseFragment implements FODItemAdapter.Call
             }
             array.recycle();
             // Loading user selected icons if any
-            final File[] files = ICON_DIR.listFiles();
-            Arrays.sort(files);
-            for (File file: files) {
+            for (File file: ICON_DIR.listFiles()) {
                 try (FileInputStream in = new FileInputStream(file)) {
                     mIconsList.add(Drawable.createFromStream(in, null));
                     mHandler.post(() -> mAdapter.notifyDataSetChanged());
@@ -191,8 +192,11 @@ public class FODIconFragment extends BaseFragment implements FODItemAdapter.Call
                     Log.e(TAG, "IOException when loading file " + file.getAbsolutePath(), e);
                 }
             }
-            mHandler.post(() -> onSelectedItemChanged(
-                Utils.getSettingInt(mContext, FOD_ICON)));
+            mHandler.post(() -> {
+                final int index = Utils.getSettingInt(mContext, FOD_ICON);
+                onSelectedItemChanged(index);
+                mLayoutManager.scrollToPositionWithOffset(index, 1);
+            });
         });
     }
 
@@ -239,7 +243,7 @@ public class FODIconFragment extends BaseFragment implements FODItemAdapter.Call
                 }
                 mIconsList.remove(index);
                 int selectedIndex = Utils.getSettingInt(mContext, FOD_ICON);
-                if (selectedIndex >= mInitialSize) {
+                if (selectedIndex >= index) {
                     Utils.applySetting(mContext, FOD_ICON, selectedIndex - 1);
                 }
                 mHandler.post(() -> {
