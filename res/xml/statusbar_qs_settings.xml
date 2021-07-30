@@ -17,17 +17,6 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/statusbar_qs_settings_title">
 
-    <PreferenceCategory
-        android:title="@string/statusbar_gestures_category_title">
-
-        <!-- DT2S -->
-        <com.krypton.settings.preference.SettingSwitchPreference
-            android:key="statusbar_dt2s_switch_preference"
-            android:title="@string/statusbar_dt2s_title"
-            settings:settingKey="double_tap_sleep_gesture"
-            settings:settingNamespace="system" />
-    </PreferenceCategory>
-
     <!-- Brightness slider -->
     <PreferenceCategory
         android:title="@string/brightness_slider_category_title">
@@ -149,6 +138,25 @@
             android:title="@string/statusbar_battery_show_percent_inside_title"
             android:dependency="statusbar_battery_show_percent_switch_preference"
             settings:settingKey="status_bar_show_battery_percent_inside"
+            settings:settingNamespace="system" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/statusbar_miscellaneous_category_title">
+
+        <!-- DT2S -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="statusbar_dt2s_switch_preference"
+            android:title="@string/statusbar_dt2s_title"
+            settings:settingKey="double_tap_sleep_gesture"
+            settings:settingNamespace="system" />
+
+        <!-- Notification count -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="statusbar_show_notification_count_switch_preference"
+            android:title="@string/statusbar_show_notification_count_title"
+            android:summary="@string/statusbar_show_notification_count_summary"
+            settings:settingKey="status_bar_notif_count"
             settings:settingNamespace="system" />
     </PreferenceCategory>
 </PreferenceScreen>
