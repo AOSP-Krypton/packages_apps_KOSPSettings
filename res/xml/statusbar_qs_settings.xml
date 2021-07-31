@@ -142,6 +142,19 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="media_category"
+        android:title="@string/media_category" >
+
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="artwork_media_background"
+            android:title="@string/artwork_media_background_title"
+            android:summary="@string/artwork_media_background_summary"
+            settings:settingKey="artwork_media_background"
+            settings:settingNamespace="system" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/statusbar_miscellaneous_category_title">
 
         <!-- DT2S -->
