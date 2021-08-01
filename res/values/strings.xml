@@ -129,6 +129,11 @@
     <string name="miscellaneous_settings_summary">Miscellaneous / general settings</string>
     <string name="volume_button_music_control_title">Skip tracks with volume buttons</string>
     <string name="volume_button_music_control_summary">Long press volume up for skipping to the next track and vice-versa</string>
+    <string name="power_button_torch_control_title">Long press power button for torch</string>
+    <string name="power_button_torch_control_summary">Turns on the torch when screen is off and turns it off when screen is on</string>
+    <string name="power_button_torch_timeout_title">Timeout for long press power gesture</string>
+    <string name="power_button_torch_timeout_summary">Number of seconds after which torch will be toggled off automatically</string>
+    <string name="power_button_torch_timeout_dialog_title">Timeout in seconds</string>
 
     <!-- Gaming Mode Settings -->
     <string name="gamingmode_settings_title">Gaming Mode</string>

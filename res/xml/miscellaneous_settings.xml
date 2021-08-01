@@ -32,4 +32,22 @@
         android:summary="@string/volume_button_music_control_summary"
         settings:settingKey="volume_button_music_control"
         settings:settingNamespace="system" />
+
+    <!-- Long press power for torch -->
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="power_button_torch_control_switch_preference"
+        android:title="@string/power_button_torch_control_title"
+        android:summary="@string/power_button_torch_control_summary"
+        settings:settingKey="torch_long_press_power_gesture"
+        settings:settingNamespace="system" />
+
+    <!-- Torch timeout for power button gesture -->
+    <com.krypton.settings.preference.SettingEditTextPreference
+        android:key="power_button_torch_timeout_preference"
+        android:title="@string/power_button_torch_timeout_title"
+        android:summary="@string/power_button_torch_timeout_summary"
+        android:dependency="power_button_torch_control_switch_preference"
+        android:dialogTitle="@string/power_button_torch_timeout_dialog_title"
+        settings:settingKey="torch_long_press_power_timeout"
+        settings:settingNamespace="system" />
 </PreferenceScreen>
