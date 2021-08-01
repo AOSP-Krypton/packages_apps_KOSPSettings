@@ -152,6 +152,22 @@
             settings:settingKey="artwork_media_background"
             settings:settingNamespace="system" />
 
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="artwork_media_background_enable_blur_preference"
+            android:title="@string/artwork_media_background_enable_blur_title"
+            android:dependency="artwork_media_background"
+            settings:settingKey="artwork_media_background_enable_blur"
+            settings:settingNamespace="system" />
+
+        <com.krypton.settings.preference.SettingSeekBarPreference
+            android:key="artwork_media_background_blur_radius_preference"
+            android:title="@string/artwork_media_background_blur_radius_title"
+            android:dependency="artwork_media_background_enable_blur_preference"
+            settings:settingKey="artwork_media_background_blur_radius"
+            settings:settingNamespace="system"
+            settings:settingDefault="1"
+            settings:max="25"
+            settings:min="1" />
     </PreferenceCategory>
 
     <PreferenceCategory
