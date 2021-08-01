@@ -20,9 +20,16 @@
     <!-- Lockscreen Settings -->
     <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="lockscreen_settings_summary">Customisations and gestures for lockscreen</string>
+
+    <!-- Lockscreen Media Artwork -->
+    <string name="lockscreen_media_art_category_title">Media art</string>
+    <string name="lockscreen_media_art_title">Show media art in lockscreen</string>
+    <string name="lockscreen_media_art_enable_blur_title">Blur media art in lockscreen</string>
+    <string name="lockscreen_media_art_blur_radius_title">Adjust the blur radius for the media art</string>
+
+    <!-- Lockscreen Miscellaneous-->
     <string name="lockscreen_dt2s_title">Double tap on lockscreen to sleep</string>
     <string name="lockscreen_charging_info_title">Show charging info in lockscreen</string>
-    <string name="lockscreen_media_art_title">Show media art</string>
     <string name="smart_space_setting_title">Enable smart space</string>
     <string name="smart_space_setting_summary">Lockscreen weather and other stuff. Requires a system reboot</string>
 
@@ -71,7 +78,6 @@
     <!-- StatusBar-QS Settings -->
     <string name="statusbar_qs_settings_title">StatusBar and QS</string>
     <string name="statusbar_qs_settings_summary">Customisations and gestures for statusbar and qs</string>
-    <string name="statusbar_miscellaneous_category_title">Miscellaneous</string>
     <string name="statusbar_dt2s_title">Double tap on statusbar to sleep</string>
     <string name="brightness_slider_category_title">Brightness Slider</string>
     <string name="qs_show_slider_title">Show brightness slider in qs</string>

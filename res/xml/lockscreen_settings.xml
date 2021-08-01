@@ -25,21 +25,6 @@
         android:summary="@string/fod_settings_summary"
         android:fragment="com.krypton.settings.fragment.FODSettingsFragment" />
 
-    <!-- DT2S -->
-    <com.krypton.settings.preference.SettingSwitchPreference
-        android:key="lockscreen_dt2s_switch_preference"
-        android:title="@string/lockscreen_dt2s_title"
-        settings:settingKey="double_tap_sleep_lockscreen"
-        settings:settingNamespace="system" />
-
-    <!-- LockScreen battery info -->
-    <com.krypton.settings.preference.SettingSwitchPreference
-        android:key="lockscreen_charging_info_switch_preference"
-        android:title="@string/lockscreen_charging_info_title"
-        settings:settingKey="lockscreen_battery_info"
-        settings:settingNamespace="system"
-        settings:settingDefault="1" />
-
     <!-- Ambient Display -->
     <Preference
         android:fragment="com.krypton.settings.fragment.AmbientDisplaySettingsFragment"
@@ -48,19 +33,59 @@
         android:summary="@string/ambient_display_settings_summary" />
 
     <!-- LockScreen media art -->
-    <com.krypton.settings.preference.SettingSwitchPreference
-        android:key="lockscreen_art_switch_preference"
-        android:title="@string/lockscreen_media_art_title"
-        settings:settingKey="keygaurd_media_art"
-        settings:settingNamespace="system" />
+    <PreferenceCategory
+        android:title="@string/lockscreen_media_art_category_title">
 
-    <!-- Smart Space -->
-    <com.krypton.settings.preference.SettingSwitchPreference
-        android:key="smart_space_switch_preference"
-        android:title="@string/smart_space_setting_title"
-        android:summary="@string/smart_space_setting_summary"
-        settings:settingKey="smart_space"
-        settings:settingNamespace="system"
-        settings:settingDefault="1" />
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="lockscreen_art_switch_preference"
+            android:title="@string/lockscreen_media_art_title"
+            settings:settingKey="keygaurd_media_art"
+            settings:settingNamespace="system" />
 
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="lockscreen_art_enable_blur_switch_preference"
+            android:title="@string/lockscreen_media_art_enable_blur_title"
+            android:dependency="lockscreen_art_switch_preference"
+            settings:settingKey="keygaurd_media_art_enable_blur"
+            settings:settingNamespace="system" />
+
+        <com.krypton.settings.preference.SettingSeekBarPreference
+            android:key="lockscreen_art_blur_radius_preference"
+            android:title="@string/lockscreen_media_art_blur_radius_title"
+            android:dependency="lockscreen_art_enable_blur_switch_preference"
+            settings:settingKey="keygaurd_media_art_blur_radius"
+            settings:settingNamespace="system"
+            settings:settingDefault="25"
+            settings:max="25"
+            settings:min="1" />
+    </PreferenceCategory>
+
+    <!-- Miscellaneous -->
+    <PreferenceCategory
+        android:title="@string/miscellaneous_settings_title">
+
+        <!-- DT2S -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="lockscreen_dt2s_switch_preference"
+            android:title="@string/lockscreen_dt2s_title"
+            settings:settingKey="double_tap_sleep_lockscreen"
+            settings:settingNamespace="system" />
+
+        <!-- LockScreen battery info -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="lockscreen_charging_info_switch_preference"
+            android:title="@string/lockscreen_charging_info_title"
+            settings:settingKey="lockscreen_battery_info"
+            settings:settingNamespace="system"
+            settings:settingDefault="1" />
+
+        <!-- Smart Space -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="smart_space_switch_preference"
+            android:title="@string/smart_space_setting_title"
+            android:summary="@string/smart_space_setting_summary"
+            settings:settingKey="smart_space"
+            settings:settingNamespace="system"
+            settings:settingDefault="1" />
+    </PreferenceCategory>
 </PreferenceScreen>
