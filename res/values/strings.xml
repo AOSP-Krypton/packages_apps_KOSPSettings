@@ -175,4 +175,11 @@
     <string name="artwork_media_background_summary">Set media artwork as notification media background</string>
     <string name="artwork_media_background_enable_blur_title">Enable to blur media artwork background</string>
     <string name="artwork_media_background_blur_radius_title">Adjust the blur radius for artwork</string>
+
+    <!-- Ambient Music -->
+    <string name="ambient_music_title">Ambient music customisations</string>
+    <string name="ambient_music_location">Show ambient music ticker</string>
+    <string name="ambient_music_disabled">Disabled</string>
+    <string name="ambient_music_bottom">At the bottom (default)</string>
+    <string name="ambient_music_center">Centered (under the cLock)</string>
 </resources>
