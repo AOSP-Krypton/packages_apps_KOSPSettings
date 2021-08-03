@@ -64,4 +64,13 @@
         <attr name="min" format="integer" />
         <attr name="max" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="SettingEditTextPreference">
+        <!-- Text input type
+             Available types :
+             1) integer for numbers
+             2) string for text
+        -->
+        <attr name="inputType" format="string" />
+    </declare-styleable>
 </resources>

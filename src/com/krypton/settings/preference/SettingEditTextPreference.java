@@ -17,29 +17,34 @@
 package com.krypton.settings.preference;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.InputType;
 import android.util.AttributeSet;
-import android.widget.Toast;
+import android.widget.EditText;
 
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.EditTextPreference;
+import androidx.preference.EditTextPreference.OnBindEditTextListener;
 
 import com.android.settings.R;
 import com.krypton.settings.Utils;
 
 public class SettingEditTextPreference extends EditTextPreference
-        implements OnPreferenceChangeListener {
-
+        implements OnPreferenceChangeListener, OnBindEditTextListener {
+    private static final String INPUT_INT = "integer";
+    private static final String INPUT_STR = "string";
     private final Context mContext;
     private final Handler mHandler;
     private final String mSettingKey, mSettingNamespace,
         mSettingDependencyKey, mSettingDependencyNS;
     private final int mSettingDefault, mSettingDependencyValue;
+    private String mInputType;
     private boolean mDependencyMet = true;
     private ContentObserver mSettingsObserver;
 
@@ -47,7 +52,11 @@ public class SettingEditTextPreference extends EditTextPreference
         super(context, attrs);
         mContext = context;
         mHandler = new Handler(Looper.getMainLooper());
-        final TypedArray typedArray = mContext.getResources().obtainAttributes(attrs, R.styleable.SettingPreferenceBaseAttrs);
+        final Resources res = mContext.getResources();
+        TypedArray typedArray = res.obtainAttributes(attrs, R.styleable.SettingEditTextPreference);
+        mInputType = typedArray.getString(R.styleable.SettingEditTextPreference_inputType);
+        typedArray.recycle();
+        typedArray = res.obtainAttributes(attrs, R.styleable.SettingPreferenceBaseAttrs);
         mSettingKey = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingKey);
         mSettingNamespace = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingNamespace);
         mSettingDependencyKey = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingDependencyKey);
@@ -55,8 +64,11 @@ public class SettingEditTextPreference extends EditTextPreference
         mSettingDefault = typedArray.getInteger(R.styleable.SettingPreferenceBaseAttrs_settingDefault, 0);
         mSettingDependencyValue = typedArray.getInteger(R.styleable.SettingPreferenceBaseAttrs_settingDependencyValue, 1);
         typedArray.recycle();
-        setText(String.valueOf(Utils.getSettingInt(mContext,
-            mSettingNamespace, mSettingKey, mSettingDefault)));
+        if (Utils.isEmpty(mInputType)) {
+            mInputType = INPUT_INT;
+        }
+        setOnBindEditTextListener(this);
+        setText(getText());
         setOnPreferenceChangeListener(this);
     }
 
@@ -92,13 +104,41 @@ public class SettingEditTextPreference extends EditTextPreference
     }
 
     @Override
+    public String getText() {
+        switch (mInputType) {
+            case INPUT_INT:
+                return String.valueOf(Utils.getSettingInt(mContext,
+                    mSettingNamespace, mSettingKey, mSettingDefault));
+            case INPUT_STR:
+                return Utils.getStringFromSettings(mContext,
+                    mSettingNamespace, mSettingKey);
+        }
+        return null;
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        try {
-            return Utils.applySetting(mContext, mSettingNamespace,
-                mSettingKey, Integer.parseInt((String) newValue));
-        } catch(NumberFormatException e) {
-            Toast.makeText(mContext, R.string.invalid_integer_value, Toast.LENGTH_LONG).show();
-            return false;
+        switch (mInputType) {
+            case INPUT_INT:
+                Utils.applySetting(mContext, mSettingNamespace,
+                    mSettingKey, (Integer) newValue);
+                return true;
+            case INPUT_STR:
+                Utils.putStringInSettings(mContext, mSettingNamespace,
+                    mSettingKey, (String) newValue);
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void onBindEditText(EditText editText) {
+        switch (mInputType) {
+            case INPUT_INT:
+                editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+                break;
+            case INPUT_STR:
+                editText.setInputType(InputType.TYPE_CLASS_TEXT);
         }
     }
 

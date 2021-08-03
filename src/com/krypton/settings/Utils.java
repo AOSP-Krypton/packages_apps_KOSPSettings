@@ -111,11 +111,47 @@ public class Utils {
     }
 
     public static String getStringFromSettings(Context context, String key) {
-        return Settings.System.getString(context.getContentResolver(), key);
+        return getStringFromSettings(context, TYPE_SYSTEM, key);
+    }
+
+    public static String getStringFromSettings(Context context, String type, String key) {
+        if (isEmpty(key)) {
+            Log.e(TAG, "key is empty, returning default value");
+            return null;
+        }
+        if (isEmpty(type)) {
+            type = TYPE_SYSTEM;
+        }
+        if (type.equals(TYPE_SYSTEM)) {
+            return Settings.System.getString(context.getContentResolver(), key);
+        } else if (type.equals(TYPE_SECURE)) {
+            return Settings.Secure.getString(context.getContentResolver(), key);
+        } else if (type.equals(TYPE_GLOBAL)) {
+            return Settings.Global.getString(context.getContentResolver(), key);
+        } else {
+            return null;
+        }
     }
 
     public static void putStringInSettings(Context context, String key, String value) {
-        Settings.System.putString(context.getContentResolver(), key, value);
+        putStringInSettings(context, TYPE_SYSTEM, key, value);
+    }
+
+    public static void putStringInSettings(Context context, String type, String key, String value) {
+        if (isEmpty(key)) {
+            Log.e(TAG, "key is empty, skipping");
+            return;
+        }
+        if (isEmpty(type)) {
+            type = TYPE_SYSTEM;
+        }
+        if (type.equals(TYPE_SYSTEM)) {
+            Settings.System.putString(context.getContentResolver(), key, value);
+        } else if (type.equals(TYPE_SECURE)) {
+            Settings.Secure.putString(context.getContentResolver(), key, value);
+        } else if (type.equals(TYPE_GLOBAL)) {
+            Settings.Global.putString(context.getContentResolver(), key, value);
+        }
     }
 
     public static void sleepThread(long duration) {

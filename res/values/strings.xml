@@ -86,6 +86,9 @@
     <string name="qs_show_slider_above_footer_title">Keep brightness slider above qs footer</string>
     <string name="statusbar_show_notification_count_title">Statusbar notification count</string>
     <string name="statusbar_show_notification_count_summary">Show pending notification count in statusbar</string>
+    <string name="qs_show_footer_text_title">Show QS footer text</string>
+    <string name="qs_footer_text_title">QS footer text</string>
+    <string name="qs_footer_text_summary">If no text is specified then KOSP will be shown by default</string>
 
     <!-- Network Traffic -->
     <string name="network_traffic_category_title">Network Traffic</string>
@@ -166,7 +169,6 @@
     <string name="custom">Custom</string>
     <string name="select">Select</string>
     <string name="reset">Reset</string>
-    <string name="invalid_integer_value">Please input a valid integer!</string>
     <string name="cannot_resolve_activity">Unable to find a suitable activity to perform the action!</string>
 
     <!-- Notification Media Options -->

@@ -187,5 +187,24 @@
             android:summary="@string/statusbar_show_notification_count_summary"
             settings:settingKey="status_bar_notif_count"
             settings:settingNamespace="system" />
+
+        <!-- Show qs footer text -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="qs_show_footer_text_switch_preference"
+            android:title="@string/qs_show_footer_text_title"
+            settings:settingKey="qs_footer_text_show"
+            settings:settingNamespace="system"
+            settings:settingDefault="1" />
+
+        <!-- QS Footer text -->
+        <com.krypton.settings.preference.SettingEditTextPreference
+            android:key="qs_footer_text_preference"
+            android:title="@string/qs_footer_text_title"
+            android:summary="@string/qs_footer_text_summary"
+            android:dependency="qs_show_footer_text_switch_preference"
+            android:dialogTitle="@string/qs_footer_text_title"
+            settings:inputType="string"
+            settings:settingKey="qs_footer_text_string"
+            settings:settingNamespace="system" />
     </PreferenceCategory>
 </PreferenceScreen>
