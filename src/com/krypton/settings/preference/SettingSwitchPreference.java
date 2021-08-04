@@ -30,13 +30,13 @@ import com.android.settings.R;
 import com.krypton.settings.Utils;
 
 public class SettingSwitchPreference extends SwitchPreference {
-
     private final Context mContext;
     private final Handler mHandler;
     private final String mSettingKey, mSettingNamespace,
         mSettingDependencyKey, mSettingDependencyNS;
-    private final int mSettingDefault, mSettingDependencyValue;
+    private final int mSettingDependencyValue;
     private ContentObserver mSettingsObserver;
+    private int mSettingDefault;
     private boolean mDependencyMet = true;
 
     public SettingSwitchPreference(Context context, AttributeSet attrs) {
@@ -48,8 +48,8 @@ public class SettingSwitchPreference extends SwitchPreference {
         mSettingNamespace = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingNamespace);
         mSettingDependencyKey = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingDependencyKey);
         mSettingDependencyNS = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingDependencyNS);
-        mSettingDefault = typedArray.getInteger(R.styleable.SettingPreferenceBaseAttrs_settingDefault, 0);
         mSettingDependencyValue = typedArray.getInteger(R.styleable.SettingPreferenceBaseAttrs_settingDependencyValue, 1);
+        parseDefaultValue(typedArray, R.styleable.SettingPreferenceBaseAttrs_settingDefault);
         typedArray.recycle();
         super.setChecked(isChecked());
     }
@@ -95,6 +95,13 @@ public class SettingSwitchPreference extends SwitchPreference {
     public void setChecked(boolean checked) {
         super.setChecked(checked);
         Utils.applySetting(mContext, mSettingNamespace, mSettingKey, checked);
+    }
+
+    private void parseDefaultValue(TypedArray a, int index) {
+        if (!a.hasValue(index)) {
+            return;
+        }
+        mSettingDefault = a.getBoolean(index, false) ? 1 : 0;
     }
 
     private void updateIfDependencyMet() {

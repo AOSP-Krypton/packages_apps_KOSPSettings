@@ -29,9 +29,9 @@
 
         <!--
             Default value to return if there isn't any saved
-            Default: 0
+            Default: false or 0
         -->
-        <attr name="settingDefault" format="integer" />
+        <attr name="settingDefault" format="boolean|integer" />
 
         <!--
             Additional dependency on a setting key
