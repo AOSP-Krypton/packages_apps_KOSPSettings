@@ -15,25 +15,35 @@
  */
 package com.krypton.settings.fragment;
 
+import android.content.Context;
+import android.content.om.IOverlayManager;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.graphics.Color;
 import android.provider.Settings;
-import android.content.Context;
 
+import androidx.preference.Preference;
+import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.R;
-import androidx.preference.*;
-import androidx.preference.Preference.OnPreferenceChangeListener;
+
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class MiscellaneousSettingsFragment extends BaseFragment implements OnPreferenceChangeListener{
+public class MiscellaneousSettingsFragment extends BaseFragment implements OnPreferenceChangeListener {
     private static final String PREF_RGB_ACCENT_PICKER = "rgb_accent_picker";
     private ColorPickerPreference rgbAccentPicker;
     private Context mContext;
+    private IOverlayManager mOverlayManager;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        addPreferencesFromResource(R.xml.miscellaneous_settings);
+        mContext = getContext();
+        mOverlayManager = IOverlayManager.Stub.asInterface(
+            ServiceManager.getService(Context.OVERLAY_SERVICE));
         rgbAccentPicker = (ColorPickerPreference) findPreference(PREF_RGB_ACCENT_PICKER);
         String colorVal = Settings.Secure.getStringForUser(mContext.getContentResolver(),
                 Settings.Secure.ACCENT_COLOR, UserHandle.USER_CURRENT);
@@ -42,7 +52,6 @@ public class MiscellaneousSettingsFragment extends BaseFragment implements OnPre
                 : Color.parseColor("#" + colorVal);
         rgbAccentPicker.setNewPreviewColor(color);
         rgbAccentPicker.setOnPreferenceChangeListener(this);
-        addPreferencesFromResource(R.xml.miscellaneous_settings);
     }
 
     @Override
