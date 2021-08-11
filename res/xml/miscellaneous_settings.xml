@@ -59,4 +59,14 @@
         android:persistent="false"
         settings:settingKey="rgb_accent_picker"
         settings:settingNamespace="system" />
+
+    <!-- SystemUI Tuner -->
+    <Preference
+        android:key="systemui_tuner_preference"
+        android:title="@string/systemui_tuner_preference_title"
+        android:summary="@string/systemui_tuner_preference_summary">
+        <intent android:action="com.android.settings.action.SETTINGS"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.TunerActivity" />
+    </Preference>
 </PreferenceScreen>
