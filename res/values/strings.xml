@@ -179,6 +179,7 @@
     <string name="artwork_media_background_summary">Set media artwork as notification media background</string>
     <string name="artwork_media_background_enable_blur_title">Enable to blur media artwork background</string>
     <string name="artwork_media_background_blur_radius_title">Adjust the blur radius for artwork</string>
+    <string name="artwork_media_background_alpha_title">Adjust the alpha value for artwork</string>
 
     <!-- Ambient Music -->
     <string name="ambient_music_title">Ambient music customisations</string>

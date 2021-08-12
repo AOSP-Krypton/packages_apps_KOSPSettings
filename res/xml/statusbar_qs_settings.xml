@@ -168,6 +168,15 @@
             settings:settingDefault="1"
             settings:max="25"
             settings:min="1" />
+
+        <com.krypton.settings.preference.SettingSeekBarPreference
+            android:key="artwork_media_background_alpha_preference"
+            android:title="@string/artwork_media_background_alpha_title"
+            android:dependency="artwork_media_background"
+            settings:settingKey="artwork_media_background_alpha"
+            settings:settingNamespace="system"
+            settings:settingDefault="255"
+            settings:max="255" />
     </PreferenceCategory>
 
     <PreferenceCategory
