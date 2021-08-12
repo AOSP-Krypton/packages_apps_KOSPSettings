@@ -69,4 +69,11 @@
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.TunerActivity" />
     </Preference>
+
+    <!-- Volume panel on left side -->
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="volume_panel_on_left_switch_preference"
+        android:title="@string/volume_panel_on_left_title"
+        settings:settingKey="volume_panel_on_left"
+        settings:settingNamespace="system" />
 </PreferenceScreen>

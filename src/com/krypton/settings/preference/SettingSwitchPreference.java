@@ -97,6 +97,10 @@ public class SettingSwitchPreference extends SwitchPreference {
         Utils.applySetting(mContext, mSettingNamespace, mSettingKey, checked);
     }
 
+    public void setSettingDefault(int def) {
+        mSettingDefault = def;
+    }
+
     private void parseDefaultValue(TypedArray a, int index) {
         if (!a.hasValue(index)) {
             return;

@@ -139,6 +139,7 @@
     <string name="power_button_torch_timeout_dialog_title">Timeout in seconds</string>
     <string name="systemui_tuner_preference_title">SystemUI Tuner</string>
     <string name="systemui_tuner_preference_summary">Experimental tweaks in SystemUI</string>
+    <string name="volume_panel_on_left_title">Show volume panel on left side</string>
 
     <!-- Gaming Mode Settings -->
     <string name="gamingmode_settings_title">Gaming Mode</string>

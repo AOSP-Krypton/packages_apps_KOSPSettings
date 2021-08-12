@@ -17,6 +17,8 @@ package com.krypton.settings.fragment;
 
 import android.content.Context;
 import android.content.om.IOverlayManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -28,6 +30,7 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.R;
+import com.krypton.settings.preference.SettingSwitchPreference;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -52,6 +55,18 @@ public class MiscellaneousSettingsFragment extends BaseFragment implements OnPre
                 : Color.parseColor("#" + colorVal);
         rgbAccentPicker.setNewPreviewColor(color);
         rgbAccentPicker.setOnPreferenceChangeListener(this);
+        SettingSwitchPreference volumePanelSwitch = (SettingSwitchPreference) findPreference(
+            "volume_panel_on_left_switch_preference");
+        try {
+            Resources res = mContext.getPackageManager().getResourcesForApplication("com.android.systemui");
+            int resId = res.getIdentifier("config_audioPanelOnLeftSide", "bool", "com.android.systemui");
+            if (resId != 0) {
+                volumePanelSwitch.setSettingDefault(res.getBoolean(resId) ? 1 : 0);
+                volumePanelSwitch.setChecked(volumePanelSwitch.isChecked());
+            }
+        } catch(NameNotFoundException e) {
+            // Do nothing
+        }
     }
 
     @Override
