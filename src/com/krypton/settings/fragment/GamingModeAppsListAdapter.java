@@ -69,8 +69,8 @@ public class GamingModeAppsListAdapter extends ListAdapter<AppInfo, AppInfoViewH
         viewHolder.getImageView().setImageDrawable(appInfo.getIcon());
         viewHolder.getTextView().setText(appInfo.getAppName());
         final CheckBox checkBox = viewHolder.getCheckBox();
-        checkBox.setChecked(Utils.getStringFromSettings(mContext,
-            GAMINGMODE_APPS).contains(appInfo.getPackageName()));
+        final String list = Utils.getStringFromSettings(mContext, GAMINGMODE_APPS);
+        checkBox.setChecked(list != null && list.contains(appInfo.getPackageName()));
         checkBox.setOnClickListener(v ->
             updateAppsListInSettings(appInfo.getPackageName(), checkBox.isChecked()));
     }
