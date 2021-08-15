@@ -188,23 +188,4 @@
     <string name="ambient_music_disabled">Disabled</string>
     <string name="ambient_music_bottom">At the bottom (default)</string>
     <string name="ambient_music_center">Centered (under the cLock)</string>
-
-    <!-- Color Picker -->
-    <string name="dialog_color_picker">Color Picker</string>
-    <string name="press_color_to_apply">Press on color below to apply</string>
-    <string name="arrow_right">→</string>
-    <string name="arrow_down">↓</string>
-    <string name="hex">Hex:</string>
-    <string name="hex_hint" translatable="false">#FFDDDDDD</string>
-    <string name="hex_check_button_text">PREVIEW</string>
-    <string name="hex_reset_button_text">RESET</string>
-    <string name="set">Set</string>
-    <string name="color_default">Default</string>
-    <string name="color_right_arrow" translatable="false">"→"</string>
-    <string name="color_down_arrow" translatable="false">"↓"</string>
-    <string name="longpress_info">Longpress box to save color</string>
-
-    <!-- RGB Accenter 3.0-->
-    <string name="rgb_accent_picker_title">RGB accent picker</string>
-    <string name="rgb_accent_picker_summary">Choose the accent color yourself</string>
 </resources>

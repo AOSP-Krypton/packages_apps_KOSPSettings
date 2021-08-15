@@ -51,15 +51,6 @@
         settings:settingKey="torch_long_press_power_timeout"
         settings:settingNamespace="system" />
 
-    <!-- Accen picker 3.0-->
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="rgb_accent_picker"
-        android:title="@string/rgb_accent_picker_title"
-        android:summary="@string/rgb_accent_picker_summary"
-        android:persistent="false"
-        settings:settingKey="rgb_accent_picker"
-        settings:settingNamespace="system" />
-
     <!-- SystemUI Tuner -->
     <Preference
         android:key="systemui_tuner_preference"

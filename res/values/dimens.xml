@@ -38,7 +38,4 @@
     <dimen name="color_picker_button_margin_top">12dp</dimen>
     <dimen name="radio_group_padding">18dp</dimen>
     <dimen name="radio_button_spacing">6dp</dimen>
-
-    <dimen name="picker_circle_preview_size">26dp</dimen>
-    <dimen name="alert_dialog_padding_material">20dp</dimen>
 </resources>
