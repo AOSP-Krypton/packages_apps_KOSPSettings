@@ -67,4 +67,9 @@
         android:title="@string/volume_panel_on_left_title"
         settings:settingKey="volume_panel_on_left"
         settings:settingNamespace="system" />
+
+    <!-- RGB accent picker -->
+    <com.krypton.settings.preference.AccentPickerPreference
+        android:key="accent_picker_preference"
+        android:title="@string/accent_picker_title" />
 </PreferenceScreen>

@@ -20,10 +20,15 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.os.Bundle;
 
+import androidx.preference.Preference;
+
 import com.android.settings.R;
+import com.krypton.settings.fragment.AccentPickerFragment;
+import com.krypton.settings.preference.AccentPickerPreference;
 import com.krypton.settings.preference.SettingSwitchPreference;
 
 public class MiscellaneousSettingsFragment extends BaseFragment {
+    private static final String TAG = "MiscellaneousSettingsFragment";
     private Context mContext;
 
     @Override
@@ -42,6 +47,17 @@ public class MiscellaneousSettingsFragment extends BaseFragment {
             }
         } catch(NameNotFoundException e) {
             // Do nothing
+        }
+    }
+
+    @Override
+    public void onDisplayPreferenceDialog(Preference preference) {
+        if (preference instanceof AccentPickerPreference) {
+            final AccentPickerFragment fragment = new AccentPickerFragment();
+            fragment.setTargetFragment(this, 0);
+            fragment.show(getParentFragmentManager(), TAG);
+        } else {
+            super.onDisplayPreferenceDialog(preference);
         }
     }
 }

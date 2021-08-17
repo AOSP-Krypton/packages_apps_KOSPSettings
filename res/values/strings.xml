@@ -188,4 +188,17 @@
     <string name="ambient_music_disabled">Disabled</string>
     <string name="ambient_music_bottom">At the bottom (default)</string>
     <string name="ambient_music_center">Centered (under the cLock)</string>
+
+    <!-- Accent picker -->
+    <string name="accent_picker_title">RGB accent picker</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+    <string name="auto_calculate_shade">Auto-magically calculate alt shades</string>
+    <string name="light_too_light">Light color is too light</string>
+    <string name="dark_too_dark">Dark color is too dark</string>
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
 </resources>

@@ -22,4 +22,67 @@
         <item name="android:paddingStart">@dimen/color_preview_padding</item>
         <item name="android:paddingEnd">@dimen/color_preview_padding</item>
     </style>
+
+    <style name="AccentDialogSeekBarStyle" parent="Widget.AppCompat.SeekBar">
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:maxHeight">8dp</item>
+        <item name="android:progressDrawable">@drawable/seekbar_background</item>
+        <item name="android:thumb">@drawable/seekbar_thumb</item>
+        <item name="android:splitTrack">false</item>
+    </style>
+
+    <style name="AccentDialogRadioButtonStyle">
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:buttonTint">?android:attr/colorAccent</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="AccentDialogButtonStyle">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textColor">?android:attr/colorAccent</item>
+    </style>
+
+    <style name="AccentDialogWarningTextStyle">
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:drawableTint">?android:attr/colorError</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">?android:attr/colorError</item>
+        <item name="android:drawableStart">@drawable/ic_baseline_info_24</item>
+    </style>
+
+    <style name="AccentDialogLabelTextStyle">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:backgroundTint">?android:attr/colorAccent</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="AccentDialogEditTextStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:digits">0123456789ABCDEF</item>
+        <item name="android:inputType">textCapCharacters|textNoSuggestions</item>
+        <item name="android:maxLength">6</item>
+        <item name="android:importantForAutofill">no</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="AccentDialogErrorIconStyle">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:src">@drawable/ic_baseline_info_24</item>
+        <item name="android:tint">?android:attr/colorError</item>
+        <item name="android:importantForAutofill">no</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:singleLine">true</item>
+    </style>
 </resources>
