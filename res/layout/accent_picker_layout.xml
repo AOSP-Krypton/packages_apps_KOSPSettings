@@ -39,15 +39,6 @@
         settings:layout_constraintEnd_toStartOf="@id/dark_accent_preview"
         settings:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/light_accent_prefix"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="#"
-        settings:layout_constraintTop_toTopOf="@id/light_accent_input"
-        settings:layout_constraintEnd_toStartOf="@id/light_accent_input"
-        settings:layout_constraintBottom_toBottomOf="@id/light_accent_input" />
-
     <EditText
         android:id="@+id/light_accent_input"
         style="@style/AccentDialogEditTextStyle"
@@ -86,15 +77,6 @@
         android:layout_height="wrap_content"
         settings:layout_constraintEnd_toEndOf="parent"
         settings:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/dark_accent_prefix"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="#"
-        settings:layout_constraintTop_toTopOf="@id/dark_accent_input"
-        settings:layout_constraintEnd_toStartOf="@id/dark_accent_input"
-        settings:layout_constraintBottom_toBottomOf="@id/dark_accent_input" />
 
     <EditText
         android:id="@+id/dark_accent_input"

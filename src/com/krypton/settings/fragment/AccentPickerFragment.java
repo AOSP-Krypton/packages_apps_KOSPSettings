@@ -32,6 +32,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +54,8 @@ import com.android.settings.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.krypton.settings.Utils;
 
+import java.util.regex.Pattern;
+
 public class AccentPickerFragment extends BottomSheetDialogFragment
         implements OnCheckedChangeListener, OnSeekBarChangeListener,
             OnClickListener {
@@ -71,12 +74,12 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
             HSVToColor(300, 1f, 1f),
             HSVToColor(360, 1f, 1f)
     };
+    private static final Pattern pattern = Pattern.compile("[0-9A-F]+");
 
     private Context mContext;
     private Drawable mPreviewTextBackground;
     private View mLightAccentPreview, mDarkAccentPreview;
     private EditText mLightAccentInput, mDarkAccentInput;
-    private TextView mLightAccentPrefix, mDarkAccentPrefix;
     private TextView mLightTextView, mDarkTextView;
     private Group mLightAccentWarning, mDarkAccentWarning;
     private Switch mAutoModeSwitch;
@@ -90,36 +93,6 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
     private int mLightAccent, mDarkAccent;
     @ColorInt
     private int mSavedLightAccent, mSavedDarkAccent;
-
-    private final TextWatcher textWatcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            // Not implemented
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            // Not implemented
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-            if (mTextInputChangedInternal) {
-                // Reset it here
-                mTextInputChangedInternal = false;
-            } else if (s.length() == 6) {
-                int color = Color.parseColor("#" + s.toString());
-                if (mPreviewMode == 0) {
-                    mLightAccent = color;
-                } else {
-                    mDarkAccent = color;
-                }
-                updateSliders();
-                updateSliderGradients(false);
-                updatePreview();
-            }
-        }
-    };
 
     public AccentPickerFragment() {
         super();
@@ -147,22 +120,68 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
         mLightTextView = view.findViewById(R.id.light_textView);
         mLightAccentPreview = view.findViewById(R.id.light_accent_preview);
         mLightAccentPreview.setOnClickListener(this);
-        mLightAccentPrefix = view.findViewById(R.id.light_accent_prefix);
         mLightAccentInput = view.findViewById(R.id.light_accent_input);
-        mLightAccentInput.addTextChangedListener(textWatcher);
         mLightAccentWarning = view.findViewById(R.id.light_accent_warning_group);
 
         mDarkTextView = view.findViewById(R.id.dark_textView);
         mDarkAccentPreview = view.findViewById(R.id.dark_accent_preview);
         mDarkAccentPreview.setOnClickListener(this);
-        mDarkAccentPrefix = view.findViewById(R.id.dark_accent_prefix);
         mDarkAccentInput = view.findViewById(R.id.dark_accent_input);
-        mDarkAccentInput.addTextChangedListener(textWatcher);
         mDarkAccentWarning = view.findViewById(R.id.dark_accent_warning_group);
+
+        final TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Not implemented
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Not implemented
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (mTextInputChangedInternal) {
+                    // Reset it here
+                    mTextInputChangedInternal = false;
+                } else if (s.length() == 7) {
+                    int color = Color.parseColor(s.toString());
+                    if (mPreviewMode == 0) {
+                        mLightAccent = color;
+                    } else {
+                        mDarkAccent = color;
+                    }
+                    updateSliders();
+                    updateSliderGradients(false);
+                    updatePreview(true);
+                }
+            }
+        };
+        mLightAccentInput.addTextChangedListener(textWatcher);
+        mDarkAccentInput.addTextChangedListener(textWatcher);
+
+        final InputFilter[] filters = new InputFilter[] {
+            new InputFilter.LengthFilter(7),
+            (source, start, end, dest, dstart, dend) -> {
+                // Make sure # is persistent
+                if (dest.length() != 0 && dstart == 0) {
+                    return "#";
+                }
+                // Deletion
+                if (start == 0 && end == 0) {
+                    return null;
+                }
+                return pattern.matcher(((end - start) == 7) ?
+                    source.subSequence(1, 7) : source).matches() ? null : "";
+            }
+        };
+        mLightAccentInput.setFilters(filters);
+        mDarkAccentInput.setFilters(filters);
 
         // Switch to automatically calculate and preview light and dark accent
         mAutoModeSwitch = view.findViewById(R.id.auto_mode_switch);
-        mAutoModeSwitch.setOnClickListener(v -> updatePreview());
+        mAutoModeSwitch.setOnClickListener(v -> updatePreview(false));
 
         Button cancelButton = view.findViewById(R.id.cancel_button);
         cancelButton.setOnClickListener(v -> requireDialog().dismiss());
@@ -256,7 +275,7 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
         } else {
             mDarkAccent = color;
         }
-        updatePreview();
+        updatePreview(false);
     }
 
     @Override
@@ -402,35 +421,35 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
         drawable.setColors(new int[] { Color.BLACK, color });
     }
 
-    private void updatePreview() {
+    // inputFromUser should be set to true when user has entered a hex color
+    private void updatePreview(boolean inputFromUser) {
         if (mPreviewMode == 0) {
-            previewLightAccent(mLightAccent, false);
+            previewLightAccent(mLightAccent, inputFromUser);
             if (mAutoModeSwitch.isChecked()) {
-                previewDarkAccent(getAltAccent(mLightAccent), false);
+                previewDarkAccent(getAltAccent(mLightAccent), inputFromUser);
             }
         } else {
-            previewDarkAccent(mDarkAccent, false);
+            previewDarkAccent(mDarkAccent, inputFromUser);
             if (mAutoModeSwitch.isChecked()) {
-                previewLightAccent(getAltAccent(mDarkAccent), false);
+                previewLightAccent(getAltAccent(mDarkAccent), inputFromUser);
             }
         }
     }
 
+    // inputFromUser should be set to true when user has entered a hex color
     private void previewLightAccent(int color, boolean inputFromUser) {
         mLightAccentPreview.setBackgroundTintList(ColorStateList.valueOf(color));
         mTextInputChangedInternal = true;
         if (!inputFromUser) {
-            mLightAccentInput.setText(colorToHex(color));
+            mLightAccentInput.setText("#" + colorToHex(color));
         }
         double luminance = ColorUtils.calculateLuminance(color);
         if (luminance < (1 - mTolerance)) {
             mLightAccentWarning.setVisibility(View.INVISIBLE);
-            mLightAccentPrefix.setTextColor(Color.WHITE);
             mLightAccentInput.setTextColor(Color.WHITE);
             mLightAccentInput.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
         } else { // Light accent is too light
             mLightAccentWarning.setVisibility(View.VISIBLE);
-            mLightAccentPrefix.setTextColor(Color.BLACK);
             mLightAccentInput.setTextColor(Color.BLACK);
             mLightAccentInput.setBackgroundTintList(ColorStateList.valueOf(Color.BLACK));
         }
@@ -440,17 +459,15 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
         mDarkAccentPreview.setBackgroundTintList(ColorStateList.valueOf(color));
         mTextInputChangedInternal = true;
         if (!inputFromUser) {
-            mDarkAccentInput.setText(colorToHex(color));
+            mDarkAccentInput.setText("#" + colorToHex(color));
         }
         double luminance = ColorUtils.calculateLuminance(color);
         if (luminance > mTolerance) {
             mDarkAccentWarning.setVisibility(View.INVISIBLE);
-            mDarkAccentPrefix.setTextColor(Color.BLACK);
             mDarkAccentInput.setTextColor(Color.BLACK);
             mDarkAccentInput.setBackgroundTintList(ColorStateList.valueOf(Color.BLACK));
         } else { // Dark accent is too dark
             mDarkAccentWarning.setVisibility(View.VISIBLE);
-            mDarkAccentPrefix.setTextColor(Color.WHITE);
             mDarkAccentInput.setTextColor(Color.WHITE);
             mDarkAccentInput.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
         }
