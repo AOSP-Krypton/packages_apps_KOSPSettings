@@ -423,12 +423,14 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
         if (mPreviewMode == 0) {
             previewLightAccent(mLightAccent, inputFromUser);
             if (mAutoModeSwitch.isChecked()) {
-                previewDarkAccent(getAltAccent(mLightAccent), inputFromUser);
+                mDarkAccent = getAltAccent(mLightAccent);
+                previewDarkAccent(mDarkAccent, inputFromUser);
             }
         } else {
             previewDarkAccent(mDarkAccent, inputFromUser);
             if (mAutoModeSwitch.isChecked()) {
-                previewLightAccent(getAltAccent(mDarkAccent), inputFromUser);
+                mLightAccent = getAltAccent(mDarkAccent);
+                previewLightAccent(mLightAccent, inputFromUser);
             }
         }
     }
