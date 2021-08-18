@@ -203,7 +203,7 @@
             android:title="@string/qs_show_footer_text_title"
             settings:settingKey="qs_footer_text_show"
             settings:settingNamespace="system"
-            settings:settingDefault="1" />
+            settings:settingDefault="0" />
 
         <!-- QS Footer text -->
         <com.krypton.settings.preference.SettingEditTextPreference
