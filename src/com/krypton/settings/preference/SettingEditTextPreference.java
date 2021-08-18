@@ -121,7 +121,7 @@ public class SettingEditTextPreference extends EditTextPreference
         switch (mInputType) {
             case INPUT_INT:
                 Utils.applySetting(mContext, mSettingNamespace,
-                    mSettingKey, (Integer) newValue);
+                    mSettingKey, Integer.parseInt((String) newValue));
                 return true;
             case INPUT_STR:
                 Utils.putStringInSettings(mContext, mSettingNamespace,
