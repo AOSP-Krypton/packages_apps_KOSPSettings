@@ -185,10 +185,14 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
 
         Button confirmButton = view.findViewById(R.id.confirm_button);
         confirmButton.setOnClickListener(v -> {
-            Utils.putStringInSettings(mContext, Utils.TYPE_SECURE, ACCENT_LIGHT,
-                colorToHex(mLightAccent));
-            Utils.putStringInSettings(mContext, Utils.TYPE_SECURE, ACCENT_DARK,
-                colorToHex(mDarkAccent));
+            if (mLightAccent != mSavedLightAccent) {
+                Utils.putStringInSettings(mContext, Utils.TYPE_SECURE, ACCENT_LIGHT,
+                    colorToHex(mLightAccent));
+            }
+            if (mDarkAccent != mSavedDarkAccent) {
+                Utils.putStringInSettings(mContext, Utils.TYPE_SECURE, ACCENT_DARK,
+                    colorToHex(mDarkAccent));
+            }
             requireDialog().dismiss();
         });
 
