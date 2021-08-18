@@ -54,8 +54,6 @@ import com.android.settings.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.krypton.settings.Utils;
 
-import java.util.regex.Pattern;
-
 public class AccentPickerFragment extends BottomSheetDialogFragment
         implements OnCheckedChangeListener, OnSeekBarChangeListener,
             OnClickListener {
@@ -66,15 +64,14 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
      */
     private static final double mTolerance = 0.5d;
     private static final int[] mHueGradientColors = new int[] {
-            HSVToColor(0, 1f, 1f),
-            HSVToColor(60, 1f, 1f),
-            HSVToColor(120, 1f, 1f),
-            HSVToColor(180, 1f, 1f),
-            HSVToColor(240, 1f, 1f),
-            HSVToColor(300, 1f, 1f),
-            HSVToColor(360, 1f, 1f)
+            Utils.HSVToColor(0, 1f, 1f),
+            Utils.HSVToColor(60, 1f, 1f),
+            Utils.HSVToColor(120, 1f, 1f),
+            Utils.HSVToColor(180, 1f, 1f),
+            Utils.HSVToColor(240, 1f, 1f),
+            Utils.HSVToColor(300, 1f, 1f),
+            Utils.HSVToColor(360, 1f, 1f)
     };
-    private static final Pattern pattern = Pattern.compile("[0-9A-F]+");
 
     private Context mContext;
     private Drawable mPreviewTextBackground;
@@ -172,7 +169,7 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
                 if (start == 0 && end == 0) {
                     return null;
                 }
-                return pattern.matcher(((end - start) == 7) ?
+                return Utils.HEX_PATTERN.matcher(((end - start) == 7) ?
                     source.subSequence(1, 7) : source).matches() ? null : "";
             }
         };
@@ -261,12 +258,12 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
                     mSeekBarThree.getProgress());
                 break;
             case HSV:
-                color = HSVToColor(mSeekBarOne.getProgress(), mSeekBarTwo.getProgress() / 100f,
+                color = Utils.HSVToColor(mSeekBarOne.getProgress(), mSeekBarTwo.getProgress() / 100f,
                     mSeekBarThree.getProgress() / 100f);
                 updateSliderGradients(false);
                 break;
             case HSL:
-                color = HSLToColor(mSeekBarOne.getProgress(), mSeekBarTwo.getProgress() / 100f,
+                color = Utils.HSLToColor(mSeekBarOne.getProgress(), mSeekBarTwo.getProgress() / 100f,
                     mSeekBarThree.getProgress() / 100f);
                 updateSliderGradients(false);
         }
@@ -386,7 +383,7 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
     private void updateLuminanceGradient() {
         GradientDrawable drawable = (GradientDrawable) mSeekBarThree.getProgressDrawable();
         drawable.setColors(new int[] { Color.BLACK,
-                HSLToColor(mSeekBarOne.getProgress(), mSeekBarTwo.getProgress() / 100f, 0.5f),
+                Utils.HSLToColor(mSeekBarOne.getProgress(), mSeekBarTwo.getProgress() / 100f, 0.5f),
                 Color.WHITE
         });
     }
@@ -394,7 +391,7 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
     private void updateValueGradient() {
         GradientDrawable drawable = (GradientDrawable) mSeekBarThree.getProgressDrawable();
         drawable.setColors(new int[] { Color.BLACK,
-                HSVToColor(mSeekBarOne.getProgress(), mSeekBarTwo.getProgress() / 100f, 1f)
+                Utils.HSVToColor(mSeekBarOne.getProgress(), mSeekBarTwo.getProgress() / 100f, 1f)
         });
     }
 
@@ -402,10 +399,10 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
         GradientDrawable drawable = (GradientDrawable) mSeekBarTwo.getProgressDrawable();
         int[] colors = new int[] { Color.WHITE, 0 };
         if (mColorModel == ColorModel.HSV) {
-            colors[1] = HSVToColor(mSeekBarOne.getProgress(), 1f,
+            colors[1] = Utils.HSVToColor(mSeekBarOne.getProgress(), 1f,
                 mSeekBarThree.getProgress() / 100f);
         } else {
-            colors[1] = HSLToColor(mSeekBarOne.getProgress(), 1f,
+            colors[1] = Utils.HSLToColor(mSeekBarOne.getProgress(), 1f,
                 mSeekBarThree.getProgress() / 100f);
         }
         drawable.setColors(colors);
@@ -493,20 +490,5 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
 
     private static String colorToHex(int color) {
         return Integer.toHexString(color).substring(2).toUpperCase(); // Skip the alpha bits
-    }
-
-    private static int HSVToColor(float hue, float sat, float val) {
-        return Color.HSVToColor(new float[] {hue, sat, val});
-    }
-
-    private static int HSLToColor(float hue, float sat, float lum) {
-        return ColorUtils.HSLToColor(new float[] {hue, sat, lum});
-    }
-
-    // Enum of supported color models
-    private enum ColorModel {
-        RGB,
-        HSL,
-        HSV
     }
 }

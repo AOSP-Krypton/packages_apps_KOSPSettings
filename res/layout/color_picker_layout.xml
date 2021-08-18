@@ -15,78 +15,121 @@
 -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/default_padding">
+    android:paddingTop="@dimen/default_padding"
+    android:paddingBottom="@dimen/default_padding">
 
-    <ImageView
+    <View
         android:id="@+id/color_preview"
-        android:layout_width="@dimen/color_preview_size"
-        android:layout_height="@dimen/color_preview_size"
-        android:padding="@dimen/color_preview_padding"
-        android:src="@color/color_black"
-        settings:layout_constraintBottom_toTopOf="@id/red_seekBar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/accent_preview_height"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:background="@drawable/color_preview_background"
         settings:layout_constraintEnd_toEndOf="parent"
         settings:layout_constraintStart_toStartOf="parent"
-        settings:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+        settings:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/color_input"
+        style="@style/AccentDialogEditTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        settings:layout_constraintStart_toStartOf="@id/color_preview"
+        settings:layout_constraintTop_toTopOf="@id/color_preview"
+        settings:layout_constraintEnd_toEndOf="@id/color_preview"
+        settings:layout_constraintBottom_toBottomOf="@id/color_preview" />
 
     <SeekBar
-        android:id="@+id/red_seekBar"
-        style="@style/ColorSeekBarStyle"
-        android:progressBackgroundTint="@color/color_red"
-        android:progressTint="@color/color_red"
-        android:thumbTint="@color/color_red"
-        settings:layout_constraintBottom_toTopOf="@id/green_seekBar"
-        settings:layout_constraintEnd_toEndOf="@+id/color_preview"
-        settings:layout_constraintStart_toStartOf="@+id/color_preview"
-        settings:layout_constraintTop_toBottomOf="@+id/color_preview" />
-
-    <SeekBar
-        android:id="@+id/green_seekBar"
-        style="@style/ColorSeekBarStyle"
-        android:progressBackgroundTint="@color/color_green"
-        android:progressTint="@color/color_green"
-        android:thumbTint="@color/color_green"
-        settings:layout_constraintBottom_toTopOf="@id/blue_seekBar"
-        settings:layout_constraintEnd_toEndOf="@+id/red_seekBar"
-        settings:layout_constraintStart_toStartOf="@+id/red_seekBar"
-        settings:layout_constraintTop_toBottomOf="@id/red_seekBar" />
-
-    <SeekBar
-        android:id="@+id/blue_seekBar"
-        style="@style/ColorSeekBarStyle"
-        android:progressBackgroundTint="@color/color_blue"
-        android:progressTint="@color/color_blue"
-        android:thumbTint="@color/color_blue"
-        settings:layout_constraintBottom_toTopOf="@id/select_button"
-        settings:layout_constraintEnd_toEndOf="@+id/red_seekBar"
-        settings:layout_constraintStart_toStartOf="@+id/red_seekBar"
-        settings:layout_constraintTop_toBottomOf="@id/green_seekBar" />
-
-    <Button
-        android:id="@+id/select_button"
+        android:id="@+id/seekBar1"
+        style="@style/AccentDialogSeekBarStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/color_picker_button_margin_top"
-        android:backgroundTint="?android:attr/colorAccent"
-        android:text="@string/select"
-        android:textColor="?android:attr/textColorPrimary"
-        settings:layout_constraintBottom_toBottomOf="parent"
-        settings:layout_constraintEnd_toEndOf="@+id/red_seekBar"
-        settings:layout_constraintStart_toEndOf="@+id/reset_button"
-        settings:layout_constraintTop_toBottomOf="@+id/blue_seekBar" />
+        settings:layout_constraintBottom_toTopOf="@id/seekBar2"
+        settings:layout_constraintEnd_toEndOf="parent"
+        settings:layout_constraintStart_toStartOf="parent"
+        settings:layout_constraintTop_toBottomOf="@id/color_preview" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        style="@style/AccentDialogSeekBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        settings:layout_constraintBottom_toTopOf="@id/seekBar3"
+        settings:layout_constraintEnd_toEndOf="parent"
+        settings:layout_constraintStart_toStartOf="parent"
+        settings:layout_constraintTop_toBottomOf="@id/seekBar1" />
+
+    <SeekBar
+        android:id="@+id/seekBar3"
+        style="@style/AccentDialogSeekBarStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin"
+        settings:layout_constraintBottom_toTopOf="@id/barrier"
+        settings:layout_constraintEnd_toEndOf="parent"
+        settings:layout_constraintStart_toStartOf="parent"
+        settings:layout_constraintTop_toBottomOf="@id/seekBar2" />
+
+    <RadioGroup
+        android:id="@+id/color_model_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:orientation="horizontal"
+        settings:layout_constraintBottom_toBottomOf="@id/confirm_button"
+        settings:layout_constraintStart_toStartOf="parent"
+        settings:layout_constraintTop_toTopOf="@id/confirm_button">
+
+        <RadioButton
+            android:id="@+id/rgb_button"
+            style="@style/AccentDialogRadioButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/rgb" />
+
+        <RadioButton
+            android:id="@+id/hsl_button"
+            style="@style/AccentDialogRadioButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hsl" />
+
+        <RadioButton
+            android:id="@+id/hsv_button"
+            style="@style/AccentDialogRadioButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hsv" />
+    </RadioGroup>
 
     <Button
-        android:id="@+id/reset_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="?android:attr/colorAccent"
-        android:text="@string/reset"
-        android:textColor="?android:attr/textColorPrimary"
-        settings:layout_constraintBottom_toBottomOf="@+id/select_button"
-        settings:layout_constraintEnd_toStartOf="@+id/select_button"
-        settings:layout_constraintStart_toStartOf="@+id/red_seekBar"
-        settings:layout_constraintTop_toTopOf="@+id/select_button" />
+        android:id="@+id/cancel_button"
+        style="@style/AccentDialogButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:text="@string/cancel"
+        settings:layout_constraintBottom_toBottomOf="@id/confirm_button"
+        settings:layout_constraintEnd_toStartOf="@id/confirm_button"
+        settings:layout_constraintTop_toTopOf="@id/confirm_button" />
+
+    <Button
+        android:id="@+id/confirm_button"
+        style="@style/AccentDialogButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:text="@string/confirm"
+        settings:layout_constraintBottom_toBottomOf="parent"
+        settings:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        settings:barrierDirection="top"
+        settings:constraint_referenced_ids="color_model_group, confirm_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

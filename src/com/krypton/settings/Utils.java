@@ -17,16 +17,21 @@
 package com.krypton.settings;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.provider.Settings;
 import android.util.Log;
 
-public class Utils {
+import androidx.core.graphics.ColorUtils;
 
+import java.util.regex.Pattern;
+
+public class Utils {
     private static final String TAG = "KryptonSettingsUtils";
     public static final String TYPE_GLOBAL = "global";
     public static final String TYPE_SYSTEM = "system";
     public static final String TYPE_SECURE = "secure";
+    public static final Pattern HEX_PATTERN = Pattern.compile("[0-9A-F]+");
 
     public static boolean isEmpty(String str) {
         return str == null || str.equals("");
@@ -179,5 +184,13 @@ public class Utils {
         } else {
             return null;
         }
+    }
+
+    public static int HSVToColor(float hue, float sat, float val) {
+        return Color.HSVToColor(new float[] {hue, sat, val});
+    }
+
+    public static int HSLToColor(float hue, float sat, float lum) {
+        return ColorUtils.HSLToColor(new float[] {hue, sat, lum});
     }
 }
