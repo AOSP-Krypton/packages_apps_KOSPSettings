@@ -72,4 +72,12 @@
     <com.krypton.settings.preference.AccentPickerPreference
         android:key="accent_picker_preference"
         android:title="@string/accent_picker_title" />
+
+    <!-- Screenshot shound -->
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="screenshot_sound_switch_preference"
+        android:title="@string/screenshot_sound_title"
+        settings:settingKey="screenshot_sound"
+        settings:settingNamespace="system"
+        settings:settingDefault="1" />
 </PreferenceScreen>

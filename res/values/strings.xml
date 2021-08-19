@@ -140,6 +140,7 @@
     <string name="systemui_tuner_preference_title">SystemUI Tuner</string>
     <string name="systemui_tuner_preference_summary">Experimental tweaks in SystemUI</string>
     <string name="volume_panel_on_left_title">Show volume panel on left side</string>
+    <string name="screenshot_sound_title">Enable screenshot sound</string>
 
     <!-- Gaming Mode Settings -->
     <string name="gamingmode_settings_title">Gaming Mode</string>
