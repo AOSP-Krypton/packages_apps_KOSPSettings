@@ -50,67 +50,6 @@
             settings:settingNamespace="system" />
     </PreferenceCategory>
 
-    <!-- Network traffic -->
-    <PreferenceCategory
-        android:title="@string/network_traffic_category_title">
-
-        <com.krypton.settings.preference.SettingSwitchPreference
-            android:key="statusbar_show_network_traffic_switch_preference"
-            android:title="@string/statusbar_show_network_traffic_title"
-            settings:settingKey="network_traffic_state"
-            settings:settingNamespace="system" />
-
-        <com.krypton.settings.preference.SettingEditTextPreference
-            android:key="statusbar_network_traffic_threshold_preference"
-            android:title="@string/statusbar_network_traffic_threshold_title"
-            android:dependency="statusbar_show_network_traffic_switch_preference"
-            android:summary="@string/statusbar_network_traffic_threshold_summary"
-            android:dialogTitle="@string/statusbar_network_traffic_threshold_dialog_title"
-            settings:settingKey="network_traffic_autohide_threshold"
-            settings:settingNamespace="system"
-            settings:settingDefault="1" />
-
-        <com.krypton.settings.preference.SettingListPreference
-            android:key="statusbar_network_traffic_type_preference"
-            android:title="@string/statusbar_network_traffic_type_title"
-            android:dependency="statusbar_show_network_traffic_switch_preference"
-            android:summary="%s"
-            android:entries="@array/network_traffic_modes"
-            android:entryValues="@array/network_traffic_mode_values"
-            android:defaultValue="0"
-            settings:settingKey="network_traffic_type"
-            settings:settingNamespace="system" />
-
-        <com.krypton.settings.preference.SettingListPreference
-            android:key="statusbar_network_traffic_location_preference"
-            android:title="@string/statusbar_network_traffic_location_title"
-            android:dependency="statusbar_show_network_traffic_switch_preference"
-            android:summary="%s"
-            android:entries="@array/network_traffic_locations"
-            android:entryValues="@array/network_traffic_location_values"
-            android:defaultValue="0"
-            settings:settingKey="network_traffic_view_location"
-            settings:settingNamespace="system" />
-
-        <com.krypton.settings.preference.SettingSwitchPreference
-            android:key="statusbar_show_network_traffic_arrow_switch_preference"
-            android:title="@string/statusbar_show_network_traffic_arrow_title"
-            android:dependency="statusbar_show_network_traffic_switch_preference"
-            settings:settingKey="network_traffic_arrow"
-            settings:settingNamespace="system"
-            settings:settingDefault="1" />
-
-        <com.krypton.settings.preference.SettingSeekBarPreference
-            android:key="statusbar_network_traffic_font_size_preference"
-            android:title="@string/statusbar_network_traffic_font_size_title"
-            android:summary="@string/statusbar_network_traffic_font_size_summary"
-            android:dependency="statusbar_show_network_traffic_switch_preference"
-            settings:settingKey="network_traffic_font_size"
-            settings:settingNamespace="system"
-            settings:max="50"
-            settings:min="21" />
-    </PreferenceCategory>
-
     <PreferenceCategory
         android:title="@string/statusbar_battery_category_title">
 

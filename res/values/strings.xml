@@ -90,25 +90,6 @@
     <string name="qs_footer_text_title">QS footer text</string>
     <string name="qs_footer_text_summary">If no text is specified then KOSP will be shown by default</string>
 
-    <!-- Network Traffic -->
-    <string name="network_traffic_category_title">Network Traffic</string>
-    <string name="statusbar_show_network_traffic_title">Show network traffic in statusbar</string>
-    <string name="statusbar_show_network_traffic_arrow_title">Show arrow indicators in statusbar</string>
-    <string name="statusbar_network_traffic_threshold_title">Auto-hide threshold</string>
-    <string name="statusbar_network_traffic_threshold_summary">Threshold value below which network traffic indicator will be hidden</string>
-    <string name="statusbar_network_traffic_threshold_dialog_title">Threshold value in KB/s</string>
-    <string name="statusbar_network_traffic_type_title">Network traffic type</string>
-    <string name="network_traffic_mode_up">Upload only</string>
-    <string name="network_traffic_mode_down">Download only</string>
-    <string name="network_traffic_mode_both">Both</string>
-    <string name="network_traffic_mode_combined">Combined</string>
-    <string name="network_traffic_mode_dynamic">Dynamic</string>
-    <string name="statusbar_network_traffic_location_title">Network traffic location</string>
-    <string name="statusbar_network_traffic_font_size_title">Single net font size</string>
-    <string name="statusbar_network_traffic_font_size_summary">Choose the font size for network traffic text when only one row is visible</string>
-    <string name="network_traffic_in_statusbar">Only in statusbar</string>
-    <string name="network_traffic_in_qs_header">Only in qs header</string>
-
     <!-- Battery -->
     <string name="statusbar_battery_category_title">Battery</string>
     <string name="statusbar_battery_style_title">Battery icon style</string>
