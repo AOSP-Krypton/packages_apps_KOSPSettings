@@ -50,6 +50,35 @@
             settings:settingNamespace="system" />
     </PreferenceCategory>
 
+    <!-- Network traffic -->
+    <PreferenceCategory
+        android:title="@string/network_traffic_category_title">
+
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="statusbar_show_network_traffic_switch_preference"
+            android:title="@string/statusbar_show_network_traffic_title"
+            settings:settingKey="network_traffic_enabled"
+            settings:settingNamespace="system" />
+
+        <com.krypton.settings.preference.SettingEditTextPreference
+            android:key="statusbar_network_traffic_threshold_preference"
+            android:title="@string/statusbar_network_traffic_threshold_tx_title"
+            android:dependency="statusbar_show_network_traffic_switch_preference"
+            android:summary="@string/statusbar_network_traffic_threshold_tx_summary"
+            android:dialogTitle="@string/statusbar_network_traffic_threshold_dialog_title"
+            settings:settingKey="network_traffic_auto_hide_threshold_tx"
+            settings:settingNamespace="system" />
+
+        <com.krypton.settings.preference.SettingEditTextPreference
+            android:key="statusbar_network_traffic_threshold_rx_preference"
+            android:title="@string/statusbar_network_traffic_threshold_rx_title"
+            android:dependency="statusbar_show_network_traffic_switch_preference"
+            android:summary="@string/statusbar_network_traffic_threshold_rx_summary"
+            android:dialogTitle="@string/statusbar_network_traffic_threshold_dialog_title"
+            settings:settingKey="network_traffic_auto_hide_threshold_rx"
+            settings:settingNamespace="system" />
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:title="@string/statusbar_battery_category_title">
 
