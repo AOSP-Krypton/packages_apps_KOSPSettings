@@ -43,7 +43,8 @@ public class SettingEditTextPreference extends EditTextPreference
     private final Handler mHandler;
     private final String mSettingKey, mSettingNamespace,
         mSettingDependencyKey, mSettingDependencyNS;
-    private final int mSettingDefault, mSettingDependencyValue;
+    private final int mSettingDependencyValue;
+    private int mSettingDefault;
     private String mInputType;
     private boolean mDependencyMet = true;
     private ContentObserver mSettingsObserver;
@@ -140,6 +141,10 @@ public class SettingEditTextPreference extends EditTextPreference
             case INPUT_STR:
                 editText.setInputType(InputType.TYPE_CLASS_TEXT);
         }
+    }
+
+    public void setSettingDefault(int def) {
+        mSettingDefault = def;
     }
 
     private void updateIfDependencyMet() {

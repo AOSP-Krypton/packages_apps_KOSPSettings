@@ -77,6 +77,24 @@
             android:dialogTitle="@string/statusbar_network_traffic_threshold_dialog_title"
             settings:settingKey="network_traffic_auto_hide_threshold_rx"
             settings:settingNamespace="system" />
+
+        <com.krypton.settings.preference.SettingEditTextPreference
+            android:key="statusbar_network_traffic_unit_text_size_preference"
+            android:title="@string/statusbar_network_traffic_unit_text_size_title"
+            android:summary="@string/statusbar_network_traffic_unit_text_size_summary"
+            android:dialogTitle="@string/statusbar_network_traffic_unit_text_size_dialog_title"
+            android:dependency="statusbar_show_network_traffic_switch_preference"
+            settings:settingKey="network_traffic_unit_text_size"
+            settings:settingNamespace="system" />
+
+        <com.krypton.settings.preference.SettingEditTextPreference
+            android:key="statusbar_network_traffic_rate_text_scale_factor_preference"
+            android:title="@string/statusbar_network_traffic_rate_text_scale_factor_title"
+            android:summary="@string/statusbar_network_traffic_rate_text_scale_factor_summary"
+            android:dialogTitle="@string/statusbar_network_traffic_rate_text_scale_factor_dialog_title"
+            android:dependency="statusbar_show_network_traffic_switch_preference"
+            settings:settingKey="network_traffic_rate_text_scale_factor"
+            settings:settingNamespace="system" />
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -98,6 +98,14 @@
     <string name="statusbar_network_traffic_threshold_rx_title">Auto hide threshold for download</string>
     <string name="statusbar_network_traffic_threshold_rx_summary">Threshold value below which download speed indicator will be hidden</string>
     <string name="statusbar_network_traffic_threshold_dialog_title">Threshold value in KiB/s</string>
+    <string name="statusbar_network_traffic_unit_text_size_title">Network traffic unit text size</string>
+    <string name="statusbar_network_traffic_unit_text_size_summary">Adjust text size of the unit text (ex: KiB/s)</string>
+    <string name="statusbar_network_traffic_unit_text_size_dialog_title">Text size</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Network traffic rate text scale factor</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_summary">Adjust the scale factor of the rate text. Text size of the rate text is determined by
+        the unit text size and this scale factor</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Scale factor</string>
+
 
     <!-- Battery -->
     <string name="statusbar_battery_category_title">Battery</string>
