@@ -24,7 +24,6 @@ import static androidx.fragment.app.DialogFragment.STYLE_NORMAL;
 import android.annotation.ColorInt;
 import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.AccentUtils;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -229,14 +228,14 @@ public class AccentPickerFragment extends BottomSheetDialogFragment
         mPreviewMode = mIsDarkMode ? 1 : 0;
         updateSelectedState();
         try {
-            Resources androidRes = mContext.getPackageManager().getResourcesForApplication("android");
+            final Resources androidRes = mContext.getPackageManager().getResourcesForApplication("android");
             int resId = androidRes.getIdentifier("accent_device_default_light", "color", "android");
             if (resId != 0) {
-                mLightAccent = mSavedLightAccent = AccentUtils.getLightAccentColor(androidRes.getColor(resId, null));
+                mLightAccent = mSavedLightAccent = androidRes.getColor(resId, null);
             }
             resId = androidRes.getIdentifier("accent_device_default_dark", "color", "android");
             if (resId != 0) {
-                mDarkAccent = mSavedDarkAccent = AccentUtils.getDarkAccentColor(androidRes.getColor(resId, null));
+                mDarkAccent = mSavedDarkAccent = androidRes.getColor(resId, null);
             }
         } catch(NameNotFoundException e) {
             // Do nothing
