@@ -80,4 +80,10 @@
         settings:settingKey="screenshot_sound"
         settings:settingNamespace="system"
         settings:settingDefault="1" />
+
+    <!-- Font picker -->
+    <Preference
+        android:key="font_picker_preference"
+        android:title="@string/font_picker_preference_title"
+        android:fragment="com.krypton.settings.fragment.FontPickerFragment" />
 </PreferenceScreen>

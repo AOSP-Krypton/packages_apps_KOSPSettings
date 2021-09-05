@@ -200,4 +200,19 @@
     <string name="hsv">HSV</string>
     <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
+
+    <!-- Font picker -->
+    <string name="font_picker_preference_title">Select and preview fonts</string>
+    <string name="font_picker_title">Select &amp; preview</string>
+    <string name="add_fonts">Add fonts</string>
+    <string name="delete_fonts">Delete fonts</string>
+    <string name="copying_fonts">Copying fonts...</string>
+    <string name="deleting_fonts">Deleting fonts...</string>
+    <string name="do_not_close">Do not close this dialog until this over!</string>
+    <string name="no_fonts_to_add">No fonts selected to add!</string>
+    <string name="unable_to_apply_font">An error occured while applying font</string>
+    <string name="unable_to_add_fonts">An error occured while adding fonts</string>
+    <string name="unable_to_get_current_font">An error occured while fetching current font, fallback to system font</string>
+    <string name="unable_to_remove_fonts">An error occured while deleting fonts</string>
+    <string name="unable_to_create_cache">An error occured while creating cache folder</string>
 </resources>
