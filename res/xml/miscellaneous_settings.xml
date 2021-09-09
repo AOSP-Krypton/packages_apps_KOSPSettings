@@ -86,4 +86,13 @@
         android:key="font_picker_preference"
         android:title="@string/font_picker_preference_title"
         android:fragment="com.krypton.settings.fragment.FontPickerFragment" />
+
+    <!-- Notification sounds -->
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="screen_on_notification_sound_switch_preference"
+        android:title="@string/notification_sound_vib_screen_on_title"
+        android:summary="@string/notification_sound_vib_screen_on_summary"
+        settings:settingKey="notification_sound_vib_screen_on"
+        settings:settingNamespace="system"
+        settings:settingDefault="1" />
 </PreferenceScreen>

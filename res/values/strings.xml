@@ -140,6 +140,10 @@
     <string name="volume_panel_on_left_title">Show volume panel on left side</string>
     <string name="screenshot_sound_title">Enable screenshot sound</string>
 
+    <!-- Allow to suppress notifications sound/vibration if screen is ON -->
+    <string name="notification_sound_vib_screen_on_title">Notification sound if active</string>
+    <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
+
     <!-- Gaming Mode Settings -->
     <string name="gamingmode_settings_title">Gaming Mode</string>
     <string name="gamingmode_settings_summary">Enhance your gaming experience</string>
