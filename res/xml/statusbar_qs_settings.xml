@@ -168,6 +168,14 @@
     <PreferenceCategory
         android:title="@string/miscellaneous_settings_title">
 
+        <!-- QS tile Haptic -->
+        <com.krypton.settings.preference.SettingSwitchPreference
+            android:key="quick_settings_vibrate"
+            android:title="@string/quick_settings_vibrate_title"
+            android:summary="@string/quick_settings_vibrate_summary"
+            settings:settingKey="quick_settings_vibrate"
+            settings:settingNamespace="secure" />
+
         <!-- DT2S -->
         <com.krypton.settings.preference.SettingSwitchPreference
             android:key="statusbar_dt2s_switch_preference"

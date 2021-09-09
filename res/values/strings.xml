@@ -219,4 +219,8 @@
     <string name="unable_to_get_current_font">An error occured while fetching current font, fallback to system font</string>
     <string name="unable_to_remove_fonts">An error occured while deleting fonts</string>
     <string name="unable_to_create_cache">An error occured while creating cache folder</string>
+
+    <!-- QS tile haptics-->
+    <string name="quick_settings_vibrate_title">Haptic feedback for QS tiles</string>
+    <string name="quick_settings_vibrate_summary">Provide haptic feedback on tapping QS tiles</string>
 </resources>
