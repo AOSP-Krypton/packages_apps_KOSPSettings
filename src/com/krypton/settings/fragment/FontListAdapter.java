@@ -40,10 +40,12 @@ public class FontListAdapter extends Adapter<FontViewHolder> {
     private Callback mCallback;
     private List<FontInfo> mFontList;
     private String mFont;
+    private int mPrevIndex;
 
-    public FontListAdapter(Context context, String def) {
+    public FontListAdapter(Context context, String def, List<FontInfo> list) {
         mContext = context;
         mDefaultFont = mFont = def;
+        mFontList = list;
         mCheckedIndices = new ArrayList<>();
         logD("default font = " + mDefaultFont);
     }
@@ -89,10 +91,8 @@ public class FontListAdapter extends Adapter<FontViewHolder> {
                 }
             } else {
                 // Deselect previous one and select the current one
-                final int index = mFontList.indexOf(mFont);
-                logD("index of item = " + index);
-                notifyItemChanged(index == -1 ? 0 : index);
                 mFont = fontInfo.fontName;
+                notifyItemChanged(mPrevIndex);
                 notifyItemChanged(position);
                 if (mCallback != null) {
                     mCallback.onItemClicked(fontInfo);
@@ -129,7 +129,12 @@ public class FontListAdapter extends Adapter<FontViewHolder> {
         if (!mCheckedIndices.isEmpty()) {
             viewHolder.getCheckBox().setVisibility(View.INVISIBLE);
         } else {
-            viewHolder.getCheckBox().setChecked(mFont.equals(fontInfo.fontName));
+            if (mFont.equals(fontInfo.fontName)) {
+                viewHolder.getCheckBox().setChecked(true);
+                mPrevIndex = position;
+            } else {
+                viewHolder.getCheckBox().setChecked(false);
+            }
             viewHolder.getCheckBox().setVisibility(View.VISIBLE);
         }
     }
@@ -137,10 +142,6 @@ public class FontListAdapter extends Adapter<FontViewHolder> {
     @Override
     public int getItemCount() {
         return mFontList == null ? 0 : mFontList.size();
-    }
-
-    public void setFontList(List<FontInfo> list) {
-        mFontList = list;
     }
 
     public void registerCallback(Callback callback) {
