@@ -76,6 +76,11 @@
     <string name="aod_brightness_mode_title">Custom AOD brightness</string>
     <string name="aod_brightness_title">Brightness value</string>
 
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Always on display schedule</string>
+    <string name="always_on_display_schedule_sunset">Sunset</string>
+    <string name="always_on_display_schedule_sunrise">Sunrise</string>
+
     <!-- StatusBar-QS Settings -->
     <string name="statusbar_qs_settings_title">StatusBar and QS</string>
     <string name="statusbar_qs_settings_summary">Customisations and gestures for statusbar and qs</string>
@@ -177,6 +182,7 @@
     <string name="select">Select</string>
     <string name="reset">Reset</string>
     <string name="cannot_resolve_activity">Unable to find a suitable activity to perform the action!</string>
+    <string name="disabled">Disabled</string>
 
     <!-- Notification Media Options -->
     <string name="media_category">Media Notification options</string>

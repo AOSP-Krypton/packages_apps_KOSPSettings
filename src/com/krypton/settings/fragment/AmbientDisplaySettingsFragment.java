@@ -16,6 +16,8 @@
 package com.krypton.settings.fragment;
 
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.provider.Settings;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.preference.Preference;
@@ -27,11 +29,15 @@ import com.krypton.settings.preference.SettingColorPickerPreference;
 public class AmbientDisplaySettingsFragment extends BaseFragment {
 
     private static final String TAG = "AmbientDisplaySettingsFragment";
+    private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
+    private Preference mAODPref;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.ambient_display_settings);
+        mAODPref = findPreference(AOD_SCHEDULE_KEY);
+        updateAlwaysOnSummary();
     }
 
     @Override
@@ -43,6 +49,29 @@ public class AmbientDisplaySettingsFragment extends BaseFragment {
             fragment.show(getParentFragmentManager(), TAG);
         } else {
             super.onDisplayPreferenceDialog(preference);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateAlwaysOnSummary();
+    }
+
+    private void updateAlwaysOnSummary() {
+        if (mAODPref == null) return;
+        int mode = Settings.Secure.getIntForUser(getActivity().getContentResolver(),
+                Settings.Secure.DOZE_ALWAYS_ON_AUTO_MODE, 0, UserHandle.USER_CURRENT);
+        switch (mode) {
+            case 0:
+                mAODPref.setSummary(R.string.disabled);
+                break;
+            case 1:
+                mAODPref.setSummary(R.string.night_display_auto_mode_twilight);
+                break;
+            case 2:
+                mAODPref.setSummary(R.string.night_display_auto_mode_custom);
+                break;
         }
     }
 }

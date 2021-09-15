@@ -140,5 +140,10 @@
             settings:settingDefault="15"
             settings:max="30"
             settings:min="1" />
+
+        <Preference
+            android:key="always_on_display_schedule"
+            android:title="@string/always_on_display_schedule_title"
+            android:fragment="com.krypton.settings.fragment.AODSchedule" />
     </PreferenceCategory>
 </PreferenceScreen>
