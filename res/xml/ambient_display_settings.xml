@@ -116,6 +116,10 @@
             settings:settingKey="ambient_notification_light_duration"
             settings:settingNamespace="system"
             settings:settingDefault="2" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/aod_settings_category_title">
 
         <!-- Always on brightness mode -->
         <com.krypton.settings.preference.SettingSwitchPreference
