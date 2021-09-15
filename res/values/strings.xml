@@ -232,4 +232,8 @@
     <!-- QS tile haptics-->
     <string name="quick_settings_vibrate_title">Haptic feedback for QS tiles</string>
     <string name="quick_settings_vibrate_summary">Provide haptic feedback on tapping QS tiles</string>
+
+    <!-- Theme Settings -->
+    <string name="theme_settings_title">Theme settings</string>
+    <string name="theme_settings_summary">Customise the UI of your device</string>
 </resources>
