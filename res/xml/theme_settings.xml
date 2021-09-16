@@ -17,11 +17,36 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/theme_settings_title">
 
+    <!-- Dark mode -->
+    <com.android.settings.display.darkmode.DarkModePreference
+        android:key="dark_ui_mode"
+        android:title="@string/dark_ui_mode"
+        android:fragment="com.android.settings.display.darkmode.DarkModeSettingsFragment"
+        android:widgetLayout="@null"
+        settings:widgetLayout="@null"
+        settings:controller="com.android.settings.display.DarkUIPreferenceController"
+        settings:keywords="@string/keywords_dark_ui_mode"/>
+
+    <!-- Icon shape -->
+    <ListPreference
+        android:key="android.theme.customization.adaptive_icon_shape"
+        android:title="@string/theme_customization_icon_shape_title"/>
+
+    <!-- Icon pack -->
+    <ListPreference
+        android:key="android.theme.customization.icon_pack"
+        android:title="@string/theme_customization_icon_pack_title"/>
+
     <!-- Font picker -->
     <Preference
         android:key="font_picker_preference"
         android:title="@string/font_picker_preference_title"
         android:fragment="com.krypton.settings.fragment.FontPickerFragment" />
+
+    <!-- Prebuilt accents -->
+    <ListPreference
+        android:key="android.theme.customization.accent_color"
+        android:title="@string/prebuilt_accent_colors_title"/>
 
     <!-- RGB accent picker -->
     <com.krypton.settings.preference.AccentPickerPreference

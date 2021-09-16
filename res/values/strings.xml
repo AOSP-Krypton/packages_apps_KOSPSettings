@@ -236,4 +236,5 @@
     <!-- Theme Settings -->
     <string name="theme_settings_title">Theme settings</string>
     <string name="theme_settings_summary">Customise the UI of your device</string>
+    <string name="prebuilt_accent_colors_title">Prebuilt accents</string>
 </resources>
