@@ -49,6 +49,12 @@
             Default: 1
         -->
         <attr name="settingDependencyValue" format="integer" />
+
+        <!--
+            Disable this preference if dependency is met
+            Default: false
+        -->
+        <attr name="disableIfDependencyMet" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="SettingListPreference">

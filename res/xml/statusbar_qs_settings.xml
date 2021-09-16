@@ -116,7 +116,11 @@
             android:key="statusbar_battery_show_percent_switch_preference"
             android:title="@string/battery_percentage_description"
             settings:settingKey="status_bar_show_battery_percent"
-            settings:settingNamespace="system" />
+            settings:settingNamespace="system"
+            settings:settingDependencyKey="status_bar_battery_style"
+            settings:settingDependencyNS="system"
+            settings:settingDependencyValue="2"
+            settings:disableIfDependencyMet="true" />
 
         <!-- Show battery percent inside -->
         <com.krypton.settings.preference.SettingSwitchPreference

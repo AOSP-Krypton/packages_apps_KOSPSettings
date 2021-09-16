@@ -35,6 +35,7 @@ public class SettingSwitchPreference extends SwitchPreference {
     private final String mSettingKey, mSettingNamespace,
         mSettingDependencyKey, mSettingDependencyNS;
     private final int mSettingDependencyValue;
+    private final boolean mDisableIfDependencyMet;
     private ContentObserver mSettingsObserver;
     private int mSettingDefault;
     private boolean mDependencyMet = true;
@@ -49,6 +50,7 @@ public class SettingSwitchPreference extends SwitchPreference {
         mSettingDependencyKey = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingDependencyKey);
         mSettingDependencyNS = typedArray.getString(R.styleable.SettingPreferenceBaseAttrs_settingDependencyNS);
         mSettingDependencyValue = typedArray.getInteger(R.styleable.SettingPreferenceBaseAttrs_settingDependencyValue, 1);
+        mDisableIfDependencyMet = typedArray.getBoolean(R.styleable.SettingPreferenceBaseAttrs_disableIfDependencyMet, false);
         parseDefaultValue(typedArray, R.styleable.SettingPreferenceBaseAttrs_settingDefault);
         typedArray.recycle();
         super.setChecked(isChecked());
@@ -82,7 +84,8 @@ public class SettingSwitchPreference extends SwitchPreference {
 
     @Override
     public boolean isEnabled() {
-        return super.isEnabled() && mDependencyMet;
+        return super.isEnabled() && (mDisableIfDependencyMet ?
+            !mDependencyMet : mDependencyMet);
     }
 
     @Override
@@ -112,5 +115,6 @@ public class SettingSwitchPreference extends SwitchPreference {
         mDependencyMet = Utils.getSettingInt(mContext, mSettingDependencyNS,
             mSettingDependencyKey) == mSettingDependencyValue;
         notifyChanged();
+        notifyDependencyChange(true);
     }
 }
