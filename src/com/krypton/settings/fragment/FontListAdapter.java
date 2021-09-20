@@ -33,7 +33,7 @@ import java.util.List;
 
 public class FontListAdapter extends Adapter<FontViewHolder> {
     private static final String TAG = "FontListAdapter";
-    private static final boolean DEBUG = true;
+    private static final boolean DEBUG = false;
     private final Context mContext;
     private final String mDefaultFont;
     private final List<Integer> mCheckedIndices;

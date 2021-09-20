@@ -223,6 +223,7 @@ public class FontPickerFragment extends BaseFragment implements FontListAdapter.
         try {
             logD("applying font " + fontInfo);
             mFontService.applyFont(fontInfo);
+            toast(R.string.reboot_to_apply_font);
         } catch (RemoteException e) {
             Log.e(TAG, "RemoteException when applying font " + fontInfo, e);
             toast(R.string.unable_to_apply_font);

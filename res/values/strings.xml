@@ -223,6 +223,7 @@
     <string name="deleting_fonts">Deleting fonts...</string>
     <string name="do_not_close">Do not close this dialog until this over!</string>
     <string name="no_fonts_to_add">No fonts selected to add!</string>
+    <string name="reboot_to_apply_font">Reboot to apply selected font</string>
     <string name="unable_to_apply_font">An error occured while applying font</string>
     <string name="unable_to_add_fonts">An error occured while adding fonts</string>
     <string name="unable_to_get_current_font">An error occured while fetching current font, fallback to system font</string>
