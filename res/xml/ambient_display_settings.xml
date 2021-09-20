@@ -26,8 +26,8 @@
             android:summary="%s"
             android:entries="@array/ambient_music_location_entries"
             android:entryValues="@array/ambient_music_location_values"
-	          android:defaultValue="1" 
-	          settings:settingKey="ambient_music_ticker"
+            android:defaultValue="1"
+            settings:settingKey="ambient_music_ticker"
             settings:settingNamespace="system"	/>
 
     </PreferenceCategory>
@@ -116,34 +116,5 @@
             settings:settingKey="ambient_notification_light_duration"
             settings:settingNamespace="system"
             settings:settingDefault="2" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/aod_settings_category_title">
-
-        <!-- Always on brightness mode -->
-        <com.krypton.settings.preference.SettingSwitchPreference
-            android:key="aod_brightness_mode_preference"
-            android:title="@string/aod_brightness_mode_title"
-            settings:settingKey="doze_custom_screen_brightness_mode"
-            settings:settingNamespace="secure"
-            settings:settingDependencyKey="doze_always_on"
-            settings:settingDependencyNS="secure" />
-
-        <!-- Always on brightness -->
-        <com.krypton.settings.preference.SettingSeekBarPreference
-            android:key="aod_brightness_preference"
-            android:title="@string/aod_brightness_title"
-            android:dependency="aod_brightness_mode_preference"
-            settings:settingKey="doze_screen_brightness"
-            settings:settingNamespace="secure"
-            settings:settingDefault="15"
-            settings:max="30"
-            settings:min="1" />
-
-        <Preference
-            android:key="always_on_display_schedule"
-            android:title="@string/always_on_display_schedule_title"
-            android:fragment="com.krypton.settings.fragment.AODSchedule" />
     </PreferenceCategory>
 </PreferenceScreen>

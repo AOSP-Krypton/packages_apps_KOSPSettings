@@ -72,16 +72,8 @@
     <string name="ambient_pulse_timeout_summary">Timeout in seconds for pulse in AOD, a timeout of 0s means it will keep pulsing until display state is changed</string>
     <string name="ambient_pulse_animation_duration_title">Edge light animation duration</string>
     <string name="ambient_pulse_animation_duration_summary">Duration in seconds for the edge light animaton, default is 2s</string>
-    <string name="aod_settings_category_title">AOD Settings</string>
     <string name="aod_brightness_mode_title">Custom AOD brightness</string>
     <string name="aod_brightness_title">Brightness value</string>
-
-    <!-- AOD Schedule -->
-    <string name="always_on_display_schedule_title">Always on display schedule</string>
-    <string name="always_on_display_schedule_sunset">Sunset</string>
-    <string name="always_on_display_schedule_sunrise">Sunrise</string>
-    <string name="always_on_display_schedule_mixed_sunset">Turns on from sunset till a time</string>
-    <string name="always_on_display_schedule_mixed_sunrise">Turns on from a time till sunrise</string>
 
     <!-- StatusBar-QS Settings -->
     <string name="statusbar_qs_settings_title">StatusBar and QS</string>
@@ -113,7 +105,6 @@
     <string name="statusbar_network_traffic_rate_text_scale_factor_summary">Adjust the scale factor of the rate text. Text size of the rate text is determined by
         the unit text size and this scale factor</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Scale factor</string>
-
 
     <!-- Battery -->
     <string name="statusbar_battery_category_title">Battery</string>
