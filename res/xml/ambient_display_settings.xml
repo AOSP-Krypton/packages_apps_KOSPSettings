@@ -38,8 +38,8 @@
         <!-- Edge Light -->
         <com.krypton.settings.preference.SettingSwitchPreference
             android:key="notification_pulse_switch_preference"
-            android:title="@string/notification_pulse_title"
-            android:summary="@string/notification_pulse_summary"
+            android:title="@string/edge_light_title"
+            android:summary="@string/edge_light_summary"
             settings:settingKey="pulse_ambient_light"
             settings:settingNamespace="system" />
 

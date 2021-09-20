@@ -54,8 +54,8 @@
     <string name="ambient_display_settings_title">Ambient Display</string>
     <string name="ambient_display_settings_summary">Edge lighting and further customisations</string>
     <string name="edge_lighting_category_title">Edge lighting</string>
-    <string name="notification_pulse_title">Enable edge lighting</string>
-    <string name="notification_pulse_summary">Show an animation along the edges of the ambient display upon receiving a notification</string>
+    <string name="edge_light_title">Enable edge lighting</string>
+    <string name="edge_light_summary">Show an animation along the edges of the ambient display upon receiving a notification</string>
     <string name="aod_pulse_title">Enable edge lighting in AOD</string>
     <string name="aod_pulse_summary">Enable to keep showing edge light after transitioning from ambient display</string>
     <string name="aod_pulse_hide_content_title">Hide contents in AOD</string>
