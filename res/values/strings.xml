@@ -17,6 +17,20 @@
     <!-- Krypton Settings Page Title -->
     <string name="krypton_page_title">Krypton Settings</string>
 
+    <!-- Theme settings -->
+    <string name="theme_settings_title">Theme settings</string>
+    <string name="theme_settings_summary">Customise the UI of your device</string>
+
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Monet engine</string>
+    <string name="monet_engine_settings_summary">Adjust monet engine parameters</string>
+    <string name="accurate_shades_title">Use accurate shades</string>
+    <string name="color_override_title">Color override</string>
+    <string name="invalid_color_input">Invalid color input!</string>
+    <string name="chroma_factor_title">Colorfulness</string>
+    <string name="linear_lightness_title">Use custom lightness scale</string>
+    <string name="white_luminance_title">Brightness</string>
+
     <!-- Device Settings -->
     <string name="device_settings_title">Device Settings</string>
     <string name="device_settings_summary">Settings for device specific parts</string>

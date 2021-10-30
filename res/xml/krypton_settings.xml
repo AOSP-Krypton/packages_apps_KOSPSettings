@@ -17,6 +17,14 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/krypton_page_title">
 
+    <!-- Theme settings -->
+    <Preference
+        android:key="theme_settings"
+        android:title="@string/theme_settings_title"
+        android:summary="@string/theme_settings_summary"
+        android:icon="@drawable/ic_palette"
+        android:fragment="com.krypton.settings.fragment.theme.ThemeSettingsFragment" />
+
     <!-- Device Settings -->
     <Preference
         android:key="device_settings"

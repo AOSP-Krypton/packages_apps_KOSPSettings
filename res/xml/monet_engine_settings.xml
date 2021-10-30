@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2021 AOSP-Krypton Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/monet_engine_settings_title">
+
+    <!-- Accurate shades -->
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="accurate_shades"
+        android:title="@string/accurate_shades_title"
+        settings:settingKey="monet_engine_accurate_shades"
+        settings:settingNamespace="secure"
+        settings:settingDefault="1" />
+
+    <!-- Color override -->
+    <EditTextPreference
+        android:key="color_override"
+        android:title="@string/color_override_title" />
+    
+    <!-- Chroma factor -->
+    <com.krypton.settings.preference.CustomSeekBarPreference
+        android:key="chroma_factor"
+        android:title="@string/chroma_factor_title"
+        android:defaultValue="100"
+        android:max="100"
+        settings:min="0" />
+
+    <!-- Custom lightness scale -->
+    <com.krypton.settings.preference.SettingSwitchPreference
+        android:key="linear_lightness"
+        android:title="@string/linear_lightness_title"
+        settings:settingKey="monet_engine_linear_lightness"
+        settings:settingNamespace="secure" />
+
+    <!-- Brightness -->
+    <com.krypton.settings.preference.CustomSeekBarPreference
+        android:key="white_luminance"
+        android:title="@string/white_luminance_title"
+        android:defaultValue="425"
+        android:max="1000"
+        settings:min="1"
+        settings:interval="5" />
+
+</PreferenceScreen>
