@@ -13,17 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.krypton.settings.fragment;
+package com.krypton.settings.fragment
 
-import android.os.Bundle;
+import com.android.internal.logging.nano.MetricsProto
+import com.android.settings.SettingsPreferenceFragment
 
-import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
-
-public class BaseFragment extends SettingsPreferenceFragment {
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.KRYPTON;
-    }
+open class BaseFragment: SettingsPreferenceFragment() {
+    override fun getMetricsCategory(): Int = MetricsProto.MetricsEvent.KRYPTON
 }

@@ -13,24 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.krypton.settings.fragment;
+package com.krypton.settings.fragment
 
-import android.os.Bundle;
+import android.os.Bundle
 
-import com.android.settings.R;
+import com.android.internal.util.krypton.KryptonUtils
+import com.android.settings.R
 
-public class KryptonSettingsFragment extends BaseFragment {
-    @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.krypton_settings);
-        boolean installed = false;
-        try {
-            getPackageManager().getPackageInfo("com.krypton.settings.device", 0);
-            installed = true;
-        } catch (Exception e) {}
-        if (!installed) {
-            getPreferenceScreen().removePreference(findPreference("device_settings"));
+class KryptonSettingsFragment: BaseFragment() {
+    override fun onCreate(bundle: Bundle?) {
+        super.onCreate(bundle)
+        addPreferencesFromResource(R.xml.krypton_settings)
+        val deviceSettingsInstalled: Boolean = KryptonUtils.isPackageInstalled(context!!,
+            "com.krypton.settings.device", false /* ignoreState */)
+        if (!deviceSettingsInstalled) {
+            preferenceScreen.removePreferenceRecursively("device_settings")
         }
     }
 }
