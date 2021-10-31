@@ -36,7 +36,8 @@
         android:title="@string/chroma_factor_title"
         android:defaultValue="100"
         android:max="100"
-        settings:min="0" />
+        settings:min="0"
+        settings:interval="10" />
 
     <!-- Custom lightness scale -->
     <com.krypton.settings.preference.SettingSwitchPreference
@@ -52,6 +53,6 @@
         android:defaultValue="425"
         android:max="1000"
         settings:min="1"
-        settings:interval="5" />
+        settings:interval="100" />
 
 </PreferenceScreen>
