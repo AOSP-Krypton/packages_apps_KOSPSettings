@@ -15,7 +15,7 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:title="@string/krypton_page_title">
+    android:title="@string/krypton_settings_title">
 
     <!-- Theme settings -->
     <Preference

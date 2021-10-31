@@ -14,8 +14,8 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Krypton Settings Page Title -->
-    <string name="krypton_page_title">Krypton Settings</string>
+    <!-- Krypton settings -->
+    <string name="krypton_settings_title">Krypton settings</string>
 
     <!-- Theme settings -->
     <string name="theme_settings_title">Theme settings</string>
@@ -31,8 +31,8 @@
     <string name="linear_lightness_title">Use custom lightness scale</string>
     <string name="white_luminance_title">Brightness</string>
 
-    <!-- Device Settings -->
-    <string name="device_settings_title">Device Settings</string>
+    <!-- Device settings -->
+    <string name="device_settings_title">Device settings</string>
     <string name="device_settings_summary">Settings for device specific parts</string>
 
 </resources>
