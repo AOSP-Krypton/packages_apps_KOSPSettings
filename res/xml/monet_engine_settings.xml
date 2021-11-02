@@ -18,12 +18,10 @@
     android:title="@string/monet_engine_settings_title">
 
     <!-- Accurate shades -->
-    <com.krypton.settings.preference.SettingSwitchPreference
-        android:key="accurate_shades"
+    <com.krypton.settings.preference.SecureSettingSwitchPreference
+        android:key="monet_engine_accurate_shades"
         android:title="@string/accurate_shades_title"
-        settings:settingKey="monet_engine_accurate_shades"
-        settings:settingNamespace="secure"
-        settings:settingDefault="1" />
+        android:defaultValue="1" />
 
     <!-- Color override -->
     <EditTextPreference
@@ -40,11 +38,9 @@
         settings:interval="10" />
 
     <!-- Custom lightness scale -->
-    <com.krypton.settings.preference.SettingSwitchPreference
-        android:key="linear_lightness"
-        android:title="@string/linear_lightness_title"
-        settings:settingKey="monet_engine_linear_lightness"
-        settings:settingNamespace="secure" />
+    <com.krypton.settings.preference.SecureSettingSwitchPreference
+        android:key="monet_engine_linear_lightness"
+        android:title="@string/linear_lightness_title" />
 
     <!-- Brightness -->
     <com.krypton.settings.preference.CustomSeekBarPreference
