@@ -14,23 +14,10 @@
  * limitations under the License
  */
 
-package com.krypton.settings;
+package com.krypton.settings
 
-import android.graphics.Color;
+import java.util.regex.Pattern
 
-import androidx.core.graphics.ColorUtils;
-
-import java.util.regex.Pattern;
-
-public class Utils {
-    private static final String TAG = "KryptonSettingsUtils";
-    public static final Pattern HEX_PATTERN = Pattern.compile("[0-9A-F]+");
-
-    public static int HSVToColor(float hue, float sat, float val) {
-        return Color.HSVToColor(new float[] {hue, sat, val});
-    }
-
-    public static int HSLToColor(float hue, float sat, float lum) {
-        return ColorUtils.HSLToColor(new float[] {hue, sat, lum});
-    }
+object Utils {
+    val HEX_PATTERN = Pattern.compile("[0-9A-F]+")
 }
