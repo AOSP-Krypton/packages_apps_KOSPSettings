@@ -20,7 +20,6 @@ import android.os.UserHandle
 import android.provider.Settings
 import android.provider.Settings.Secure.MONET_ENGINE_CHROMA_FACTOR
 import android.provider.Settings.Secure.MONET_ENGINE_COLOR_OVERRIDE
-import android.provider.Settings.Secure.MONET_ENGINE_WHITE_LUMINANCE
 import android.widget.Toast
 
 import androidx.preference.EditTextPreference
@@ -49,19 +48,10 @@ class MonetEngineSettingsFragment: BaseFragment(),
         findPreference<CustomSeekBarPreference>(CHROMA_SLIDER_PREF_KEY)?.also {
             it.setValue(chromaFactor.toInt())
         }?.setOnPreferenceChangeListener(this)
-
-        findPreference<CustomSeekBarPreference>(BRIGHTNESS_SLIDER_PREF_KEY)?.also {
-            it.setValue(Settings.Secure.getInt(context!!.contentResolver,
-                MONET_ENGINE_WHITE_LUMINANCE, BRIGHTNESS_DEFAULT))
-        }?.setOnPreferenceChangeListener(this)
     }
 
     override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean =
         when (preference.key) {
-            BRIGHTNESS_SLIDER_PREF_KEY -> {
-                Settings.Secure.putInt(context!!.contentResolver,
-                    MONET_ENGINE_WHITE_LUMINANCE, newValue as Int)
-            }
             CHROMA_SLIDER_PREF_KEY -> {
                 Settings.Secure.putFloat(context!!.contentResolver,
                     MONET_ENGINE_CHROMA_FACTOR, (newValue as Int) / 100f)
@@ -82,9 +72,6 @@ class MonetEngineSettingsFragment: BaseFragment(),
 
     companion object {
         private const val COLOR_OVERRIDE_PREF_KEY = "color_override"
-
-        private const val BRIGHTNESS_SLIDER_PREF_KEY = "white_luminance"
-        private const val BRIGHTNESS_DEFAULT = 425
 
         private const val CHROMA_SLIDER_PREF_KEY = "chroma_factor"
         private const val CHROMA_DEFAULT = 1f
