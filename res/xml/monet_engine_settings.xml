@@ -24,10 +24,10 @@
         android:defaultValue="1" />
 
     <!-- Color override -->
-    <EditTextPreference
-        android:key="color_override"
+    <com.krypton.settings.preference.SecureSettingColorPickerPreference
+        android:key="monet_engine_color_override"
         android:title="@string/color_override_title" />
-    
+
     <!-- Chroma factor -->
     <com.krypton.settings.preference.CustomSeekBarPreference
         android:key="chroma_factor"

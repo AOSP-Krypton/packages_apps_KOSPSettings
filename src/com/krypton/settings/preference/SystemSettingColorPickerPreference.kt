@@ -14,21 +14,17 @@
  * limitations under the License
  */
 
-package com.krypton.settings
+package com.krypton.settings.preference
 
-import android.graphics.Color
+import android.content.Context
+import android.util.AttributeSet
 
-import androidx.core.graphics.ColorUtils
-
-import java.util.regex.Pattern
-
-object Utils {
-    val HEX_PATTERN = Pattern.compile("[0-9a-fA-F]+")
-
-    fun HSVToColor(hue: Float, sat: Float, value: Float): Int = Color.HSVToColor(floatArrayOf(hue, sat, value))
-
-    fun HSLToColor(hue: Float, sat: Float, lum: Float) = ColorUtils.HSLToColor(floatArrayOf(hue, sat, lum))
-
-    // color values are always negative, use a - sign to make it positive
-    fun colorToHex(color: Int) = String.format("#%06X", (0xFFFFFF and color))
+public class SystemSettingColorPickerPreference(
+    context: Context,
+    attrs: AttributeSet?,
+): SettingColorPickerPreference(
+    context,
+    attrs,
+) {
+    override fun getSettingsDataStore(context: Context) = SystemSettingsStore(context.contentResolver)
 }

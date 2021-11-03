@@ -21,6 +21,13 @@
     <string name="theme_settings_title">Theme settings</string>
     <string name="theme_settings_summary">Customise the UI of your device</string>
 
+    <!-- Color picker -->
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Monet engine</string>
     <string name="monet_engine_settings_summary">Adjust monet engine parameters</string>
