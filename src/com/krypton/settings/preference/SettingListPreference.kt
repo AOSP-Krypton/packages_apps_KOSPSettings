@@ -18,6 +18,7 @@
 package com.krypton.settings.preference
 
 import android.content.Context
+import android.content.res.TypedArray
 import android.util.AttributeSet
 
 import androidx.preference.PreferenceDataStore
@@ -34,12 +35,16 @@ abstract class SettingListPreference(
         setPreferenceDataStore(getSettingsDataStore(context))
     }
 
+    override protected fun onGetDefaultValue(a: TypedArray, index: Int): Any? {
+        return a.getString(index)
+    }
+
     override protected fun onSetInitialValue(restoreValue: Boolean, defaultValue: Any?) {
-        // This is what default ListPreference implementation is doing without respecting
-        // real default value:
-        //setValue(restoreValue ? getPersistedString(mValue) : (String) defaultValue);
-        // Instead, we better do
-        (defaultValue as String?)?.let { setValue(if (restoreValue) getPersistedString(it) else it) }
+        defaultValue?.let {
+            if (it is String) {
+                setValue(if (restoreValue) getPersistedString(it) else it)
+            }
+        }
     }
 
     abstract fun getSettingsDataStore(context: Context): PreferenceDataStore

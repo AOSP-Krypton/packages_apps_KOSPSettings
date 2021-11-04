@@ -18,6 +18,7 @@
 package com.krypton.settings.preference
 
 import android.content.Context
+import android.content.res.TypedArray
 import android.util.AttributeSet
 
 import androidx.preference.PreferenceDataStore
@@ -34,13 +35,16 @@ abstract class SettingSwitchPreference(
         setPreferenceDataStore(getSettingsDataStore(context))
     }
 
+    override protected fun onGetDefaultValue(a: TypedArray, index: Int): Any? {
+        return a.getBoolean(index, false)
+    }
+
     override protected fun onSetInitialValue(restoreValue: Boolean, defaultValue: Any?) {
-        // This is what default TwoStatePreference implementation is doing without respecting
-        // real default value:
-        //setChecked(restoreValue ? getPersistedBoolean(mChecked)
-        //        : (Boolean) defaultValue);
-        // Instead, we better do
-        (defaultValue as Boolean?)?.let { setChecked(if (restoreValue) getPersistedBoolean(it) else it) }
+        defaultValue?.let {
+            if (it is Boolean) {
+                setChecked(if (restoreValue) getPersistedBoolean(it) else it)
+            }
+        }
     }
 
     abstract fun getSettingsDataStore(context: Context): PreferenceDataStore

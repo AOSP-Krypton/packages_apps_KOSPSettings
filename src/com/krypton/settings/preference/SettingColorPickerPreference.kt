@@ -17,6 +17,7 @@
 package com.krypton.settings.preference
 
 import android.content.Context
+import android.content.res.TypedArray
 import android.util.AttributeSet
 
 import androidx.preference.DialogPreference
@@ -29,11 +30,10 @@ abstract class SettingColorPickerPreference(
     context,
     attrs,
 ) {
-    var defaultValue = attrs?.getAttributeValue(ANDROID_NS, "defaultValue")
+
+    override protected fun onGetDefaultValue(a: TypedArray, index: Int): Any? {
+        return a.getString(index)
+    }
 
     abstract fun getSettingsDataStore(context: Context): PreferenceDataStore
-
-    companion object {
-        private const val ANDROID_NS = "http://schemas.android.com/apk/res/android"
-    }
 }
