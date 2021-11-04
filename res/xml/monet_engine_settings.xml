@@ -34,6 +34,7 @@
         android:title="@string/chroma_factor_title"
         android:defaultValue="100"
         android:max="100"
+        android:persistent="false"
         settings:min="0"
         settings:interval="10" />
 
