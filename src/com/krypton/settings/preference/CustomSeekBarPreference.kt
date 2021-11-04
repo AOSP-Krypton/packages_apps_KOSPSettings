@@ -259,9 +259,9 @@ open class CustomSeekBarPreference(
     override fun onLongClick(v: View): Boolean {
         if (v.id == R.id.reset) {
             setValue(defaultValue)
-            return false
+            return true
         }
-        return true
+        return false
     }
 
     override protected fun onSetInitialValue(restoreValue: Boolean, defaultValue: Any?) {
