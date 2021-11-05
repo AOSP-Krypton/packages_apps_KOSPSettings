@@ -97,14 +97,11 @@ open class CustomSeekBarPreference(
         minValue = attrs?.getAttributeIntValue(SETTINGS_NS, "min", minValue) ?: minValue
         maxValue = attrs?.getAttributeIntValue(ANDROID_NS, "max", minValue) ?: minValue
         if (maxValue < minValue) {
-            throw IllegalStateException("Max value $maxValue is less than min value $minValue")
+            maxValue = minValue
         }
 
         try {
             attrs?.getAttributeValue(SETTINGS_NS, "interval")?.let { interval = Integer.parseInt(it) }
-            if (interval > (maxValue - minValue)) {
-                throw IllegalStateException("Interval $interval is out of range")
-            }
         } catch (ex: NumberFormatException) {
             Log.e(TAG, "Invalid interval value, ${ex.message}")
         }
@@ -114,7 +111,7 @@ open class CustomSeekBarPreference(
             try {
                 defaultValue = def.toInt()
                 if (defaultValue < minValue || defaultValue > maxValue) {
-                    throw IllegalStateException("Default value $defaultValue is out of range")
+                    defaultValue = minValue
                 }
                 defaultValueExists = true
                 seekBarValue = defaultValue
@@ -128,6 +125,8 @@ open class CustomSeekBarPreference(
         trackingValue = seekBarValue
 
         seekBar = SeekBar(context, attrs)
+        seekBar.setMax(maxValue)
+        seekBar.setMin(minValue)
         setLayoutResource(R.layout.preference_custom_seekbar)
     }
 
@@ -288,13 +287,17 @@ open class CustomSeekBarPreference(
     }
 
     fun setMax(max: Int) {
-        maxValue = max
-        seekBar.setMax(maxValue)
+        if (maxValue != max) {
+            maxValue = max
+            seekBar.setMax(maxValue)
+        }
     }
 
     fun setMin(min: Int) {
-        minValue = min
-        seekBar.setMin(minValue)
+        if (minValue != min) {
+            minValue = min
+            seekBar.setMin(minValue)
+        }
     }
 
     fun setValue(newValue: Int) {
