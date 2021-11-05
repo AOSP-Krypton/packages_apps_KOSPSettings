@@ -22,11 +22,11 @@ import androidx.preference.PreferenceDataStore
 import com.krypton.settings.fragment.ColorPickerFragment
 
 class MonetColorOverrideFragment(
-    private val settingKey: String,
-    private val preferenceDataStore: PreferenceDataStore,
+    private val settingKey: String?,
+    private val preferenceDataStore: PreferenceDataStore?,
     @ColorInt defaultColor: Int
 ): ColorPickerFragment(defaultColor) {
     override fun persistValue(hexColor: String) {
-        preferenceDataStore.putString(settingKey, hexColor)
+        settingKey?.let { preferenceDataStore?.putString(settingKey, hexColor) }
     }
 }

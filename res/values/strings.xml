@@ -32,7 +32,8 @@
     <string name="monet_engine_settings_title">Monet engine</string>
     <string name="monet_engine_settings_summary">Adjust monet engine parameters</string>
     <string name="accurate_shades_title">Use accurate shades</string>
-    <string name="color_override_title">Accent color picker</string>
+    <string name="use_wallpaper_color_title">Use wallpaper color</string>
+    <string name="color_override_title">Custom color picker</string>
     <string name="invalid_color_input">Invalid color input!</string>
     <string name="chroma_factor_title">Colorfulness</string>
     <string name="linear_lightness_title">Use custom lightness scale</string>

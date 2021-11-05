@@ -23,6 +23,12 @@
         android:title="@string/accurate_shades_title"
         android:defaultValue="1" />
 
+    <!-- Use wallpaper colors -->
+    <SwitchPreference
+        android:key="monet_engine_use_wallpaper_color"
+        android:title="@string/use_wallpaper_color_title"
+        android:defaultValue="1" />
+
     <!-- Color override -->
     <com.krypton.settings.preference.SecureSettingColorPickerPreference
         android:key="monet_engine_color_override"
