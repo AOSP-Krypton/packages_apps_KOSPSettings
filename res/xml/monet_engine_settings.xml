@@ -41,7 +41,8 @@
     <!-- Custom lightness scale -->
     <com.krypton.settings.preference.SecureSettingSwitchPreference
         android:key="monet_engine_linear_lightness"
-        android:title="@string/linear_lightness_title" />
+        android:title="@string/linear_lightness_title"
+        android:defaultValue="0" />
 
     <!-- Brightness -->
     <com.krypton.settings.preference.SecureSettingSeekBarPreference
