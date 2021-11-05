@@ -38,6 +38,19 @@
     <string name="linear_lightness_title">Use custom lightness scale</string>
     <string name="white_luminance_title">Brightness</string>
 
+    <!-- Statusbar settings -->
+    <string name="statusbar_settings_title">Statusbar settings</string>
+    <string name="statusbar_settings_summary">Network traffic</string>
+
+    <!-- Network traffic -->
+    <string name="network_traffic_category_title">Network traffic</string>
+    <string name="statusbar_show_network_traffic_title">Show network traffic in statusbar</string>
+    <string name="statusbar_network_traffic_threshold_tx_title">Auto hide threshold for upload</string>
+    <string name="statusbar_network_traffic_threshold_rx_title">Auto hide threshold for download</string>
+    <string name="statusbar_network_traffic_unit_text_size_title">Network traffic unit text size</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Network traffic rate text scale factor</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Scale factor</string>
+
     <!-- Device settings -->
     <string name="device_settings_title">Device settings</string>
     <string name="device_settings_summary">Settings for device specific parts</string>
