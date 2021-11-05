@@ -129,12 +129,13 @@ open class CustomSeekBarPreference(
 
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
-
-        seekBar = (holder.findViewById(R.id.seekbar) as SeekBar?)?.apply {
-            setMax(maxValue)
-            setMin(minValue)
-            setProgress(seekBarValue)
-            setEnabled(isEnabled())
+        android.util.Log.d("CustomSeek", "onBindViewHolder")
+        seekBar = (holder.findViewById(R.id.seekbar) as SeekBar?)?.also {
+            it.setMax(maxValue)
+            it.setMin(minValue)
+            it.setProgress(seekBarValue)
+            it.setEnabled(isEnabled())
+            it.setOnSeekBarChangeListener(this)
         }
 
         valueTextView = holder.findViewById(R.id.value) as TextView?
@@ -143,8 +144,6 @@ open class CustomSeekBarPreference(
         plusImageView = holder.findViewById(R.id.plus) as ImageView?
 
         updateValueViews()
-
-        seekBar?.setOnSeekBarChangeListener(this)
 
         resetImageView?.setOnClickListener(this)
         minusImageView?.setOnClickListener(this)
@@ -237,6 +236,9 @@ open class CustomSeekBarPreference(
     override fun onLongClick(v: View): Boolean {
         if (v.id == R.id.reset) {
             setValue(defaultValue)
+            if (!shouldPersist()) {
+                callChangeListener(defaultValue)
+            }
             return true
         }
         return false
@@ -283,7 +285,10 @@ open class CustomSeekBarPreference(
 
     fun setValue(newValue: Int) {
         if (seekBarValue != newValue) {
-            seekBar?.setProgress(seekBarValue)
+            if (!shouldPersist()) {
+                seekBarValue = newValue
+            }
+            seekBar?.setProgress(newValue)
             updateValueViews()             
         }
     }
