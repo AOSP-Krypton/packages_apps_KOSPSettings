@@ -82,7 +82,7 @@ open class CustomSeekBarPreference(
     private var resetImageView: ImageView? = null
     private var minusImageView: ImageView? = null
     private var plusImageView: ImageView? = null
-    private var seekBar: SeekBar
+    private var seekBar: SeekBar? = null
 
     private var trackingTouch = false
     private var trackingValue: Int
@@ -124,35 +124,18 @@ open class CustomSeekBarPreference(
         }
         trackingValue = seekBarValue
 
-        seekBar = SeekBar(context, attrs)
-        seekBar.setMax(maxValue)
-        seekBar.setMin(minValue)
         setLayoutResource(R.layout.preference_custom_seekbar)
     }
 
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
-        try {
-            // move our seekbar to the new view we've been given
-            val oldContainer: ViewParent? = seekBar.getParent()
-            val newContainer: ViewGroup? = holder.findViewById(R.id.seekbar) as ViewGroup
-            if (oldContainer != newContainer) {
-                // remove the seekbar from the old view
-                oldContainer?.let { (oldContainer as ViewGroup).removeView(seekBar) }
-                // remove the existing seekbar (there may not be one) and add ours
-                newContainer?.let {
-                    it.removeAllViews()
-                    it.addView(seekBar, ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT)
-                }
-            }
-        } catch (ex: Exception) {
-            Log.e(TAG, "Error binding view", ex)
-        }
 
-        seekBar.setMax(maxValue)
-        seekBar.setProgress(seekBarValue)
-        seekBar.setEnabled(isEnabled())
+        seekBar = (holder.findViewById(R.id.seekbar) as SeekBar?)?.apply {
+            setMax(maxValue)
+            setMin(minValue)
+            setProgress(seekBarValue)
+            setEnabled(isEnabled())
+        }
 
         valueTextView = holder.findViewById(R.id.value) as TextView?
         resetImageView = holder.findViewById(R.id.reset) as ImageView?
@@ -161,7 +144,7 @@ open class CustomSeekBarPreference(
 
         updateValueViews()
 
-        seekBar.setOnSeekBarChangeListener(this)
+        seekBar?.setOnSeekBarChangeListener(this)
 
         resetImageView?.setOnClickListener(this)
         minusImageView?.setOnClickListener(this)
@@ -173,11 +156,7 @@ open class CustomSeekBarPreference(
     private fun updateValueViews() {
         valueTextView?.let {
             var text = context.getString(R.string.custom_seekbar_value);
-            if (trackingTouch) {
-                text += " $trackingValue"
-            } else {
-                text += " $seekBarValue"
-            }
+            text += " ${ if (trackingTouch) trackingValue else seekBarValue}"
             if (showSign) {
                 text += units
             }
@@ -268,10 +247,12 @@ open class CustomSeekBarPreference(
     }
 
     override fun setDefaultValue(defaultValue: Any?) {
-        if (defaultValue is Int?)
-            defaultValue?.let { setDefaultValue(it) }
-        else if (defaultValue != null) {
-            setDefaultValue((defaultValue as String).toInt())
+        defaultValue?.let {
+            if (it is Int) {
+                setDefaultValue(it)
+            } else if (it is String) {
+                setDefaultValue(it.toInt())
+            }
         }
     }
 
@@ -289,21 +270,20 @@ open class CustomSeekBarPreference(
     fun setMax(max: Int) {
         if (maxValue != max) {
             maxValue = max
-            seekBar.setMax(maxValue)
+            seekBar?.setMax(maxValue)
         }
     }
 
     fun setMin(min: Int) {
         if (minValue != min) {
             minValue = min
-            seekBar.setMin(minValue)
+            seekBar?.setMin(minValue)
         }
     }
 
     fun setValue(newValue: Int) {
         if (seekBarValue != newValue) {
-            seekBarValue = newValue
-            seekBar.setProgress(seekBarValue)
+            seekBar?.setProgress(seekBarValue)
             updateValueViews()             
         }
     }
