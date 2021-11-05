@@ -19,7 +19,7 @@
 
     <!-- Theme settings -->
     <string name="theme_settings_title">Theme settings</string>
-    <string name="theme_settings_summary">Customise the UI of your device</string>
+    <string name="theme_settings_summary">Monet</string>
 
     <!-- Color picker -->
     <string name="rgb">RGB</string>
@@ -30,7 +30,7 @@
 
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Monet engine</string>
-    <string name="monet_engine_settings_summary">Adjust monet engine parameters</string>
+    <string name="monet_engine_settings_summary">Custom color, colorfulness, brightness</string>
     <string name="accurate_shades_title">Use accurate shades</string>
     <string name="use_wallpaper_color_title">Use wallpaper color</string>
     <string name="color_override_title">Custom color picker</string>
