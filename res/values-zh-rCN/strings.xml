@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2021 AOSP-Krypton Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Krypton settings -->
+    <string name="krypton_settings_title">Krypton 设置</string>
+
+    <!-- Theme settings -->
+    <string name="theme_settings_title">主题设置</string>
+    <string name="theme_settings_summary">Monet</string>
+
+    <!-- Color picker -->
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确认</string>
+
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Monet engine</string>
+    <string name="monet_engine_settings_summary">自定义颜色、色彩、亮度</string>
+    <string name="accurate_shades_title">调整界面色调</string>
+    <string name="use_wallpaper_color_title">使用壁纸颜色</string>
+    <string name="color_override_title">自定义颜色选择</string>
+    <string name="invalid_color_input">颜色输入错误!</string>
+    <string name="chroma_factor_title">色彩</string>
+    <string name="linear_lightness_title">调整界面亮度</string>
+    <string name="white_luminance_title">亮度</string>
+
+    <!-- Statusbar settings -->
+    <string name="statusbar_settings_title">状态栏设置</string>
+    <string name="statusbar_settings_summary">网络流量监视器</string>
+
+    <!-- Network traffic -->
+    <string name="network_traffic_category_title">网络流量监视器</string>
+    <string name="statusbar_show_network_traffic_title">在状态栏中显示网络流量监视器</string>
+    <string name="statusbar_network_traffic_threshold_tx_title">上传速度到阈值时自动隐藏</string>
+    <string name="statusbar_network_traffic_threshold_rx_title">下载速度到阈值时自动隐藏</string>
+    <string name="statusbar_network_traffic_unit_text_size_title">网络流量监视器字体大小</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_title">根据网络速度改变字体大小</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Scale factor</string>
+
+    <!-- Lockscree settings -->
+    <string name="lockscreen_settings_title">锁屏设置</string>
+    <string name="lockscreen_settings_summary">充电信息</string>
+
+    <!-- Lockscreen battery info -->
+    <string name="lockscreen_charging_info_title">在锁屏界面显示充电信息</string>
+    <string name="lockscreen_charging_info_summary">在充电时显示温度、充电电流等信息</string>
+
+    <!-- Device settings -->
+    <string name="device_settings_title">设备设置</string>
+    <string name="device_settings_summary">对设备特定功能进行设置</string>
+
+</resources>
