@@ -51,6 +51,18 @@
             android:defaultValue="false" />
     </PreferenceCategory>
 
+     <!-- Gestures -->	
+     <PreferenceCategory
+        android:title="@string/statusbar_gesture_title">
+
+        <com.flamingo.support.preference.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_gesture"
+            android:title="@string/double_tap_sleep_gesture_title"
+            android:summary="@string/double_tap_sleep_gesture_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
     <!-- Miscellaneous -->
     <PreferenceCategory
         android:title="@string/miscellaneous_settings_title">
