@@ -18,7 +18,7 @@
     <string name="krypton_settings_title">Krypton settings</string>
 
     <!-- Theme settings -->
-    <string name="theme_settings_title">Theme settings</string>
+    <string name="theme_settings_title">Theme</string>
     <string name="theme_settings_summary">Monet</string>
 
     <!-- Color picker -->
@@ -40,7 +40,7 @@
     <string name="white_luminance_title">Brightness</string>
 
     <!-- Statusbar settings -->
-    <string name="statusbar_settings_title">Statusbar settings</string>
+    <string name="statusbar_settings_title">Statusbar</string>
     <string name="statusbar_settings_summary">Network traffic, Gestures</string>
 
     <!-- Network traffic -->
@@ -53,7 +53,7 @@
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Scale factor</string>
 
     <!-- Lockscree settings -->
-    <string name="lockscreen_settings_title">Lockscreen settings</string>
+    <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="lockscreen_settings_summary">Charging info, Gestures</string>
 
     <!-- Lockscreen battery info -->
