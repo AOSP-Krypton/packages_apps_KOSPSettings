@@ -41,7 +41,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">Statusbar settings</string>
-    <string name="statusbar_settings_summary">Network traffic</string>
+    <string name="statusbar_settings_summary">Network traffic, Gestures</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">Network traffic</string>
@@ -54,7 +54,7 @@
 
     <!-- Lockscree settings -->
     <string name="lockscreen_settings_title">Lockscreen settings</string>
-    <string name="lockscreen_settings_summary">Charging info</string>
+    <string name="lockscreen_settings_summary">Charging info, Gestures</string>
 
     <!-- Lockscreen battery info -->
     <string name="lockscreen_charging_info_title">Show charging info in lockscreen</string>
