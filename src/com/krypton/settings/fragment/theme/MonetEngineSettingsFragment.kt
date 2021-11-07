@@ -44,6 +44,12 @@ class MonetEngineSettingsFragment: BaseFragment(),
 
         customColorPickerPreference = findPreference<SettingColorPickerPreference>(CUSTOM_COLOR_PREF_KEY)
 
+        val defaultCustomColorSummary: String = getString(R.string.color_override_summary)
+
+        customColorPickerPreference?.setSummary(
+            customColor?:defaultCustomColorSummary
+        )
+
         findPreference<SwitchPreference>(USE_WALLPAPER_COLOR_PREF_KEY)?.also {
             val isEnabled = customColor == null || customColor.isEmpty()
             it.setChecked(isEnabled)
