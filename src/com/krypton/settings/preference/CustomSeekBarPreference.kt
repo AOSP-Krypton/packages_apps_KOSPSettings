@@ -129,7 +129,6 @@ open class CustomSeekBarPreference(
 
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
-        android.util.Log.d("CustomSeek", "onBindViewHolder")
         seekBar = (holder.findViewById(R.id.seekbar) as SeekBar?)?.also {
             it.setMax(maxValue)
             it.setMin(minValue)
@@ -245,7 +244,7 @@ open class CustomSeekBarPreference(
     }
 
     override protected fun onSetInitialValue(restoreValue: Boolean, defaultValue: Any?) {
-        if (restoreValue) seekBarValue = getPersistedInt(minValue)
+        if (restoreValue) seekBarValue = getPersistedInt(if (defaultValueExists) this.defaultValue else minValue)
     }
 
     override fun setDefaultValue(defaultValue: Any?) {
