@@ -60,4 +60,15 @@
             android:max="20"
             settings:min="10" />
     </PreferenceCategory>
+
+     <PreferenceCategory
+        android:title="@string/statusbar_gesture_title">
+
+        <com.krypton.settings.preference.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_gesture"
+            android:title="@string/double_tap_sleep_gesture_title"
+            android:summary="@string/double_tap_sleep_gesture_summary"
+            android:defaultValue="false" />
+            
+    </PreferenceCategory>
 </PreferenceScreen>
