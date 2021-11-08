@@ -18,7 +18,7 @@
     <string name="krypton_settings_title">Krypton 设置</string>
 
     <!-- Theme settings -->
-    <string name="theme_settings_title">主题设置</string>
+    <string name="theme_settings_title">主题</string>
     <string name="theme_settings_summary">Monet</string>
 
     <!-- Color picker -->
@@ -34,13 +34,14 @@
     <string name="accurate_shades_title">调整界面色调</string>
     <string name="use_wallpaper_color_title">使用壁纸颜色</string>
     <string name="color_override_title">自定义颜色选择</string>
+    <string name="color_override_summary">"选择一个强调色来覆盖 Monet engine 选择的颜色"</string>
     <string name="invalid_color_input">颜色输入错误!</string>
     <string name="chroma_factor_title">色彩</string>
     <string name="linear_lightness_title">调整界面亮度</string>
     <string name="white_luminance_title">亮度</string>
 
     <!-- Statusbar settings -->
-    <string name="statusbar_settings_title">状态栏设置</string>
+    <string name="statusbar_settings_title">状态栏</string>
     <string name="statusbar_settings_summary">网络流量监视器</string>
 
     <!-- Network traffic -->
@@ -53,7 +54,7 @@
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Scale factor</string>
 
     <!-- Lockscree settings -->
-    <string name="lockscreen_settings_title">锁屏设置</string>
+    <string name="lockscreen_settings_title">锁屏</string>
     <string name="lockscreen_settings_summary">充电信息</string>
 
     <!-- Lockscreen battery info -->
@@ -63,5 +64,14 @@
     <!-- Device settings -->
     <string name="device_settings_title">设备设置</string>
     <string name="device_settings_summary">对设备特定功能进行设置</string>
+
+    <!--Double Tap to Sleep Lockscreen-->
+    <string name="double_tap_sleep_lockscreen_title">双击息屏</string>
+    <string name="double_tap_sleep_lockscreen_summary">双击锁屏界面上的任意位置来关闭屏幕</string>
+
+    <!-- Double Tap to Sleep Statusbar -->
+    <string name="statusbar_gesture_title">手势</string>
+    <string name="double_tap_sleep_gesture_title">双击锁屏</string>
+    <string name="double_tap_sleep_gesture_summary">双击状态栏或锁屏界面以关闭屏幕</string>
 
 </resources>
