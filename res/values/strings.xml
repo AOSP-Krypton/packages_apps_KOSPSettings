@@ -61,6 +61,9 @@
     <string name="lockscreen_charging_info_title">Show charging info in lockscreen</string>
     <string name="lockscreen_charging_info_summary">Shows temperature, charging current and more while plugged in</string>
 
+    <string name="screen_off_fod_title">Screen off FOD</string>
+    <string name="screen_off_fod_summary">Enable FOD even when screen is off</string>
+
     <!-- Device settings -->
     <string name="device_settings_title">Device settings</string>
     <string name="device_settings_summary">Settings for device specific parts</string>

@@ -29,4 +29,10 @@
           android:summary="@string/double_tap_sleep_lockscreen_summary"
           android:defaultValue="false" />
 
+     <com.krypton.settings.preference.SystemSettingSwitchPreference
+          android:key="screen_off_fod"
+          android:title="@string/screen_off_fod_title"
+          android:summary="@string/screen_off_fod_summary"
+          android:defaultValue="false" />
+
 </PreferenceScreen>
