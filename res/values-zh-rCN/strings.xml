@@ -61,6 +61,9 @@
     <string name="lockscreen_charging_info_title">在锁屏界面显示充电信息</string>
     <string name="lockscreen_charging_info_summary">在充电时显示温度、充电电流等信息</string>
 
+    <string name="screen_off_fod_title">息屏指纹</string>
+    <string name="screen_off_fod_summary">屏幕关闭时显示指纹解锁图案</string>
+
     <!-- Device settings -->
     <string name="device_settings_title">设备设置</string>
     <string name="device_settings_summary">对设备特定功能进行设置</string>
