@@ -42,7 +42,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">状态栏</string>
-    <string name="statusbar_settings_summary">网络流量监视器</string>
+    <string name="statusbar_settings_summary">网络流量,手势,位置指示</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">网络流量监视器</string>
@@ -76,5 +76,11 @@
     <string name="statusbar_gesture_title">手势</string>
     <string name="double_tap_sleep_gesture_title">双击锁屏</string>
     <string name="double_tap_sleep_gesture_summary">双击状态栏或锁屏界面以关闭屏幕</string>
+
+    <string name="miscellaneous_category_title">杂项</string>
+
+    <!-- Location privacy indicator -->
+    <string name="location_privacy_indicator_title">显示使用定位指示器</string>
+    <string name="location_privacy_indicator_summary">重启以生效</string>
 
 </resources>
