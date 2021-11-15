@@ -29,12 +29,12 @@
     <string name="confirm">确认</string>
 
     <!-- Monet engine -->
-    <string name="monet_engine_settings_title">Monet engine</string>
+    <string name="monet_engine_settings_title">Monet 引擎</string>
     <string name="monet_engine_settings_summary">自定义颜色、色彩、亮度</string>
     <string name="accurate_shades_title">调整界面色调</string>
     <string name="use_wallpaper_color_title">使用壁纸颜色</string>
     <string name="color_override_title">自定义颜色选择</string>
-    <string name="color_override_summary">"选择一个强调色来覆盖 Monet engine 选择的颜色"</string>
+    <string name="color_override_summary">"选择一个强调色来覆盖 Monet 引擎选择的颜色"</string>
     <string name="invalid_color_input">颜色输入错误!</string>
     <string name="chroma_factor_title">色彩</string>
     <string name="linear_lightness_title">调整界面亮度</string>
@@ -42,7 +42,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">状态栏</string>
-    <string name="statusbar_settings_summary">网络流量监视器</string>
+    <string name="statusbar_settings_summary">网络流量,手势,位置指示器</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">网络流量监视器</string>
@@ -76,5 +76,11 @@
     <string name="statusbar_gesture_title">手势</string>
     <string name="double_tap_sleep_gesture_title">双击锁屏</string>
     <string name="double_tap_sleep_gesture_summary">双击状态栏或锁屏界面以关闭屏幕</string>
+
+    <string name="miscellaneous_category_title">杂项</string>
+
+    <!-- Location privacy indicator -->
+    <string name="location_privacy_indicator_title">位置指示器</string>
+    <string name="location_privacy_indicator_summary">重启以生效</string>
 
 </resources>
