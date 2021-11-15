@@ -71,4 +71,16 @@
             android:defaultValue="false" />
             
     </PreferenceCategory>
+
+    <!-- Miscellaneous -->
+    <PreferenceCategory
+        android:title="@string/miscellaneous_category_title">
+
+        <!-- Location privacy indicator -->
+        <com.krypton.settings.preference.SecureSettingSwitchPreference
+            android:key="enable_location_privacy_indicator"
+            android:title="@string/location_privacy_indicator_title"
+            android:summary="@string/location_privacy_indicator_summary" />
+
+    </PreferenceCategory>
 </PreferenceScreen>

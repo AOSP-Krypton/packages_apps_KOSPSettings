@@ -16,6 +16,11 @@
 package com.krypton.settings.fragment.statusbar
 
 import android.os.Bundle
+import android.os.UserHandle
+import android.provider.DeviceConfig
+import android.provider.Settings
+
+import androidx.preference.SwitchPreference
 
 import com.android.settings.R
 import com.krypton.settings.fragment.BaseFragment
@@ -24,5 +29,19 @@ class StatusbarSettingsFragment: BaseFragment() {
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
         addPreferencesFromResource(R.xml.statusbar_settings)
+        findPreference<SwitchPreference>(LOCATION_INDICATOR_PREF_KEY)?.also {
+            val showLocationIndicator = Settings.Secure.getIntForUser(context!!.contentResolver,
+                Settings.Secure.ENABLE_LOCATION_PRIVACY_INDICATOR,
+                if (shouldShowLocationIndicator()) 1 else 0,
+                UserHandle.USER_CURRENT) == 1
+            it.setChecked(showLocationIndicator)
+        }
+    }
+
+    companion object {
+        private const val LOCATION_INDICATOR_PREF_KEY = "enable_location_privacy_indicator"
+
+        private fun shouldShowLocationIndicator() = DeviceConfig.getBoolean(DeviceConfig.NAMESPACE_PRIVACY,
+                "location_indicators_enabled", false)
     }
 }

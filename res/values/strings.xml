@@ -42,7 +42,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">Statusbar</string>
-    <string name="statusbar_settings_summary">Network traffic, Gestures</string>
+    <string name="statusbar_settings_summary">Network traffic, Gestures, Location indicator</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">Network traffic</string>
@@ -76,5 +76,11 @@
     <string name="statusbar_gesture_title">Gestures</string>
     <string name="double_tap_sleep_gesture_title">Double-tap to sleep</string>
     <string name="double_tap_sleep_gesture_summary">Double-tap anywhere on the status bar to put the device to sleep</string>
+
+    <string name="miscellaneous_category_title">Miscellaneous</string>
+
+    <!-- Location privacy indicator -->
+    <string name="location_privacy_indicator_title">Show privacy indicator for location</string>
+    <string name="location_privacy_indicator_summary">Reboot to take effect</string>
 
 </resources>
