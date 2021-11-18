@@ -53,6 +53,10 @@
     <string name="statusbar_network_traffic_rate_text_scale_factor_title">根据网络速度改变字体大小</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Scale factor</string>
 
+    <!-- Combined signal icons in status bar -->
+    <string name="combined_status_bar_signal_icons">组合信号图标</string>
+    <string name="combined_status_bar_signal_icons_summary">网络类型将显示在信号图标上方，需要重启手机或系统界面</string>
+
     <!-- Lockscree settings -->
     <string name="lockscreen_settings_title">锁屏</string>
     <string name="lockscreen_settings_summary">充电信息</string>
@@ -81,6 +85,18 @@
 
     <!-- Location privacy indicator -->
     <string name="location_privacy_indicator_title">位置指示器</string>
-    <string name="location_privacy_indicator_summary">重启以生效</string>
+    <string name="location_privacy_indicator_summary">重启手机或重启系统界面以生效</string>
+
+    <!-- Miscellaneous -->
+    <string name="miscellaneous_settings_summary">手势，截图提示音</string>
+
+    <!-- Torch Power button gestures -->
+    <string name="torch_power_button_gesture_title">息屏时切换手电筒</string>
+    <string name="torch_power_button_gesture_none">已禁用</string>
+    <string name="torch_power_button_gesture_dt">缓慢的双击两次电源键以关闭双击电源键所唤起的相机</string>
+    <string name="torch_power_button_gesture_lp">长按电源键</string>
+
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">截图提示音</string>
 
 </resources>
