@@ -45,6 +45,7 @@
     <Preference
         android:key="miscellaneous_settings"
         android:title="@string/miscellaneous_category_title"
+        android:summary="@string/miscellaneous_settings_summary"
         android:icon="@drawable/ic_miscellaneous"
         android:fragment="com.krypton.settings.fragment.miscellaneous.MiscellaneousSettingsFragment" />
 
