@@ -41,6 +41,13 @@
         android:icon="@drawable/ic_lockscreen"
         android:fragment="com.krypton.settings.fragment.lockscreen.LockscreenSettingsFragment" />
 
+    <!-- Miscellaneous settings -->
+    <Preference
+        android:key="miscellaneous_settings"
+        android:title="@string/miscellaneous_category_title"
+        android:icon="@drawable/ic_miscellaneous"
+        android:fragment="com.krypton.settings.fragment.miscellaneous.MiscellaneousSettingsFragment" />
+
     <!-- Device Settings -->
     <Preference
         android:key="device_settings"
