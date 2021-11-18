@@ -27,4 +27,10 @@
         android:entryValues="@array/torch_power_button_gesture_values"
         android:defaultValue="0" />
 
+    <!-- Screenshot sound -->
+    <com.krypton.settings.preference.SystemSettingSwitchPreference
+        android:key="screenshot_shutter_sound"
+        android:title="@string/screenshot_shutter_sound_title"
+        android:defaultValue="1" />
+
 </PreferenceScreen>
