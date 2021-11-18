@@ -15,8 +15,10 @@
  */
 package com.krypton.settings.fragment.statusbar
 
+import android.content.Context
 import android.os.Bundle
 import android.os.UserHandle
+import android.os.UserManager
 import android.provider.DeviceConfig
 import android.provider.Settings
 
@@ -24,8 +26,11 @@ import androidx.preference.SwitchPreference
 
 import com.android.settings.R
 import com.krypton.settings.fragment.BaseFragment
+import com.android.settingslib.RestrictedLockUtilsInternal
+import com.android.settingslib.Utils
 
 class StatusbarSettingsFragment: BaseFragment() {
+
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
         addPreferencesFromResource(R.xml.statusbar_settings)
@@ -36,6 +41,25 @@ class StatusbarSettingsFragment: BaseFragment() {
                 UserHandle.USER_CURRENT) == 1
             it.setChecked(showLocationIndicator)
         }
+
+        val combinedSignalIconPref = findPreference<SwitchPreference>(KEY_SHOW_COMBINED_STATUS_BAR_SIGNAL_ICONS)
+        val hideCombinedSignalIconsPref = Utils.isWifiOnly(context) ||
+            !context!!.getSystemService(UserManager::class.java).isAdminUser() ||
+            RestrictedLockUtilsInternal.hasBaseUserRestriction(context,
+                UserManager.DISALLOW_CONFIG_MOBILE_NETWORKS,
+                UserHandle.myUserId())
+        if (hideCombinedSignalIconsPref) preferenceScreen.removePreference(combinedSignalIconPref)
+        context!!.packageManager.getResourcesForApplication(SYSTEMUI_PACKAGE).also { res ->
+            val defaultEnabled: Boolean = res.getIdentifier(CONFIG_RESOURCE_NAME, BOOL_RES_TYPE, SYSTEMUI_PACKAGE)
+                .takeIf { resId -> resId != 0 }
+                ?.let { res.getBoolean(it) } ?: false
+            combinedSignalIconPref?.setChecked(
+                Settings.Secure.getIntForUser(context!!.contentResolver,
+                    Settings.Secure.SHOW_COMBINED_STATUS_BAR_SIGNAL_ICONS,
+                    if (defaultEnabled) 1 else 0,
+                    UserHandle.USER_CURRENT) == 1
+            )
+        }
     }
 
     companion object {
@@ -43,5 +67,10 @@ class StatusbarSettingsFragment: BaseFragment() {
 
         private fun shouldShowLocationIndicator() = DeviceConfig.getBoolean(DeviceConfig.NAMESPACE_PRIVACY,
                 "location_indicators_enabled", false)
+
+        private const val KEY_SHOW_COMBINED_STATUS_BAR_SIGNAL_ICONS = "show_combined_status_bar_signal_icons"
+        private const val CONFIG_RESOURCE_NAME = "flag_combined_status_bar_signal_icons"
+        private const val BOOL_RES_TYPE = "bool"
+        private const val SYSTEMUI_PACKAGE = "com.android.systemui"
     }
 }

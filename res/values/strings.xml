@@ -53,6 +53,10 @@
     <string name="statusbar_network_traffic_rate_text_scale_factor_title">Network traffic rate text scale factor</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Scale factor</string>
 
+    <!-- Combined signal icons in status bar -->
+    <string name="combined_status_bar_signal_icons">Combined signal icons</string>
+    <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons in status bar. Needs SystemUI restart or reboot</string>
+
     <!-- Lockscree settings -->
     <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="lockscreen_settings_summary">Charging info, Gestures</string>
