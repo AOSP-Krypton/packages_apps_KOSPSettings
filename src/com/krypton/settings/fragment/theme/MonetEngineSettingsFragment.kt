@@ -70,7 +70,7 @@ class MonetEngineSettingsFragment: BaseFragment(),
                 (newValue as Boolean).let {
                     if (it) {
                         Settings.Secure.putString(context!!.contentResolver,
-                            MONET_ENGINE_COLOR_OVERRIDE, "")
+                            MONET_ENGINE_COLOR_OVERRIDE, null)
                     }
                     customColorPickerPreference?.setEnabled(!it)
                     return true
