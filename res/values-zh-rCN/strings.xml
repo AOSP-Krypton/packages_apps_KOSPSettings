@@ -55,7 +55,7 @@
 
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">组合信号图标</string>
-    <string name="combined_status_bar_signal_icons_summary">网络类型将显示在信号图标上方，需要重启手机或系统界面</string>
+    <string name="combined_status_bar_signal_icons_summary">禁用组合信号图标，需要重启手机或系统界面</string>
 
     <!-- Lockscree settings -->
     <string name="lockscreen_settings_title">锁屏</string>
@@ -93,7 +93,7 @@
     <!-- Torch Power button gestures -->
     <string name="torch_power_button_gesture_title">息屏时切换手电筒</string>
     <string name="torch_power_button_gesture_none">已禁用</string>
-    <string name="torch_power_button_gesture_dt">缓慢的双击两次电源键以关闭双击电源键所唤起的相机</string>
+    <string name="torch_power_button_gesture_dt">双击电源键</string>
     <string name="torch_power_button_gesture_lp">长按电源键</string>
 
     <!-- Screenshot shutter -->
