@@ -18,11 +18,20 @@ package com.krypton.settings.fragment.lockscreen
 import android.os.Bundle
 
 import com.android.settings.R
+import com.krypton.settings.Utils
 import com.krypton.settings.fragment.BaseFragment
 
 class LockscreenSettingsFragment: BaseFragment() {
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
         addPreferencesFromResource(R.xml.lockscreen_settings)
+
+        if (!Utils.hasUDFPS(activity!!)) {
+            removePreference(SCREEN_OFF_FOD_KEY)
+        }
+    }
+
+    companion object {
+        private const val SCREEN_OFF_FOD_KEY = "screen_off_fod"
     }
 }
