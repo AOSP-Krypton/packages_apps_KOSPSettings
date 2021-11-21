@@ -16,7 +16,10 @@
 
 package com.krypton.settings
 
+import android.content.Context
 import android.graphics.Color
+import android.hardware.fingerprint.FingerprintManager
+import android.hardware.fingerprint.FingerprintSensorPropertiesInternal
 
 import androidx.core.graphics.ColorUtils
 
@@ -31,4 +34,15 @@ object Utils {
 
     // color values are always negative, use a - sign to make it positive
     fun colorToHex(color: Int) = String.format("#%06X", (0xFFFFFF and color))
+
+    /**
+     * Checks if the device has udfps.
+     * @param context context for obtaining an instance FingerprintManager service.
+     * @return true is udfps is present.
+     */
+    fun hasUDFPS(context: Context): Boolean {
+        val fingerprintManager = context.getSystemService(FingerprintManager::class.java)
+        val props: List<FingerprintSensorPropertiesInternal> = fingerprintManager.getSensorPropertiesInternal()
+        return props.size == 1 && props[0].isAnyUdfpsType()
+    }
 }
