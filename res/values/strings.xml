@@ -98,5 +98,6 @@
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Screenshot sound</string>
+    <string name="screenshot_shutter_sound_summary">Enable screenshot sound and vibration</string>
 
 </resources>
