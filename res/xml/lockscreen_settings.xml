@@ -18,7 +18,7 @@
     android:title="@string/lockscreen_settings_title">
 
     <com.krypton.settings.preference.SystemSettingSwitchPreference
-        android:key="lockscreen_charging_info"
+        android:key="lockscreen_battery_info"
         android:title="@string/lockscreen_charging_info_title"
         android:summary="@string/lockscreen_charging_info_summary"
         android:defaultValue="1" />
