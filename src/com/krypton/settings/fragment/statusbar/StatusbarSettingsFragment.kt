@@ -22,6 +22,7 @@ import android.os.UserManager
 import android.provider.DeviceConfig
 import android.provider.Settings
 
+import androidx.preference.Preference
 import androidx.preference.SwitchPreference
 
 import com.android.settings.R
@@ -29,7 +30,13 @@ import com.krypton.settings.fragment.BaseFragment
 import com.android.settingslib.RestrictedLockUtilsInternal
 import com.android.settingslib.Utils
 
-class StatusbarSettingsFragment: BaseFragment() {
+class StatusbarSettingsFragment: BaseFragment(),
+    Preference.OnPreferenceChangeListener {
+
+    private var qsBottomSliderPreference: Preference? = null
+    private var autoBrightnessPreference: Preference? = null
+    private var isQSsliderEnabled = false
+    private var isQQSsliderEnabled = false
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
@@ -60,6 +67,46 @@ class StatusbarSettingsFragment: BaseFragment() {
                     UserHandle.USER_CURRENT) == 1
             )
         }
+
+        findPreference<SwitchPreference>(QS_SHOW_BRIGHTNESS_PREF_KEY)?.let {
+            it.setOnPreferenceChangeListener(this)
+            isQSsliderEnabled = it.isChecked()
+        }
+        findPreference<SwitchPreference>(QQS_SHOW_BRIGHTNESS_PREF_KEY)?.let {
+            it.setOnPreferenceChangeListener(this)
+            isQQSsliderEnabled = it.isChecked()
+        }
+        qsBottomSliderPreference = findPreference<Preference>(QS_BOTTOM_BRIGHTNESS_PREF_KEY)
+        val isAutoBrightnessAvailable = context!!.resources.getBoolean(
+            com.android.internal.R.bool.config_automatic_brightness_available)
+        if (!isAutoBrightnessAvailable) {
+            removePreference(AUTO_BRIGHTNESS_BUTTON_PREF_KEY)
+        } else {
+            autoBrightnessPreference = findPreference<Preference>(AUTO_BRIGHTNESS_BUTTON_PREF_KEY)
+        }
+        updateOtherSliderPrefs()
+    }
+
+    override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
+        val result = when (preference.key) {
+            QS_SHOW_BRIGHTNESS_PREF_KEY -> {
+                isQSsliderEnabled = newValue as Boolean
+                true
+            }
+            QQS_SHOW_BRIGHTNESS_PREF_KEY -> {
+                isQQSsliderEnabled = newValue as Boolean
+                true
+            }
+            else -> false
+        }
+        updateOtherSliderPrefs()
+        return result
+    }
+
+    private fun updateOtherSliderPrefs() {
+        val showOtherSliderPrefs = isQSsliderEnabled || isQQSsliderEnabled
+        qsBottomSliderPreference?.setEnabled(showOtherSliderPrefs)
+        autoBrightnessPreference?.setEnabled(showOtherSliderPrefs)
     }
 
     companion object {
@@ -72,5 +119,10 @@ class StatusbarSettingsFragment: BaseFragment() {
         private const val CONFIG_RESOURCE_NAME = "flag_combined_status_bar_signal_icons"
         private const val BOOL_RES_TYPE = "bool"
         private const val SYSTEMUI_PACKAGE = "com.android.systemui"
+
+        private const val QS_SHOW_BRIGHTNESS_PREF_KEY = "qs_show_brightness"
+        private const val QQS_SHOW_BRIGHTNESS_PREF_KEY = "qqs_show_brightness"
+        private const val QS_BOTTOM_BRIGHTNESS_PREF_KEY = "qs_brightness_position_bottom"
+        private const val AUTO_BRIGHTNESS_BUTTON_PREF_KEY = "qs_show_auto_brightness_button"
     }
 }
