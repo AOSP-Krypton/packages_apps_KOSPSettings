@@ -46,7 +46,6 @@
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">网络流量监视器</string>
-    <string name="statusbar_show_network_traffic_title">在状态栏中显示网络流量监视器</string>
     <string name="statusbar_network_traffic_threshold_tx_title">上传速度到阈值时自动隐藏</string>
     <string name="statusbar_network_traffic_threshold_rx_title">下载速度到阈值时自动隐藏</string>
     <string name="statusbar_network_traffic_unit_text_size_title">网络流量监视器字体大小</string>
