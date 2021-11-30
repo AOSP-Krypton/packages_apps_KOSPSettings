@@ -25,6 +25,6 @@ class NetworkTrafficMonitorSettingsFragment: BaseFragment() {
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        addPreferencesFromResource(R.xml.network_traffic_monitor_settings_fragment)
+        addPreferencesFromResource(R.xml.network_traffic_monitor_settings)
     }
 }
