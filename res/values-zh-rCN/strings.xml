@@ -52,6 +52,15 @@
     <string name="statusbar_network_traffic_rate_text_scale_factor_title">根据网络速度改变字体大小</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Scale factor</string>
 
+    <!-- QS Brightness -->
+    <string name="qs_brightness_category_title">亮度滑块</string>
+    <string name="qs_show_brightness_title">在快速设置面板中显示亮度滑块</string>
+    <string name="qqs_show_brightness_title">在拓展快速设置面板中显示亮度滑块</string>
+    <string name="qs_brightness_position_bottom_title">底部亮度滑块</string>
+    <string name="qs_brightness_position_bottom_summary_on">位置：底部</string>
+    <string name="qs_brightness_position_bottom_summary_off">位置：顶部</string>
+    <string name="qs_show_auto_brightness_button_title">显示自动亮度按钮</string>
+
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">组合信号图标</string>
     <string name="combined_status_bar_signal_icons_summary">禁用组合信号图标，需要重启手机或系统界面</string>
@@ -97,5 +106,6 @@
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">截图提示音</string>
+    <string name="screenshot_shutter_sound_summary">启用截图提示音和震动</string>
 
 </resources>
