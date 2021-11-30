@@ -91,10 +91,7 @@ class MonetEngineSettingsFragment: BaseFragment(),
                 customColorPickerPreference?.key,
                 preferenceDataStore,
                 defaultColor,
-            ).let {
-                it.setTargetFragment(this, 0)
-                it.show(getParentFragmentManager(), TAG)
-            }
+            ).show(childFragmentManager, TAG)
         } else {
             super.onDisplayPreferenceDialog(preference)
         }
