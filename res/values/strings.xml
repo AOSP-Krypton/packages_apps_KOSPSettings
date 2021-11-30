@@ -46,7 +46,6 @@
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">Network traffic</string>
-    <string name="statusbar_show_network_traffic_title">Show network traffic in statusbar</string>
     <string name="statusbar_network_traffic_threshold_tx_title">Auto hide threshold for upload</string>
     <string name="statusbar_network_traffic_threshold_rx_title">Auto hide threshold for download</string>
     <string name="statusbar_network_traffic_unit_text_size_title">Network traffic unit text size</string>

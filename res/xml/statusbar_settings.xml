@@ -18,50 +18,13 @@
     android:title="@string/statusbar_settings_title">
 
     <!-- Network traffic -->
+    <com.krypton.settings.preference.SystemSettingMasterSwitchPreference
+        android:key="network_traffic_enabled"
+        android:title="@string/network_traffic_category_title"
+        android:defaultValue="0"
+        android:fragment="com.krypton.settings.fragment.statusbar.NetworkTrafficMonitorSettingsFragment" />
+
     <PreferenceCategory
-        android:title="@string/network_traffic_category_title">
-
-        <com.krypton.settings.preference.SystemSettingSwitchPreference
-            android:key="network_traffic_enabled"
-            android:title="@string/statusbar_show_network_traffic_title"
-            android:defaultValue="0" />
-
-        <com.krypton.settings.preference.SystemSettingSeekBarPreference
-            android:key="network_traffic_auto_hide_threshold_tx"
-            android:title="@string/statusbar_network_traffic_threshold_tx_title"
-            android:dependency="network_traffic_enabled"
-            android:defaultValue="0"
-            android:max="1024"
-            settings:min="0"
-            settings:interval="128" />
-
-        <com.krypton.settings.preference.SystemSettingSeekBarPreference
-            android:key="network_traffic_auto_hide_threshold_rx"
-            android:title="@string/statusbar_network_traffic_threshold_rx_title"
-            android:dependency="network_traffic_enabled"
-            android:defaultValue="0"
-            android:max="1024"
-            settings:min="0"
-            settings:interval="128" />
-
-        <com.krypton.settings.preference.SystemSettingSeekBarPreference
-            android:key="network_traffic_unit_text_size"
-            android:title="@string/statusbar_network_traffic_unit_text_size_title"
-            android:dependency="network_traffic_enabled"
-            android:defaultValue="21"
-            android:max="25"
-            settings:min="15" />
-
-        <com.krypton.settings.preference.SystemSettingSeekBarPreference
-            android:key="network_traffic_rate_text_scale_factor"
-            android:title="@string/statusbar_network_traffic_rate_text_scale_factor_title"
-            android:dependency="network_traffic_enabled"
-            android:defaultValue="15"
-            android:max="20"
-            settings:min="10" />
-    </PreferenceCategory>
-
-     <PreferenceCategory
         android:title="@string/statusbar_gesture_title">
 
         <com.krypton.settings.preference.SystemSettingSwitchPreference
