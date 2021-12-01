@@ -14,14 +14,18 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:title="@string/theme_settings_title">
+     xmlns:settings="http://schemas.android.com/apk/res-auto"
+     android:title="@string/theme_settings_title">
 
-    <!-- Monet -->
-    <Preference
-        android:key="monet_engine_settings"
-        android:title="@string/monet_engine_settings_title"
-        android:summary="@string/monet_engine_settings_summary"
-        android:fragment="com.krypton.settings.fragment.theme.MonetEngineSettingsFragment" />
+     <!-- Monet -->
+     <Preference
+          android:key="monet_engine_settings"
+          android:title="@string/monet_engine_settings_title"
+          android:summary="@string/monet_engine_settings_summary"
+          android:fragment="com.krypton.settings.fragment.theme.MonetEngineSettingsFragment" />
+
+     <ListPreference
+          android:key="android.theme.customization.font"
+          android:title="@string/theme_customization_font_title"/>
 
 </PreferenceScreen>

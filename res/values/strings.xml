@@ -40,6 +40,9 @@
     <string name="linear_lightness_title">Use custom lightness scale</string>
     <string name="white_luminance_title">Brightness</string>
 
+    <!-- Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Headline / Body font</string>
+
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">Statusbar</string>
     <string name="statusbar_settings_summary">Network traffic, Gestures, Location indicator</string>
