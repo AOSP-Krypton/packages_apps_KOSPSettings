@@ -29,11 +29,31 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
     override protected fun createPreferenceControllers(
         context: Context
     ): List<AbstractPreferenceController> {
+        val isAospLauncherInstalled = KryptonUtils.isPackageInstalled(
+            context, TARGET_LAUNCHER, false /** ignoreState */
+        )
+        val isAospThemePickerInstalled = KryptonUtils.isPackageInstalled(
+            context, TARGET_THEME_PICKER, false /** ignoreState */
+        )
         return listOf(
             ThemeOverlayPreferenceController(context,
                 "font_list_preference",
                 mapOf(OVERLAY_CATEGORY_FONT to TARGET_ANDROID),
             ),
+            ThemeOverlayPreferenceController(context,
+                "icon_pack_list_preference",
+                mutableMapOf(
+                    OVERLAY_CATEGORY_ICON_ANDROID to TARGET_ANDROID,
+                    OVERLAY_CATEGORY_ICON_SYSUI to TARGET_SYSUI,
+                    OVERLAY_CATEGORY_ICON_SETTINGS to TARGET_SETTINGS,
+                ).also {
+                    // Conditionally add launcher and themepicker
+                    if (isAospLauncherInstalled) it.put(
+                        OVERLAY_CATEGORY_ICON_LAUNCHER, TARGET_LAUNCHER)
+                    if (isAospThemePickerInstalled) it.put(
+                        OVERLAY_CATEGORY_ICON_THEME_PICKER, TARGET_THEME_PICKER)
+                },
+            )
         )
     }
 
@@ -43,7 +63,16 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
         private const val TAG = "ThemeSettingsFragment"
 
         private const val OVERLAY_CATEGORY_FONT = "android.theme.customization.font"
+        private const val OVERLAY_CATEGORY_ICON_ANDROID = "android.theme.customization.icon_pack.android"
+        private const val OVERLAY_CATEGORY_ICON_SYSUI = "android.theme.customization.icon_pack.systemui"
+        private const val OVERLAY_CATEGORY_ICON_SETTINGS = "android.theme.customization.icon_pack.settings"
+        private const val OVERLAY_CATEGORY_ICON_LAUNCHER = "android.theme.customization.icon_pack.launcher"
+        private const val OVERLAY_CATEGORY_ICON_THEME_PICKER = "android.theme.customization.icon_pack.themepicker"
 
         private const val TARGET_ANDROID = "android"
+        private const val TARGET_SYSUI = "com.android.systemui"
+        private const val TARGET_SETTINGS = "com.android.settings"
+        private const val TARGET_LAUNCHER = "com.android.launcher3"
+        private const val TARGET_THEME_PICKER = "com.android.wallpaper"
     }
 }
