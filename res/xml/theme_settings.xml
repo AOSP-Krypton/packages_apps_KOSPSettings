@@ -25,7 +25,7 @@
           android:fragment="com.krypton.settings.fragment.theme.MonetEngineSettingsFragment" />
 
      <ListPreference
-          android:key="android.theme.customization.font"
+          android:key="font_list_preference"
           android:title="@string/theme_customization_font_title"/>
 
 </PreferenceScreen>

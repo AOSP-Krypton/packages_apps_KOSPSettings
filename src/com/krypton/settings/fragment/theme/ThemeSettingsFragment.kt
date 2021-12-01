@@ -17,8 +17,8 @@ package com.krypton.settings.fragment.theme
 
 import android.content.Context
 
+import com.android.internal.util.krypton.KryptonUtils
 import com.android.settings.R
-import com.android.settings.development.OverlayCategoryPreferenceController
 import com.android.settingslib.core.AbstractPreferenceController
 import com.krypton.settings.fragment.KryptonDashboardFragment
 
@@ -27,15 +27,23 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
     override protected fun getPreferenceScreenResId() = R.xml.theme_settings
 
     override protected fun createPreferenceControllers(
-        context: Context?
-    ): List<AbstractPreferenceController> = listOf(
-            OverlayCategoryPreferenceController(context,
-                "android.theme.customization.font")
+        context: Context
+    ): List<AbstractPreferenceController> {
+        return listOf(
+            ThemeOverlayPreferenceController(context,
+                "font_list_preference",
+                mapOf(OVERLAY_CATEGORY_FONT to TARGET_ANDROID),
+            ),
         )
+    }
 
     override protected fun getLogTag() = TAG
 
     companion object {
         private const val TAG = "ThemeSettingsFragment"
+
+        private const val OVERLAY_CATEGORY_FONT = "android.theme.customization.font"
+
+        private const val TARGET_ANDROID = "android"
     }
 }
