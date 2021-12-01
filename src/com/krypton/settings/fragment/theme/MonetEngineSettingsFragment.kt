@@ -26,18 +26,17 @@ import androidx.preference.Preference
 import androidx.preference.SwitchPreference
 
 import com.android.settings.R
-import com.krypton.settings.fragment.BaseFragment
+import com.krypton.settings.fragment.KryptonDashboardFragment
 import com.krypton.settings.preference.CustomSeekBarPreference
 import com.krypton.settings.preference.SettingColorPickerPreference
 
-class MonetEngineSettingsFragment: BaseFragment(),
+class MonetEngineSettingsFragment: KryptonDashboardFragment(),
         Preference.OnPreferenceChangeListener {
 
     private var customColorPickerPreference: SettingColorPickerPreference? = null
     
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        addPreferencesFromResource(R.xml.monet_engine_settings)
 
         val customColor: String? = Settings.Secure.getString(
             context!!.contentResolver, MONET_ENGINE_COLOR_OVERRIDE)
@@ -63,6 +62,8 @@ class MonetEngineSettingsFragment: BaseFragment(),
             it.setValue(chromaFactor.toInt())
         }?.setOnPreferenceChangeListener(this)
     }
+
+    override protected fun getPreferenceScreenResId() = R.xml.monet_engine_settings
 
     override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean =
         when (preference.key) {
@@ -96,6 +97,8 @@ class MonetEngineSettingsFragment: BaseFragment(),
             super.onDisplayPreferenceDialog(preference)
         }
     }
+
+    override protected fun getLogTag() = TAG
 
     companion object {
         private const val TAG = "MonetEngineSettingsFragment"

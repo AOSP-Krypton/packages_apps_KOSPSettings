@@ -19,19 +19,24 @@ import android.os.Bundle
 
 import com.android.settings.R
 import com.krypton.settings.Utils
-import com.krypton.settings.fragment.BaseFragment
+import com.krypton.settings.fragment.KryptonDashboardFragment
 
-class LockscreenSettingsFragment: BaseFragment() {
+class LockscreenSettingsFragment: KryptonDashboardFragment() {
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        addPreferencesFromResource(R.xml.lockscreen_settings)
 
         if (!Utils.hasUDFPS(activity!!)) {
             removePreference(SCREEN_OFF_FOD_KEY)
         }
     }
 
+    override protected fun getPreferenceScreenResId() = R.xml.lockscreen_settings
+
+    override protected fun getLogTag() = TAG
+
     companion object {
+        private const val TAG = "LockscreenSettingsFragment"
+
         private const val SCREEN_OFF_FOD_KEY = "screen_off_fod"
     }
 }

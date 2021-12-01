@@ -16,8 +16,8 @@
 package com.krypton.settings.fragment
 
 import com.android.internal.logging.nano.MetricsProto
-import com.android.settings.SettingsPreferenceFragment
+import com.android.settings.dashboard.DashboardFragment
 
-open class BaseFragment: SettingsPreferenceFragment() {
+abstract class KryptonDashboardFragment: DashboardFragment() {
     override fun getMetricsCategory(): Int = MetricsProto.MetricsEvent.KRYPTON
 }

@@ -20,14 +20,23 @@ import android.os.Bundle
 import com.android.internal.util.krypton.KryptonUtils
 import com.android.settings.R
 
-class KryptonSettingsFragment: BaseFragment() {
+class KryptonSettingsFragment: KryptonDashboardFragment() {
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        addPreferencesFromResource(R.xml.krypton_settings)
-        val deviceSettingsInstalled: Boolean = KryptonUtils.isPackageInstalled(context!!,
+        val deviceSettingsInstalled = KryptonUtils.isPackageInstalled(context,
             "com.krypton.settings.device", false /* ignoreState */)
         if (!deviceSettingsInstalled) {
-            preferenceScreen.removePreferenceRecursively("device_settings")
+            removePreference(DEVICE_SETTINGS_PREF_KEY)
         }
+    }
+
+    override protected fun getPreferenceScreenResId() = R.xml.krypton_settings
+
+    override protected fun getLogTag() = TAG
+
+    companion object {
+        private const val TAG = "KryptonSettingsFragment"
+
+        private const val DEVICE_SETTINGS_PREF_KEY = "device_settings"
     }
 }

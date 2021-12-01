@@ -15,14 +15,15 @@
  */
 package com.krypton.settings.fragment.miscellaneous
 
-import android.os.Bundle
-
-import com.krypton.settings.fragment.BaseFragment
 import com.android.settings.R
+import com.krypton.settings.fragment.KryptonDashboardFragment
 
-class MiscellaneousSettingsFragment: BaseFragment() {
-    override fun onCreate(bundle: Bundle?) {
-        super.onCreate(bundle)
-        addPreferencesFromResource(R.xml.miscellaneous_settings)
+class MiscellaneousSettingsFragment: KryptonDashboardFragment() {
+    override protected fun getPreferenceScreenResId() = R.xml.miscellaneous_settings
+
+    override protected fun getLogTag() = TAG
+
+    companion object {
+        private const val TAG = "MiscellaneousSettingsFragment"
     }
 }

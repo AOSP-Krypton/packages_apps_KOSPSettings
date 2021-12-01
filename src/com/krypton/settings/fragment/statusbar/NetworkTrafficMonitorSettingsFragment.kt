@@ -16,15 +16,15 @@
 
 package com.krypton.settings.fragment.statusbar
 
-import android.os.Bundle
-
 import com.android.settings.R
-import com.krypton.settings.fragment.BaseFragment
+import com.krypton.settings.fragment.KryptonDashboardFragment
 
-class NetworkTrafficMonitorSettingsFragment: BaseFragment() {
+class NetworkTrafficMonitorSettingsFragment: KryptonDashboardFragment() {
+    override protected fun getPreferenceScreenResId() = R.xml.network_traffic_monitor_settings
 
-    override fun onCreate(bundle: Bundle?) {
-        super.onCreate(bundle)
-        addPreferencesFromResource(R.xml.network_traffic_monitor_settings)
+    override protected fun getLogTag() = TAG
+
+    companion object {
+        private const val TAG = "NetworkTrafficMonitorSettingsFragment"
     }
 }

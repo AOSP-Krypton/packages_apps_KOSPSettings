@@ -15,14 +15,15 @@
  */
 package com.krypton.settings.fragment.theme
 
-import android.os.Bundle
-
-import com.krypton.settings.fragment.BaseFragment
+import com.krypton.settings.fragment.KryptonDashboardFragment
 import com.android.settings.R
 
-class ThemeSettingsFragment: BaseFragment() {
-    override fun onCreate(bundle: Bundle?) {
-        super.onCreate(bundle)
-        addPreferencesFromResource(R.xml.theme_settings)
+class ThemeSettingsFragment: KryptonDashboardFragment() {
+    override protected fun getPreferenceScreenResId() = R.xml.theme_settings
+
+    override protected fun getLogTag() = TAG
+
+    companion object {
+        private const val TAG = "ThemeSettingsFragment"
     }
 }

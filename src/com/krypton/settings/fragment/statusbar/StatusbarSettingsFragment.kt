@@ -26,11 +26,11 @@ import androidx.preference.Preference
 import androidx.preference.SwitchPreference
 
 import com.android.settings.R
-import com.krypton.settings.fragment.BaseFragment
 import com.android.settingslib.RestrictedLockUtilsInternal
 import com.android.settingslib.Utils
+import com.krypton.settings.fragment.KryptonDashboardFragment
 
-class StatusbarSettingsFragment: BaseFragment(),
+class StatusbarSettingsFragment: KryptonDashboardFragment(),
     Preference.OnPreferenceChangeListener {
 
     private var qsBottomSliderPreference: Preference? = null
@@ -40,7 +40,6 @@ class StatusbarSettingsFragment: BaseFragment(),
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        addPreferencesFromResource(R.xml.statusbar_settings)
         findPreference<SwitchPreference>(LOCATION_INDICATOR_PREF_KEY)?.also {
             val showLocationIndicator = Settings.Secure.getIntForUser(context!!.contentResolver,
                 Settings.Secure.ENABLE_LOCATION_PRIVACY_INDICATOR,
@@ -87,6 +86,8 @@ class StatusbarSettingsFragment: BaseFragment(),
         updateOtherSliderPrefs()
     }
 
+    override protected fun getPreferenceScreenResId() = R.xml.statusbar_settings
+
     override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
         val result = when (preference.key) {
             QS_SHOW_BRIGHTNESS_PREF_KEY -> {
@@ -103,6 +104,8 @@ class StatusbarSettingsFragment: BaseFragment(),
         return result
     }
 
+    override protected fun getLogTag() = TAG
+
     private fun updateOtherSliderPrefs() {
         val showOtherSliderPrefs = isQSsliderEnabled || isQQSsliderEnabled
         qsBottomSliderPreference?.setEnabled(showOtherSliderPrefs)
@@ -110,6 +113,8 @@ class StatusbarSettingsFragment: BaseFragment(),
     }
 
     companion object {
+        private const val TAG = "StatusbarSettingsFragment"
+
         private const val LOCATION_INDICATOR_PREF_KEY = "enable_location_privacy_indicator"
 
         private fun shouldShowLocationIndicator() = DeviceConfig.getBoolean(DeviceConfig.NAMESPACE_PRIVACY,
