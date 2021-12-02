@@ -37,7 +37,10 @@ import org.json.JSONObject
 
 /**
  * [Preference] controller for theme customisation overlays.
- * @param categoryPackageMap a [Map] of an overlay category to it's targets' package name.
+ *
+ * @param context the [Context] for this controller.
+ * @param key the preference key.
+ * @param categoryPackageMap a [Map] of an overlays category to it's target package.
  */
 class ThemeOverlayPreferenceController(
     private val context: Context,
@@ -50,7 +53,7 @@ class ThemeOverlayPreferenceController(
     private val defaultLabel: String
 
     /**
-     * [MutableMap] of overlay label to a list of [OverlayInfo]s with same label
+     * [MutableMap] of overlay label to a list of [OverlayInfo]s with same label.
      */
     private var overlayInfos: MutableMap<String, MutableList<OverlayInfo>>
 
@@ -105,16 +108,15 @@ class ThemeOverlayPreferenceController(
                     }
                     return@let
                 }
-                val list = overlayInfos[value as String]
-                list?.let {
-                    categoryPackageMap.keys.forEach { category ->
-                        val overlayInfo = it.find { it.category == category }
+                overlayInfos[value as String]?.let {
+                    categoryPackageMap.forEach { category, target ->
+                        val overlayInfo = it.find { oi -> oi.targetPackageName == target }
                         if (overlayInfo == null) {
-                            // There is no overlay that targets this category, delete entry
+                            // There is no overlay for this category, delete entry
                             // if present so that system default will be used for it.
                             jsonObject.remove(category)
                         } else {
-                            jsonObject.put(overlayInfo.category, overlayInfo.packageName)
+                            jsonObject.put(category, overlayInfo.packageName)
                         }
                     }
                 }
@@ -133,16 +135,12 @@ class ThemeOverlayPreferenceController(
         // A map of overlay name to all the OverlayInfo's with the same name
         val filteredInfos = mutableMapOf<String, MutableList<OverlayInfo>>()
         try {
-            categoryPackageMap.values.forEach { target ->
+            categoryPackageMap.forEach { category, target ->
                 val overlays = overlayManager.getOverlayInfosForTarget(
                         target, UserHandle.USER_SYSTEM) as List<OverlayInfo>
                 overlays.filter {
-                    // Discard empty categories
-                    it.category?.isNotBlank() ?: false
-                }.filter {
-                    // Check if the overlay category is for the
-                    // give categories of this preference
-                    categoryPackageMap.containsKey(it.category)
+                    // Filter based on category.
+                    it.category == category
                 }.forEach {
                     try {
                         val label = packageManager.getApplicationInfo(it.packageName,
@@ -152,9 +150,7 @@ class ThemeOverlayPreferenceController(
                         } else {
                             filteredInfos[label]!!.add(it)
                         }
-                    } catch (e: PackageManager.NameNotFoundException) {
-                        // Ignored
-                    }
+                    } catch (_: PackageManager.NameNotFoundException) {}
                 }
             }
         } catch (e: RemoteException) {
