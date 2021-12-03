@@ -113,4 +113,7 @@
     <string name="screenshot_shutter_sound_title">Screenshot sound</string>
     <string name="screenshot_shutter_sound_summary">Enable screenshot sound and vibration</string>
 
+    <string name="search">Search</string>
+    <string name="search_apps">Search apps</string>
+
 </resources>
