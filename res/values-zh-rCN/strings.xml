@@ -40,6 +40,11 @@
     <string name="linear_lightness_title">调整界面亮度</string>
     <string name="white_luminance_title">亮度</string>
 
+    <!-- Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">标题 / 正文 字体</string>
+    <!-- Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="theme_customization_icon_pack_title">图标包</string>
+
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">状态栏</string>
     <string name="statusbar_settings_summary">网络流量,手势,位置指示器</string>
