@@ -41,4 +41,16 @@
         <item>3</item>
     </string-array>
 
+    <!-- Battery styles -->
+    <string-array name="statusbar_battery_styles">
+        <item>@string/battery_style_portrait</item>
+        <item>@string/battery_style_circle</item>
+        <item>@string/battery_style_text</item>
+    </string-array>
+    <string-array name="statusbar_battery_style_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>

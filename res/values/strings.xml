@@ -66,6 +66,14 @@
     <string name="qs_brightness_position_bottom_summary_off">Position: Top</string>
     <string name="qs_show_auto_brightness_button_title">Show auto brightness button</string>
 
+    <!-- Battery -->
+    <string name="statusbar_battery_category_title">Battery</string>
+    <string name="statusbar_battery_style_title">Battery icon style</string>
+    <string name="battery_style_portrait">Portrait</string>
+    <string name="battery_style_circle">Circle</string>
+    <string name="battery_style_text">Text</string>
+    <string name="statusbar_battery_show_percent_inside_title">Show battery percent inside icon</string>
+
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Combined signal icons</string>
     <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons in status bar. Needs SystemUI restart or reboot</string>
