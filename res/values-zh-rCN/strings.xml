@@ -99,7 +99,6 @@
     <string name="ambient_pulse_color_mode_title">边缘闪光颜色</string>
     <string name="ambient_pulse_custom_color_mode_title">自定义颜色</string>
     <string name="ambient_pulse_custom_color_mode_summary">为边缘闪光选择一个颜色</string>
-    <string name="color_picker_title">颜色选择器</string>
     <string name="ambient_pulse_repeat_count_title">闪光重复次数</string>
     <string name="ambient_pulse_repeat_count_summary">选择边缘闪光重复次数，如果设为 0 将重复至超时</string>
     <string name="ambient_pulse_timeout_title">边缘闪光超时</string>

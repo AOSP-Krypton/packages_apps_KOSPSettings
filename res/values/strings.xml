@@ -19,7 +19,7 @@
 
     <!-- Theme settings -->
     <string name="theme_settings_title">Theme</string>
-    <string name="theme_settings_summary">Monet</string>
+    <string name="theme_settings_summary">Monet, Font, Icon pack</string>
 
     <!-- Color picker -->
     <string name="rgb">RGB</string>
@@ -47,7 +47,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">Statusbar</string>
-    <string name="statusbar_settings_summary">Network traffic, Gestures, Location indicator</string>
+    <string name="statusbar_settings_summary">Network traffic, Brightness slider, Battery style</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">Network traffic</string>
@@ -80,7 +80,7 @@
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">Lockscreen</string>
-    <string name="lockscreen_settings_summary">Charging info, Gestures</string>
+    <string name="lockscreen_settings_summary">Charging info, Gestures, Edge light</string>
 
     <!-- Lockscreen battery info -->
     <string name="lockscreen_charging_info_title">Show charging info in lockscreen</string>
@@ -99,7 +99,6 @@
     <string name="ambient_pulse_color_mode_title">Edge light color</string>
     <string name="ambient_pulse_custom_color_mode_title">Custom color</string>
     <string name="ambient_pulse_custom_color_mode_summary">Choose a custom color for edge light</string>
-    <string name="color_picker_title">Color picker</string>
     <string name="ambient_pulse_repeat_count_title">Pulse repeat count</string>
     <string name="ambient_pulse_repeat_count_summary">Choose how many times ambient pulse should repeat, a repeat count of 0
             will cause the animation to run until timeout</string>
@@ -133,7 +132,7 @@
     <string name="location_privacy_indicator_summary">Reboot or restart system UI for it to take effect</string>
 
     <!-- Miscellaneous -->
-    <string name="miscellaneous_settings_summary">Gestures, Screenshot sound</string>
+    <string name="miscellaneous_settings_summary">Gestures, Screenshot sound, Volume rocker</string>
 
     <!-- Torch Power button gestures -->
     <string name="torch_power_button_gesture_title">Toggle torch when screen off</string>
