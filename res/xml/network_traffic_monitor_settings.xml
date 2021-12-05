@@ -23,7 +23,8 @@
         android:defaultValue="0"
         android:max="1024"
         settings:min="0"
-        settings:interval="128" />
+        settings:interval="128"
+        settings:units="KiB/s" />
 
     <com.krypton.settings.preference.SystemSettingSeekBarPreference
         android:key="network_traffic_auto_hide_threshold_rx"
@@ -31,14 +32,16 @@
         android:defaultValue="0"
         android:max="1024"
         settings:min="0"
-        settings:interval="128" />
+        settings:interval="128"
+        settings:units="KiB/s" />
 
     <com.krypton.settings.preference.SystemSettingSeekBarPreference
         android:key="network_traffic_unit_text_size"
         android:title="@string/statusbar_network_traffic_unit_text_size_title"
         android:defaultValue="21"
         android:max="25"
-        settings:min="15" />
+        settings:min="15"
+        settings:units="px" />
 
     <com.krypton.settings.preference.SystemSettingSeekBarPreference
         android:key="network_traffic_rate_text_scale_factor"

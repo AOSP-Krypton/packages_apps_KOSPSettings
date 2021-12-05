@@ -68,8 +68,7 @@ open class CustomSeekBarPreference(
     constructor(context: Context): this(context, null)
 
     private var interval = 1
-    private var units = " "
-    private var showSign: Boolean
+    private var units: String? = null
     private var continuousUpdates = false
 
     private var minValue = 0
@@ -89,8 +88,7 @@ open class CustomSeekBarPreference(
 
     init {
         context.obtainStyledAttributes(attrs, R.styleable.CustomSeekBarPreference).use {
-            showSign = it.getBoolean(R.styleable.CustomSeekBarPreference_showSign, false)
-            it.getString(R.styleable.CustomSeekBarPreference_units)?.let { units += it }
+            units = it.getString(R.styleable.CustomSeekBarPreference_units)
             continuousUpdates = it.getBoolean(R.styleable.CustomSeekBarPreference_continuousUpdates, continuousUpdates)
         }
 
@@ -154,9 +152,9 @@ open class CustomSeekBarPreference(
     private fun updateValueViews() {
         valueTextView?.let {
             var text = context.getString(R.string.custom_seekbar_value);
-            text += " ${ if (trackingTouch) trackingValue else seekBarValue}"
-            if (showSign) {
-                text += units
+            text += " ${ if (trackingTouch) trackingValue else seekBarValue }"
+            if (units != null) {
+                text += " $units"
             }
             if (!trackingTouch && defaultValueExists && seekBarValue == defaultValue) {
                 text += " (" + context.getString(R.string.custom_seekbar_default_value) + ")"

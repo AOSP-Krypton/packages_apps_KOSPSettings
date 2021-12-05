@@ -65,7 +65,8 @@
         android:defaultValue="0"
         android:max="600"
         settings:min="0"
-        settings:interval="30" />
+        settings:interval="30"
+        settings:units="s" />
 
     <!-- Edge Light duration -->
     <com.krypton.settings.preference.SystemSettingSeekBarPreference
@@ -74,5 +75,6 @@
         android:summary="@string/ambient_pulse_animation_duration_summary"
         android:defaultValue="2"
         android:max="5"
-        settings:min="1" />
+        settings:min="1"
+        settings:units="s" />
 </PreferenceScreen>
