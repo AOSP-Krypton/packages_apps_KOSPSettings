@@ -66,6 +66,14 @@
     <string name="qs_brightness_position_bottom_summary_off">位置：顶部</string>
     <string name="qs_show_auto_brightness_button_title">显示自动亮度按钮</string>
 
+    <!-- Battery -->
+    <string name="statusbar_battery_category_title">电池</string>
+    <string name="statusbar_battery_style_title">电池图标样式</string>
+    <string name="battery_style_portrait">方形</string>
+    <string name="battery_style_circle">圆形</string>
+    <string name="battery_style_text">文本</string>
+    <string name="statusbar_battery_show_percent_inside_title">在图标内显示电量百分比</string>
+
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">组合信号图标</string>
     <string name="combined_status_bar_signal_icons_summary">禁用组合信号图标，需要重启手机或系统界面</string>
@@ -80,6 +88,29 @@
 
     <string name="screen_off_fod_title">息屏指纹</string>
     <string name="screen_off_fod_summary">屏幕关闭时显示指纹解锁图案</string>
+
+    <!-- Edge light -->
+    <string name="edge_light_title">边缘闪光</string>
+    <string name="edge_light_summary">收到通知时在环境显示边缘显示动画</string>
+    <string name="aod_pulse_title">在环境显示中启用边缘闪光</string>
+    <string name="aod_pulse_summary">启用在从环境显示过渡后继续显示闪光的功能</string>
+    <string name="aod_pulse_hide_content_title">隐藏环境显示内容</string>
+    <string name="aod_pulse_hide_content_summary">启用后将在边缘闪光时隐藏环境显示内容</string>
+    <string name="ambient_pulse_color_mode_title">边缘闪光颜色</string>
+    <string name="ambient_pulse_custom_color_mode_title">自定义颜色</string>
+    <string name="ambient_pulse_custom_color_mode_summary">为边缘闪光选择一个颜色</string>
+    <string name="color_picker_title">颜色选择器</string>
+    <string name="ambient_pulse_repeat_count_title">闪光重复次数</string>
+    <string name="ambient_pulse_repeat_count_summary">选择边缘闪光重复次数，如果设为 0 将重复至超时</string>
+    <string name="ambient_pulse_timeout_title">边缘闪光超时</string>
+    <string name="ambient_pulse_timeout_summary">边缘闪光超时时间, 如果设为 0 将重复直到开启屏幕</string>
+    <string name="ambient_pulse_animation_duration_title">边缘闪光持续时间</string>
+    <string name="ambient_pulse_animation_duration_summary">边缘光线动画的持续时间（秒）, 默认为 2 秒</string>
+
+    <string name="accent">强调色 </string>
+    <string name="wallpaper">壁纸</string>
+    <string name="notification">通知</string>
+    <string name="custom">自定义</string>
 
     <!-- Device settings -->
     <string name="device_settings_title">设备设置</string>
@@ -115,5 +146,9 @@
 
     <string name="search">搜索</string>
     <string name="search_apps">搜索应用</string>
+
+    <!-- Volume key music control -->
+    <string name="volume_button_music_control_title">音量键切换曲目</string>
+    <string name="volume_button_music_control_summary">长按音量加切换到下一曲目，反之亦然</string>
 
 </resources>
