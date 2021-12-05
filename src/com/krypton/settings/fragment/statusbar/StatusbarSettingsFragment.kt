@@ -35,6 +35,7 @@ class StatusbarSettingsFragment: KryptonDashboardFragment(),
 
     private var qsBottomSliderPreference: Preference? = null
     private var autoBrightnessPreference: Preference? = null
+    private var batteryShowPercentPreference: Preference? = null
     private var isQSsliderEnabled = false
     private var isQQSsliderEnabled = false
 
@@ -84,24 +85,32 @@ class StatusbarSettingsFragment: KryptonDashboardFragment(),
             autoBrightnessPreference = findPreference<Preference>(AUTO_BRIGHTNESS_BUTTON_PREF_KEY)
         }
         updateOtherSliderPrefs()
+
+        batteryShowPercentPreference = findPreference<Preference>(BATTERY_SHOW_PERCENT_PREF_KEY)?.also {
+            val isTextMode = Settings.System.getIntForUser(context!!.contentResolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0, UserHandle.USER_CURRENT) == 2
+            it.setEnabled(!isTextMode)
+        }
+        findPreference<Preference>(BATTERY_STYLE_PREF_KEY)?.setOnPreferenceChangeListener(this)
     }
 
     override protected fun getPreferenceScreenResId() = R.xml.statusbar_settings
 
     override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
-        val result = when (preference.key) {
+        when (preference.key) {
             QS_SHOW_BRIGHTNESS_PREF_KEY -> {
                 isQSsliderEnabled = newValue as Boolean
-                true
             }
             QQS_SHOW_BRIGHTNESS_PREF_KEY -> {
                 isQQSsliderEnabled = newValue as Boolean
-                true
             }
-            else -> false
+            BATTERY_STYLE_PREF_KEY -> {
+                val mode = (newValue as String).toInt()
+                batteryShowPercentPreference?.setEnabled(mode != 2)
+            }
         }
         updateOtherSliderPrefs()
-        return result
+        return true
     }
 
     override protected fun getLogTag() = TAG
@@ -129,5 +138,8 @@ class StatusbarSettingsFragment: KryptonDashboardFragment(),
         private const val QQS_SHOW_BRIGHTNESS_PREF_KEY = "qqs_show_brightness"
         private const val QS_BOTTOM_BRIGHTNESS_PREF_KEY = "qs_brightness_position_bottom"
         private const val AUTO_BRIGHTNESS_BUTTON_PREF_KEY = "qs_show_auto_brightness_button"
+
+        private const val BATTERY_STYLE_PREF_KEY = "status_bar_battery_style"
+        private const val BATTERY_SHOW_PERCENT_PREF_KEY = "status_bar_show_battery_percent"
     }
 }
