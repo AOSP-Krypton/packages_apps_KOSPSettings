@@ -27,6 +27,7 @@ import android.widget.Switch
 import androidx.preference.PreferenceViewHolder
 
 import com.android.settings.R
+import com.android.settingslib.widget.TwoTargetPreference
 
 /**
  * A custom preference that provides inline switch toggle. It has a mandatory field for title, and
@@ -51,6 +52,8 @@ open class MasterSwitchPreference(
 
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
+        holder.setDividerAllowedAbove(false)
+        holder.setDividerAllowedBelow(false)
         switch = holder.findViewById(R.id.switchWidget) as? Switch
         holder.findViewById(android.R.id.widget_frame)?.setOnClickListener {
             if (switch?.isEnabled() == false) {
@@ -62,6 +65,7 @@ open class MasterSwitchPreference(
             } else {
                 persistBoolean(checked)
             }
+            setSelectable(checked)
         }
         switch?.let {
             it.contentDescription = title
@@ -90,7 +94,9 @@ open class MasterSwitchPreference(
     override protected fun onSetInitialValue(restoreValue: Boolean, defaultValue: Any?) {
         defaultValue?.let {
             if (it is Boolean) {
-                setChecked(if (restoreValue) getPersistedBoolean(it) else it)
+                val peristedBool = if (restoreValue) getPersistedBoolean(it) else it
+                setSelectable(peristedBool)
+                setChecked(peristedBool)
             }
         }
     }
