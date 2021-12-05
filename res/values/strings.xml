@@ -70,7 +70,7 @@
     <string name="combined_status_bar_signal_icons">Combined signal icons</string>
     <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons in status bar. Needs SystemUI restart or reboot</string>
 
-    <!-- Lockscree settings -->
+    <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="lockscreen_settings_summary">Charging info, Gestures</string>
 
@@ -80,6 +80,30 @@
 
     <string name="screen_off_fod_title">Screen off FOD</string>
     <string name="screen_off_fod_summary">Enable FOD even when screen is off</string>
+
+    <!-- Edge light -->
+    <string name="edge_light_title">Edge light</string>
+    <string name="edge_light_summary">Show an animation along the edges of the ambient display upon receiving a notification</string>
+    <string name="aod_pulse_title">Enable edge light in AOD</string>
+    <string name="aod_pulse_summary">Enable to keep showing edge light after transitioning from ambient display</string>
+    <string name="aod_pulse_hide_content_title">Hide contents in AOD</string>
+    <string name="aod_pulse_hide_content_summary">Enable to hide contents of AOD when pulsing</string>
+    <string name="ambient_pulse_color_mode_title">Edge light color</string>
+    <string name="ambient_pulse_custom_color_mode_title">Custom color</string>
+    <string name="ambient_pulse_custom_color_mode_summary">Choose a custom color for edge light</string>
+    <string name="color_picker_title">Color picker</string>
+    <string name="ambient_pulse_repeat_count_title">Pulse repeat count</string>
+    <string name="ambient_pulse_repeat_count_summary">Choose how many times ambient pulse should repeat, a repeat count of 0
+            will cause the animation to run until timeout</string>
+    <string name="ambient_pulse_timeout_title">Edge light timeout</string>
+    <string name="ambient_pulse_timeout_summary">Timeout in seconds for pulse in AOD, a timeout of 0s means it will keep pulsing until display state is changed</string>
+    <string name="ambient_pulse_animation_duration_title">Edge light animation duration</string>
+    <string name="ambient_pulse_animation_duration_summary">Duration in seconds for the edge light animaton, default is 2s</string>
+
+    <string name="accent">Accent </string>
+    <string name="wallpaper">Wallpaper</string>
+    <string name="notification">Notification</string>
+    <string name="custom">Custom</string>
 
     <!-- Device settings -->
     <string name="device_settings_title">Device settings</string>
