@@ -113,4 +113,7 @@
     <string name="screenshot_shutter_sound_title">截图提示音</string>
     <string name="screenshot_shutter_sound_summary">启用截图提示音和震动</string>
 
+    <string name="search">搜索</string>
+    <string name="search_apps">搜索应用</string>
+
 </resources>
