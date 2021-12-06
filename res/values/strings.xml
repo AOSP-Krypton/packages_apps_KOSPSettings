@@ -45,6 +45,13 @@
     <!-- Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="theme_customization_icon_pack_title">Icon pack</string>
 
+    <!-- Custom font -->
+    <string name="custom_font_preference_title">Select a custom font</string>
+    <string name="custom_font_preference_footer_message">Reboot after selecting a font to take effect</string>
+    <string name="cannot_resolve_activity">Unable to find a suitable activity to perform this action!</string>
+    <string name="invalid_font_file">Font file does not have valid postscript table</string>
+    <string name="failed_to_update_font">Failed to update font</string>
+
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">Statusbar</string>
     <string name="statusbar_settings_summary">Network traffic, Brightness slider, Battery style</string>

@@ -23,13 +23,23 @@
           android:title="@string/monet_engine_settings_title"
           android:summary="@string/monet_engine_settings_summary"
           android:fragment="com.krypton.settings.fragment.theme.MonetEngineSettingsFragment" />
+     
+     <ListPreference
+          android:key="icon_pack_list_preference"
+          android:title="@string/theme_customization_icon_pack_title"/>
 
      <ListPreference
           android:key="font_list_preference"
           android:title="@string/theme_customization_font_title"/>
-
-     <ListPreference
-          android:key="icon_pack_list_preference"
-          android:title="@string/theme_customization_icon_pack_title"/>
+     
+     <Preference
+          android:key="custom_font_preference"
+          android:title="@string/custom_font_preference_title" />
+     
+     <com.android.settingslib.widget.FooterPreference
+          android:key="custom_font_preference_footer"
+          android:title="@string/custom_font_preference_footer_message"
+          android:selectable="false"
+          settings:searchable="false"/>
 
 </PreferenceScreen>

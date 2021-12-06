@@ -15,14 +15,55 @@
  */
 package com.krypton.settings.fragment.theme
 
+import android.content.ActivityNotFoundException
 import android.content.Context
+import android.graphics.fonts.FontFamilyUpdateRequest
+import android.graphics.fonts.FontFileUpdateRequest
+import android.graphics.fonts.FontFileUtil
+import android.graphics.fonts.FontManager
+import android.graphics.fonts.FontStyle
+import android.net.Uri
+import android.os.Bundle
+import android.os.ParcelFileDescriptor
+import android.util.Log
+import android.widget.Toast
+
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts.OpenDocument
+import androidx.preference.Preference
 
 import com.android.internal.util.krypton.KryptonUtils
 import com.android.settings.R
 import com.android.settingslib.core.AbstractPreferenceController
 import com.krypton.settings.fragment.KryptonDashboardFragment
 
+import java.io.FileInputStream
+import java.io.IOException
+import java.nio.MappedByteBuffer
+import java.nio.channels.FileChannel
+
 class ThemeSettingsFragment: KryptonDashboardFragment() {
+
+    private val activityResultLauncher: ActivityResultLauncher<Array<String>>
+    private lateinit var fontManager: FontManager
+    private var customFontPreference: Preference? = null
+
+    init {
+        activityResultLauncher = registerForActivityResult(OpenDocument()) {
+            if (it != null) parseFont(it)
+        }
+    }
+
+    override fun onCreate(bundle: Bundle?) {
+        super.onCreate(bundle)
+        fontManager = context!!.getSystemService(FontManager::class.java)
+        customFontPreference = findPreference<Preference>(CUSTOM_FONT_PREF_KEY)?.also {
+            it.setOnPreferenceClickListener {
+                showFontPickerActivity()
+                true
+            }
+        }
+    }
 
     override protected fun getPreferenceScreenResId() = R.xml.theme_settings
 
@@ -36,6 +77,7 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
             context, TARGET_THEME_PICKER, false /** ignoreState */
         )
         return listOf(
+            CustomFontPreferenceController(context, CUSTOM_FONT_PREF_KEY),
             ThemeOverlayPreferenceController(context,
                 "font_list_preference",
                 mapOf(OVERLAY_CATEGORY_FONT to TARGET_ANDROID),
@@ -59,6 +101,62 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
 
     override protected fun getLogTag() = TAG
 
+    private fun showFontPickerActivity() {
+        try {
+            activityResultLauncher.launch(FONT_MIME_TYPE)
+        } catch (_: ActivityNotFoundException) {
+            Toast.makeText(context, R.string.cannot_resolve_activity, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun parseFont(uri: Uri) {
+        val parcelFileDescriptor = context!!.contentResolver.openFileDescriptor(uri, "r" /** RO mode */)
+        try {
+            FileInputStream(parcelFileDescriptor.fileDescriptor).use Main@ { inStream -> 
+                inStream.channel.use { fileChannel ->
+                    val byteBuffer: MappedByteBuffer = fileChannel.map(
+                        FileChannel.MapMode.READ_ONLY, 0, fileChannel.size())
+                    val postScriptName = FontFileUtil.getPostScriptName(byteBuffer, 0)
+                    if (postScriptName == null) {
+                        Toast.makeText(context, R.string.invalid_font_file, Toast.LENGTH_LONG).show()
+                        return@Main
+                    }
+                    updateFontFamily(parcelFileDescriptor, postScriptName)
+                }
+            }
+        } catch (ex: IOException) {
+            Log.e(TAG, "IOException while parsing font, ${ex.message}")
+        }
+    }
+
+    private fun updateFontFamily(fontFd: ParcelFileDescriptor, postScriptName: String) {
+        val fontFileUpdateRequest = FontFileUpdateRequest(fontFd, byteArrayOf())
+
+        val fontRegular = FontFamilyUpdateRequest.Font.Builder(postScriptName, FontStyle()).build()
+        val fontMedium = FontFamilyUpdateRequest.Font.Builder(postScriptName, FontStyle(
+            FontStyle.FONT_WEIGHT_MEDIUM, FontStyle.FONT_SLANT_UPRIGHT)).build()
+
+        val fontFamilyRegular = FontFamilyUpdateRequest.FontFamily.Builder(
+            CUSTOM_FONT_FAMILY_REGULAR_NAME, listOf(fontRegular)).build()
+        val fontFamilyMedium = FontFamilyUpdateRequest.FontFamily.Builder(
+            CUSTOM_FONT_FAMILY_MEDIUM_NAME, listOf(fontMedium)).build()
+        
+        val fontFamilyUpdateRequest = FontFamilyUpdateRequest.Builder()
+            .addFontFileUpdateRequest(fontFileUpdateRequest)
+            .addFontFamily(fontFamilyRegular)
+            .addFontFamily(fontFamilyMedium)
+            .build()
+
+        val result = fontManager.updateFontFamily(fontFamilyUpdateRequest,
+            fontManager.fontConfig.configVersion)
+        if (result != FontManager.RESULT_SUCCESS) {
+            Log.e(TAG, "result code = $result")
+            Toast.makeText(context, R.string.failed_to_update_font, Toast.LENGTH_LONG).show()
+            return
+        }
+        customFontPreference?.setSummary(postScriptName)
+    }
+ 
     companion object {
         private const val TAG = "ThemeSettingsFragment"
 
@@ -74,5 +172,10 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
         private const val TARGET_SETTINGS = "com.android.settings"
         private const val TARGET_LAUNCHER = "com.android.launcher3"
         private const val TARGET_THEME_PICKER = "com.android.wallpaper"
+
+        private const val CUSTOM_FONT_PREF_KEY = "custom_font_preference"
+        const val CUSTOM_FONT_FAMILY_REGULAR_NAME = "custom-font"
+        private const val CUSTOM_FONT_FAMILY_MEDIUM_NAME = "custom-font-medium"
+        private val FONT_MIME_TYPE = arrayOf("font/ttf")
     }
 }
