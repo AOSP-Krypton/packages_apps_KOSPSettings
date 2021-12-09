@@ -51,6 +51,7 @@
     <string name="cannot_resolve_activity">Unable to find a suitable activity to perform this action!</string>
     <string name="invalid_font_file">Font file does not have valid postscript table</string>
     <string name="failed_to_update_font">Failed to update font</string>
+    <string name="failed_to_copy_file_to_cache">Failed to copy font to cache</string>
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">Statusbar</string>

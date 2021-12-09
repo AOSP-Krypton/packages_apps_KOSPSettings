@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.krypton.settings.fragment.theme
 
 import android.content.ActivityNotFoundException
@@ -24,6 +25,7 @@ import android.graphics.fonts.FontManager
 import android.graphics.fonts.FontStyle
 import android.net.Uri
 import android.os.Bundle
+import android.os.FileUtils
 import android.os.ParcelFileDescriptor
 import android.util.Log
 import android.widget.Toast
@@ -37,7 +39,9 @@ import com.android.settings.R
 import com.android.settingslib.core.AbstractPreferenceController
 import com.krypton.settings.fragment.KryptonDashboardFragment
 
+import java.io.File
 import java.io.FileInputStream
+import java.io.FileOutputStream
 import java.io.IOException
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
@@ -105,29 +109,52 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
         try {
             activityResultLauncher.launch(FONT_MIME_TYPE)
         } catch (_: ActivityNotFoundException) {
-            Toast.makeText(context, R.string.cannot_resolve_activity, Toast.LENGTH_LONG).show()
+            toast(R.string.cannot_resolve_activity)
         }
     }
 
     private fun parseFont(uri: Uri) {
-        val parcelFileDescriptor = context!!.contentResolver.openFileDescriptor(uri, "r" /** RO mode */)
+        val cacheFile = context!!.contentResolver.openFileDescriptor(uri, "r" /** RO mode */).use {
+            copyFileToCache(it)
+        }
+        if (cacheFile == null) {
+            toast(R.string.failed_to_copy_file_to_cache)
+            return
+        }
         try {
-            FileInputStream(parcelFileDescriptor.fileDescriptor).use Main@ { inStream -> 
+            FileInputStream(cacheFile).use Main@ { inStream ->
                 inStream.channel.use { fileChannel ->
                     val byteBuffer: MappedByteBuffer = fileChannel.map(
                         FileChannel.MapMode.READ_ONLY, 0, fileChannel.size())
                     val postScriptName = FontFileUtil.getPostScriptName(byteBuffer, 0)
                     if (postScriptName == null) {
-                        Toast.makeText(context, R.string.invalid_font_file, Toast.LENGTH_LONG).show()
+                        toast(R.string.invalid_font_file)
                         return@Main
                     }
-                    updateFontFamily(parcelFileDescriptor, postScriptName)
+                    ParcelFileDescriptor.dup(inStream.fd).use {
+                        updateFontFamily(it, postScriptName)
+                    }
                 }
             }
         } catch (ex: IOException) {
             Log.e(TAG, "IOException while parsing font, ${ex.message}")
         }
     }
+
+    private fun copyFileToCache(pfd: ParcelFileDescriptor): File? =
+        try {
+            FileInputStream(pfd.fileDescriptor).use { inStream ->
+                val cacheFile = File(context!!.getCacheDir(), FONT_CACHE_FILE_NAME)
+                FileOutputStream(cacheFile).use { outStream ->
+                    FileUtils.copy(inStream, outStream)
+                    outStream.flush()
+                }
+                cacheFile
+            }
+        } catch (e: IOException) {
+            Log.e(TAG, "IOException while copying file to cache, ${e.message}")
+            null
+        }
 
     private fun updateFontFamily(fontFd: ParcelFileDescriptor, postScriptName: String) {
         val fontFileUpdateRequest = FontFileUpdateRequest(fontFd, byteArrayOf())
@@ -151,10 +178,14 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
             fontManager.fontConfig.configVersion)
         if (result != FontManager.RESULT_SUCCESS) {
             Log.e(TAG, "result code = $result")
-            Toast.makeText(context, R.string.failed_to_update_font, Toast.LENGTH_LONG).show()
+            toast(R.string.failed_to_update_font)
             return
         }
         customFontPreference?.setSummary(postScriptName)
+    }
+
+    private fun toast(msgId: Int) {
+        Toast.makeText(context, msgId, Toast.LENGTH_LONG).show()
     }
  
     companion object {
@@ -172,6 +203,8 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
         private const val TARGET_SETTINGS = "com.android.settings"
         private const val TARGET_LAUNCHER = "com.android.launcher3"
         private const val TARGET_THEME_PICKER = "com.android.wallpaper"
+
+        private const val FONT_CACHE_FILE_NAME = "font_cache.ttf"
 
         private const val CUSTOM_FONT_PREF_KEY = "custom_font_preference"
         const val CUSTOM_FONT_FAMILY_REGULAR_NAME = "custom-font"
