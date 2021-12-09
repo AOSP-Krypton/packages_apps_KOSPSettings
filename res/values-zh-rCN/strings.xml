@@ -51,6 +51,7 @@
     <string name="cannot_resolve_activity">无法执行此操作！</string>
     <string name="invalid_font_file">字体文件没有有效的 PostScript 表</string>
     <string name="failed_to_update_font">更新字体失败</string>
+    <string name="failed_to_copy_file_to_cache">无法将字体复制到缓存</string>
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">状态栏</string>
