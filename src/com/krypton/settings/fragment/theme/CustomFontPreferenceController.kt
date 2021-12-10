@@ -34,6 +34,7 @@ import org.json.JSONObject
 class CustomFontPreferenceController(
     private val context: Context,
     private val key: String,
+    private val customFontFamilyName: String,
 ): BasePreferenceController(context, key) {
 
     private val fontManager: FontManager
@@ -66,7 +67,7 @@ class CustomFontPreferenceController(
     }
 
     override fun getSummary() = fontManager.fontConfig.fontFamilies.find {
-            it.name?.contains(ThemeSettingsFragment.CUSTOM_FONT_FAMILY_REGULAR_NAME) == true
+            it.name?.contains(customFontFamilyName) == true
         }?.fontList?.first()?.postScriptName ?: context.getString(
             R.string.overlay_option_device_default)
     
