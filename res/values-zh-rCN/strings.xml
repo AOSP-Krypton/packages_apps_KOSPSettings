@@ -33,7 +33,7 @@
     <string name="monet_engine_settings_summary">自定义颜色、色彩、亮度</string>
     <string name="accurate_shades_title">调整界面色调</string>
     <string name="use_wallpaper_color_title">使用壁纸颜色</string>
-    <string name="color_override_title">自定义颜色选择</string>
+    <string name="color_override_title">自定义颜色</string>
     <string name="color_override_summary">"选择一个强调色来覆盖 Monet 引擎选择的颜色"</string>
     <string name="invalid_color_input">颜色输入错误!</string>
     <string name="chroma_factor_title">色彩</string>
@@ -41,13 +41,13 @@
     <string name="white_luminance_title">亮度</string>
 
     <!-- Title of the setting which enables overlays to customize headline and body fonts. -->
-    <string name="theme_customization_font_title">标题 / 正文 字体</string>
+    <string name="theme_customization_font_title">系统字体</string>
     <!-- Title of the setting which enables overlays to customize the system wide icon pack. -->
     <string name="theme_customization_icon_pack_title">图标包</string>
 
     <!-- Custom font -->
     <string name="custom_font_preference_title">选择字体</string>
-    <string name="custom_font_preference_footer_message">选择字体后需要重启生效</string>
+    <string name="custom_font_preference_footer_message">自定义后需要重启生效</string>
     <string name="cannot_resolve_activity">无法执行此操作！</string>
     <string name="invalid_font_file">字体文件没有有效的 PostScript 表</string>
     <string name="failed_to_update_font">更新字体失败</string>
@@ -67,20 +67,20 @@
 
     <!-- QS Brightness -->
     <string name="qs_brightness_category_title">亮度滑块</string>
-    <string name="qs_show_brightness_title">在快速设置面板中显示亮度滑块</string>
-    <string name="qqs_show_brightness_title">在拓展快速设置面板中显示亮度滑块</string>
-    <string name="qs_brightness_position_bottom_title">底部亮度滑块</string>
+    <string name="qs_show_brightness_title">下拉快速设置中显示滑块</string>
+    <string name="qqs_show_brightness_title">快速设置中显示滑块</string>
+    <string name="qs_brightness_position_bottom_title">滑块位置</string>
     <string name="qs_brightness_position_bottom_summary_on">位置：底部</string>
     <string name="qs_brightness_position_bottom_summary_off">位置：顶部</string>
-    <string name="qs_show_auto_brightness_button_title">显示自动亮度按钮</string>
+    <string name="qs_show_auto_brightness_button_title">自动亮度按钮</string>
 
     <!-- Battery -->
     <string name="statusbar_battery_category_title">电池</string>
-    <string name="statusbar_battery_style_title">电池图标样式</string>
+    <string name="statusbar_battery_style_title">图标样式</string>
     <string name="battery_style_portrait">方形</string>
     <string name="battery_style_circle">圆形</string>
     <string name="battery_style_text">文本</string>
-    <string name="statusbar_battery_show_percent_inside_title">在图标内显示电量百分比</string>
+    <string name="statusbar_battery_show_percent_inside_title">图标内显示电量百分比</string>
 
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">隐藏信号图标</string>
@@ -91,8 +91,8 @@
     <string name="lockscreen_settings_summary">充电信息</string>
 
     <!-- Lockscreen battery info -->
-    <string name="lockscreen_charging_info_title">在锁屏界面显示充电信息</string>
-    <string name="lockscreen_charging_info_summary">在充电时显示温度、充电电流等信息</string>
+    <string name="lockscreen_charging_info_title">充电信息</string>
+    <string name="lockscreen_charging_info_summary">充电时在锁屏界面显示温度、充电电流等信息</string>
 
     <string name="screen_off_fod_title">息屏指纹</string>
     <string name="screen_off_fod_summary">屏幕关闭时显示指纹解锁图案</string>
@@ -107,11 +107,11 @@
     <string name="ambient_pulse_color_mode_title">光效颜色</string>
     <string name="ambient_pulse_custom_color_mode_title">自定义颜色</string>
     <string name="ambient_pulse_custom_color_mode_summary">为通知光效选择一个颜色</string>
-    <string name="ambient_pulse_repeat_count_title">光效重复次数</string>
+    <string name="ambient_pulse_repeat_count_title">重复次数</string>
     <string name="ambient_pulse_repeat_count_summary">通知光效重复次数，如果设为 0 将重复至超时</string>
-    <string name="ambient_pulse_timeout_title">光效超时</string>
+    <string name="ambient_pulse_timeout_title">超时时间</string>
     <string name="ambient_pulse_timeout_summary">通知光效超时时间, 如果设为 0 将重复直到开启屏幕</string>
-    <string name="ambient_pulse_animation_duration_title">光效持续时间</string>
+    <string name="ambient_pulse_animation_duration_title">持续时间</string>
     <string name="ambient_pulse_animation_duration_summary">通知光效的持续时间（秒）, 默认为 2 秒</string>
 
     <string name="accent">强调色 </string>
@@ -156,6 +156,6 @@
 
     <!-- Volume key music control -->
     <string name="volume_button_music_control_title">音量键切换曲目</string>
-    <string name="volume_button_music_control_summary">长按音量加切换到下一曲目，反之亦然</string>
+    <string name="volume_button_music_control_summary">长按音量加/减切换到下/上一曲目</string>
 
 </resources>
