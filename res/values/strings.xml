@@ -79,7 +79,7 @@
 
     <!-- QS Settings -->
     <string name="qs_settings_title">QuickSettings</string>
-    <string name="qs_settings_summary">Brightness slider</string>
+    <string name="qs_settings_summary">Brightness slider, Media artwork</string>
 
     <!-- Brightness slider -->
     <string name="qs_brightness_category_title">Brightness slider</string>
@@ -89,6 +89,14 @@
     <string name="qs_brightness_position_bottom_summary_on">Position: Bottom</string>
     <string name="qs_brightness_position_bottom_summary_off">Position: Top</string>
     <string name="qs_show_auto_brightness_button_title">Show auto brightness button</string>
+
+    <!-- Media artwork -->
+    <string name="media_category">Media notification</string>
+    <string name="artwork_media_background_title">Artwork media background</string>
+    <string name="artwork_media_background_summary">Set media artwork as the notification media background</string>
+    <string name="artwork_media_background_enable_blur_title">Blur media media artwork background</string>
+    <string name="artwork_media_background_blur_radius_title">Blur amount for media artwork</string>
+    <string name="artwork_media_background_alpha_title">Transparency of media artwork</string>
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">Lockscreen</string>
