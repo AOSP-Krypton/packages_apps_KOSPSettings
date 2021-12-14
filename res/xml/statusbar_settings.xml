@@ -35,34 +35,6 @@
             
     </PreferenceCategory>
 
-    <!-- QS Brightness -->
-    <PreferenceCategory
-        android:title="@string/qs_brightness_category_title">
-
-        <com.krypton.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_show_brightness"
-            android:title="@string/qs_show_brightness_title"
-            android:defaultValue="true" />
-        
-        <com.krypton.settings.preference.SystemSettingSwitchPreference
-            android:key="qqs_show_brightness"
-            android:title="@string/qqs_show_brightness_title"
-            android:defaultValue="false" />
-        
-        <com.krypton.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_brightness_position_bottom"
-            android:title="@string/qs_brightness_position_bottom_title"
-            android:summaryOn="@string/qs_brightness_position_bottom_summary_on"
-            android:summaryOff="@string/qs_brightness_position_bottom_summary_off"
-            android:defaultValue="false" />
-        
-        <com.krypton.settings.preference.SystemSettingSwitchPreference
-            android:key="qs_show_auto_brightness_button"
-            android:title="@string/qs_show_auto_brightness_button_title"
-            android:defaultValue="false" />
-            
-    </PreferenceCategory>
-
     <PreferenceCategory
         android:title="@string/statusbar_battery_category_title">
 

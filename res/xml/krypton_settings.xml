@@ -33,6 +33,14 @@
         android:icon="@drawable/ic_statusbar"
         android:fragment="com.krypton.settings.fragment.statusbar.StatusbarSettingsFragment" />
 
+    <!-- QS settings -->
+    <Preference
+        android:key="qs_settings"
+        android:title="@string/qs_settings_title"
+        android:summary="@string/qs_settings_summary"
+        android:icon="@drawable/ic_qs"
+        android:fragment="com.krypton.settings.fragment.qs.QSSettingsFragment" />
+
     <!-- Lockscreen settings -->
     <Preference
         android:key="lockscreen_settings"
