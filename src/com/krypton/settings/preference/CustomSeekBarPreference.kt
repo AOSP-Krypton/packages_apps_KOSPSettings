@@ -222,10 +222,18 @@ open class CustomSeekBarPreference(
                     defaultValue), Toast.LENGTH_LONG).show()
             }
             R.id.minus -> {
-                setValue(Math.max(seekBarValue - interval, minValue))
+                val newValue = Math.max(seekBarValue - interval, minValue)
+                setValue(newValue)
+                if (!shouldPersist()) {
+                    callChangeListener(newValue)
+                }
             }
             R.id.plus -> {
-                setValue(Math.min(seekBarValue + interval, maxValue))
+                val newValue = Math.min(seekBarValue + interval, maxValue)
+                setValue(newValue)
+                if (!shouldPersist()) {
+                    callChangeListener(newValue)
+                }
             }
         }
     }
