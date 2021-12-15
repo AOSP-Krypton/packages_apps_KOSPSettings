@@ -56,8 +56,8 @@
         android:textColor="?android:attr/textColorSecondary"
         android:textAlignment="viewStart"
         android:maxLines="4"
-        settings:layout_constraintEnd_toEndOf="@android:id/title"
-        settings:layout_constraintStart_toStartOf="@android:id/title"
+        settings:layout_constraintEnd_toEndOf="parent"
+        settings:layout_constraintStart_toEndOf="@android:id/icon"
         settings:layout_constraintTop_toBottomOf="@android:id/title" />
 
     <TextView
@@ -70,7 +70,7 @@
         android:textColor="?android:attr/textColorSecondary"
         android:maxLines="1"
         android:ellipsize="end"
-        settings:layout_constraintStart_toStartOf="@android:id/title"
+        settings:layout_constraintStart_toEndOf="@android:id/icon"
         settings:layout_constraintTop_toBottomOf="@android:id/summary" />
 
     <ImageView
@@ -93,7 +93,7 @@
         android:paddingEnd="8dp"
         settings:layout_constraintBottom_toBottomOf="@id/seekbar"
         settings:layout_constraintEnd_toStartOf="@id/seekbar"
-        settings:layout_constraintStart_toStartOf="@android:id/title"
+        settings:layout_constraintStart_toEndOf="@android:id/icon"
         settings:layout_constraintTop_toTopOf="@id/seekbar" />
 
     <SeekBar
