@@ -152,7 +152,10 @@
     <string name="location_privacy_indicator_summary">Reboot or restart system UI for it to take effect</string>
 
     <!-- Miscellaneous -->
-    <string name="miscellaneous_settings_summary">Screenshot sound, Volume rocker</string>
+    <string name="miscellaneous_settings_summary">Swipe to screenshot, Screenshot sound, Volume rocker</string>
+
+    <string name="three_finger_screenshot_title">Swipe to screenshot</string>
+    <string name="three_finger_screenshot_summary">Swipe down with three fingers to take a screenshot</string>
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Screenshot sound</string>
