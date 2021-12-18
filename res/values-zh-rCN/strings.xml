@@ -151,7 +151,7 @@
     <string name="location_privacy_indicator_summary">需要重启系统界面</string>
 
     <!-- Miscellaneous -->
-    <string name="miscellaneous_settings_summary">手势，截图提示音</string>
+    <string name="miscellaneous_settings_summary">音量键，截图提示音</string>
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">截图提示音</string>
