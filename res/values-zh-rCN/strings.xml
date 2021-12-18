@@ -86,8 +86,8 @@
     <string name="qs_show_brightness_title">下拉快速设置中显示滑块</string>
     <string name="qqs_show_brightness_title">快速设置中显示滑块</string>
     <string name="qs_brightness_position_bottom_title">滑块位置</string>
-    <string name="qs_brightness_position_bottom_summary_on">位置：底部</string>
-    <string name="qs_brightness_position_bottom_summary_off">位置：顶部</string>
+    <string name="qs_brightness_position_bottom_summary_on">底部</string>
+    <string name="qs_brightness_position_bottom_summary_off">顶部</string>
     <string name="qs_show_auto_brightness_button_title">自动亮度按钮</string>
 
     <!-- Media artwork -->
@@ -151,7 +151,10 @@
     <string name="location_privacy_indicator_summary">需要重启系统界面</string>
 
     <!-- Miscellaneous -->
-    <string name="miscellaneous_settings_summary">音量键，截图提示音</string>
+    <string name="miscellaneous_settings_summary">音量键，截图提示音，滑动截屏</string>
+
+    <string name="three_finger_screenshot_title">滑动截屏</string>
+    <string name="three_finger_screenshot_summary">三指下滑以截取屏幕</string>
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">截图提示音</string>
