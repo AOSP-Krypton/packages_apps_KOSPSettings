@@ -112,7 +112,7 @@
     <!-- Edge light -->
     <string name="edge_light_title">通知光效</string>
     <string name="edge_light_summary">收到通知时在环境显示边缘显示光效</string>
-    <string name="aod_pulse_title">在环境显示中启用光效</string>
+    <string name="aod_pulse_title">环境显示启用光效</string>
     <string name="aod_pulse_summary">启用在从环境显示过渡后继续显示通知光效</string>
     <string name="aod_pulse_hide_content_title">隐藏环境显示内容</string>
     <string name="aod_pulse_hide_content_summary">通知光效开启时隐藏环境显示内容</string>
