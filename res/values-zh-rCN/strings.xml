@@ -109,6 +109,13 @@
     <string name="screen_off_fod_title">息屏指纹</string>
     <string name="screen_off_fod_summary">屏幕关闭时显示指纹解锁图案</string>
 
+    <!-- Media artwork -->
+    <string name="keyguard_media_art">专辑封面</string>
+    <string name="keyguard_media_art_title">显示音乐专辑封面</string>
+    <string name="keyguard_media_art_summary">当播放音乐时在锁屏界面显示专辑封面而不是壁纸</string>
+    <string name="keyguard_media_art_enable_blur_title">背景模糊</string>
+    <string name="keyguard_media_art_blur_radius_title">背景模糊量</string>
+
     <!-- Edge light -->
     <string name="edge_light_title">通知光效</string>
     <string name="edge_light_summary">收到通知时在环境显示边缘显示光效</string>
