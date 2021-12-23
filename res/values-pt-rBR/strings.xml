@@ -172,6 +172,6 @@
 
     <!-- Volume key music control -->
     <string name="volume_button_music_control_title">Pular faixas com os botões de volume</string>
-    <string name="volume_button_music_control_summary">Pressionar o botão de volume para pular para a próxima faixa e vice-versa</string>
+    <string name="volume_button_music_control_summary">Pressionar por um tempo o volume para pular para a próxima faixa e vice-versa</string>
 
 </resources>
