@@ -51,7 +51,7 @@
     <string name="cannot_resolve_activity">Incapaz de encontrar uma atividade adequada para realizar esta ação!</string>
     <string name="invalid_font_file">O arquivo fonte não tem tabela de postscript válida</string>
     <string name="failed_to_update_font">Falha na atualização da fonte</string>
-    <string name="failed_to_copy_file_to_cache">Falha na cópia da fonte para o cache/string>
+    <string name="failed_to_copy_file_to_cache">Falha na cópia da fonte para o cache</string>
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">Barra de status</string>
