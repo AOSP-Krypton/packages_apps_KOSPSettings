@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2021 AOSP-Krypton Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Krypton settings -->
+    <string name="krypton_settings_title">Configuración de Krypton</string>
+
+    <!-- Theme settings -->
+    <string name="theme_settings_title">Tema</string>
+    <string name="theme_settings_summary">Monet, Fuente, Paquete de iconos</string>
+
+    <!-- Color picker -->
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirm">Confirmar</string>
+
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Motor Monet</string>
+    <string name="monet_engine_settings_summary">Color, Saturación y Brillo personalizados</string>
+    <string name="accurate_shades_title">Utilizar tonos precisos</string>
+    <string name="use_wallpaper_color_title">Utilizar el color del fondo de pantalla</string>
+    <string name="color_override_title">Selector de color personalizado</string>
+    <string name="color_override_summary">"Elija un color de acento personalizado para anular los colores elegidos por el motor monet"</string>
+    <string name="invalid_color_input">¡Entrada de color inválida!</string>
+    <string name="chroma_factor_title">Saturación</string>
+    <string name="linear_lightness_title">Utilizar una escala de luminosidad personalizada</string>
+    <string name="white_luminance_title">Brillo</string>
+
+    <!-- Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Encabezado / Fuente del cuerpo</string>
+    <!-- Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="theme_customization_icon_pack_title">Paquete de iconos</string>
+
+    <!-- Custom font -->
+    <string name="custom_font_preference_title">Seleccione una fuente personalizada</string>
+    <string name="custom_font_preference_footer_message">Reiniciar después de seleccionar una fuente para que surta efecto</string>
+    <string name="cannot_resolve_activity">No se ha podido encontrar una actividad adecuada para realizar esta acción.</string>
+    <string name="invalid_font_file">El archivo de fuentes no tiene una tabla postscript válida</string>
+    <string name="failed_to_update_font">Fallo en la actualización de la fuente</string>
+    <string name="failed_to_copy_file_to_cache">Fallo al copiar la fuente en la caché</string>
+
+    <!-- Statusbar settings -->
+    <string name="statusbar_settings_title">Barra de estado</string>
+    <string name="statusbar_settings_summary">Tráfico de la red, Estilo batería</string>
+
+    <!-- Network traffic -->
+    <string name="network_traffic_category_title">Tráfico de la red</string>
+    <string name="statusbar_network_traffic_threshold_tx_title">Umbral de ocultación automático para la carga</string>
+    <string name="statusbar_network_traffic_threshold_rx_title">Umbral de ocultación automático para la descarga</string>
+    <string name="statusbar_network_traffic_unit_text_size_title">Tamaño del texto de la unidad de tráfico de la red</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Factor de escala del texto de la tasa de tráfico de la red</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Factor de escala</string>
+
+    <!-- Battery -->
+    <string name="statusbar_battery_category_title">Batería</string>
+    <string name="statusbar_battery_style_title">Estilo de icono de batería</string>
+    <string name="battery_style_portrait">Vertical</string>
+    <string name="battery_style_circle">Círculo</string>
+    <string name="battery_style_text">Texto</string>
+    <string name="statusbar_battery_show_percent_inside_title">Mostrar el porcentaje de batería dentro del icono</string>
+
+    <!-- Combined signal icons in status bar -->
+    <string name="combined_status_bar_signal_icons">Iconos de señales combinadas</string>
+    <string name="combined_status_bar_signal_icons_summary">Habilitar iconos de señales combinadas en la barra de estado. Necesita reiniciar SystemUI o reiniciar</string>
+
+    <!-- QS Settings -->
+    <string name="qs_settings_title">Ajustes rápidos</string>
+    <string name="qs_settings_summary">Deslizador de brillo, Obra de arte de los medios de comunicación</string>
+
+    <!-- Brightness slider -->
+    <string name="qs_brightness_category_title">Control deslizante del brillo</string>
+    <string name="qs_show_brightness_title">Mostrar el deslizador de brillo en el panel QS</string>
+    <string name="qqs_show_brightness_title">Mostrar el deslizador de brillo en el panel QQS</string>
+    <string name="qs_brightness_position_bottom_title">Deslizador de brillo inferior</string>
+    <string name="qs_brightness_position_bottom_summary_on">Posición: Abajo</string>
+    <string name="qs_brightness_position_bottom_summary_off">Posición: Arriba</string>
+    <string name="qs_show_auto_brightness_button_title">Mostrar botón de brillo automático</string>
+
+    <!-- Media artwork -->
+    <string name="media_category">Notificación a los medios</string>
+    <string name="artwork_media_background_title">Fondo de medios artísticos</string>
+    <string name="artwork_media_background_summary">Establecer la obra de arte de los medios como el fondo de los medios de notificación</string>
+    <string name="artwork_media_background_enable_blur_title">Desenfocar el fondo del arte de los medios</string>
+    <string name="artwork_media_background_blur_radius_title">Cantidad de desenfoque para las obras de arte de los medios</string>
+    <string name="artwork_media_background_alpha_title">Transparencia de las obras de arte de los medios</string>
+
+    <!-- Lockscreen settings -->
+    <string name="lockscreen_settings_title">Pantalla de bloqueo</string>
+    <string name="lockscreen_settings_summary">Información de carga, Gestos, Luz de borde</string>
+
+    <!-- Lockscreen battery info -->
+    <string name="lockscreen_charging_info_title">Mostrar información de carga en la pantalla de bloqueo</string>
+    <string name="lockscreen_charging_info_summary">Muestra la temperatura, la corriente de carga y mucho más mientras está enchufado</string>
+
+    <string name="screen_off_fod_title">Pantalla de FOD</string>
+    <string name="screen_off_fod_summary">Activar el FOD incluso con la pantalla apagada</string>
+
+    <!-- Edge light -->
+    <string name="edge_light_title">Luz de borde</string>
+    <string name="edge_light_summary">Mostrar una animación en los bordes de la pantalla ambiental al recibir una notificación</string>
+    <string name="aod_pulse_title">Activar la luz de borde en AOD</string>
+    <string name="aod_pulse_summary">Habilitar para seguir mostrando la luz de los bordes después de la transición de la visualización ambiental</string>
+    <string name="aod_pulse_hide_content_title">Ocultar contenidos en AOD</string>
+    <string name="aod_pulse_hide_content_summary">Habilitar para ocultar el contenido de AOD cuando se pulsa</string>
+    <string name="ambient_pulse_color_mode_title">Color de la luz de los bordes</string>
+    <string name="ambient_pulse_custom_color_mode_title">Color personalizado</string>
+    <string name="ambient_pulse_custom_color_mode_summary">Elija un color personalizado para la luz del borde</string>
+    <string name="ambient_pulse_repeat_count_title">Recuento de repetición de pulsos</string>
+    <string name="ambient_pulse_repeat_count_summary">Elija cuántas veces debe repetirse el pulso ambiental, una cuenta de repetición de 0 hará que la animación se ejecute hasta que se agote el tiempo de espera</string>
+    <string name="ambient_pulse_timeout_title">Tiempo de espera de la luz de borde</string>
+    <string name="ambient_pulse_timeout_summary">Tiempo de espera en segundos para el pulso en AOD, un tiempo de espera de 0s significa que seguirá pulsando hasta que se cambie el estado de la pantalla</string>
+    <string name="ambient_pulse_animation_duration_title">Duración de la animación de la luz de borde</string>
+    <string name="ambient_pulse_animation_duration_summary">Duración en segundos de la animación de la luz del borde, por defecto es 2s</string>
+
+    <string name="accent">Destacado</string>
+    <string name="wallpaper">Fondo de pantalla</string>
+    <string name="notification">Notificación</string>
+    <string name="custom">Personalizado</string>
+
+    <!-- Device settings -->
+    <string name="device_settings_title">Ajustes del dispositivo</string>
+    <string name="device_settings_summary">Ajustes de las partes específicas del dispositivo</string>
+
+    <!--Double Tap to Sleep Lockscreen-->
+    <string name="double_tap_sleep_lockscreen_title">Doble toque para bloquear</string>
+    <string name="double_tap_sleep_lockscreen_summary">Doble toque en cualquier parte de la pantalla de bloqueo para bloquear</string>
+
+    <!-- Double Tap to Sleep Statusbar -->
+    <string name="statusbar_gesture_title">Gestos</string>
+    <string name="double_tap_sleep_gesture_title">Doble toque para bloquear</string>
+    <string name="double_tap_sleep_gesture_summary">Pulse dos veces en cualquier lugar de la barra de estado para bloquear el dispositivo</string>
+
+    <string name="miscellaneous_category_title">Otros</string>
+
+    <!-- Location privacy indicator -->
+    <string name="location_privacy_indicator_title">Mostrar el indicador de privacidad de la ubicación</string>
+    <string name="location_privacy_indicator_summary">Reiniciar la interfaz del sistema para que surta efecto</string>
+
+    <!-- Miscellaneous -->
+    <string name="miscellaneous_settings_summary">Deslizar para capturar la pantalla, Sonido de captura de pantalla, Control de volumen</string>
+
+    <string name="three_finger_screenshot_title">Desliza el dedo para hacer una captura de pantalla</string>
+    <string name="three_finger_screenshot_summary">Desliza tres dedos hacia abajo para hacer una captura de pantalla</string>
+
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Sonido de las capturas de pantalla</string>
+    <string name="screenshot_shutter_sound_summary">Activar el sonido y la vibración de las capturas de pantalla</string>
+
+    <string name="search">Buscar</string>
+    <string name="search_apps">Buscar aplicaciones</string>
+
+    <!-- Volume key music control -->
+    <string name="volume_button_music_control_title">Saltar canciones con los botones de volumen</string>
+    <string name="volume_button_music_control_summary">Pulsación larga del volumen para saltar a la siguiente canción y viceversa</string>
+
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Recuento de notificaciones</string>
+    <string name="status_bar_notif_count_summary">Mostrar el número de notificaciones pendientes</string>
+</resources>
