@@ -168,4 +168,7 @@
     <string name="volume_button_music_control_title">Skip tracks with volume buttons</string>
     <string name="volume_button_music_control_summary">Long press volume up for skipping to the next track and vice-versa</string>
 
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Notification count</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
 </resources>
