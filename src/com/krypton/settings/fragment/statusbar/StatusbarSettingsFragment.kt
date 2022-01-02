@@ -16,6 +16,7 @@
 package com.krypton.settings.fragment.statusbar
 
 import android.content.Context
+import android.content.res.Resources
 import android.os.Bundle
 import android.os.UserHandle
 import android.os.UserManager
@@ -56,14 +57,21 @@ class StatusbarSettingsFragment: KryptonDashboardFragment(),
                 UserManager.DISALLOW_CONFIG_MOBILE_NETWORKS,
                 UserHandle.myUserId())
         if (hideCombinedSignalIconsPref) preferenceScreen.removePreference(combinedSignalIconPref)
+
         context!!.packageManager.getResourcesForApplication(SYSTEMUI_PACKAGE).also { res ->
-            val defaultEnabled: Boolean = res.getIdentifier(CONFIG_RESOURCE_NAME, BOOL_RES_TYPE, SYSTEMUI_PACKAGE)
-                .takeIf { resId -> resId != 0 }
-                ?.let { res.getBoolean(it) } ?: false
+            val defaultEnabled = getBoolSysUIResource(res, CONFIG_RESOURCE_NAME)
             combinedSignalIconPref?.setChecked(
                 Settings.Secure.getIntForUser(context!!.contentResolver,
                     Settings.Secure.SHOW_COMBINED_STATUS_BAR_SIGNAL_ICONS,
                     if (defaultEnabled) 1 else 0,
+                    UserHandle.USER_CURRENT) == 1
+            )
+
+            val defaultShowCounter = getBoolSysUIResource(res, NOTIF_COUNTER_RESOURCE)
+            findPreference<SwitchPreference>(KEY_STATUS_BAR_NOTIF_COUNT)?.setChecked(
+                Settings.System.getIntForUser(context!!.contentResolver,
+                    Settings.System.STATUS_BAR_NOTIF_COUNT,
+                    if (defaultShowCounter) 1 else 0,
                     UserHandle.USER_CURRENT) == 1
             )
         }
@@ -121,6 +129,12 @@ class StatusbarSettingsFragment: KryptonDashboardFragment(),
         autoBrightnessPreference?.setEnabled(showOtherSliderPrefs)
     }
 
+    private fun getBoolSysUIResource(res: Resources, resName: String, def: Boolean = false): Boolean {
+        return res.getIdentifier(resName, BOOL_RES_TYPE, SYSTEMUI_PACKAGE)
+            .takeIf { resId -> resId != 0 }
+            ?.let { res.getBoolean(it) } ?: def
+    }
+
     companion object {
         private const val TAG = "StatusbarSettingsFragment"
 
@@ -141,5 +155,8 @@ class StatusbarSettingsFragment: KryptonDashboardFragment(),
 
         private const val BATTERY_STYLE_PREF_KEY = "status_bar_battery_style"
         private const val BATTERY_SHOW_PERCENT_PREF_KEY = "status_bar_show_battery_percent"
+
+        private const val KEY_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count"
+        private const val NOTIF_COUNTER_RESOURCE = "config_statusBarShowNumber"
     }
 }
