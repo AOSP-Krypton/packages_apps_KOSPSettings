@@ -167,4 +167,7 @@
     <string name="volume_button_music_control_title">音量键切换曲目</string>
     <string name="volume_button_music_control_summary">长按音量加/减切换到下/上一曲目</string>
 
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">通知计数</string>
+    <string name="status_bar_notif_count_summary">显示待处理通知的数量</string>
 </resources>
