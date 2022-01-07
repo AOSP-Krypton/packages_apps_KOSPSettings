@@ -81,11 +81,7 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
             context, TARGET_THEME_PICKER, false /** ignoreState */
         )
         return listOf(
-            CustomFontPreferenceController(
-                context,
-                CUSTOM_FONT_PREF_KEY,
-                CUSTOM_FONT_FAMILY_REGULAR_NAME,
-            ),
+            CustomFontPreferenceController(context, CUSTOM_FONT_PREF_KEY),
             ThemeOverlayPreferenceController(context,
                 "font_list_preference",
                 mapOf(OVERLAY_CATEGORY_FONT to TARGET_ANDROID),
@@ -171,14 +167,11 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
             CUSTOM_FONT_FAMILY_REGULAR_NAME, listOf(fontRegular)).build()
         val fontFamilyMedium = FontFamilyUpdateRequest.FontFamily.Builder(
             CUSTOM_FONT_FAMILY_MEDIUM_NAME, listOf(fontMedium)).build()
-        val sansSerifFontFamily = FontFamilyUpdateRequest.FontFamily.Builder(
-            SANS_SERIF_FAMILY, listOf(fontRegular)).build()
         
         val fontFamilyUpdateRequest = FontFamilyUpdateRequest.Builder()
             .addFontFileUpdateRequest(fontFileUpdateRequest)
             .addFontFamily(fontFamilyRegular)
             .addFontFamily(fontFamilyMedium)
-            .addFontFamily(sansSerifFontFamily)
             .build()
 
         val result = fontManager.updateFontFamily(fontFamilyUpdateRequest,
@@ -214,8 +207,7 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
         private const val FONT_CACHE_FILE_NAME = "font_cache.ttf"
 
         private const val CUSTOM_FONT_PREF_KEY = "custom_font_preference"
-        private const val CUSTOM_FONT_FAMILY_REGULAR_NAME = "custom-font"
-        private const val SANS_SERIF_FAMILY = "sans-serif"
+        const val CUSTOM_FONT_FAMILY_REGULAR_NAME = "custom-font"
         private const val CUSTOM_FONT_FAMILY_MEDIUM_NAME = "custom-font-medium"
         private val FONT_MIME_TYPE = arrayOf("font/ttf")
     }
