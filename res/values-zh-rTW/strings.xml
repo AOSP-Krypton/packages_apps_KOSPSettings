@@ -109,28 +109,6 @@
     <string name="screen_off_fod_title">息屏指紋</string>
     <string name="screen_off_fod_summary">螢幕關閉時顯示指紋解鎖圖案</string>
 
-    <!-- Edge light -->
-    <string name="edge_light_title">通知光效</string>
-    <string name="edge_light_summary">收到通知時在環境顯示邊緣顯示光效</string>
-    <string name="aod_pulse_title">環境顯示啟用光效</string>
-    <string name="aod_pulse_summary">啟用在從環境顯示過渡後繼續顯示通知光效</string>
-    <string name="aod_pulse_hide_content_title">隱藏環境顯示內容</string>
-    <string name="aod_pulse_hide_content_summary">通知光效開啟時隱藏環境顯示內容</string>
-    <string name="ambient_pulse_color_mode_title">光效顏色</string>
-    <string name="ambient_pulse_custom_color_mode_title">自定義顏色</string>
-    <string name="ambient_pulse_custom_color_mode_summary">為通知光效選擇一個顏色</string>
-    <string name="ambient_pulse_repeat_count_title">重複次數</string>
-    <string name="ambient_pulse_repeat_count_summary">通知光效重複次數，如果設為 0 將重複至超時</string>
-    <string name="ambient_pulse_timeout_title">超時時間</string>
-    <string name="ambient_pulse_timeout_summary">通知光效超時時間, 如果設為 0 將重複直到開啟螢幕</string>
-    <string name="ambient_pulse_animation_duration_title">持續時間</string>
-    <string name="ambient_pulse_animation_duration_summary">通知光效的持續時間（秒）, 預設為 2 秒</string>
-
-    <string name="accent">強調色 </string>
-    <string name="wallpaper">桌布</string>
-    <string name="notification">通知</string>
-    <string name="custom">自定義</string>
-
     <!-- Device settings -->
     <string name="device_settings_title">裝置設定</string>
     <string name="device_settings_summary">對裝置特定功能進行設定</string>

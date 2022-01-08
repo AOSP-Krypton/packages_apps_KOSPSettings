@@ -109,28 +109,6 @@
     <string name="screen_off_fod_title">FOD na tela desligada</string>
     <string name="screen_off_fod_summary">Habilitar FOD mesmo quando a tela estiver desligada</string>
 
-    <!-- Edge light -->
-    <string name="edge_light_title">luz de borda</string>
-    <string name="edge_light_summary">Mostrar uma animação ao longo das bordas da tela ambiente ao receber uma notificação</string>
-    <string name="aod_pulse_title">Habilitar a luz de borda no AOD</string>
-    <string name="aod_pulse_summary">Permitir continuar mostrando luz de borda após a transição da tela ambiente</string>
-    <string name="aod_pulse_hide_content_title">Ocultar conteúdo no AOD</string>
-    <string name="aod_pulse_hide_content_summary">Permitir esconder o conteúdo do AOD ao pulsar</string>
-    <string name="ambient_pulse_color_mode_title">Cor da luz da borda</string>
-    <string name="ambient_pulse_custom_color_mode_title">Cor personalizada</string>
-    <string name="ambient_pulse_custom_color_mode_summary">Escolha uma cor personalizada para a luz de borda</string>
-    <string name="ambient_pulse_repeat_count_title">Contagem de repetição de pulsos</string>
-    <string name="ambient_pulse_repeat_count_summary">Escolha quantas vezes o pulso ambiente deve se repetir, uma contagem repetida de 0 fará com que a animação funcione até o tempo limite</string>
-    <string name="ambient_pulse_timeout_title">Tempo limite de luz de borda</string>
-    <string name="ambient_pulse_timeout_summary">Tempo limite em segundos para pulsação no AOD, um tempo limite de 0s significa que ele continuará pulsando até que o estado de exibição seja alterado</string>
-    <string name="ambient_pulse_animation_duration_title">Duração da animação com luz de borda</string>
-    <string name="ambient_pulse_animation_duration_summary">Duração em segundos para a animação da luz de borda, o padrão é de 2s</string>
-
-    <string name="accent">Destaque </string>
-    <string name="wallpaper">Papel de parede</string>
-    <string name="notification">Notificação</string>
-    <string name="custom">Personalizado</string>
-
     <!-- Device settings -->
     <string name="device_settings_title">Configurações do dispositivo</string>
     <string name="device_settings_summary">Configurações para as partes específicas do dispositivo</string>

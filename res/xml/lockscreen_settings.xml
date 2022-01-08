@@ -35,12 +35,4 @@
           android:summary="@string/screen_off_fod_summary"
           android:defaultValue="false" />
 
-     <!-- Edge Light -->
-     <com.krypton.settings.preference.SystemSettingMasterSwitchPreference
-          android:key="pulse_ambient_light"
-          android:title="@string/edge_light_title"
-          android:summary="@string/edge_light_summary"
-          android:defaultValue="0"
-          android:fragment="com.krypton.settings.fragment.lockscreen.EdgeLightSettingsFragment" />
-
 </PreferenceScreen>

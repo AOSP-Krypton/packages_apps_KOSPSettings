@@ -109,28 +109,6 @@
     <string name="screen_off_fod_title">Pantalla de FOD</string>
     <string name="screen_off_fod_summary">Activar el FOD incluso con la pantalla apagada</string>
 
-    <!-- Edge light -->
-    <string name="edge_light_title">Luz de borde</string>
-    <string name="edge_light_summary">Mostrar una animación en los bordes de la pantalla ambiental al recibir una notificación</string>
-    <string name="aod_pulse_title">Activar la luz de borde en AOD</string>
-    <string name="aod_pulse_summary">Habilitar para seguir mostrando la luz de los bordes después de la transición de la visualización ambiental</string>
-    <string name="aod_pulse_hide_content_title">Ocultar contenidos en AOD</string>
-    <string name="aod_pulse_hide_content_summary">Habilitar para ocultar el contenido de AOD cuando se pulsa</string>
-    <string name="ambient_pulse_color_mode_title">Color de la luz de los bordes</string>
-    <string name="ambient_pulse_custom_color_mode_title">Color personalizado</string>
-    <string name="ambient_pulse_custom_color_mode_summary">Elija un color personalizado para la luz del borde</string>
-    <string name="ambient_pulse_repeat_count_title">Recuento de repetición de pulsos</string>
-    <string name="ambient_pulse_repeat_count_summary">Elija cuántas veces debe repetirse el pulso ambiental, una cuenta de repetición de 0 hará que la animación se ejecute hasta que se agote el tiempo de espera</string>
-    <string name="ambient_pulse_timeout_title">Tiempo de espera de la luz de borde</string>
-    <string name="ambient_pulse_timeout_summary">Tiempo de espera en segundos para el pulso en AOD, un tiempo de espera de 0s significa que seguirá pulsando hasta que se cambie el estado de la pantalla</string>
-    <string name="ambient_pulse_animation_duration_title">Duración de la animación de la luz de borde</string>
-    <string name="ambient_pulse_animation_duration_summary">Duración en segundos de la animación de la luz del borde, por defecto es 2s</string>
-
-    <string name="accent">Destacado</string>
-    <string name="wallpaper">Fondo de pantalla</string>
-    <string name="notification">Notificación</string>
-    <string name="custom">Personalizado</string>
-
     <!-- Device settings -->
     <string name="device_settings_title">Ajustes del dispositivo</string>
     <string name="device_settings_summary">Ajustes de las partes específicas del dispositivo</string>
