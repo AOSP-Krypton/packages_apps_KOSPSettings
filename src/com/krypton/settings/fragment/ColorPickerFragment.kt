@@ -25,9 +25,9 @@ import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.text.Editable
 import android.text.Spanned
-import android.view.HapticFeedbackConstants.KEYBOARD_PRESS
 import android.text.InputFilter
 import android.text.TextWatcher
+import android.view.HapticFeedbackConstants.KEYBOARD_PRESS
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,13 +39,18 @@ import android.widget.TextView
 
 import androidx.core.graphics.ColorUtils
 import androidx.fragment.app.DialogFragment.STYLE_NORMAL
+import androidx.fragment.app.setFragmentResult
 import androidx.preference.PreferenceDataStore
 
 import com.android.settings.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.krypton.settings.Utils
 
-abstract class ColorPickerFragment(@ColorInt initialColor: Int): BottomSheetDialogFragment(),
+class ColorPickerFragment(
+    private val settingKey: String,
+    private val preferenceDataStore: PreferenceDataStore?,
+    defaultColor: String?,
+): BottomSheetDialogFragment(),
         RadioGroup.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener {
 
     private val hueGradientColors = intArrayOf(
@@ -67,7 +72,22 @@ abstract class ColorPickerFragment(@ColorInt initialColor: Int): BottomSheetDial
     private var textInputChangedInternal = false // Internal variable to prevent loops with TextWatcher
 
     @ColorInt
-    private var color = initialColor
+    private var color: Int
+
+    init {
+        val defColor = defaultColor ?: "#FFFFFF"
+        val defColorInt = try {
+            Color.parseColor(defColor)
+        } catch (e: Exception) {
+            Color.WHITE
+        }
+        color = try {
+            Color.parseColor(preferenceDataStore?.getString(
+                settingKey, defColor) ?: defColor)
+        } catch (e: Exception) {
+            defColorInt
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -228,7 +248,14 @@ abstract class ColorPickerFragment(@ColorInt initialColor: Int): BottomSheetDial
      * Called when confirm button of the dialog is pressed.
      * @param hexColor will be with # prefix and of RGB type
      */
-    abstract fun persistValue(hexColor: String); 
+    fun persistValue(hexColor: String) {
+        preferenceDataStore?.let {
+            it.putString(settingKey, hexColor)
+            setFragmentResult(KryptonDashboardFragment.REQUEST_KEY, Bundle(1).apply {
+                putCharSequence(BUNDLE_KEY, hexColor)
+            })
+        }
+    }
 
     /**
      * Used to update sliders if color model changes or
@@ -347,6 +374,10 @@ abstract class ColorPickerFragment(@ColorInt initialColor: Int): BottomSheetDial
         seekBarOne.setMax(if (isRGB) 255 else 360)
         seekBarTwo.setMax(if (isRGB) 255 else 100)
         seekBarThree.setMax(if (isRGB) 255 else 100)
+    }
+
+    companion object {
+        const val BUNDLE_KEY = "color"
     }
 }
 

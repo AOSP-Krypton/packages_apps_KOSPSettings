@@ -15,9 +15,7 @@
  */
 package com.krypton.settings.fragment.theme
 
-import android.graphics.Color
 import android.os.Bundle
-import android.os.UserHandle
 import android.provider.Settings
 import android.provider.Settings.Secure.MONET_ENGINE_CHROMA_FACTOR
 import android.provider.Settings.Secure.MONET_ENGINE_COLOR_OVERRIDE
@@ -43,11 +41,9 @@ class MonetEngineSettingsFragment: KryptonDashboardFragment(),
 
         customColorPickerPreference = findPreference<SettingColorPickerPreference>(CUSTOM_COLOR_PREF_KEY)
 
-        val defaultCustomColorSummary: String = getString(R.string.color_override_summary)
-
-        customColorPickerPreference?.setSummary(
-            customColor?:defaultCustomColorSummary
-        )
+        if (customColor == null) {
+            customColorPickerPreference?.setSummary(getString(R.string.color_override_summary))
+        }
 
         findPreference<SwitchPreference>(USE_WALLPAPER_COLOR_PREF_KEY)?.also {
             val isEnabled = customColor == null || customColor.isEmpty()
@@ -81,22 +77,6 @@ class MonetEngineSettingsFragment: KryptonDashboardFragment(),
                     MONET_ENGINE_CHROMA_FACTOR, (newValue as Int) / 100f)
             else -> false
         }
-    
-    override fun onDisplayPreferenceDialog(preference: Preference) {
-        if (preference == customColorPickerPreference) {
-            val preferenceDataStore = customColorPickerPreference?.getSettingsDataStore(context!!)
-            var defaultColor: Int = preferenceDataStore?.getString(preference.key, null)
-                ?.takeIf { it.isNotEmpty() }
-                ?.let { Color.parseColor(it) } ?: CUSTOM_COLOR_DEFAULT
-            MonetColorOverrideFragment(
-                customColorPickerPreference?.key,
-                preferenceDataStore,
-                defaultColor,
-            ).show(childFragmentManager, TAG)
-        } else {
-            super.onDisplayPreferenceDialog(preference)
-        }
-    }
 
     override protected fun getLogTag() = TAG
 
@@ -105,7 +85,6 @@ class MonetEngineSettingsFragment: KryptonDashboardFragment(),
 
         private const val USE_WALLPAPER_COLOR_PREF_KEY = "monet_engine_use_wallpaper_color"
         private const val CUSTOM_COLOR_PREF_KEY = "monet_engine_color_override"
-        private const val CUSTOM_COLOR_DEFAULT = Color.GREEN
 
         private const val CHROMA_SLIDER_PREF_KEY = "chroma_factor"
         private const val CHROMA_DEFAULT = 1f
