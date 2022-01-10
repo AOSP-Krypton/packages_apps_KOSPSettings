@@ -16,15 +16,45 @@
 
 package com.krypton.settings.fragment.statusbar
 
+import android.os.Bundle
+import android.widget.Switch
+
+import androidx.preference.forEachIndexed
+
+import com.android.settingslib.widget.MainSwitchPreference
+import com.android.settingslib.widget.OnMainSwitchChangeListener
+import com.android.settingslib.widget.TopIntroPreference
 import com.android.settings.R
 import com.krypton.settings.fragment.KryptonDashboardFragment
 
-class NetworkTrafficMonitorSettingsFragment: KryptonDashboardFragment() {
+class NetworkTrafficMonitorSettingsFragment: KryptonDashboardFragment(), OnMainSwitchChangeListener {
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        super.onCreatePreferences(savedInstanceState, rootKey)
+        findPreference<MainSwitchPreference>(MAIN_SWITCH_KEY)?.also {
+            updatePreferences(it.isChecked)
+            it.addOnSwitchChangeListener(this)
+        }
+    }
+
     override protected fun getPreferenceScreenResId() = R.xml.network_traffic_monitor_settings
 
     override protected fun getLogTag() = TAG
 
+    override fun onSwitchChanged(switchView: Switch, isChecked: Boolean) {
+        updatePreferences(isChecked)
+    }
+
+    private fun updatePreferences(isChecked: Boolean) {
+        preferenceScreen.forEachIndexed { _, preference ->
+            if (preference !is MainSwitchPreference &&
+                preference !is TopIntroPreference
+            ) preference.isVisible = isChecked
+        }
+    }
+
     companion object {
         private const val TAG = "NetworkTrafficMonitorSettingsFragment"
+
+        private const val MAIN_SWITCH_KEY = "network_traffic_enabled"
     }
 }

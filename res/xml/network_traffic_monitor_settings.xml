@@ -17,6 +17,17 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/network_traffic_category_title">
 
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="network_traffic_intro"
+        android:title="@string/network_traffic_intro_text"
+        android:selectable="false"
+        android:persistent="false" />
+
+    <com.krypton.settings.preference.SystemSettingMainSwitchPreference
+        android:key="network_traffic_enabled"
+        android:title="@string/enable_network_traffic"
+        android:defaultValue="false" />
+
     <com.krypton.settings.preference.SystemSettingSeekBarPreference
         android:key="network_traffic_auto_hide_threshold_tx"
         android:title="@string/statusbar_network_traffic_threshold_tx_title"
