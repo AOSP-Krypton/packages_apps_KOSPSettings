@@ -109,6 +109,23 @@
     <string name="screen_off_fod_title">Pantalla de FOD</string>
     <string name="screen_off_fod_summary">Activar el FOD incluso con la pantalla apagada</string>
 
+    <!-- Edge light -->
+    <string name="edge_light_title">Luz en el borde</string>
+    <string name="enable_edge_light">Activar la luz del borde</string>
+    <string name="edge_light_intro_text">Mostrar una animación a lo largo de los bordes de la pantalla cuando se pulsa</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Disparar siempre a pulso</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Si se muestra la luz de borde siempre que se muestre la pantalla ambiental y no sólo para las notificaciones</string>
+    <string name="edge_light_repeat_animation_title">Repetir animación</string>
+    <string name="edge_light_repeat_animation_summary_on">Repetir hasta que se agote el tiempo</string>
+    <string name="edge_light_repeat_animation_summary_off">Mostrar sólo una vez</string>
+    <string name="edge_light_color_mode_title">Modo de color de la luz de los bordes</string>
+    <string name="accent_color">Color de acento (Predeterminado)</string>
+    <string name="notification_color">Color de la notificación</string>
+    <string name="wallpaper_color">Color del fondo de pantalla</string>
+    <string name="custom_color">Color personalizado</string>
+    <string name="edge_light_custom_color_title">Color personalizado</string>
+
+
     <!-- Device settings -->
     <string name="device_settings_title">Ajustes del dispositivo</string>
     <string name="device_settings_summary">Ajustes de las partes específicas del dispositivo</string>
