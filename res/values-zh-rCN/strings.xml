@@ -98,9 +98,9 @@
     <string name="artwork_media_background_blur_radius_title">背景模糊量</string>
     <string name="artwork_media_background_alpha_title">背景透明度</string>
 
-    <!-- Lockscree settings -->
+    <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">锁屏</string>
-    <string name="lockscreen_settings_summary">充电信息</string>
+    <string name="lockscreen_settings_summary">充电信息，手势，通知光效</string>
 
     <!-- Lockscreen battery info -->
     <string name="lockscreen_charging_info_title">充电信息</string>
@@ -108,6 +108,22 @@
 
     <string name="screen_off_fod_title">息屏指纹</string>
     <string name="screen_off_fod_summary">屏幕关闭时显示指纹解锁图案</string>
+
+    <!-- Edge light -->
+    <string name="edge_light_title">通知光效</string>
+    <string name="enable_edge_light">启用通知光效</string>
+    <string name="edge_light_intro_text">收到消息时在屏幕边缘显示光效</string>
+    <string name="edge_light_always_trigger_on_pulse_title">随时显示</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">无论如何都显示通知光效</string>
+    <string name="edge_light_repeat_animation_title">重复动画</string>
+    <string name="edge_light_repeat_animation_summary_on">直到超时</string>
+    <string name="edge_light_repeat_animation_summary_off">仅一次</string>
+    <string name="edge_light_color_mode_title">光效颜色</string>
+    <string name="accent_color">强调色（默认）</string>
+    <string name="notification_color">通知色</string>
+    <string name="wallpaper_color">壁纸色</string>
+    <string name="custom_color">自定义</string>
+    <string name="edge_light_custom_color_title">自定义</string>
 
     <!-- Device settings -->
     <string name="device_settings_title">设备设置</string>
