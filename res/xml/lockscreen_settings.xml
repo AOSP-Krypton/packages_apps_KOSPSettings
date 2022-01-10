@@ -35,4 +35,10 @@
           android:summary="@string/screen_off_fod_summary"
           android:defaultValue="false" />
 
+     <Preference
+          android:key="edge_light_preference"
+          android:title="@string/edge_light_title"
+          android:persistent="false"
+          android:fragment="com.krypton.settings.fragment.lockscreen.EdgeLightSettingsFragment" />
+
 </PreferenceScreen>

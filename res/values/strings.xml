@@ -98,9 +98,9 @@
     <string name="artwork_media_background_blur_radius_title">Blur amount for media artwork</string>
     <string name="artwork_media_background_alpha_title">Transparency of media artwork</string>
 
-    <!-- Lockscree settings -->
+    <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">Lockscreen</string>
-    <string name="lockscreen_settings_summary">Charging info, Gestures</string>
+    <string name="lockscreen_settings_summary">Charging info, Gestures, Edge light</string>
 
     <!-- Lockscreen battery info -->
     <string name="lockscreen_charging_info_title">Show charging info in lockscreen</string>
@@ -108,6 +108,22 @@
 
     <string name="screen_off_fod_title">Screen off FOD</string>
     <string name="screen_off_fod_summary">Enable FOD even when screen is off</string>
+
+    <!-- Edge light -->
+    <string name="edge_light_title">Edge light</string>
+    <string name="enable_edge_light">Enable edge light</string>
+    <string name="edge_light_intro_text">Display an animation along the edges of the screen when pulsing</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
+    <string name="edge_light_repeat_animation_title">Repeat animation</string>
+    <string name="edge_light_repeat_animation_summary_on">Repeat until timeout</string>
+    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
+    <string name="edge_light_color_mode_title">Edge light color mode</string>
+    <string name="accent_color">Accent color (Default)</string>
+    <string name="notification_color">Notification color</string>
+    <string name="wallpaper_color">Wallpaper color</string>
+    <string name="custom_color">Custom color</string>
+    <string name="edge_light_custom_color_title">Custom color</string>
 
     <!-- Device settings -->
     <string name="device_settings_title">Device settings</string>
