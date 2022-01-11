@@ -32,7 +32,7 @@ abstract class KryptonDashboardFragment: DashboardFragment() {
             }
             ColorPickerFragment(
                 preference.key,
-                preference.getSettingsDataStore(requireContext()),
+                preference.preferenceDataStore,
                 preference.getColor()
             ).show(childFragmentManager, preference.key)
         } else {
