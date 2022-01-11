@@ -41,10 +41,11 @@
           android:summary="@string/disable_qs_summary"
           android:defaultValue="false" />
 
-     <Preference
-          android:key="edge_light_preference"
+     <com.krypton.settings.preference.SystemSettingPrimarySwitchPreference
+          android:key="edge_light_enabled"
           android:title="@string/edge_light_title"
-          android:persistent="false"
-          android:fragment="com.krypton.settings.fragment.lockscreen.EdgeLightSettingsFragment" />
+          android:defaultValue="false"
+          android:fragment="com.krypton.settings.fragment.lockscreen.EdgeLightSettingsFragment"
+          settings:observe="true" />
 
 </PreferenceScreen>

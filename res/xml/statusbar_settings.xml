@@ -18,11 +18,12 @@
     android:title="@string/statusbar_settings_title">
 
     <!-- Network traffic -->
-    <Preference
-        android:key="network_traffic_preference"
+    <com.krypton.settings.preference.SystemSettingPrimarySwitchPreference
+        android:key="network_traffic_enabled"
         android:title="@string/network_traffic_category_title"
-        android:persistent="false"
-        android:fragment="com.krypton.settings.fragment.statusbar.NetworkTrafficMonitorSettingsFragment" />
+        android:defaultValue="false"
+        android:fragment="com.krypton.settings.fragment.statusbar.NetworkTrafficMonitorSettingsFragment"
+        settings:observe="true" />
 
     <PreferenceCategory
         android:title="@string/statusbar_gesture_title">
