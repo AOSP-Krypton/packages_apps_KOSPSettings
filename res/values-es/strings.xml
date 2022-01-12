@@ -59,6 +59,12 @@
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">Tráfico de la red</string>
+    <string name="network_traffic_intro_text">
+        Muestra la velocidad actual del tráfico de red en la barra de estado.
+        El monitor muestra la velocidad dinámicamente de manera que alterna entre 
+        velocidad de carga y descarga cada segundo
+    </string>
+    <string name="enable_network_traffic">Enable network traffic monitor</string>
     <string name="statusbar_network_traffic_threshold_tx_title">Umbral de ocultación automático para la carga</string>
     <string name="statusbar_network_traffic_threshold_rx_title">Umbral de ocultación automático para la descarga</string>
     <string name="statusbar_network_traffic_unit_text_size_title">Tamaño del texto de la unidad de tráfico de la red</string>
@@ -98,6 +104,10 @@
     <string name="artwork_media_background_blur_radius_title">Cantidad de desenfoque para las obras de arte de los medios</string>
     <string name="artwork_media_background_alpha_title">Transparencia de las obras de arte de los medios</string>
 
+   <!-- Disable QS -->
+    <string name="disable_qs_title">Ocultar QS en la pantalla de bloqueo</string>
+    <string name="disable_qs_summary">Oculta QS si el dispositivo está bloqueado. No desactiva la sombra de notificación</string>
+   
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">Pantalla de bloqueo</string>
     <string name="lockscreen_settings_summary">Información de carga, Gestos, Luz de borde</string>
@@ -124,7 +134,6 @@
     <string name="wallpaper_color">Color del fondo de pantalla</string>
     <string name="custom_color">Color personalizado</string>
     <string name="edge_light_custom_color_title">Color personalizado</string>
-
 
     <!-- Device settings -->
     <string name="device_settings_title">Ajustes del dispositivo</string>
