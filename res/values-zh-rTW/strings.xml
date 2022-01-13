@@ -59,6 +59,11 @@
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">網路流量監視器</string>
+    <string name="network_traffic_intro_text">
+        在狀態列中顯示當前的網路流量速度。
+        監視器將在狀態列中動態顯示當前上傳和下載速度。
+    </string>
+    <string name="enable_network_traffic">啟用網路流量監視器</string>
     <string name="statusbar_network_traffic_threshold_tx_title">上傳速度到閾值時自動隱藏</string>
     <string name="statusbar_network_traffic_threshold_rx_title">下載速度到閾值時自動隱藏</string>
     <string name="statusbar_network_traffic_unit_text_size_title">網路流量監視器字型大小</string>
@@ -97,6 +102,10 @@
     <string name="artwork_media_background_enable_blur_title">背景模糊</string>
     <string name="artwork_media_background_blur_radius_title">背景模糊量</string>
     <string name="artwork_media_background_alpha_title">背景透明度</string>
+
+    <!-- Disable QS -->
+    <string name="disable_qs_title">隱藏快速設定</string>
+    <string name="disable_qs_summary">如果裝置已鎖定，將隱藏快速設定。但不會禁用通知氣泡。</string>
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">鎖屏</string>
