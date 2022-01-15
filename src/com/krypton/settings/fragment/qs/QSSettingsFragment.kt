@@ -16,15 +16,38 @@
 
 package com.krypton.settings.fragment.qs
 
+import android.os.Bundle
+
 import com.android.settings.R
 import com.krypton.settings.fragment.KryptonDashboardFragment
+import com.krypton.settings.preference.SystemSettingEditTextPreference
 
 class QSSettingsFragment: KryptonDashboardFragment() {
+
+    override fun onCreate(bundle: Bundle?) {
+        super.onCreate(bundle)
+        val footerTextPreference = findPreference<SystemSettingEditTextPreference>(
+            QS_FOOTER_TEXT_STRING
+        )?.also {
+            if (it.text?.isBlank() != false) {
+                it.text = "KOSP"
+            }
+            it.setOnPreferenceChangeListener { _, newValue ->
+                if (newValue is String && newValue.isBlank()) {
+                    it.text = "KOSP"
+                }
+                true
+            }
+        }
+    }
+
     override protected fun getPreferenceScreenResId() = R.xml.qs_settings
 
     override protected fun getLogTag() = TAG
 
     companion object {
         private const val TAG = "QSSettingsFragment"
+
+        private const val QS_FOOTER_TEXT_STRING = "qs_footer_text_string"
     }
 }

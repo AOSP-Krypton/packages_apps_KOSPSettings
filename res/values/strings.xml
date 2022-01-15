@@ -113,6 +113,11 @@
     <string name="qs_show_battery_estimate_summary_on">Show battery estimates in QS</string>
     <string name="qs_show_battery_estimate_summary_off">Hide battery estimates in QS</string>
 
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">Show QS footer text</string>
+    <string name="qs_footer_text_string_title">Customize footer text</string>
+    <string name="qs_footer_text_string_summary">Set to empty for default KOSP</string>
+
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">Lockscreen</string>
     <string name="lockscreen_settings_summary">Charging info, Gestures, Edge light</string>
