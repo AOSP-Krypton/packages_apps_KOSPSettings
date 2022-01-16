@@ -70,7 +70,7 @@
         <com.krypton.settings.preference.SecureSettingSwitchPreference
             android:key="enable_location_privacy_indicator"
             android:title="@string/location_privacy_indicator_title"
-            android:summary="@string/location_privacy_indicator_summary" />
+            android:defaultValue="false" />
 
         <!-- Combined signal icons -->
         <com.krypton.settings.preference.SecureSettingSwitchPreference

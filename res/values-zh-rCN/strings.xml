@@ -151,7 +151,6 @@
 
     <!-- Location privacy indicator -->
     <string name="location_privacy_indicator_title">位置指示器</string>
-    <string name="location_privacy_indicator_summary">需要重启系统界面</string>
 
     <!-- Miscellaneous -->
     <string name="miscellaneous_settings_summary">音量键，截图提示音，滑动截屏</string>

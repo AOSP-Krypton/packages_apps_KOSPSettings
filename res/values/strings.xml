@@ -162,7 +162,6 @@
 
     <!-- Location privacy indicator -->
     <string name="location_privacy_indicator_title">Show privacy indicator for location</string>
-    <string name="location_privacy_indicator_summary">Reboot or restart system UI for it to take effect</string>
 
     <!-- Miscellaneous -->
     <string name="miscellaneous_settings_summary">Swipe to screenshot, Screenshot sound, Volume rocker</string>

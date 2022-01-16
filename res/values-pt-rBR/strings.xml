@@ -126,7 +126,6 @@
 
     <!-- Location privacy indicator -->
     <string name="location_privacy_indicator_title">Mostrar indicador de privacidade para localização</string>
-    <string name="location_privacy_indicator_summary">Reiniciar o dispositivo ou reiniciar o sistema UI para que ele tenha efeito</string>
 
     <!-- Miscellaneous -->
     <string name="miscellaneous_settings_summary">Deslize para captura de tela, Som da captura de tela, roque de volume</string>

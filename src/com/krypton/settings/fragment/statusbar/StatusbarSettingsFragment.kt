@@ -20,7 +20,6 @@ import android.content.res.Resources
 import android.os.Bundle
 import android.os.UserHandle
 import android.os.UserManager
-import android.provider.DeviceConfig
 import android.provider.Settings
 
 import androidx.preference.Preference
@@ -42,14 +41,6 @@ class StatusbarSettingsFragment: KryptonDashboardFragment(),
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        findPreference<SwitchPreference>(LOCATION_INDICATOR_PREF_KEY)?.also {
-            val showLocationIndicator = Settings.Secure.getIntForUser(context!!.contentResolver,
-                Settings.Secure.ENABLE_LOCATION_PRIVACY_INDICATOR,
-                if (shouldShowLocationIndicator()) 1 else 0,
-                UserHandle.USER_CURRENT) == 1
-            it.setChecked(showLocationIndicator)
-        }
-
         val combinedSignalIconPref = findPreference<SwitchPreference>(KEY_SHOW_COMBINED_STATUS_BAR_SIGNAL_ICONS)
         val hideCombinedSignalIconsPref = Utils.isWifiOnly(context) ||
             !context!!.getSystemService(UserManager::class.java).isAdminUser() ||
@@ -137,11 +128,6 @@ class StatusbarSettingsFragment: KryptonDashboardFragment(),
 
     companion object {
         private const val TAG = "StatusbarSettingsFragment"
-
-        private const val LOCATION_INDICATOR_PREF_KEY = "enable_location_privacy_indicator"
-
-        private fun shouldShowLocationIndicator() = DeviceConfig.getBoolean(DeviceConfig.NAMESPACE_PRIVACY,
-                "location_indicators_enabled", false)
 
         private const val KEY_SHOW_COMBINED_STATUS_BAR_SIGNAL_ICONS = "show_combined_status_bar_signal_icons"
         private const val CONFIG_RESOURCE_NAME = "flag_combined_status_bar_signal_icons"

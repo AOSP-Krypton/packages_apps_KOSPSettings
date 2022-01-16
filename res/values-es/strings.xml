@@ -152,7 +152,6 @@
 
     <!-- Location privacy indicator -->
     <string name="location_privacy_indicator_title">Mostrar el indicador de privacidad de la ubicación</string>
-    <string name="location_privacy_indicator_summary">Reiniciar la interfaz del sistema para que surta efecto</string>
 
     <!-- Miscellaneous -->
     <string name="miscellaneous_settings_summary">Deslizar para capturar la pantalla, Sonido de captura de pantalla, Control de volumen</string>
