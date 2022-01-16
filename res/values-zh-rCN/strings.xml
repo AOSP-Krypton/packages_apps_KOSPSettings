@@ -107,6 +107,16 @@
     <string name="disable_qs_title">隐藏快速设置</string>
     <string name="disable_qs_summary">如果设备已锁定，将隐藏快速设置。但不会禁用通知气泡。</string>
 
+    <!-- QS Battery estimates -->
+    <string name="qs_show_battery_estimate_title">电量估计</string>
+    <string name="qs_show_battery_estimate_summary_on">在快速设置中显示电量估计</string>
+    <string name="qs_show_battery_estimate_summary_off">在快速设置中隐藏电量估计</string>
+
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">页脚文本</string>
+    <string name="qs_footer_text_string_title">自定义快速设置中的页脚文本</string>
+    <string name="qs_footer_text_string_summary">设为空值将默认为 KOSP</string>
+
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">锁屏</string>
     <string name="lockscreen_settings_summary">充电信息，手势，通知光效</string>
@@ -151,7 +161,6 @@
 
     <!-- Location privacy indicator -->
     <string name="location_privacy_indicator_title">位置指示器</string>
-    <string name="location_privacy_indicator_summary">需要重启系统界面</string>
 
     <!-- Miscellaneous -->
     <string name="miscellaneous_settings_summary">音量键，截图提示音，滑动截屏</string>
