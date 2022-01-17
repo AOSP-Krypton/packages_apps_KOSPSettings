@@ -107,6 +107,16 @@
     <string name="disable_qs_title">隱藏快速設定</string>
     <string name="disable_qs_summary">如果裝置已鎖定，將隱藏快速設定。但不會禁用通知氣泡。</string>
 
+    <!-- QS Battery estimates -->
+    <string name="qs_show_battery_estimate_title">電量估計</string>
+    <string name="qs_show_battery_estimate_summary_on">在快速設定中顯示電量估計</string>
+    <string name="qs_show_battery_estimate_summary_off">在快速設定中隱藏電量估計</string>
+
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">頁尾文字</string>
+    <string name="qs_footer_text_string_title">自定義快速設定中的頁尾文字</string>
+    <string name="qs_footer_text_string_summary">設為空值將預設為 KOSP</string>
+
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">鎖屏</string>
     <string name="lockscreen_settings_summary">充電資訊，手勢，通知光效</string>
