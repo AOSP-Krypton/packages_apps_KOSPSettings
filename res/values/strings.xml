@@ -129,6 +129,8 @@
     <string name="screen_off_fod_title">Screen off FOD</string>
     <string name="screen_off_fod_summary">Enable FOD even when screen is off</string>
 
+    <string name="udfps_haptic_feedback_title">Play haptic feedback on pressing udfps view</string>
+
     <!-- Edge light -->
     <string name="edge_light_title">Edge light</string>
     <string name="enable_edge_light">Enable edge light</string>
