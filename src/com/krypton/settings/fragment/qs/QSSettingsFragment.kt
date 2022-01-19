@@ -26,15 +26,13 @@ class QSSettingsFragment: KryptonDashboardFragment() {
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        val footerTextPreference = findPreference<SystemSettingEditTextPreference>(
-            QS_FOOTER_TEXT_STRING
-        )?.also {
-            if (it.text?.isBlank() != false) {
-                it.text = "KOSP"
+        findPreference<SystemSettingEditTextPreference>(QS_FOOTER_TEXT_STRING)?.apply {
+            if (text?.isBlank() != false) {
+                text = "KOSP"
             }
-            it.setOnPreferenceChangeListener { _, newValue ->
+            setOnPreferenceChangeListener { _, newValue ->
                 if (newValue is String && newValue.isBlank()) {
-                    it.text = "KOSP"
+                    text = "KOSP"
                 }
                 true
             }
