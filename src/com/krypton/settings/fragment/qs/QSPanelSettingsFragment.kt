@@ -22,7 +22,7 @@ import com.android.settings.R
 import com.krypton.settings.fragment.KryptonDashboardFragment
 import com.krypton.settings.preference.SystemSettingEditTextPreference
 
-class QSSettingsFragment: KryptonDashboardFragment() {
+class QSPanelSettingsFragment: KryptonDashboardFragment() {
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)

@@ -39,7 +39,7 @@
         android:title="@string/qs_settings_title"
         android:summary="@string/qs_settings_summary"
         android:icon="@drawable/ic_qs"
-        android:fragment="com.krypton.settings.fragment.qs.QSSettingsFragment" />
+        android:fragment="com.krypton.settings.fragment.qs.QSPanelSettingsFragment" />
 
     <!-- Lockscreen settings -->
     <Preference

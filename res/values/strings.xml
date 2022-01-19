@@ -55,7 +55,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">Statusbar</string>
-    <string name="statusbar_settings_summary">Network traffic, Battery style</string>
+    <string name="statusbar_settings_summary">Network traffic, Battery style, Notification count</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">Network traffic</string>
@@ -83,9 +83,9 @@
     <string name="combined_status_bar_signal_icons">Combined signal icons</string>
     <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons in status bar. Needs SystemUI restart or reboot</string>
 
-    <!-- QS Settings -->
-    <string name="qs_settings_title">QuickSettings</string>
-    <string name="qs_settings_summary">Brightness slider, Media artwork</string>
+    <!-- QS Panel -->
+    <string name="qs_settings_title">QS Panel</string>
+    <string name="qs_settings_summary">Brightness slider, Media artwork, Footer text</string>
 
     <!-- Brightness slider -->
     <string name="qs_brightness_category_title">Brightness slider</string>
