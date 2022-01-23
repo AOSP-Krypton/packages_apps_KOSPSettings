@@ -55,7 +55,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">状态栏</string>
-    <string name="statusbar_settings_summary">网络流量,手势,位置指示器</string>
+    <string name="statusbar_settings_summary">网络流量，电池样式，通知计数</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">网络流量监视器</string>
@@ -84,7 +84,7 @@
 
     <!-- QS Settings -->
     <string name="qs_settings_title">快速设置</string>
-    <string name="qs_settings_summary">亮度滑块，音乐封面</string>
+    <string name="qs_settings_summary">亮度滑块，音乐封面，页脚文本</string>
 
     <!-- Brightness slider -->
     <string name="qs_brightness_category_title">亮度滑块</string>
@@ -127,6 +127,8 @@
 
     <string name="screen_off_fod_title">息屏指纹</string>
     <string name="screen_off_fod_summary">屏幕关闭时显示指纹解锁图案</string>
+
+    <string name="udfps_haptic_feedback_title">触摸指纹图案时震动</string>
 
     <!-- Edge light -->
     <string name="edge_light_title">通知光效</string>
