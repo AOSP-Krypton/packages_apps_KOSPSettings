@@ -26,7 +26,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceScreen
 
 import com.android.settings.R
-import com.android.settings.core.BasePreferenceController
+import com.krypton.settings.KryptonBasePreferenceController
 
 import org.json.JSONException
 import org.json.JSONObject
@@ -34,7 +34,7 @@ import org.json.JSONObject
 class CustomFontPreferenceController(
     private val context: Context,
     private val key: String,
-): BasePreferenceController(context, key) {
+): KryptonBasePreferenceController(context, key) {
 
     private val fontManager: FontManager
 

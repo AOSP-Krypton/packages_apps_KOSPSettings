@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 AOSP-Krypton Project
+ * Copyright (C) 2021-2022 AOSP-Krypton Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.krypton.settings.fragment.miscellaneous
 
 import com.android.settings.R
+import com.android.settings.search.BaseSearchIndexProvider
+import com.android.settingslib.search.SearchIndexable
 import com.krypton.settings.fragment.KryptonDashboardFragment
 
-class MiscellaneousSettingsFragment: KryptonDashboardFragment() {
+@SearchIndexable
+class MiscellaneousSettingsFragment : KryptonDashboardFragment() {
+
     override protected fun getPreferenceScreenResId() = R.xml.miscellaneous_settings
 
     override protected fun getLogTag() = TAG
 
     companion object {
         private const val TAG = "MiscellaneousSettingsFragment"
+
+        @JvmField
+        val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.miscellaneous_settings)
     }
 }

@@ -31,6 +31,7 @@ import androidx.preference.Preference
 
 import com.android.settings.R
 import com.android.settings.core.BasePreferenceController
+import com.krypton.settings.KryptonBasePreferenceController
 
 import org.json.JSONException
 import org.json.JSONObject
@@ -46,7 +47,8 @@ class ThemeOverlayPreferenceController(
     private val context: Context,
     private val key: String,
     private val categoryPackageMap: Map<String, String>
-): BasePreferenceController(context, key), Preference.OnPreferenceChangeListener {
+): KryptonBasePreferenceController(context, key),
+        Preference.OnPreferenceChangeListener {
 
     private val overlayManager: IOverlayManager
     private val packageManager: PackageManager

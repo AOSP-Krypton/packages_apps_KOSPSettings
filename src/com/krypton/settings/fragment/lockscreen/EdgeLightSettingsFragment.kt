@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 AOSP-Krypton Project
+ * Copyright (C) 2021-2022 AOSP-Krypton Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,11 +27,16 @@ import com.android.settingslib.widget.MainSwitchPreference
 import com.android.settingslib.widget.OnMainSwitchChangeListener
 import com.android.settingslib.widget.TopIntroPreference
 import com.android.settings.R
+import com.android.settings.search.BaseSearchIndexProvider
+import com.android.settingslib.search.SearchIndexable
 import com.krypton.settings.fragment.KryptonDashboardFragment
 import com.krypton.settings.preference.SettingColorPickerPreference
 
-class EdgeLightSettingsFragment: KryptonDashboardFragment(),
-        Preference.OnPreferenceChangeListener, OnMainSwitchChangeListener {
+@SearchIndexable
+class EdgeLightSettingsFragment : KryptonDashboardFragment(),
+        Preference.OnPreferenceChangeListener,
+        OnMainSwitchChangeListener {
+
     private var colorPickerPreference: SettingColorPickerPreference? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
@@ -76,5 +81,8 @@ class EdgeLightSettingsFragment: KryptonDashboardFragment(),
         private const val MAIN_SWITCH_KEY = "edge_light_enabled"
         private const val COLOR_MODE_PREF_KEY = "edge_light_color_mode"
         private const val COLOR_PICKER_PREF_KEY = "edge_light_custom_color"
+
+        @JvmField
+        val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.edge_light_settings)
     }
 }

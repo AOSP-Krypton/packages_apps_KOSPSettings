@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 AOSP-Krypton Project
+ * Copyright (C) 2021-2022 AOSP-Krypton Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.krypton.settings.fragment.statusbar
 
 import android.content.Context
@@ -26,12 +27,15 @@ import androidx.preference.Preference
 import androidx.preference.SwitchPreference
 
 import com.android.settings.R
+import com.android.settings.search.BaseSearchIndexProvider
 import com.android.settingslib.RestrictedLockUtilsInternal
+import com.android.settingslib.search.SearchIndexable
 import com.android.settingslib.Utils
 import com.krypton.settings.fragment.KryptonDashboardFragment
 
-class StatusbarSettingsFragment: KryptonDashboardFragment(),
-    Preference.OnPreferenceChangeListener {
+@SearchIndexable
+class StatusbarSettingsFragment : KryptonDashboardFragment(),
+        Preference.OnPreferenceChangeListener {
 
     private var qsBottomSliderPreference: Preference? = null
     private var autoBrightnessPreference: Preference? = null
@@ -144,5 +148,8 @@ class StatusbarSettingsFragment: KryptonDashboardFragment(),
 
         private const val KEY_STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count"
         private const val NOTIF_COUNTER_RESOURCE = "config_statusBarShowNumber"
+
+        @JvmField
+        val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.statusbar_settings)
     }
 }

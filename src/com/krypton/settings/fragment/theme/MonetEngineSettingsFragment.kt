@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 AOSP-Krypton Project
+ * Copyright (C) 2021-2022 AOSP-Krypton Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.krypton.settings.fragment.theme
 
 import android.os.Bundle
@@ -23,12 +24,15 @@ import android.provider.Settings.Secure.MONET_ENGINE_COLOR_OVERRIDE
 import androidx.preference.Preference
 import androidx.preference.SwitchPreference
 
-import com.android.settings.R
 import com.krypton.settings.fragment.KryptonDashboardFragment
 import com.krypton.settings.preference.CustomSeekBarPreference
 import com.krypton.settings.preference.SettingColorPickerPreference
+import com.android.settings.R
+import com.android.settings.search.BaseSearchIndexProvider
+import com.android.settingslib.search.SearchIndexable
 
-class MonetEngineSettingsFragment: KryptonDashboardFragment(),
+@SearchIndexable
+class MonetEngineSettingsFragment : KryptonDashboardFragment(),
         Preference.OnPreferenceChangeListener {
 
     private var customColorPickerPreference: SettingColorPickerPreference? = null
@@ -88,5 +92,8 @@ class MonetEngineSettingsFragment: KryptonDashboardFragment(),
 
         private const val CHROMA_SLIDER_PREF_KEY = "chroma_factor"
         private const val CHROMA_DEFAULT = 1f
+
+        @JvmField
+        val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.monet_engine_settings)
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 AOSP-Krypton Project
+ * Copyright (C) 2021-2022 AOSP-Krypton Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +36,9 @@ import androidx.preference.Preference
 
 import com.android.internal.util.krypton.KryptonUtils
 import com.android.settings.R
+import com.android.settings.search.BaseSearchIndexProvider
 import com.android.settingslib.core.AbstractPreferenceController
+import com.android.settingslib.search.SearchIndexable
 import com.krypton.settings.fragment.KryptonDashboardFragment
 
 import java.io.File
@@ -46,7 +48,8 @@ import java.io.IOException
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
 
-class ThemeSettingsFragment: KryptonDashboardFragment() {
+@SearchIndexable
+class ThemeSettingsFragment : KryptonDashboardFragment() {
 
     private val activityResultLauncher: ActivityResultLauncher<Array<String>>
     private lateinit var fontManager: FontManager
@@ -71,37 +74,7 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
 
     override protected fun getPreferenceScreenResId() = R.xml.theme_settings
 
-    override protected fun createPreferenceControllers(
-        context: Context
-    ): List<AbstractPreferenceController> {
-        val isAospLauncherInstalled = KryptonUtils.isPackageInstalled(
-            context, TARGET_LAUNCHER, false /** ignoreState */
-        )
-        val isAospThemePickerInstalled = KryptonUtils.isPackageInstalled(
-            context, TARGET_THEME_PICKER, false /** ignoreState */
-        )
-        return listOf(
-            CustomFontPreferenceController(context, CUSTOM_FONT_PREF_KEY),
-            ThemeOverlayPreferenceController(context,
-                "font_list_preference",
-                mapOf(OVERLAY_CATEGORY_FONT to TARGET_ANDROID),
-            ),
-            ThemeOverlayPreferenceController(context,
-                "icon_pack_list_preference",
-                mutableMapOf(
-                    OVERLAY_CATEGORY_ICON_ANDROID to TARGET_ANDROID,
-                    OVERLAY_CATEGORY_ICON_SYSUI to TARGET_SYSUI,
-                    OVERLAY_CATEGORY_ICON_SETTINGS to TARGET_SETTINGS,
-                ).also {
-                    // Conditionally add launcher and themepicker
-                    if (isAospLauncherInstalled) it.put(
-                        OVERLAY_CATEGORY_ICON_LAUNCHER, TARGET_LAUNCHER)
-                    if (isAospThemePickerInstalled) it.put(
-                        OVERLAY_CATEGORY_ICON_THEME_PICKER, TARGET_THEME_PICKER)
-                },
-            )
-        )
-    }
+    override protected fun createPreferenceControllers(context: Context) = buildPreferenceControllers(context)
 
     override protected fun getLogTag() = TAG
 
@@ -210,5 +183,41 @@ class ThemeSettingsFragment: KryptonDashboardFragment() {
         const val CUSTOM_FONT_FAMILY_REGULAR_NAME = "custom-font"
         private const val CUSTOM_FONT_FAMILY_MEDIUM_NAME = "custom-font-medium"
         private val FONT_MIME_TYPE = arrayOf("font/ttf")
+
+        fun buildPreferenceControllers(context: Context): List<AbstractPreferenceController> {
+            val isAospLauncherInstalled = KryptonUtils.isPackageInstalled(
+            context, TARGET_LAUNCHER, false /** ignoreState */
+            )
+            val isAospThemePickerInstalled = KryptonUtils.isPackageInstalled(
+                context, TARGET_THEME_PICKER, false /** ignoreState */
+            )
+            return listOf(
+                CustomFontPreferenceController(context, CUSTOM_FONT_PREF_KEY),
+                ThemeOverlayPreferenceController(context,
+                    "font_list_preference",
+                    mapOf(OVERLAY_CATEGORY_FONT to TARGET_ANDROID),
+                ),
+                ThemeOverlayPreferenceController(context,
+                    "icon_pack_list_preference",
+                    mutableMapOf(
+                        OVERLAY_CATEGORY_ICON_ANDROID to TARGET_ANDROID,
+                        OVERLAY_CATEGORY_ICON_SYSUI to TARGET_SYSUI,
+                        OVERLAY_CATEGORY_ICON_SETTINGS to TARGET_SETTINGS,
+                    ).also {
+                        // Conditionally add launcher and themepicker
+                        if (isAospLauncherInstalled) it.put(
+                            OVERLAY_CATEGORY_ICON_LAUNCHER, TARGET_LAUNCHER)
+                        if (isAospThemePickerInstalled) it.put(
+                            OVERLAY_CATEGORY_ICON_THEME_PICKER, TARGET_THEME_PICKER)
+                    },
+                )
+            )
+        }
+
+        @JvmField
+        val SEARCH_INDEX_DATA_PROVIDER = object : BaseSearchIndexProvider(R.xml.edge_light_settings) {
+            override fun createPreferenceControllers(context: Context) =
+                buildPreferenceControllers(context)
+        }
     }
 }
