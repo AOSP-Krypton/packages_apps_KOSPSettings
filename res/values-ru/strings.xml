@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2021 AOSP-Krypton Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Krypton settings -->
+    <string name="krypton_settings_title">Настройки Krypton</string>
+
+    <!-- Theme settings -->
+    <string name="theme_settings_title">Тема</string>
+    <string name="theme_settings_summary">Monet, Шрифт, Иконпак</string>
+
+    <!-- Color picker -->
+    <string name="rgb">RGB</string>
+    <string name="hsl">HSL</string>
+    <string name="hsv">HSV</string>
+    <string name="cancel">Отмена</string>
+    <string name="confirm">Применить</string>
+
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Движок Monet</string>
+    <string name="monet_engine_settings_summary">Собственный цвет, цветность, яркость</string>
+    <string name="accurate_shades_title">Использовать точные оттенки</string>
+    <string name="use_wallpaper_color_title">Использовать цвет обоев</string>
+    <string name="color_override_title">Пользовательский выбор цвета</string>
+    <string name="color_override_summary">"Выберите собственный цвет акцента, чтобы переопределить цвета, выбранные движком Monet."</string>
+    <string name="invalid_color_input">Неверный ввод цвета!</string>
+    <string name="chroma_factor_title">Цветность</string>
+    <string name="linear_lightness_title">Использовать пользовательскую шкалу яркости</string>
+    <string name="white_luminance_title">Яркость</string>
+
+    <!-- Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Заголовок / Основной шрифт</string>
+    <!-- Title of the setting which enables overlays to customize the system wide icon pack. -->
+    <string name="theme_customization_icon_pack_title">Иконпак</string>
+
+    <!-- Custom font -->
+    <string name="custom_font_preference_title">Выберите собственный шрифт</string>
+    <string name="custom_font_preference_footer_message">Перезагрузитесь после выбора шрифта, чтобы он вступил в силу.</string>
+    <string name="cannot_resolve_activity">Не удалось найти подходящее активити для выполнения этого действия!</string>
+    <string name="invalid_font_file">Файл шрифта не имеет допустимой таблицы постскриптума</string>
+    <string name="failed_to_update_font">Не удалось обновить шрифт</string>
+    <string name="failed_to_copy_file_to_cache">Не удалось скопировать шрифт в кеш</string>
+
+    <!-- Statusbar settings -->
+    <string name="statusbar_settings_title">Статусбар</string>
+    <string name="statusbar_settings_summary">Сетевой трафик, стиль батареи, количество уведомлений</string>
+
+    <!-- Network traffic -->
+    <string name="network_traffic_category_title">Сетевой трафик</string>
+    <string name="network_traffic_intro_text">
+        Показывает текущую скорость сетевого трафика в статусбаре.
+        Монитор показывает скорость динамически, так что она чередуется между
+        скоростью загрузки и скачивания каждую секунду
+    </string>
+    <string name="enable_network_traffic">Включить монитор сетевого трафика</string>
+    <string name="statusbar_network_traffic_threshold_tx_title">Порог автоматического скрытия для выгрузки</string>
+    <string name="statusbar_network_traffic_threshold_rx_title">Порог автоматического скрытия для загрузки</string>
+    <string name="statusbar_network_traffic_unit_text_size_title">Размер текста блока сетевого трафика</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Масштабный коэффициент текста скорости сетевого трафика</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Масштаб</string>
+
+    <!-- Battery -->
+    <string name="statusbar_battery_category_title">Батарея</string>
+    <string name="statusbar_battery_style_title">Стиль значка батареи</string>
+    <string name="battery_style_portrait">Портрет</string>
+    <string name="battery_style_circle">Круг</string>
+    <string name="battery_style_text">Текст</string>
+    <string name="statusbar_battery_show_percent_inside_title">Показать процент заряда батареи внутри значка</string>
+
+    <!-- Combined signal icons in status bar -->
+    <string name="combined_status_bar_signal_icons">Значки комбинированных сигналов</string>
+    <string name="combined_status_bar_signal_icons_summary">Включить комбинированные значки сигналов в строке состояния. Требуется перезапуск или перезагрузка SystemUI</string>
+
+    <!-- QS Panel -->
+    <string name="qs_settings_title">Панель быстрых настроек</string>
+    <string name="qs_settings_summary">Ползунок яркости, Медиа-обложка, Текст нижнего колонтитула</string>
+
+    <!-- Brightness slider -->
+    <string name="qs_brightness_category_title">Ползунок яркости</string>
+    <string name="qs_show_brightness_title">Показать ползунок яркости на панели быстрых настроек</string>
+    <string name="qqs_show_brightness_title">Показать ползунок яркости на панели быстрых настроек в системе</string>
+    <string name="qs_brightness_position_bottom_title">Позиция ползунка яркости</string>
+    <string name="qs_brightness_position_bottom_summary_on">Позиция: Внизу</string>
+    <string name="qs_brightness_position_bottom_summary_off">Позиция: Вверху</string>
+    <string name="qs_show_auto_brightness_button_title">Показать кнопку автояркости</string>
+
+    <!-- Media artwork -->
+    <string name="media_category">Медиа уведомления</string>
+    <string name="artwork_media_background_title">Фон медиа уведомления</string>
+    <string name="artwork_media_background_summary">Установить медиа-арт в качестве фона для уведомлений</string>
+    <string name="artwork_media_background_enable_blur_title">Размытие фона медиа-арта</string>
+    <string name="artwork_media_background_blur_radius_title">Степень размытия для медиа-арта</string>
+    <string name="artwork_media_background_alpha_title">Прозрачность медиа-арта</string>
+
+    <!-- Disable QS -->
+    <string name="disable_qs_title">Скрыть быстрые настройки на безопасном экране блокировки</string>
+    <string name="disable_qs_summary">Скрывает быстрые настройки, если устройство заблокировано. Не отключает тень уведомлений</string>
+
+    <!-- QS Battery estimates -->
+    <string name="qs_show_battery_estimate_title">Оценка заряда батареи</string>
+    <string name="qs_show_battery_estimate_summary_on">Показать оценку заряда батареи в быстрых настройках</string>
+    <string name="qs_show_battery_estimate_summary_off">Скрыть оценку заряда батареи в быстрых настройках</string>
+
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">Показать текст нижнего колонтитула быстрых настроек</string>
+    <string name="qs_footer_text_string_title">Настроить текст нижнего колонтитула</string>
+    <string name="qs_footer_text_string_summary">Установить пустым для KOSP по умолчанию</string>
+
+    <!-- Lockscreen settings -->
+    <string name="lockscreen_settings_title">Экран блокировки</string>
+    <string name="lockscreen_settings_summary">Информация о зарядке, жесты, боковая подсветка</string>
+
+    <!-- Lockscreen battery info -->
+    <string name="lockscreen_charging_info_title">Показывать информацию о зарядке на экране блокировки</string>
+    <string name="lockscreen_charging_info_summary">Показывает температуру, ток зарядки и многое другое при подключении к сети</string>
+
+    <string name="screen_off_fod_title">Экран FOD выключен</string>
+    <string name="screen_off_fod_summary">Включить FOD, даже когда экран выключен</string>
+
+    <string name="udfps_haptic_feedback_title">Воспроизведение тактильной обратной связи при нажатии на просмотр udfps</string>
+
+    <!-- Edge light -->
+    <string name="edge_light_title">Боковая подсветка</string>
+    <string name="enable_edge_light">Включить боковую подсветку</string>
+    <string name="edge_light_intro_text">Отображать анимацию по краям экрана при пульсации</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Всегда срабатывать по импульсу</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Показывать ли боковую подсветку всякий раз, когда отображается внешний дисплей, а не только для уведомлений</string>
+    <string name="edge_light_repeat_animation_title">Повторять анимацию</string>
+    <string name="edge_light_repeat_animation_summary_on">Повторять до таймаута</string>
+    <string name="edge_light_repeat_animation_summary_off">Показать только один раз</string>
+    <string name="edge_light_color_mode_title">Цветовой режим боковой подсветки</string>
+    <string name="accent_color">Акцентный цвет (по умолчанию)</string>
+    <string name="notification_color">Цвет уведомления</string>
+    <string name="wallpaper_color">Wallpaper color</string>
+    <string name="custom_color">Цвет обоев</string>
+    <string name="edge_light_custom_color_title">Свой цвет</string>
+
+    <!-- Device settings -->
+    <string name="device_settings_title">Настройки устройства</string>
+    <string name="device_settings_summary">Настройки для конкретных частей устройства</string>
+
+    <!--Double Tap to Sleep Lockscreen-->
+    <string name="double_tap_sleep_lockscreen_title">Двойной тап, чтобы усыпить</string>
+    <string name="double_tap_sleep_lockscreen_summary">Двойной тап в любом месте на экране блокировки, чтобы усыпить</string>
+
+    <!-- Double Tap to Sleep Statusbar -->
+    <string name="statusbar_gesture_title">Жесты</string>
+    <string name="double_tap_sleep_gesture_title">Двойной тап, чтобы усыпить</string>
+    <string name="double_tap_sleep_gesture_summary">Дважды нажмите в любом месте строки состояния, чтобы перевести устройство в спящий режим.</string>
+
+    <string name="miscellaneous_category_title">Разное</string>
+
+    <!-- Location privacy indicator -->
+    <string name="location_privacy_indicator_title">Показать индикатор конфиденциальности для местоположения</string>
+
+    <!-- Miscellaneous -->
+    <string name="miscellaneous_settings_summary">Скриншот свайпом, звук скриншота, качелька громкости</string>
+
+    <string name="three_finger_screenshot_title">Скриншот свайпом</string>
+    <string name="three_finger_screenshot_summary">Проведите тремя пальцами вниз, чтобы сделать снимок экрана</string>
+
+    <!-- Screenshot shutter -->
+    <string name="screenshot_shutter_sound_title">Звук скриншота</string>
+    <string name="screenshot_shutter_sound_summary">Включить звук скриншота и вибрацию</string>
+
+    <string name="search">Поиск</string>
+    <string name="search_apps">Поиск приложений</string>
+
+    <!-- Volume key music control -->
+    <string name="volume_button_music_control_title">Пропуск треков с помощью кнопок громкости</string>
+    <string name="volume_button_music_control_summary">Длительное нажатие на увеличение громкости для перехода к следующему треку и наоборот</string>
+
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Счетчик уведомлений</string>
+    <string name="status_bar_notif_count_summary">Показать количество ожидающих уведомлений</string>
+</resources>
