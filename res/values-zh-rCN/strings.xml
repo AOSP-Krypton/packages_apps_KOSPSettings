@@ -184,4 +184,9 @@
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">通知计数</string>
     <string name="status_bar_notif_count_summary">显示待处理通知的数量</string>
+
+    <!-- Tiles on secure keyguard -->
+    <string name="use_tiles_on_secure_keyguard_title">禁用开关</string>
+    <string name="use_tiles_on_secure_keyguard_summary">在锁屏界面使用快速设置中按钮时将需要解锁手机</string>
+
 </resources>
