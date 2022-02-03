@@ -102,8 +102,8 @@
             android:dependency="qs_footer_text_show"
             android:defaultValue="KOSP" />
 	
-        <com.krypton.settings.preference.SystemSettingSwitchPreference
-            android:key="use_tiles_on_secure_keyguard"
+        <com.krypton.settings.preference.SecureSettingSwitchPreference
+            android:key="disable_secure_tiles_on_lockscreen"
             android:title="@string/use_tiles_on_secure_keyguard_title"
             android:summary="@string/use_tiles_on_secure_keyguard_summary"
             android:defaultValue="true" />     
