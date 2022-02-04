@@ -185,4 +185,9 @@
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Счетчик уведомлений</string>
     <string name="status_bar_notif_count_summary">Показать количество ожидающих уведомлений</string>
+
+    <!-- Tiles on secure keyguard -->
+    <string name="use_tiles_on_secure_keyguard_title">Требовать разблокировки для использования чувствительных плиток</string>
+    <string name="use_tiles_on_secure_keyguard_summary">Запрос на разблокировку экрана блокировки при использовании чувствительных плиток</string>
+	
 </resources>
