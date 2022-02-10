@@ -126,7 +126,7 @@
     <string name="lockscreen_charging_info_summary">充电时在锁屏界面显示温度、充电电流等信息</string>
 
     <string name="screen_off_fod_title">息屏指纹</string>
-    <string name="screen_off_fod_summary">屏幕关闭时显示指纹解锁图案</string>
+    <string name="screen_off_fod_summary">屏幕关闭时亦可指纹解锁</string>
 
     <string name="udfps_haptic_feedback_title">触摸指纹图案时震动</string>
 
