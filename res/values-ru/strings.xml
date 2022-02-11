@@ -19,7 +19,7 @@
 
     <!-- Theme settings -->
     <string name="theme_settings_title">Тема</string>
-    <string name="theme_settings_summary">Monet, Шрифт, Иконпак</string>
+    <string name="theme_settings_summary">Monet, Шрифт, Набор иконок</string>
 
     <!-- Color picker -->
     <string name="rgb">RGB</string>
@@ -36,7 +36,7 @@
     <string name="color_override_title">Пользовательский выбор цвета</string>
     <string name="color_override_summary">"Выберите собственный цвет акцента, чтобы переопределить цвета, выбранные движком Monet."</string>
     <string name="invalid_color_input">Неверный ввод цвета!</string>
-    <string name="chroma_factor_title">Красочность </string>
+    <string name="chroma_factor_title">Красочность</string>
     <string name="linear_lightness_title">Использовать пользовательскую шкалу яркости</string>
     <string name="white_luminance_title">Яркость</string>
 
@@ -126,10 +126,10 @@
     <string name="lockscreen_charging_info_title">Показывать информацию о зарядке на экране блокировки</string>
     <string name="lockscreen_charging_info_summary">Показывает температуру, ток зарядки и многое другое при подключении к сети</string>
 
-    <string name="screen_off_fod_title">Отпечаток пальца выключен</string>
-    <string name="screen_off_fod_summary">Включить отпечаток пальца, даже когда экран выключен</string>
+    <string name="screen_off_fod_title"> Экран отпечатка пальца выключен</string>
+    <string name="screen_off_fod_summary">Включить экран отпечатка пальца, даже когда дисплей выключен</string>
 
-    <string name="udfps_haptic_feedback_title">Воспроизведение тактильной обратной связи при нажатии на udfps </string>
+    <string name="udfps_haptic_feedback_title">Воспроизведение тактильной обратной связи при нажатии на udfps</string>
 
     <!-- Edge light -->
     <string name="edge_light_title">Боковая подсветка</string>
