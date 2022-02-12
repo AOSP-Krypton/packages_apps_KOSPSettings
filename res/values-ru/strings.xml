@@ -19,7 +19,7 @@
 
     <!-- Theme settings -->
     <string name="theme_settings_title">Тема</string>
-    <string name="theme_settings_summary">Monet, Шрифт, Иконпак</string>
+    <string name="theme_settings_summary">Monet, Шрифт, Набор иконок</string>
 
     <!-- Color picker -->
     <string name="rgb">RGB</string>
@@ -30,20 +30,20 @@
 
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Движок Monet</string>
-    <string name="monet_engine_settings_summary">Собственный цвет, цветность, яркость</string>
+    <string name="monet_engine_settings_summary">Собственный цвет, красочность, яркость</string>
     <string name="accurate_shades_title">Использовать точные оттенки</string>
     <string name="use_wallpaper_color_title">Использовать цвет обоев</string>
     <string name="color_override_title">Пользовательский выбор цвета</string>
     <string name="color_override_summary">"Выберите собственный цвет акцента, чтобы переопределить цвета, выбранные движком Monet."</string>
     <string name="invalid_color_input">Неверный ввод цвета!</string>
-    <string name="chroma_factor_title">Цветность</string>
+    <string name="chroma_factor_title">Красочность</string>
     <string name="linear_lightness_title">Использовать пользовательскую шкалу яркости</string>
     <string name="white_luminance_title">Яркость</string>
 
     <!-- Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">Заголовок / Основной шрифт</string>
     <!-- Title of the setting which enables overlays to customize the system wide icon pack. -->
-    <string name="theme_customization_icon_pack_title">Иконпак</string>
+    <string name="theme_customization_icon_pack_title">Набор иконок</string>
 
     <!-- Custom font -->
     <string name="custom_font_preference_title">Выберите собственный шрифт</string>
@@ -126,10 +126,10 @@
     <string name="lockscreen_charging_info_title">Показывать информацию о зарядке на экране блокировки</string>
     <string name="lockscreen_charging_info_summary">Показывает температуру, ток зарядки и многое другое при подключении к сети</string>
 
-    <string name="screen_off_fod_title">Экран FOD выключен</string>
-    <string name="screen_off_fod_summary">Включить FOD, даже когда экран выключен</string>
+    <string name="screen_off_fod_title"> Экран отпечатка пальца выключен</string>
+    <string name="screen_off_fod_summary">Включить экран отпечатка пальца, даже когда дисплей выключен</string>
 
-    <string name="udfps_haptic_feedback_title">Воспроизведение тактильной обратной связи при нажатии на просмотр udfps</string>
+    <string name="udfps_haptic_feedback_title">Воспроизведение тактильной обратной связи при нажатии на udfps</string>
 
     <!-- Edge light -->
     <string name="edge_light_title">Боковая подсветка</string>
@@ -143,8 +143,8 @@
     <string name="edge_light_color_mode_title">Цветовой режим боковой подсветки</string>
     <string name="accent_color">Акцентный цвет (по умолчанию)</string>
     <string name="notification_color">Цвет уведомления</string>
-    <string name="wallpaper_color">Wallpaper color</string>
-    <string name="custom_color">Цвет обоев</string>
+    <string name="wallpaper_color">Цвет обоев</string>
+    <string name="custom_color">Свой цвет</string>
     <string name="edge_light_custom_color_title">Свой цвет</string>
 
     <!-- Device settings -->
@@ -187,7 +187,7 @@
     <string name="status_bar_notif_count_summary">Показать количество ожидающих уведомлений</string>
 
     <!-- Tiles on secure keyguard -->
-    <string name="use_tiles_on_secure_keyguard_title">Требовать разблокировки для использования чувствительных плиток</string>
+    <string name="use_tiles_on_secure_keyguard_title">Требовать разблокировку для использования чувствительных плиток</string>
     <string name="use_tiles_on_secure_keyguard_summary">Запрос на разблокировку экрана при использовании чувствительных плиток</string>
 	
 </resources>
