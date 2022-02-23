@@ -190,4 +190,7 @@
     <string name="use_tiles_on_secure_keyguard_title">Require unlocking to use sensitive tiles</string>
     <string name="use_tiles_on_secure_keyguard_summary">Ask to unlock lockscreen when using sensitive tiles</string>
 
+    <!-- NavBar Inverse -->
+    <string name="navigation_bar_inverse_title">Invert 3 button navigation bar</string>
+
 </resources>

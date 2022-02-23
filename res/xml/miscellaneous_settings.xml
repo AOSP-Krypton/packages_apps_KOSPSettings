@@ -38,4 +38,10 @@
         android:summary="@string/volume_button_music_control_summary"
         android:defaultValue="0" />
 
+    <com.krypton.settings.preference.SystemSettingSwitchPreference
+        android:key="navigation_bar_inverse"
+        android:title="@string/navigation_bar_inverse_title"
+        android:defaultValue="0"
+        settings:controller="com.krypton.settings.fragment.miscellaneous.NavBarInversePreferenceController" />
+
 </PreferenceScreen>
