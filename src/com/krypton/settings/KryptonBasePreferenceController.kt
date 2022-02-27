@@ -24,8 +24,8 @@ import com.android.settings.core.PreferenceControllerMixin
 import com.android.settingslib.search.SearchIndexableRaw
 
 abstract class KryptonBasePreferenceController(
-    private val context: Context,
-    private val key: String,
+    context: Context,
+    key: String,
 ): BasePreferenceController(context, key),
         PreferenceControllerMixin {
 
@@ -42,11 +42,11 @@ abstract class KryptonBasePreferenceController(
                 Log.w(TAG, "Skipping updateNonIndexableKeys due to empty key " + toString())
                 return
             }
-            if (keys.contains(key)) {
+            if (keys.contains(preferenceKey)) {
                 Log.w(TAG, "Skipping updateNonIndexableKeys, key already in list. " + toString())
                 return
             }
-            keys.add(key)
+            keys.add(preferenceKey)
         }
     }
 

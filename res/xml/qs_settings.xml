@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2021 AOSP-Krypton Project
+<!-- Copyright (C) 2021-2022 AOSP-Krypton Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -25,24 +25,24 @@
             android:key="qs_show_brightness"
             android:title="@string/qs_show_brightness_title"
             android:defaultValue="true" />
-        
+
         <com.krypton.settings.preference.SystemSettingSwitchPreference
             android:key="qqs_show_brightness"
             android:title="@string/qqs_show_brightness_title"
             android:defaultValue="false" />
-        
+
         <com.krypton.settings.preference.SystemSettingSwitchPreference
             android:key="qs_brightness_position_bottom"
             android:title="@string/qs_brightness_position_bottom_title"
             android:summaryOn="@string/qs_brightness_position_bottom_summary_on"
             android:summaryOff="@string/qs_brightness_position_bottom_summary_off"
             android:defaultValue="false" />
-        
+
         <com.krypton.settings.preference.SystemSettingSwitchPreference
             android:key="qs_show_auto_brightness_button"
             android:title="@string/qs_show_auto_brightness_button_title"
             android:defaultValue="false" />
-            
+
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -100,8 +100,8 @@
             android:title="@string/qs_footer_text_string_title"
             android:summary="@string/qs_footer_text_string_summary"
             android:dependency="qs_footer_text_show"
-            android:defaultValue="KOSP" />
-	
+            settings:controller="com.krypton.settings.fragment.qs.QSFooterTextPreferenceController" />
+
         <com.krypton.settings.preference.SecureSettingSwitchPreference
             android:key="disable_secure_tiles_on_lockscreen"
             android:title="@string/use_tiles_on_secure_keyguard_title"

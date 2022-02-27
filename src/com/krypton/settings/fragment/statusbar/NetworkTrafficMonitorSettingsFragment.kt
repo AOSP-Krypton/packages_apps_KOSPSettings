@@ -21,12 +21,12 @@ import android.widget.Switch
 
 import androidx.preference.forEachIndexed
 
+import com.android.settings.R
 import com.android.settings.search.BaseSearchIndexProvider
 import com.android.settingslib.search.SearchIndexable
 import com.android.settingslib.widget.MainSwitchPreference
 import com.android.settingslib.widget.OnMainSwitchChangeListener
 import com.android.settingslib.widget.TopIntroPreference
-import com.android.settings.R
 import com.krypton.settings.fragment.KryptonDashboardFragment
 
 class NetworkTrafficMonitorSettingsFragment : KryptonDashboardFragment(),

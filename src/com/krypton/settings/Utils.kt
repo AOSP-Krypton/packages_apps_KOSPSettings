@@ -25,6 +25,9 @@ import androidx.core.graphics.ColorUtils
 import java.util.regex.Pattern
 
 object Utils {
+    private const val BOOL_RES_TYPE = "bool"
+    private const val SYSTEMUI_PACKAGE = "com.android.systemui"
+
     val HEX_PATTERN = Pattern.compile("[0-9a-fA-F]+")
 
     fun HSVToColor(hue: Float, sat: Float, value: Float): Int = Color.HSVToColor(floatArrayOf(hue, sat, value))
@@ -44,5 +47,23 @@ object Utils {
         val fingerprintManager = context.getSystemService(android.hardware.fingerprint.FingerprintManager::class.java)
         val props: List<FingerprintSensorPropertiesInternal> = fingerprintManager.getSensorPropertiesInternal()
         return props.size == 1 && props[0].isAnyUdfpsType()
+    }
+
+    /**
+     * Get value of a systemui resource.
+     *
+     * @param context context for obtaining for resources for systemui.
+     * @param resName the name of the resource.
+     * @param def the default value to return if resource is not found.
+     */
+    fun getBoolSysUIResource(
+        context: Context,
+        resName: String,
+        def: Boolean = false
+    ): Boolean {
+        val res = context.packageManager.getResourcesForApplication(SYSTEMUI_PACKAGE)
+        return res.getIdentifier(resName, BOOL_RES_TYPE, SYSTEMUI_PACKAGE)
+            .takeIf { resId -> resId != 0 }
+            ?.let { res.getBoolean(it) } ?: def
     }
 }
