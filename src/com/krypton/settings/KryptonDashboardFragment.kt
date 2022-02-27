@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 AOSP-Krypton Project
+ * Copyright (C) 2021-2022 AOSP-Krypton Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment
+package com.krypton.settings
 
 import androidx.preference.Preference
 
 import com.android.internal.logging.nano.MetricsProto
 import com.android.settings.dashboard.DashboardFragment
+import com.krypton.settings.fragment.ColorPickerFragment
 import com.krypton.settings.preference.SettingColorPickerPreference
 
-abstract class KryptonDashboardFragment: DashboardFragment() {
+abstract class KryptonDashboardFragment : DashboardFragment() {
     override fun getMetricsCategory(): Int = MetricsProto.MetricsEvent.KRYPTON
 
     override fun onDisplayPreferenceDialog(preference: Preference) {

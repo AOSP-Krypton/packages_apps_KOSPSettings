@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.theme
+package com.krypton.settings.theme
 
 import android.content.ActivityNotFoundException
 import android.content.Context

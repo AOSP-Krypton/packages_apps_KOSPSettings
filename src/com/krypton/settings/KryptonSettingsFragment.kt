@@ -14,24 +14,36 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.miscellaneous
+package com.krypton.settings
 
+import android.os.Bundle
+
+import com.android.internal.util.krypton.KryptonUtils
 import com.android.settings.R
 import com.android.settings.search.BaseSearchIndexProvider
 import com.android.settingslib.search.SearchIndexable
-import com.krypton.settings.fragment.KryptonDashboardFragment
 
 @SearchIndexable
-class MiscellaneousSettingsFragment : KryptonDashboardFragment() {
+class KryptonSettingsFragment: KryptonDashboardFragment() {
+    override fun onCreate(bundle: Bundle?) {
+        super.onCreate(bundle)
+        val deviceSettingsInstalled = KryptonUtils.isPackageInstalled(context,
+            "com.krypton.settings.device", false /* ignoreState */)
+        if (!deviceSettingsInstalled) {
+            removePreference(DEVICE_SETTINGS_PREF_KEY)
+        }
+    }
 
-    override protected fun getPreferenceScreenResId() = R.xml.miscellaneous_settings
+    override protected fun getPreferenceScreenResId() = R.xml.krypton_settings
 
     override protected fun getLogTag() = TAG
 
     companion object {
-        private const val TAG = "MiscellaneousSettingsFragment"
+        private const val TAG = "KryptonSettingsFragment"
+
+        private const val DEVICE_SETTINGS_PREF_KEY = "device_settings"
 
         @JvmField
-        val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.miscellaneous_settings)
+        val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.krypton_settings)
     }
 }

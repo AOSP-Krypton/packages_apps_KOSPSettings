@@ -14,23 +14,27 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.statusbar
+package com.krypton.settings.lockscreen
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.Switch
 
 import androidx.preference.forEachIndexed
 
 import com.android.settings.R
+import com.krypton.settings.KryptonDashboardFragment
 import com.android.settings.search.BaseSearchIndexProvider
+import com.android.settingslib.core.AbstractPreferenceController
+import com.android.settingslib.core.lifecycle.Lifecycle
 import com.android.settingslib.search.SearchIndexable
 import com.android.settingslib.widget.MainSwitchPreference
 import com.android.settingslib.widget.OnMainSwitchChangeListener
 import com.android.settingslib.widget.TopIntroPreference
-import com.krypton.settings.fragment.KryptonDashboardFragment
 
-class NetworkTrafficMonitorSettingsFragment : KryptonDashboardFragment(),
-        OnMainSwitchChangeListener {
+@SearchIndexable
+class EdgeLightSettingsFragment : KryptonDashboardFragment(),
+    OnMainSwitchChangeListener {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         super.onCreatePreferences(savedInstanceState, rootKey)
@@ -40,9 +44,13 @@ class NetworkTrafficMonitorSettingsFragment : KryptonDashboardFragment(),
         }
     }
 
-    override protected fun getPreferenceScreenResId() = R.xml.network_traffic_monitor_settings
+    override protected fun getPreferenceScreenResId() = R.xml.edge_light_settings
 
     override protected fun getLogTag() = TAG
+
+    override protected fun createPreferenceControllers(
+        context: Context
+    ): List<AbstractPreferenceController> = buildPreferenceControllers(context, settingsLifecycle)
 
     override fun onSwitchChanged(switchView: Switch, isChecked: Boolean) {
         updatePreferences(isChecked)
@@ -57,11 +65,23 @@ class NetworkTrafficMonitorSettingsFragment : KryptonDashboardFragment(),
     }
 
     companion object {
-        private const val TAG = "NetworkTrafficMonitorSettingsFragment"
+        private const val TAG = "EdgeLightSettingsFragment"
 
-        private const val MAIN_SWITCH_KEY = "network_traffic_enabled"
+        private const val MAIN_SWITCH_KEY = "edge_light_enabled"
+
+        private fun buildPreferenceControllers(
+            context: Context,
+            lifecycle: Lifecycle?,
+        ): List<AbstractPreferenceController> = listOf(
+            EdgeLightColorPickerPreferenceController(context, lifecycle)
+        )
 
         @JvmField
-        val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.network_traffic_monitor_settings)
+        val SEARCH_INDEX_DATA_PROVIDER = object : BaseSearchIndexProvider(R.xml.edge_light_settings) {
+            override fun createPreferenceControllers(
+                context: Context
+            ): List<AbstractPreferenceController> = buildPreferenceControllers(
+                context, null /* lifecycle */)
+        }
     }
 }

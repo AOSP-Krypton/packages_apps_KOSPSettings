@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.statusbar
+package com.krypton.settings.statusbar
 
 import android.content.Context
 import android.os.UserHandle

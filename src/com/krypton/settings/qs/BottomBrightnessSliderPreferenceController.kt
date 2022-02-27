@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.qs
+package com.krypton.settings.qs
 
 import android.content.Context
 import android.database.ContentObserver

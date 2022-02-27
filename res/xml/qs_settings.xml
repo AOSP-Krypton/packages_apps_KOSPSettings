@@ -100,7 +100,7 @@
             android:title="@string/qs_footer_text_string_title"
             android:summary="@string/qs_footer_text_string_summary"
             android:dependency="qs_footer_text_show"
-            settings:controller="com.krypton.settings.fragment.qs.QSFooterTextPreferenceController" />
+            settings:controller="com.krypton.settings.qs.QSFooterTextPreferenceController" />
 
         <com.krypton.settings.preference.SecureSettingSwitchPreference
             android:key="disable_secure_tiles_on_lockscreen"

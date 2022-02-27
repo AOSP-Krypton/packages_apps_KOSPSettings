@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.lockscreen
+package com.krypton.settings.lockscreen
 
 import com.android.settings.R
-import com.krypton.settings.fragment.KryptonDashboardFragment
+import com.krypton.settings.KryptonDashboardFragment
 import com.android.settings.search.BaseSearchIndexProvider
 import com.android.settingslib.search.SearchIndexable
 

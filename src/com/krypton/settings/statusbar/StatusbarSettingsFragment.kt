@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.qs
+package com.krypton.settings.statusbar
 
 import android.content.Context
 
@@ -23,12 +23,12 @@ import com.android.settings.search.BaseSearchIndexProvider
 import com.android.settingslib.core.AbstractPreferenceController
 import com.android.settingslib.core.lifecycle.Lifecycle
 import com.android.settingslib.search.SearchIndexable
-import com.krypton.settings.fragment.KryptonDashboardFragment
+import com.krypton.settings.KryptonDashboardFragment
 
 @SearchIndexable
-class QSPanelSettingsFragment : KryptonDashboardFragment() {
+class StatusbarSettingsFragment : KryptonDashboardFragment() {
 
-    override protected fun getPreferenceScreenResId() = R.xml.qs_settings
+    override protected fun getPreferenceScreenResId() = R.xml.statusbar_settings
 
     override protected fun getLogTag() = TAG
 
@@ -37,18 +37,17 @@ class QSPanelSettingsFragment : KryptonDashboardFragment() {
     ): List<AbstractPreferenceController> = buildPreferenceControllers(context, settingsLifecycle)
 
     companion object {
-        private const val TAG = "QSSettingsFragment"
+        private const val TAG = "StatusbarSettingsFragment"
 
         private fun buildPreferenceControllers(
             context: Context,
             lifecycle: Lifecycle?,
         ): List<AbstractPreferenceController> = listOf(
-            AutoBrightnessPreferenceController(context, lifecycle),
-            BottomBrightnessSliderPreferenceController(context, lifecycle),
+            BatteryPercentPreferenceController(context, lifecycle)
         )
 
         @JvmField
-        val SEARCH_INDEX_DATA_PROVIDER = object : BaseSearchIndexProvider(R.xml.qs_settings) {
+        val SEARCH_INDEX_DATA_PROVIDER = object : BaseSearchIndexProvider(R.xml.statusbar_settings) {
             override fun createPreferenceControllers(
                 context: Context
             ): List<AbstractPreferenceController> = buildPreferenceControllers(

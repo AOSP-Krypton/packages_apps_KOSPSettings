@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.lockscreen
+package com.krypton.settings.lockscreen
 
 import android.content.Context
 
 import com.krypton.settings.KryptonBasePreferenceController
 import com.krypton.settings.Utils
 
-class ScreenOffUdfpsPreferenceController(
+class UdfpsHapticFeedbackPreferenceController(
     context: Context,
     key: String,
 ): KryptonBasePreferenceController(context, key) {

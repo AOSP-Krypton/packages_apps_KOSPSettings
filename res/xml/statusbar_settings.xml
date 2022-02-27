@@ -22,7 +22,7 @@
         android:key="network_traffic_enabled"
         android:title="@string/network_traffic_category_title"
         android:defaultValue="false"
-        android:fragment="com.krypton.settings.fragment.statusbar.NetworkTrafficMonitorSettingsFragment"
+        android:fragment="com.krypton.settings.statusbar.NetworkTrafficMonitorSettingsFragment"
         settings:observe="true" />
 
     <PreferenceCategory
@@ -77,14 +77,14 @@
             android:key="show_combined_status_bar_signal_icons"
             android:title="@string/combined_status_bar_signal_icons"
             android:summary="@string/combined_status_bar_signal_icons_summary"
-            settings:controller="com.krypton.settings.fragment.statusbar.CombinedSignalIconPreferenceController" />
+            settings:controller="com.krypton.settings.statusbar.CombinedSignalIconPreferenceController" />
        
        <!-- Notification Counter -->
        <com.krypton.settings.preference.SystemSettingSwitchPreference
             android:key="status_bar_notif_count"
             android:title="@string/status_bar_notif_count_title"
             android:summary="@string/status_bar_notif_count_summary"
-            settings:controller="com.krypton.settings.fragment.statusbar.NotificationCountPreferenceController" />
+            settings:controller="com.krypton.settings.statusbar.NotificationCountPreferenceController" />
 
     </PreferenceCategory>
 </PreferenceScreen>

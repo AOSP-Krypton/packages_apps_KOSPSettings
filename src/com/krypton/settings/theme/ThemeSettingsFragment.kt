@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.theme
+package com.krypton.settings.theme
 
 import android.content.Context
 
@@ -24,7 +24,7 @@ import com.android.settings.search.BaseSearchIndexProvider
 import com.android.settingslib.core.AbstractPreferenceController
 import com.android.settingslib.core.lifecycle.Lifecycle
 import com.android.settingslib.search.SearchIndexable
-import com.krypton.settings.fragment.KryptonDashboardFragment
+import com.krypton.settings.KryptonDashboardFragment
 
 @SearchIndexable
 class ThemeSettingsFragment : KryptonDashboardFragment() {

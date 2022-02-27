@@ -14,29 +14,22 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.miscellaneous
+package com.krypton.settings.lockscreen
 
 import android.content.Context
-import android.os.UserHandle
-import android.provider.Settings
 
 import com.krypton.settings.KryptonBasePreferenceController
+import com.krypton.settings.Utils
 
-class NavBarInversePreferenceController(
+class ScreenOffUdfpsPreferenceController(
     context: Context,
     key: String,
 ): KryptonBasePreferenceController(context, key) {
 
-    override fun getAvailabilityStatus(): Int {
-        val threeButtonMode = Settings.Secure.getIntForUser(
-            mContext.contentResolver,
-            Settings.Secure.NAVIGATION_MODE,
-            0,
-            UserHandle.USER_CURRENT,
-        ) == 0
-        return if (threeButtonMode)
+    override fun getAvailabilityStatus(): Int =
+        if (Utils.hasUDFPS(mContext)) {
             AVAILABLE
-        else
-            DISABLED_DEPENDENT_SETTING
-    }
+        } else {
+            UNSUPPORTED_ON_DEVICE
+        }
 }

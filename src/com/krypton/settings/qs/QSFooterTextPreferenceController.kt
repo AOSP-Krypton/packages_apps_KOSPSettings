@@ -14,39 +14,41 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.statusbar
+package com.krypton.settings.qs
 
 import android.content.Context
-import android.os.UserHandle
-import android.provider.Settings
 
 import androidx.preference.Preference
-import androidx.preference.SwitchPreference
 
 import com.krypton.settings.KryptonBasePreferenceController
-import com.krypton.settings.preference.SystemSettingSwitchPreference
-import com.krypton.settings.Utils
+import com.krypton.settings.preference.SystemSettingEditTextPreference
 
-class NotificationCountPreferenceController(
+class QSFooterTextPreferenceController(
     context: Context,
     key: String,
-) : KryptonBasePreferenceController(context, key) {
-
-    private val defaultEnabled = Utils.getBoolSysUIResource(context, CONFIG_RESOURCE_NAME)
+) : KryptonBasePreferenceController(context, key),
+    Preference.OnPreferenceChangeListener {
 
     override fun getAvailabilityStatus(): Int = AVAILABLE
 
     override fun updateState(preference: Preference) {
-        (preference as SwitchPreference).setChecked(
-            Settings.System.getIntForUser(mContext.contentResolver,
-                Settings.System.STATUS_BAR_NOTIF_COUNT,
-                if (defaultEnabled) 1 else 0,
-                UserHandle.USER_CURRENT,
-            ) == 1
-        )
+        super.updateState(preference)
+        (preference as SystemSettingEditTextPreference).apply {
+            if (text == null || text.isBlank()) {
+                text = DEFAULT_TEXT
+            }
+        }
+    }
+
+    override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
+        if (newValue is String && newValue.isBlank()) {
+            (preference as SystemSettingEditTextPreference).text = DEFAULT_TEXT
+            return false
+        }
+        return true
     }
 
     companion object {
-        private const val CONFIG_RESOURCE_NAME = "config_statusBarShowNumber"
+        private const val DEFAULT_TEXT = "KOSP"
     }
 }

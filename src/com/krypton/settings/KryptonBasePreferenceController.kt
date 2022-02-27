@@ -26,8 +26,8 @@ import com.android.settingslib.search.SearchIndexableRaw
 abstract class KryptonBasePreferenceController(
     context: Context,
     key: String,
-): BasePreferenceController(context, key),
-        PreferenceControllerMixin {
+) : BasePreferenceController(context, key),
+    PreferenceControllerMixin {
 
     /**
      * Updates non-indexable keys for search provider.

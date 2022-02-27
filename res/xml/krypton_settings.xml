@@ -23,7 +23,7 @@
         android:title="@string/theme_settings_title"
         android:summary="@string/theme_settings_summary"
         android:icon="@drawable/ic_palette"
-        android:fragment="com.krypton.settings.fragment.theme.ThemeSettingsFragment" />
+        android:fragment="com.krypton.settings.theme.ThemeSettingsFragment" />
     
     <!-- Statusbar settings -->
     <Preference
@@ -31,7 +31,7 @@
         android:title="@string/statusbar_settings_title"
         android:summary="@string/statusbar_settings_summary"
         android:icon="@drawable/ic_statusbar"
-        android:fragment="com.krypton.settings.fragment.statusbar.StatusbarSettingsFragment" />
+        android:fragment="com.krypton.settings.statusbar.StatusbarSettingsFragment" />
 
     <!-- QS settings -->
     <Preference
@@ -39,7 +39,7 @@
         android:title="@string/qs_settings_title"
         android:summary="@string/qs_settings_summary"
         android:icon="@drawable/ic_qs"
-        android:fragment="com.krypton.settings.fragment.qs.QSPanelSettingsFragment" />
+        android:fragment="com.krypton.settings.qs.QSPanelSettingsFragment" />
 
     <!-- Lockscreen settings -->
     <Preference
@@ -47,7 +47,7 @@
         android:title="@string/lockscreen_settings_title"
         android:summary="@string/lockscreen_settings_summary"
         android:icon="@drawable/ic_lockscreen"
-        android:fragment="com.krypton.settings.fragment.lockscreen.LockscreenSettingsFragment" />
+        android:fragment="com.krypton.settings.lockscreen.LockscreenSettingsFragment" />
 
     <!-- Miscellaneous settings -->
     <Preference
@@ -55,7 +55,7 @@
         android:title="@string/miscellaneous_category_title"
         android:summary="@string/miscellaneous_settings_summary"
         android:icon="@drawable/ic_miscellaneous"
-        android:fragment="com.krypton.settings.fragment.miscellaneous.MiscellaneousSettingsFragment" />
+        android:fragment="com.krypton.settings.miscellaneous.MiscellaneousSettingsFragment" />
 
     <!-- Device Settings -->
     <Preference

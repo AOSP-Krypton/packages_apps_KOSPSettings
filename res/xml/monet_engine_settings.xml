@@ -27,7 +27,7 @@
     <com.krypton.settings.preference.SecureSettingColorPickerPreference
         android:key="monet_engine_color_override"
         android:title="@string/color_override_title"
-        settings:controller="com.krypton.settings.fragment.theme.MonetCustomColorPreferenceController" />
+        settings:controller="com.krypton.settings.theme.MonetCustomColorPreferenceController" />
 
     <!-- Chroma factor -->
     <com.krypton.settings.preference.CustomSeekBarPreference
@@ -38,7 +38,7 @@
         android:persistent="false"
         settings:min="0"
         settings:interval="10"
-        settings:controller="com.krypton.settings.fragment.theme.MonetChromaFactorPreferenceController" />
+        settings:controller="com.krypton.settings.theme.MonetChromaFactorPreferenceController" />
 
     <!-- Custom lightness scale -->
     <com.krypton.settings.preference.SecureSettingSwitchPreference

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.qs
+package com.krypton.settings.statusbar
 
 import android.content.Context
 import android.database.ContentObserver
@@ -29,11 +29,10 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.preference.Preference
 import androidx.preference.PreferenceScreen
 
-import com.android.internal.R
 import com.android.settingslib.core.lifecycle.Lifecycle
 import com.krypton.settings.KryptonBasePreferenceController
 
-class AutoBrightnessPreferenceController(
+class BatteryPercentPreferenceController(
     context: Context,
     lifecycle: Lifecycle?,
 ) : KryptonBasePreferenceController(context, KEY),
@@ -58,12 +57,7 @@ class AutoBrightnessPreferenceController(
     override fun onStateChanged(owner: LifecycleOwner, event: Event) {
         if (event == Event.ON_START) {
             mContext.contentResolver.registerContentObserver(
-                Settings.System.getUriFor(Settings.System.QS_SHOW_BRIGHTNESS),
-                false /* notifyDescendants */,
-                settingsObserver,
-            )
-            mContext.contentResolver.registerContentObserver(
-                Settings.System.getUriFor(Settings.System.QQS_SHOW_BRIGHTNESS),
+                Settings.System.getUriFor(Settings.System.STATUS_BAR_BATTERY_STYLE),
                 false /* notifyDescendants */,
                 settingsObserver,
             )
@@ -73,23 +67,15 @@ class AutoBrightnessPreferenceController(
     }
 
     override fun getAvailabilityStatus(): Int {
-        val available = mContext.resources.getBoolean(
-            R.bool.config_automatic_brightness_available)
-        if (!available) return UNSUPPORTED_ON_DEVICE
-        val qsSliderEnabled = Settings.System.getIntForUser(
+        val isTextMode = Settings.System.getIntForUser(
             mContext.contentResolver,
-            Settings.System.QS_SHOW_BRIGHTNESS,
+            Settings.System.STATUS_BAR_BATTERY_STYLE,
             0, UserHandle.USER_CURRENT
-        ) == 1
-        val qqsSliderEnabled = Settings.System.getIntForUser(
-            mContext.contentResolver,
-            Settings.System.QQS_SHOW_BRIGHTNESS,
-            0, UserHandle.USER_CURRENT
-        ) == 1
-        return if (qsSliderEnabled || qqsSliderEnabled) {
-            AVAILABLE
-        } else {
+        ) == 2
+        return if (isTextMode) {
             DISABLED_DEPENDENT_SETTING
+        } else {
+            AVAILABLE
         }
     }
 
@@ -104,6 +90,6 @@ class AutoBrightnessPreferenceController(
     }
 
     companion object {
-        private const val KEY = "qs_show_auto_brightness_button"
+        private const val KEY = "status_bar_show_battery_percent"
     }
 }

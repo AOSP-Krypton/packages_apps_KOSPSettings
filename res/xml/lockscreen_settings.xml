@@ -34,13 +34,13 @@
           android:title="@string/screen_off_fod_title"
           android:summary="@string/screen_off_fod_summary"
           android:defaultValue="false"
-          settings:controller="com.krypton.settings.fragment.lockscreen.ScreenOffUdfpsPreferenceController" />
+          settings:controller="com.krypton.settings.lockscreen.ScreenOffUdfpsPreferenceController" />
 
      <com.krypton.settings.preference.SystemSettingSwitchPreference
           android:key="enable_udfps_start_haptic_feedback"
           android:title="@string/udfps_haptic_feedback_title"
           android:defaultValue="true"
-          settings:controller="com.krypton.settings.fragment.lockscreen.UdfpsHapticFeedbackPreferenceController" />
+          settings:controller="com.krypton.settings.lockscreen.UdfpsHapticFeedbackPreferenceController" />
 
      <com.krypton.settings.preference.SecureSettingSwitchPreference
           android:key="secure_lockscreen_qs_disabled"
@@ -52,7 +52,7 @@
           android:key="edge_light_enabled"
           android:title="@string/edge_light_title"
           android:defaultValue="false"
-          android:fragment="com.krypton.settings.fragment.lockscreen.EdgeLightSettingsFragment"
+          android:fragment="com.krypton.settings.lockscreen.EdgeLightSettingsFragment"
           settings:observe="true" />
 
 </PreferenceScreen>

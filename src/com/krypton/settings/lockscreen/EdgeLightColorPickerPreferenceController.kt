@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.fragment.lockscreen
+package com.krypton.settings.lockscreen
 
 import android.content.Context
 import android.database.ContentObserver
