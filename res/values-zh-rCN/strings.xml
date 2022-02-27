@@ -32,7 +32,6 @@
     <string name="monet_engine_settings_title">Monet 引擎</string>
     <string name="monet_engine_settings_summary">自定义颜色、色彩、亮度</string>
     <string name="accurate_shades_title">调整界面色调</string>
-    <string name="use_wallpaper_color_title">使用壁纸颜色</string>
     <string name="color_override_title">自定义颜色</string>
     <string name="color_override_summary">"选择一个强调色来覆盖 Monet 引擎选择的颜色"</string>
     <string name="invalid_color_input">颜色输入错误!</string>

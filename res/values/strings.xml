@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2021 AOSP-Krypton Project
+<!-- Copyright (C) 2021-2022 AOSP-Krypton Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Krypton settings -->
     <string name="krypton_settings_title">Krypton settings</string>
 
@@ -32,9 +32,11 @@
     <string name="monet_engine_settings_title">Monet engine</string>
     <string name="monet_engine_settings_summary">Custom color, colorfulness, brightness</string>
     <string name="accurate_shades_title">Use accurate shades</string>
-    <string name="use_wallpaper_color_title">Use wallpaper color</string>
     <string name="color_override_title">Custom color picker</string>
-    <string name="color_override_summary">"Choose a custom accent color to override the colors chosen by monet engine"</string>
+    <string name="color_override_default_summary">Using wallpaper color</string>
+    <string name="custom_color_override_summary_placeholder">
+        Choosen color: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Set an empty value to use wallpaper color.
+    </string>
     <string name="invalid_color_input">Invalid color input!</string>
     <string name="chroma_factor_title">Colorfulness</string>
     <string name="linear_lightness_title">Use custom lightness scale</string>

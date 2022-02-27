@@ -32,7 +32,6 @@
     <string name="monet_engine_settings_title">Motor Monet</string>
     <string name="monet_engine_settings_summary">Cor personalizada, colorido, brilho</string>
     <string name="accurate_shades_title">Usar tonalidades precisas</string>
-    <string name="use_wallpaper_color_title">Use a cor do papel de parede</string>
     <string name="color_override_title">Seletor de cores personalizadas</string>
     <string name="color_override_summary">"Escolha uma cor de acento personalizada para substituir as cores escolhidas pelo motor monet"</string>
     <string name="invalid_color_input">Entrada de cor inválida!</string>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 AOSP-Krypton Project
+ * Copyright (C) 2021-2022 AOSP-Krypton Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,28 +44,21 @@ import org.json.JSONObject
  * @param categoryPackageMap a [Map] of an overlays category to it's target package.
  */
 class ThemeOverlayPreferenceController(
-    private val context: Context,
-    private val key: String,
+    context: Context,
+    key: String,
     private val categoryPackageMap: Map<String, String>
-): KryptonBasePreferenceController(context, key),
-        Preference.OnPreferenceChangeListener {
+) : KryptonBasePreferenceController(context, key),
+    Preference.OnPreferenceChangeListener {
 
-    private val overlayManager: IOverlayManager
-    private val packageManager: PackageManager
-    private val defaultLabel: String
+    private val overlayManager = IOverlayManager.Stub.asInterface(
+        ServiceManager.getService(Context.OVERLAY_SERVICE))
+    private val packageManager = context.packageManager
+    private val defaultLabel = context.getString(R.string.overlay_option_device_default)
 
     /**
      * [MutableMap] of overlay label to a list of [OverlayInfo]s with same label.
      */
-    private var overlayInfos: MutableMap<String, MutableList<OverlayInfo>>
-
-    init {
-        overlayManager = IOverlayManager.Stub.asInterface(
-            ServiceManager.getService(Context.OVERLAY_SERVICE))
-        packageManager = context.packageManager
-        defaultLabel = context.getString(R.string.overlay_option_device_default)
-        overlayInfos = getOverlayInfos()
-    }
+    private var overlayInfos: MutableMap<String, MutableList<OverlayInfo>> = getOverlayInfos()
 
     override fun getAvailabilityStatus() = AVAILABLE
 
@@ -96,7 +89,7 @@ class ThemeOverlayPreferenceController(
     override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
         // Map of overlay category to overlay package stored as a [JSONObject] flattened to string
         val overlayPackageJson: String? = Settings.Secure.getStringForUser(
-                context.contentResolver,
+                mContext.contentResolver,
                 Settings.Secure.THEME_CUSTOMIZATION_OVERLAY_PACKAGES,
                 UserHandle.USER_CURRENT)
         try {
@@ -123,7 +116,7 @@ class ThemeOverlayPreferenceController(
                     }
                 }
             }
-            Settings.Secure.putStringForUser(context.contentResolver,
+            Settings.Secure.putStringForUser(mContext.contentResolver,
                 Settings.Secure.THEME_CUSTOMIZATION_OVERLAY_PACKAGES,
                 jsonObject.toString(), UserHandle.USER_CURRENT)
         } catch (e: JSONException) {

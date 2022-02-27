@@ -32,7 +32,6 @@
     <string name="monet_engine_settings_title">Движок Monet</string>
     <string name="monet_engine_settings_summary">Собственный цвет, красочность, яркость</string>
     <string name="accurate_shades_title">Использовать точные оттенки</string>
-    <string name="use_wallpaper_color_title">Использовать цвет обоев</string>
     <string name="color_override_title">Пользовательский выбор цвета</string>
     <string name="color_override_summary">"Выберите собственный цвет акцента, чтобы переопределить цвета, выбранные движком Monet."</string>
     <string name="invalid_color_input">Неверный ввод цвета!</string>

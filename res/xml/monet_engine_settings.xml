@@ -23,16 +23,11 @@
         android:title="@string/accurate_shades_title"
         android:defaultValue="1" />
 
-    <!-- Use wallpaper colors -->
-    <SwitchPreference
-        android:key="monet_engine_use_wallpaper_color"
-        android:title="@string/use_wallpaper_color_title"
-        android:defaultValue="1" />
-
     <!-- Color override -->
     <com.krypton.settings.preference.SecureSettingColorPickerPreference
         android:key="monet_engine_color_override"
-        android:title="@string/color_override_title" />
+        android:title="@string/color_override_title"
+        settings:controller="com.krypton.settings.fragment.theme.MonetCustomColorPreferenceController" />
 
     <!-- Chroma factor -->
     <com.krypton.settings.preference.CustomSeekBarPreference
@@ -42,7 +37,8 @@
         android:max="100"
         android:persistent="false"
         settings:min="0"
-        settings:interval="10" />
+        settings:interval="10"
+        settings:controller="com.krypton.settings.fragment.theme.MonetChromaFactorPreferenceController" />
 
     <!-- Custom lightness scale -->
     <com.krypton.settings.preference.SecureSettingSwitchPreference
