@@ -16,23 +16,13 @@
 
 package com.krypton.settings.fragment.lockscreen
 
-import android.os.Bundle
-
 import com.android.settings.R
+import com.krypton.settings.fragment.KryptonDashboardFragment
 import com.android.settings.search.BaseSearchIndexProvider
 import com.android.settingslib.search.SearchIndexable
-import com.krypton.settings.Utils
-import com.krypton.settings.fragment.KryptonDashboardFragment
 
 @SearchIndexable
 class LockscreenSettingsFragment : KryptonDashboardFragment() {
-
-    override fun onCreate(bundle: Bundle?) {
-        super.onCreate(bundle)
-        if (!Utils.hasUDFPS(activity!!)) {
-            removePreference(SCREEN_OFF_FOD_KEY)
-        }
-    }
 
     override protected fun getPreferenceScreenResId() = R.xml.lockscreen_settings
 
@@ -40,8 +30,6 @@ class LockscreenSettingsFragment : KryptonDashboardFragment() {
 
     companion object {
         private const val TAG = "LockscreenSettingsFragment"
-
-        private const val SCREEN_OFF_FOD_KEY = "screen_off_fod"
 
         @JvmField
         val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.lockscreen_settings)
