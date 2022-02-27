@@ -21,27 +21,24 @@ import androidx.preference.Preference
 import com.android.internal.logging.nano.MetricsProto
 import com.android.settings.dashboard.DashboardFragment
 import com.krypton.settings.fragment.ColorPickerFragment
-import com.krypton.settings.preference.SettingColorPickerPreference
+import com.krypton.settings.preference.ColorPickerPreference
 
 abstract class KryptonDashboardFragment : DashboardFragment() {
     override fun getMetricsCategory(): Int = MetricsProto.MetricsEvent.KRYPTON
 
     override fun onDisplayPreferenceDialog(preference: Preference) {
-        if (preference is SettingColorPickerPreference) {
-            childFragmentManager.setFragmentResultListener(REQUEST_KEY, this) { _, resultBundle ->
-                preference.setSummary(resultBundle.getString(ColorPickerFragment.BUNDLE_KEY))
-            }
-            ColorPickerFragment(
-                preference.key,
-                preference.preferenceDataStore,
-                preference.getColor()
-            ).show(childFragmentManager, preference.key)
+        if (preference is ColorPickerPreference) {
+            ColorPickerFragment(preference.color).apply {
+                setOnConfirmListener {
+                    preference.setColor(it)
+                }
+            }.show(childFragmentManager, COLOR_PICKER_DIALOG_KEY)
         } else {
             super.onDisplayPreferenceDialog(preference)
         }
     }
 
     companion object {
-        const val REQUEST_KEY = "KryptonDashboardFragment#RequestKey"
+        const val COLOR_PICKER_DIALOG_KEY = "color_picker_dialog"
     }
 }
