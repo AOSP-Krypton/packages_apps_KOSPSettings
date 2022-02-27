@@ -21,13 +21,6 @@
     <string name="theme_settings_title">Тема</string>
     <string name="theme_settings_summary">Monet, Шрифт, Набор иконок</string>
 
-    <!-- Color picker -->
-    <string name="rgb">RGB</string>
-    <string name="hsl">HSL</string>
-    <string name="hsv">HSV</string>
-    <string name="cancel">Отмена</string>
-    <string name="confirm">Применить</string>
-
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Движок Monet</string>
     <string name="monet_engine_settings_summary">Собственный цвет, красочность, яркость</string>
@@ -173,9 +166,6 @@
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Звук скриншота</string>
     <string name="screenshot_shutter_sound_summary">Включить звук скриншота и вибрацию</string>
-
-    <string name="search">Поиск</string>
-    <string name="search_apps">Поиск приложений</string>
 
     <!-- Volume key music control -->
     <string name="volume_button_music_control_title">Пропуск треков с помощью кнопок громкости</string>

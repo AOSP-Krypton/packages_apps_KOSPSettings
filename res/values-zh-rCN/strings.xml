@@ -21,13 +21,6 @@
     <string name="theme_settings_title">主题</string>
     <string name="theme_settings_summary">Monet，字体，图标包</string>
 
-    <!-- Color picker -->
-    <string name="rgb">RGB</string>
-    <string name="hsl">HSL</string>
-    <string name="hsv">HSV</string>
-    <string name="cancel">取消</string>
-    <string name="confirm">确认</string>
-
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Monet 引擎</string>
     <string name="monet_engine_settings_summary">自定义颜色、色彩、亮度</string>
@@ -172,9 +165,6 @@
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">截图提示音</string>
     <string name="screenshot_shutter_sound_summary">启用截图提示音和震动</string>
-
-    <string name="search">搜索</string>
-    <string name="search_apps">搜索应用</string>
 
     <!-- Volume key music control -->
     <string name="volume_button_music_control_title">音量键切换曲目</string>

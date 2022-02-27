@@ -21,13 +21,6 @@
     <string name="theme_settings_title">Theme</string>
     <string name="theme_settings_summary">Monet, Font, Icon pack</string>
 
-    <!-- Color picker -->
-    <string name="rgb">RGB</string>
-    <string name="hsl">HSL</string>
-    <string name="hsv">HSV</string>
-    <string name="cancel">Cancel</string>
-    <string name="confirm">Confirm</string>
-
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Monet engine</string>
     <string name="monet_engine_settings_summary">Custom color, colorfulness, brightness</string>
@@ -176,9 +169,6 @@
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Screenshot sound</string>
     <string name="screenshot_shutter_sound_summary">Enable screenshot sound and vibration</string>
-
-    <string name="search">Search</string>
-    <string name="search_apps">Search apps</string>
 
     <!-- Volume key music control -->
     <string name="volume_button_music_control_title">Skip tracks with volume buttons</string>

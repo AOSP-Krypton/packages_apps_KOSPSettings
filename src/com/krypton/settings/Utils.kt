@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 AOSP-Krypton Project
+ * Copyright (C) 2021-2022 AOSP-Krypton Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,25 +17,11 @@
 package com.krypton.settings
 
 import android.content.Context
-import android.graphics.Color
 import android.hardware.fingerprint.FingerprintSensorPropertiesInternal
-
-import androidx.core.graphics.ColorUtils
-
-import java.util.regex.Pattern
 
 object Utils {
     private const val BOOL_RES_TYPE = "bool"
     private const val SYSTEMUI_PACKAGE = "com.android.systemui"
-
-    val HEX_PATTERN = Pattern.compile("[0-9a-fA-F]+")
-
-    fun HSVToColor(hue: Float, sat: Float, value: Float): Int = Color.HSVToColor(floatArrayOf(hue, sat, value))
-
-    fun HSLToColor(hue: Float, sat: Float, lum: Float) = ColorUtils.HSLToColor(floatArrayOf(hue, sat, lum))
-
-    // color values are always negative, use a - sign to make it positive
-    fun colorToHex(color: Int) = String.format("#%06X", (0xFFFFFF and color))
 
     /**
      * Checks if the device has udfps.

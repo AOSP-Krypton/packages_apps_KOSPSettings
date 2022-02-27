@@ -21,13 +21,6 @@
     <string name="theme_settings_title">Tema</string>
     <string name="theme_settings_summary">Monet, Fonte, Pacote de ícones</string>
 
-    <!-- Color picker -->
-    <string name="rgb">RGB</string>
-    <string name="hsl">HSL</string>
-    <string name="hsv">HSV</string>
-    <string name="cancel">Cancelar</string>
-    <string name="confirm">Confirmar</string>
-
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Motor Monet</string>
     <string name="monet_engine_settings_summary">Cor personalizada, colorido, brilho</string>
@@ -135,9 +128,6 @@
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Som da captura de tela</string>
     <string name="screenshot_shutter_sound_summary">Habilitar som de captura de tela e vibração</string>
-
-    <string name="search">Pesquisa</string>
-    <string name="search_apps">Pesquisar aplicativos</string>
 
     <!-- Volume key music control -->
     <string name="volume_button_music_control_title">Pular faixas com os botões de volume</string>
