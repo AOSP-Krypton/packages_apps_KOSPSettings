@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2021 AOSP-Krypton Project
+<!-- Copyright (C) 2021-2022 AOSP-Krypton Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Krypton settings -->
     <string name="krypton_settings_title">Krypton 设置</string>
 
@@ -26,7 +26,10 @@
     <string name="monet_engine_settings_summary">自定义颜色、色彩、亮度</string>
     <string name="accurate_shades_title">调整界面色调</string>
     <string name="color_override_title">自定义颜色</string>
-    <string name="color_override_summary">"选择一个强调色来覆盖 Monet 引擎选择的颜色"</string>
+    <string name="color_override_default_summary">使用壁纸颜色</string>
+    <string name="custom_color_override_summary_placeholder">
+        已选择: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>。 设为空值来使用壁纸颜色。
+    </string>
     <string name="invalid_color_input">颜色输入错误!</string>
     <string name="chroma_factor_title">色彩</string>
     <string name="linear_lightness_title">调整界面亮度</string>
@@ -54,6 +57,7 @@
     <string name="network_traffic_intro_text">
         在状态栏中显示当前的网络流量速度。
         监视器将在状态栏中动态显示当前上传和下载速度。
+        数值每秒刷新一次。
     </string>
     <string name="enable_network_traffic">启用网络流量监视器</string>
     <string name="statusbar_network_traffic_threshold_tx_title">上传速度到阈值时自动隐藏</string>
@@ -74,7 +78,15 @@
     <string name="combined_status_bar_signal_icons">隐藏信号图标</string>
     <string name="combined_status_bar_signal_icons_summary">禁用 WiFi 开启时隐藏信号图标，需要重启系统界面</string>
 
-    <!-- QS Settings -->
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">4G 图标</string>
+    <string name="show_fourg_icon_summary">使用数据时显示 4G 而不是 LTE 图标</string>
+
+    <!-- Old mobile type icons -->
+    <string name="use_old_mobiletype_title">小型数据图标</string>
+    <string name="use_old_mobiletype_summary">在信号强度上方显示数据类型图标</string>
+
+    <!-- QS Panel -->
     <string name="qs_settings_title">快速设置</string>
     <string name="qs_settings_summary">亮度滑块，音乐封面，页脚文本</string>
 
@@ -180,5 +192,4 @@
 
     <!-- NavBar Inverse -->
     <string name="navigation_bar_inverse_title">反转导航栏</string>
-
 </resources>
