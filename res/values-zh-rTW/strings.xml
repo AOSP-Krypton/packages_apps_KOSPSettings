@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2021 AOSP-Krypton Project
+<!-- Copyright (C) 2021-2022 AOSP-Krypton Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Krypton settings -->
     <string name="krypton_settings_title">Krypton 設定</string>
 
@@ -21,19 +21,15 @@
     <string name="theme_settings_title">主題</string>
     <string name="theme_settings_summary">Monet，字型，圖示包</string>
 
-    <!-- Color picker -->
-    <string name="rgb">RGB</string>
-    <string name="hsl">HSL</string>
-    <string name="hsv">HSV</string>
-    <string name="cancel">取消</string>
-    <string name="confirm">確認</string>
-
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Monet 引擎</string>
     <string name="monet_engine_settings_summary">自定義顏色、色彩、亮度</string>
     <string name="accurate_shades_title">調整介面色調</string>
     <string name="color_override_title">自定義顏色</string>
-    <string name="color_override_summary">"選擇一個強調色來覆蓋 Monet 引擎選擇的顏色"</string>
+    <string name="color_override_default_summary">使用桌布顏色</string>
+    <string name="custom_color_override_summary_placeholder">
+        已選擇: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>。 設為空值來使用桌布顏色。
+    </string>
     <string name="invalid_color_input">顏色輸入錯誤!</string>
     <string name="chroma_factor_title">色彩</string>
     <string name="linear_lightness_title">調整介面亮度</string>
@@ -61,6 +57,7 @@
     <string name="network_traffic_intro_text">
         在狀態列中顯示當前的網路流量速度。
         監視器將在狀態列中動態顯示當前上傳和下載速度。
+        數值每秒重新整理一次。
     </string>
     <string name="enable_network_traffic">啟用網路流量監視器</string>
     <string name="statusbar_network_traffic_threshold_tx_title">上傳速度到閾值時自動隱藏</string>
@@ -81,7 +78,15 @@
     <string name="combined_status_bar_signal_icons">隱藏訊號圖示</string>
     <string name="combined_status_bar_signal_icons_summary">禁用 WiFi 開啟時隱藏訊號圖示，需要重啟系統介面</string>
 
-    <!-- QS Settings -->
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">4G 圖示</string>
+    <string name="show_fourg_icon_summary">使用資料時顯示 4G 而不是 LTE 圖示</string>
+
+    <!-- Old mobile type icons -->
+    <string name="use_old_mobiletype_title">小型資料圖示</string>
+    <string name="use_old_mobiletype_summary">在訊號強度上方顯示資料型別圖示</string>
+
+    <!-- QS Panel -->
     <string name="qs_settings_title">快速設定</string>
     <string name="qs_settings_summary">亮度滑塊，音樂封面，頁尾文字</string>
 
@@ -173,9 +178,6 @@
     <string name="screenshot_shutter_sound_title">截圖提示音</string>
     <string name="screenshot_shutter_sound_summary">啟用截圖提示音和震動</string>
 
-    <string name="search">搜尋</string>
-    <string name="search_apps">搜尋應用</string>
-
     <!-- Volume key music control -->
     <string name="volume_button_music_control_title">音量鍵切換曲目</string>
     <string name="volume_button_music_control_summary">長按音量加/減切換到下/上一曲目</string>
@@ -190,5 +192,4 @@
 
     <!-- NavBar Inverse -->
     <string name="navigation_bar_inverse_title">反轉導航欄</string>
-
 </resources>
