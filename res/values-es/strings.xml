@@ -52,14 +52,6 @@
     <string name="statusbar_network_traffic_rate_text_scale_factor_title">Factor de escala del texto de la tasa de tráfico de la red</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Factor de escala</string>
 
-    <!-- Battery -->
-    <string name="statusbar_battery_category_title">Batería</string>
-    <string name="statusbar_battery_style_title">Estilo de icono de batería</string>
-    <string name="battery_style_portrait">Vertical</string>
-    <string name="battery_style_circle">Círculo</string>
-    <string name="battery_style_text">Texto</string>
-    <string name="statusbar_battery_show_percent_inside_title">Mostrar el porcentaje de batería dentro del icono</string>
-
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Iconos de señales combinadas</string>
     <string name="combined_status_bar_signal_icons_summary">Habilitar iconos de señales combinadas en la barra de estado. Necesita reiniciar SystemUI o reiniciar</string>
