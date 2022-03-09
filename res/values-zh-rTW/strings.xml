@@ -76,15 +76,6 @@
     <string name="qs_settings_title">快速設定</string>
     <string name="qs_settings_summary">亮度滑塊，音樂封面，頁尾文字</string>
 
-    <!-- Brightness slider -->
-    <string name="qs_brightness_category_title">亮度滑塊</string>
-    <string name="qs_show_brightness_title">下拉快速設定中顯示滑塊</string>
-    <string name="qqs_show_brightness_title">快速設定中顯示滑塊</string>
-    <string name="qs_brightness_position_bottom_title">滑塊位置</string>
-    <string name="qs_brightness_position_bottom_summary_on">底部</string>
-    <string name="qs_brightness_position_bottom_summary_off">頂部</string>
-    <string name="qs_show_auto_brightness_button_title">自動亮度按鈕</string>
-
     <!-- Media artwork -->
     <string name="media_category">音樂通知欄</string>
     <string name="artwork_media_background_title">顯示封面</string>

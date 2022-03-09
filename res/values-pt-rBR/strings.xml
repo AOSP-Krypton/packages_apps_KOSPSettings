@@ -62,15 +62,6 @@
     <string name="qs_settings_title">Ajustes rápidos</string>
     <string name="qs_settings_summary">Controle deslizante de brilho, Arte de mídia</string>
 
-    <!-- Brightness slider -->
-    <string name="qs_brightness_category_title">Controle deslizante de brilho</string>
-    <string name="qs_show_brightness_title">Mostrar o controle deslizante de brilho no painel QS</string>
-    <string name="qqs_show_brightness_title">Mostrar o controle deslizante de brilho no painel QQS</string>
-    <string name="qs_brightness_position_bottom_title">Controle deslizante de brilho no inferior</string>
-    <string name="qs_brightness_position_bottom_summary_on">Posição: Parte Inferior</string>
-    <string name="qs_brightness_position_bottom_summary_off">Posição: Parte Superior</string>
-    <string name="qs_show_auto_brightness_button_title">Mostrar o botão de brilho automático na parte inferior</string>
-
     <!-- Media artwork -->
     <string name="media_category">Notificação de mídia</string>
     <string name="artwork_media_background_title">Fundo da mídia de arte</string>

@@ -66,16 +66,7 @@
 
     <!-- QS Panel -->
     <string name="qs_settings_title">Панель быстрых настроек</string>
-    <string name="qs_settings_summary">Ползунок яркости, Медиа-обложка, Текст нижнего колонтитула</string>
-
-    <!-- Brightness slider -->
-    <string name="qs_brightness_category_title">Ползунок яркости</string>
-    <string name="qs_show_brightness_title">Показать ползунок яркости на панели быстрых настроек</string>
-    <string name="qqs_show_brightness_title">Показать ползунок яркости на панели быстрых настроек в системе</string>
-    <string name="qs_brightness_position_bottom_title">Позиция ползунка яркости</string>
-    <string name="qs_brightness_position_bottom_summary_on">Позиция: Внизу</string>
-    <string name="qs_brightness_position_bottom_summary_off">Позиция: Вверху</string>
-    <string name="qs_show_auto_brightness_button_title">Показать кнопку автояркости</string>
+    <string name="qs_settings_summary">Медиа-обложка, Текст нижнего колонтитула</string>
 
     <!-- Media artwork -->
     <string name="media_category">Медиа уведомления</string>

@@ -66,16 +66,7 @@
 
     <!-- QS Settings -->
     <string name="qs_settings_title">Ajustes rápidos</string>
-    <string name="qs_settings_summary">Deslizador de brillo, Obra de arte de los medios de comunicación</string>
-
-    <!-- Brightness slider -->
-    <string name="qs_brightness_category_title">Control deslizante del brillo</string>
-    <string name="qs_show_brightness_title">Mostrar el deslizador de brillo en el panel QS</string>
-    <string name="qqs_show_brightness_title">Mostrar el deslizador de brillo en el panel QQS</string>
-    <string name="qs_brightness_position_bottom_title">Deslizador de brillo inferior</string>
-    <string name="qs_brightness_position_bottom_summary_on">Posición: Abajo</string>
-    <string name="qs_brightness_position_bottom_summary_off">Posición: Arriba</string>
-    <string name="qs_show_auto_brightness_button_title">Mostrar botón de brillo automático</string>
+    <string name="qs_settings_summary">Obra de arte de los medios de comunicación</string>
 
     <!-- Media artwork -->
     <string name="media_category">Notificación a los medios</string>
