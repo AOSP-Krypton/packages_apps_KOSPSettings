@@ -19,18 +19,7 @@
 
     <!-- Theme settings -->
     <string name="theme_settings_title">Tema</string>
-    <string name="theme_settings_summary">Monet, Fonte, Pacote de ícones</string>
-
-    <!-- Monet engine -->
-    <string name="monet_engine_settings_title">Motor Monet</string>
-    <string name="monet_engine_settings_summary">Cor personalizada, colorido, brilho</string>
-    <string name="accurate_shades_title">Usar tonalidades precisas</string>
-    <string name="color_override_title">Seletor de cores personalizadas</string>
-    <string name="color_override_summary">"Escolha uma cor de acento personalizada para substituir as cores escolhidas pelo motor monet"</string>
-    <string name="invalid_color_input">Entrada de cor inválida!</string>
-    <string name="chroma_factor_title">Colorido</string>
-    <string name="linear_lightness_title">Usar escala de luminosidade personalizada</string>
-    <string name="white_luminance_title">Brilho</string>
+    <string name="theme_settings_summary">Fonte, Pacote de ícones</string>
 
     <!-- Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">Título / Fonte do corpo</string>
