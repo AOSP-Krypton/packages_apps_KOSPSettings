@@ -109,7 +109,7 @@ class ThemeSettingsFragment : KryptonDashboardFragment() {
         }
 
         @JvmField
-        val SEARCH_INDEX_DATA_PROVIDER = object : BaseSearchIndexProvider(R.xml.edge_light_settings) {
+        val SEARCH_INDEX_DATA_PROVIDER = object : BaseSearchIndexProvider(R.xml.theme_settings) {
             override fun createPreferenceControllers(
                 context: Context
             ): List<AbstractPreferenceController> = buildPreferenceControllers(
