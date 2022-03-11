@@ -106,10 +106,6 @@
     <string name="custom_color">Свой цвет</string>
     <string name="edge_light_custom_color_title">Свой цвет</string>
 
-    <!-- Device settings -->
-    <string name="device_settings_title">Настройки устройства</string>
-    <string name="device_settings_summary">Настройки для конкретных частей устройства</string>
-
     <!--Double Tap to Sleep Lockscreen-->
     <string name="double_tap_sleep_lockscreen_title">Двойной тап, чтобы усыпить</string>
     <string name="double_tap_sleep_lockscreen_summary">Двойной тап в любом месте на экране блокировки, чтобы усыпить</string>

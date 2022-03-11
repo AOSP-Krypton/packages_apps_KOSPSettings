@@ -114,10 +114,6 @@
     <string name="custom_color">Custom color</string>
     <string name="edge_light_custom_color_title">Custom color</string>
 
-    <!-- Device settings -->
-    <string name="device_settings_title">Device settings</string>
-    <string name="device_settings_summary">Settings for device specific parts</string>
-
     <!--Double Tap to Sleep Lockscreen-->
     <string name="double_tap_sleep_lockscreen_title">Double tap to sleep</string>
     <string name="double_tap_sleep_lockscreen_summary">Double tap anywhere on the lockscreeen to sleep</string>

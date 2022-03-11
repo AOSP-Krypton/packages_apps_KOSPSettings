@@ -73,10 +73,6 @@
     <string name="screen_off_fod_title">FOD na tela desligada</string>
     <string name="screen_off_fod_summary">Habilitar FOD mesmo quando a tela estiver desligada</string>
 
-    <!-- Device settings -->
-    <string name="device_settings_title">Configurações do dispositivo</string>
-    <string name="device_settings_summary">Configurações para as partes específicas do dispositivo</string>
-
     <!--Double Tap to Sleep Lockscreen-->
     <string name="double_tap_sleep_lockscreen_title">Duplo toque para suspender o dispositivo</string>
     <string name="double_tap_sleep_lockscreen_summary">Tocar duas vezes em qualquer lugar da tela de bloqueio para suspender o dispositivo</string>

@@ -99,10 +99,6 @@
     <string name="custom_color">Color personalizado</string>
     <string name="edge_light_custom_color_title">Color personalizado</string>
 
-    <!-- Device settings -->
-    <string name="device_settings_title">Ajustes del dispositivo</string>
-    <string name="device_settings_summary">Ajustes de las partes específicas del dispositivo</string>
-
     <!--Double Tap to Sleep Lockscreen-->
     <string name="double_tap_sleep_lockscreen_title">Doble toque para bloquear</string>
     <string name="double_tap_sleep_lockscreen_summary">Doble toque en cualquier parte de la pantalla de bloqueo para bloquear</string>

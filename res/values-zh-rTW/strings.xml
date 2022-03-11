@@ -114,10 +114,6 @@
     <string name="custom_color">自定義</string>
     <string name="edge_light_custom_color_title">自定義</string>
 
-    <!-- Device settings -->
-    <string name="device_settings_title">裝置設定</string>
-    <string name="device_settings_summary">對裝置特定功能進行設定</string>
-
     <!--Double Tap to Sleep Lockscreen-->
     <string name="double_tap_sleep_lockscreen_title">雙擊息屏</string>
     <string name="double_tap_sleep_lockscreen_summary">雙擊鎖屏介面上的任意位置來關閉螢幕</string>
