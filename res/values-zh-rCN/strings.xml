@@ -19,7 +19,7 @@
 
     <!-- Theme settings -->
     <string name="theme_settings_title">主题</string>
-    <string name="theme_settings_summary">，字体，图标包</string>
+    <string name="theme_settings_summary">字体，图标包</string>
 
     <!-- Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">系统字体</string>
@@ -36,7 +36,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">状态栏</string>
-    <string name="statusbar_settings_summary">网络流量，电池样式，通知计数</string>
+    <string name="statusbar_settings_summary">网络流量，通知计数</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">网络流量监视器</string>
@@ -66,7 +66,7 @@
 
     <!-- QS Panel -->
     <string name="qs_settings_title">快速设置</string>
-    <string name="qs_settings_summary">亮度滑块，音乐封面，页脚文本</string>
+    <string name="qs_settings_summary">音乐封面，页脚文本</string>
 
     <!-- Media artwork -->
     <string name="media_category">音乐通知栏</string>
