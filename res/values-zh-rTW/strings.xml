@@ -19,7 +19,7 @@
 
     <!-- Theme settings -->
     <string name="theme_settings_title">主題</string>
-    <string name="theme_settings_summary">，字型，圖示包</string>
+    <string name="theme_settings_summary">字型，圖示包</string>
 
     <!-- Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">系統字型</string>
@@ -36,7 +36,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">狀態列</string>
-    <string name="statusbar_settings_summary">網路流量，電池樣式，通知計數</string>
+    <string name="statusbar_settings_summary">網路流量，通知計數</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">網路流量監視器</string>
@@ -74,7 +74,7 @@
 
     <!-- QS Panel -->
     <string name="qs_settings_title">快速設定</string>
-    <string name="qs_settings_summary">亮度滑塊，音樂封面，頁尾文字</string>
+    <string name="qs_settings_summary">音樂封面，頁尾文字</string>
 
     <!-- Media artwork -->
     <string name="media_category">音樂通知欄</string>
