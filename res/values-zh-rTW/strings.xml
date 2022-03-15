@@ -52,6 +52,14 @@
     <string name="statusbar_network_traffic_rate_text_scale_factor_title">根據網路速度改變字型大小</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Scale factor</string>
 
+    <!-- Battery -->
+    <string name="statusbar_battery_category_title">電池</string>
+    <string name="statusbar_battery_style_title">圖示樣式</string>
+    <string name="battery_style_portrait">方形</string>
+    <string name="battery_style_circle">圓形</string>
+    <string name="battery_style_text">文字</string>
+    <string name="statusbar_battery_show_percent_inside_title">圖示內顯示電量百分比</string>
+
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">隱藏訊號圖示</string>
     <string name="combined_status_bar_signal_icons_summary">禁用 WiFi 開啟時隱藏訊號圖示，需要重啟系統介面</string>
@@ -79,6 +87,11 @@
     <!-- Disable QS -->
     <string name="disable_qs_title">隱藏快速設定</string>
     <string name="disable_qs_summary">如果裝置已鎖定，將隱藏快速設定。但不會禁用通知氣泡。</string>
+
+    <!-- QS Battery estimates -->
+    <string name="qs_show_battery_estimate_title">電量估計</string>
+    <string name="qs_show_battery_estimate_summary_on">在快速設定中顯示電量估計</string>
+    <string name="qs_show_battery_estimate_summary_off">在快速設定中隱藏電量估計</string>
 
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">頁尾文字</string>

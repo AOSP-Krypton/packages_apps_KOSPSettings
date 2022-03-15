@@ -36,6 +36,32 @@
             
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/statusbar_battery_category_title">
+
+        <!-- Battery style -->
+        <com.krypton.settings.preference.SystemSettingListPreference
+            android:key="status_bar_battery_style"
+            android:title="@string/statusbar_battery_style_title"
+            android:summary="%s"
+            android:entries="@array/statusbar_battery_styles"
+            android:entryValues="@array/statusbar_battery_style_values"
+            android:defaultValue="0" />
+
+        <!-- Show battery percent -->
+        <com.krypton.settings.preference.SystemSettingSwitchPreference
+            android:key="status_bar_show_battery_percent"
+            android:title="@string/battery_percentage_description"
+            android:defaultValue="0" />
+
+        <!-- Show battery percent inside -->
+        <com.krypton.settings.preference.SystemSettingSwitchPreference
+            android:key="status_bar_show_battery_percent_inside"
+            android:title="@string/statusbar_battery_show_percent_inside_title"
+            android:dependency="status_bar_show_battery_percent"
+            android:defaultValue="0" />
+    </PreferenceCategory>
+
     <!-- Miscellaneous -->
     <PreferenceCategory
         android:title="@string/miscellaneous_category_title">

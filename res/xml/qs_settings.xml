@@ -52,6 +52,14 @@
     <PreferenceCategory
         android:title="@string/miscellaneous_category_title" >
 
+        <!-- QS Battery estimates -->
+        <com.krypton.settings.preference.SystemSettingSwitchPreference
+            android:key="qs_show_battery_estimate"
+            android:title="@string/qs_show_battery_estimate_title"
+            android:summaryOn="@string/qs_show_battery_estimate_summary_on"
+            android:summaryOff="@string/qs_show_battery_estimate_summary_off"
+            android:defaultValue="false" />
+
         <!-- QS footer text toggle -->
         <com.krypton.settings.preference.SystemSettingSwitchPreference
             android:key="qs_footer_text_show"

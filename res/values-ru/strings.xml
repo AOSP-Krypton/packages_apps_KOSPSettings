@@ -52,6 +52,14 @@
     <string name="statusbar_network_traffic_rate_text_scale_factor_title">Масштабный коэффициент текста скорости сетевого трафика</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Масштаб</string>
 
+    <!-- Battery -->
+    <string name="statusbar_battery_category_title">Батарея</string>
+    <string name="statusbar_battery_style_title">Стиль значка батареи</string>
+    <string name="battery_style_portrait">Портрет</string>
+    <string name="battery_style_circle">Круг</string>
+    <string name="battery_style_text">Текст</string>
+    <string name="statusbar_battery_show_percent_inside_title">Показать процент заряда батареи внутри значка</string>
+
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Значки комбинированных сигналов</string>
     <string name="combined_status_bar_signal_icons_summary">Включить комбинированные значки сигналов в строке состояния. Требуется перезапуск или перезагрузка SystemUI</string>
@@ -71,6 +79,11 @@
     <!-- Disable QS -->
     <string name="disable_qs_title">Скрыть быстрые настройки на безопасном экране блокировки</string>
     <string name="disable_qs_summary">Скрывает быстрые настройки, если устройство заблокировано. Не отключает тень уведомлений</string>
+
+    <!-- QS Battery estimates -->
+    <string name="qs_show_battery_estimate_title">Оценка заряда батареи</string>
+    <string name="qs_show_battery_estimate_summary_on">Показать оценку заряда батареи в быстрых настройках</string>
+    <string name="qs_show_battery_estimate_summary_off">Скрыть оценку заряда батареи в быстрых настройках</string>
 
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">Показать текст нижнего колонтитула быстрых настроек</string>
