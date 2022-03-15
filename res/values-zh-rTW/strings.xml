@@ -131,9 +131,6 @@
     <!-- Miscellaneous -->
     <string name="miscellaneous_settings_summary">音量鍵，截圖提示音，滑動截圖</string>
 
-    <string name="three_finger_screenshot_title">滑動截圖</string>
-    <string name="three_finger_screenshot_summary">三指下滑以擷取螢幕</string>
-
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">截圖提示音</string>
     <string name="screenshot_shutter_sound_summary">啟用截圖提示音和震動</string>

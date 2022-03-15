@@ -121,10 +121,7 @@
     <string name="location_privacy_indicator_title">Показать индикатор конфиденциальности для местоположения</string>
 
     <!-- Miscellaneous -->
-    <string name="miscellaneous_settings_summary">Скриншот свайпом, звук скриншота, качелька громкости</string>
-
-    <string name="three_finger_screenshot_title">Скриншот свайпом</string>
-    <string name="three_finger_screenshot_summary">Проведите тремя пальцами вниз, чтобы сделать снимок экрана</string>
+    <string name="miscellaneous_settings_summary">звук скриншота, качелька громкости</string>
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Звук скриншота</string>

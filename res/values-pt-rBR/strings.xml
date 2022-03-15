@@ -88,10 +88,7 @@
     <string name="location_privacy_indicator_title">Mostrar indicador de privacidade para localização</string>
 
     <!-- Miscellaneous -->
-    <string name="miscellaneous_settings_summary">Deslize para captura de tela, Som da captura de tela, roque de volume</string>
-
-    <string name="three_finger_screenshot_title">Deslize para captura de tela</string>
-    <string name="three_finger_screenshot_summary">Deslize com três dedos para tirar uma captura de tela</string>
+    <string name="miscellaneous_settings_summary">Som da captura de tela, roque de volume</string>
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Som da captura de tela</string>

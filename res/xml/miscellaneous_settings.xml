@@ -17,13 +17,6 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/miscellaneous_category_title">
 
-    <!-- Three finger screenshot -->
-    <com.krypton.settings.preference.SystemSettingSwitchPreference
-        android:key="three_finger_gesture"
-        android:title="@string/three_finger_screenshot_title"
-        android:summary="@string/three_finger_screenshot_summary"
-        android:defaultValue="0" />
-
     <!-- Screenshot sound -->
     <com.krypton.settings.preference.SystemSettingSwitchPreference
         android:key="screenshot_shutter_sound"

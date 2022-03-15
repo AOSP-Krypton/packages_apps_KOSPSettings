@@ -114,10 +114,7 @@
     <string name="location_privacy_indicator_title">Mostrar el indicador de privacidad de la ubicación</string>
 
     <!-- Miscellaneous -->
-    <string name="miscellaneous_settings_summary">Deslizar para capturar la pantalla, Sonido de captura de pantalla, Control de volumen</string>
-
-    <string name="three_finger_screenshot_title">Desliza el dedo para hacer una captura de pantalla</string>
-    <string name="three_finger_screenshot_summary">Desliza tres dedos hacia abajo para hacer una captura de pantalla</string>
+    <string name="miscellaneous_settings_summary">Sonido de captura de pantalla, Control de volumen</string>
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Sonido de las capturas de pantalla</string>
