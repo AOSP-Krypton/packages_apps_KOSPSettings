@@ -36,19 +36,19 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">状态栏</string>
-    <string name="statusbar_settings_summary">网络流量，通知计数</string>
+    <string name="statusbar_settings_summary">流量指示，电池样式，通知计数</string>
 
     <!-- Network traffic -->
-    <string name="network_traffic_category_title">网络流量监视器</string>
+    <string name="network_traffic_category_title">流量指示器</string>
     <string name="network_traffic_intro_text">
         在状态栏中显示当前的网络流量速度。
-        监视器将在状态栏中动态显示当前上传和下载速度。
+        指示器将在状态栏中动态显示当前上传和下载速度。
         数值每秒刷新一次。
     </string>
-    <string name="enable_network_traffic">启用网络流量监视器</string>
-    <string name="statusbar_network_traffic_threshold_tx_title">上传速度到阈值时自动隐藏</string>
-    <string name="statusbar_network_traffic_threshold_rx_title">下载速度到阈值时自动隐藏</string>
-    <string name="statusbar_network_traffic_unit_text_size_title">网络流量监视器字体大小</string>
+    <string name="enable_network_traffic">流量指示器</string>
+    <string name="statusbar_network_traffic_threshold_tx_title">上传速度自动隐藏阈值</string>
+    <string name="statusbar_network_traffic_threshold_rx_title">下载速度自动隐藏阈值</string>
+    <string name="statusbar_network_traffic_unit_text_size_title">指示器字体大小</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_title">根据网络速度改变字体大小</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Scale factor</string>
 
@@ -61,8 +61,8 @@
     <string name="statusbar_battery_show_percent_inside_title">图标内显示电量百分比</string>
 
     <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons">隐藏信号图标</string>
-    <string name="combined_status_bar_signal_icons_summary">禁用 WiFi 开启时隐藏信号图标，需要重启系统界面</string>
+    <string name="combined_status_bar_signal_icons">信号图标</string>
+    <string name="combined_status_bar_signal_icons_summary">开启后将在 WiFi 开启时自动隐藏信号图标，需要重启系统界面</string>
 
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G 图标</string>
@@ -77,7 +77,7 @@
     <string name="qs_settings_summary">音乐封面，页脚文本</string>
 
     <!-- Media artwork -->
-    <string name="media_category">音乐通知栏</string>
+    <string name="media_category">音乐通知</string>
     <string name="artwork_media_background_title">显示封面</string>
     <string name="artwork_media_background_summary">将专辑封面作为音乐通知栏的背景</string>
     <string name="artwork_media_background_enable_blur_title">背景模糊</string>
@@ -95,8 +95,8 @@
 
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">页脚文本</string>
-    <string name="qs_footer_text_string_title">自定义快速设置中的页脚文本</string>
-    <string name="qs_footer_text_string_summary">设为空值将默认为 KOSP</string>
+    <string name="qs_footer_text_string_title">自定义快速设置下方的文本</string>
+    <string name="qs_footer_text_string_summary">为空将默认使用 KOSP</string>
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">锁屏</string>

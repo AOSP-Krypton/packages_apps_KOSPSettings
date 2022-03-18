@@ -36,19 +36,19 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">狀態列</string>
-    <string name="statusbar_settings_summary">網路流量，通知計數</string>
+    <string name="statusbar_settings_summary">流量指示，電池樣式，通知計數</string>
 
     <!-- Network traffic -->
-    <string name="network_traffic_category_title">網路流量監視器</string>
+    <string name="network_traffic_category_title">流量指示器</string>
     <string name="network_traffic_intro_text">
         在狀態列中顯示當前的網路流量速度。
-        監視器將在狀態列中動態顯示當前上傳和下載速度。
+        指示器將在狀態列中動態顯示當前上傳和下載速度。
         數值每秒重新整理一次。
     </string>
-    <string name="enable_network_traffic">啟用網路流量監視器</string>
-    <string name="statusbar_network_traffic_threshold_tx_title">上傳速度到閾值時自動隱藏</string>
-    <string name="statusbar_network_traffic_threshold_rx_title">下載速度到閾值時自動隱藏</string>
-    <string name="statusbar_network_traffic_unit_text_size_title">網路流量監視器字型大小</string>
+    <string name="enable_network_traffic">流量指示器</string>
+    <string name="statusbar_network_traffic_threshold_tx_title">上傳速度自動隱藏閾值</string>
+    <string name="statusbar_network_traffic_threshold_rx_title">下載速度自動隱藏閾值</string>
+    <string name="statusbar_network_traffic_unit_text_size_title">指示器字型大小</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_title">根據網路速度改變字型大小</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Scale factor</string>
 
@@ -61,8 +61,8 @@
     <string name="statusbar_battery_show_percent_inside_title">圖示內顯示電量百分比</string>
 
     <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons">隱藏訊號圖示</string>
-    <string name="combined_status_bar_signal_icons_summary">禁用 WiFi 開啟時隱藏訊號圖示，需要重啟系統介面</string>
+    <string name="combined_status_bar_signal_icons">訊號圖示</string>
+    <string name="combined_status_bar_signal_icons_summary">開啟後將在 WiFi 開啟時自動隱藏訊號圖示，需要重啟系統介面</string>
 
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G 圖示</string>
@@ -77,7 +77,7 @@
     <string name="qs_settings_summary">音樂封面，頁尾文字</string>
 
     <!-- Media artwork -->
-    <string name="media_category">音樂通知欄</string>
+    <string name="media_category">音樂通知</string>
     <string name="artwork_media_background_title">顯示封面</string>
     <string name="artwork_media_background_summary">將專輯封面作為音樂通知欄的背景</string>
     <string name="artwork_media_background_enable_blur_title">背景模糊</string>
@@ -95,8 +95,8 @@
 
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">頁尾文字</string>
-    <string name="qs_footer_text_string_title">自定義快速設定中的頁尾文字</string>
-    <string name="qs_footer_text_string_summary">設為空值將預設為 KOSP</string>
+    <string name="qs_footer_text_string_title">自定義快速設定下方的文字</string>
+    <string name="qs_footer_text_string_summary">為空將預設使用 KOSP</string>
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">鎖屏</string>
