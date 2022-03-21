@@ -4,6 +4,8 @@
         coreApp="true"
         android:sharedUserId="android.uid.system">
 
+    <uses-permission android:name="lineageos.permission.MANAGE_LIVEDISPLAY" />
+
     <application>
         <uses-library android:name="org.apache.http.legacy"/>
         <uses-library android:name="androidx.window.extensions" android:required="false"/>
@@ -27,6 +29,24 @@
                 android:value="@string/menu_key_flamingo" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.flamingo.settings.FlamingoSettingsFragment" />
+        </activity>
+
+        <activity
+            android:name="com.flamingo.settings.display.livedisplay.LiveDisplaySettingsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.LIVEDISPLAY_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.order" android:value="-100" />
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.display" />
+            <meta-data android:name="com.android.settings.title"
+                android:resource="@*android:string/live_display_title" />
+            <meta-data android:name="com.android.settings.summary"
+                android:resource="@string/live_display_summary" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.flamingo.settings.display.livedisplay.LiveDisplaySettings" />
         </activity>
 
         <receiver android:name="com.google.android.settings.routines.RoutinesActionBroadcastReceiver"
