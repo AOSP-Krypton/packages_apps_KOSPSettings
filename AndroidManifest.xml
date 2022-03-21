@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         package="com.android.settings"
         coreApp="true"
         android:sharedUserId="android.uid.system">
 
     <uses-permission android:name="android.permission.UPDATE_FONTS" />
+    <uses-permission android:name="lineageos.permission.MANAGE_LIVEDISPLAY" />
 
     <application>
         <uses-library android:name="org.apache.http.legacy"/>
@@ -32,6 +32,25 @@
                 android:value="@string/menu_key_krypton" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.krypton.settings.KryptonSettingsFragment" />
+        </activity>
+
+        <activity
+            android:name="com.krypton.settings.KryptonSettings$LiveDisplaySettingsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.LIVEDISPLAY_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.keyhint" android:value="livedisplay" />
+            <meta-data android:name="com.android.settings.order" android:value="-100" />
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.display" />
+            <meta-data android:name="com.android.settings.title"
+                android:resource="@*android:string/live_display_title" />
+            <meta-data android:name="com.android.settings.summary"
+                android:resource="@string/live_display_summary" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.krypton.settings.display.livedisplay.LiveDisplaySettings" />
         </activity>
     </application>
 </manifest>

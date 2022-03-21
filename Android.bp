@@ -1,6 +1,7 @@
 filegroup {
     name: "KryptonSettings_srcs",
     srcs: [
+        "src/**/*.java",
         "src/**/*.kt",
     ],
 }

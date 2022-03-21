@@ -18,4 +18,6 @@ package com.krypton.settings
 
 import com.android.settings.SettingsActivity
 
-class KryptonSettings : SettingsActivity()
+class KryptonSettings : SettingsActivity() {
+    class LiveDisplaySettingsActivity : SettingsActivity()
+}
