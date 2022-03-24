@@ -14,8 +14,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Krypton settings -->
+    <!-- Krypton Settings Title and Description -->
     <string name="krypton_settings_title">Krypton settings</string>
+    <string name="krypton_settings_summary">Theme, Statusbar, QS Panel, Lockscreen</string>
+    <string name="menu_key_krypton" translatable="false">top_level_krypton</string>
 
     <!-- Theme settings -->
     <string name="theme_settings_title">Theme</string>

@@ -1,0 +1,2 @@
+# Keep all Fragments in this package, which are used by reflection.
+-keep public class com.krypton.settings.** extends androidx.fragment.app.Fragment

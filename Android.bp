@@ -1,0 +1,36 @@
+filegroup {
+    name: "KryptonSettings_srcs",
+    srcs: [
+        "src/**/*.kt",
+    ],
+}
+
+genrule {
+    name: "KryptonSettings_res",
+    tools: [
+        "soong_zip",
+    ],
+    srcs: [
+        "res/**/*",
+    ],
+    out: [
+        "KryptonSettings_res.zip",
+    ],
+    cmd: "INPUTS=($(in)) && "
+        + "RES_DIR=$$(dirname $$(dirname $${INPUTS[0]})) && "
+        + "$(location soong_zip) -o $(out) -C $$RES_DIR -D $$RES_DIR"
+}
+
+filegroup {
+    name: "KryptonSettings_manifest",
+    srcs: [
+        "AndroidManifest.xml",
+    ],
+}
+
+filegroup {
+    name: "KryptonSettings_proguard_flags",
+    srcs: [
+        "proguard.flags",
+    ],
+}

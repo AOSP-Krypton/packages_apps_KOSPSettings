@@ -21,14 +21,18 @@ import com.android.settings.search.BaseSearchIndexProvider
 import com.android.settingslib.search.SearchIndexable
 
 @SearchIndexable
-class KryptonSettingsFragment: KryptonDashboardFragment() {
+class KryptonSettingsFragment : KryptonDashboardFragment() {
 
     override protected fun getPreferenceScreenResId() = R.xml.krypton_settings
 
     override protected fun getLogTag() = TAG
 
+    override fun getCategoryKey(): String = CATEGORY_KRYPTON
+
     companion object {
         private const val TAG = "KryptonSettingsFragment"
+
+        private const val CATEGORY_KRYPTON = "com.android.settings.category.ia.krypton"
 
         @JvmField
         val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.krypton_settings)
