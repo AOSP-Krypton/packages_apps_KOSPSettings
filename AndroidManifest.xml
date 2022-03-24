@@ -4,6 +4,7 @@
         coreApp="true"
         android:sharedUserId="android.uid.system">
 
+    <uses-permission android:name="android.permission.MANAGE_APP_LOCK" />
     <uses-permission android:name="lineageos.permission.MANAGE_LIVEDISPLAY" />
 
     <application>
@@ -47,6 +48,18 @@
                 android:resource="@string/live_display_summary" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.flamingo.settings.display.livedisplay.LiveDisplaySettings" />
+        </activity>
+
+        <activity android:name="com.flamingo.settings.security.applock.AppLockCredentialActivity"
+            android:exported="false"
+            android:permission="android.permission.MANAGE_APP_LOCK"
+            android:excludeFromRecents="true"
+            android:stateNotNeeded="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.app.action.UNLOCK_APP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <receiver android:name="com.google.android.settings.routines.RoutinesActionBroadcastReceiver"
