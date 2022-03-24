@@ -14,8 +14,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Krypton settings -->
+    <!-- Krypton Settings Title and Description -->
     <string name="krypton_settings_title">Krypton 设置</string>
+    <string name="krypton_settings_summary">主题，状态栏，快速设置，锁屏</string>
 
     <!-- Theme settings -->
     <string name="theme_settings_title">主题</string>
