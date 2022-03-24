@@ -216,4 +216,24 @@
     <string name="adj_saturation_title">饱和度</string>
     <string name="adj_intensity_title">亮度</string>
     <string name="adj_contrast_title">对比度</string>
+
+    <!-- App lock -->
+    <string name="app_lock_title">应用锁</string>
+    <string name="app_lock_summary_singular">1 个受保护的应用</string>
+    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> 个受保护的应用</string>
+    <string name="app_lock_authentication_dialog_title">解锁</string>
+    <string name="enable_debugging">启用调试</string>
+    <string name="disable_debugging">禁用调试</string>
+    <string name="app_lock_packages_title">受保护的应用</string>
+    <string name="app_lock_packages_summary">选择要用指纹解锁或设备凭证保护的应用程序</string>
+    <string name="app_lock_timeout_title">自动锁定超时</string>
+    <string name="app_lock_timeout_summary">解锁的应用到后台后被锁定的延迟</string>
+    <string name="app_lock_notifications_title">折叠通知</string>
+    <string name="app_lock_notifications_summary">
+          当选定的应用程序被锁定时，通知内容将被隐藏和折叠。
+          浮动通知将被自动禁用。
+     </string>
+    <string name="app_lock_notifications_disabled_summary">请先选择一个受保护应用</string>
+    <string name="app_lock_biometrics_allowed_title">启用生物识别</string>
+    <string name="app_lock_footer_text">气泡在超时后将会自动消失</string>
 </resources>

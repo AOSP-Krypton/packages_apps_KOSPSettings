@@ -4,6 +4,7 @@
         coreApp="true"
         android:sharedUserId="android.uid.system">
 
+    <uses-permission android:name="android.permission.MANAGE_APP_LOCK" />
     <uses-permission android:name="android.permission.UPDATE_FONTS" />
     <uses-permission android:name="lineageos.permission.MANAGE_LIVEDISPLAY" />
 
