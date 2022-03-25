@@ -35,3 +35,9 @@ filegroup {
         "proguard.flags",
     ],
 }
+
+java_import {
+    name: "powerusagefeaturegoogle",
+    jars: ["libs/powerusagefeaturegoogle.jar"],
+    sdk_version: "current",
+}

@@ -60,4 +60,8 @@
         <item>600000</item>
         <item>1800000</item>
     </string-array>
+
+    <string-array name="allowlist_hide_background_in_battery_usage" translatable="false">
+        <item>com.google.android.GoogleCamera</item>
+    </string-array>
 </resources>
