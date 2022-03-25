@@ -53,5 +53,13 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.krypton.settings.display.livedisplay.LiveDisplaySettings" />
         </activity>
+
+        <receiver android:name="com.google.android.settings.routines.RoutinesActionBroadcastReceiver"
+                  android:permission="com.google.android.settings.routines.ROUTINES_ACTIONS"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.settings.routines.RoutinesActionBroadcastReceiver.RINGER_MODE_SILENCE_ACTION"/>
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
