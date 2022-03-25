@@ -9,5 +9,12 @@
         <uses-library android:name="androidx.window.extensions" android:required="false"/>
         <uses-library android:name="androidx.window.sidecar" android:required="false"/>
 
+        <receiver android:name="com.google.android.settings.routines.RoutinesActionBroadcastReceiver"
+                  android:permission="com.google.android.settings.routines.ROUTINES_ACTIONS"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.settings.routines.RoutinesActionBroadcastReceiver.RINGER_MODE_SILENCE_ACTION"/>
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
