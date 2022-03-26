@@ -73,5 +73,22 @@
             android:permission="android.permission.BIND_JOB_SERVICE"
             android:exported="false"
             android:process=":usage_data_loader" />
+
+        <activity android:name="com.krypton.settings.KryptonSettings$SwipeToScreenshotSettingsActivity"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.order" android:value="1000" />
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.gestures" />
+            <meta-data android:name="com.android.settings.title"
+                android:resource="@string/three_finger_gesture_title" />
+            <meta-data android:name="com.android.settings.summary"
+                android:resource="@string/three_finger_gesture_summary" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.krypton.settings.gestures.SwipeToScreenshotSettings" />
+        </activity>
     </application>
 </manifest>

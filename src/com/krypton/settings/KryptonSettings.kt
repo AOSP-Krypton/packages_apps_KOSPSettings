@@ -31,4 +31,6 @@ class KryptonSettings : SettingsActivity() {
                 super.isValidFragment(fragmentName)
         }
     }
+
+    class SwipeToScreenshotSettingsActivity : SettingsActivity()
 }
