@@ -17,7 +17,18 @@
 package com.krypton.settings
 
 import com.android.settings.SettingsActivity
+import com.krypton.settings.display.livedisplay.LiveDisplaySettings
 
 class KryptonSettings : SettingsActivity() {
-    class LiveDisplaySettingsActivity : SettingsActivity()
+    override protected fun isValidFragment(fragmentName: String): Boolean {
+        return fragmentName == KryptonSettingsFragment::class.qualifiedName ||
+            super.isValidFragment(fragmentName)
+    }
+
+    class LiveDisplaySettingsActivity : SettingsActivity() {
+        override protected fun isValidFragment(fragmentName: String): Boolean {
+            return fragmentName == LiveDisplaySettings::class.qualifiedName ||
+                super.isValidFragment(fragmentName)
+        }
+    }
 }
