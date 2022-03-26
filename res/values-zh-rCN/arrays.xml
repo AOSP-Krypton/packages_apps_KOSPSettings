@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2021-2022 AOSP-Krypton Project
+<!-- Copyright (C) 2021 AOSP-Krypton Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,6 +14,32 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Battery styles -->
+    <string-array name="statusbar_battery_styles">
+        <item>@string/battery_style_portrait</item>
+        <item>@string/battery_style_circle</item>
+        <item>@string/battery_style_text</item>
+    </string-array>
+    <string-array name="statusbar_battery_style_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- Edge light color modes -->
+    <string-array name="edge_light_color_mode_entries" translatable="false">
+        <item>@string/accent_color</item>
+        <item>@string/notification_color</item>
+        <item>@string/wallpaper_color</item>
+        <item>@string/custom_color</item>
+    </string-array>
+    <string-array name="edge_light_color_mode_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <!-- App lock timeout -->
     <string-array name="app_lock_timeout_entries">
         <item>5 秒</item>
@@ -23,5 +49,19 @@
         <item>5 分钟</item>
         <item>10 分钟</item>
         <item>30 分钟</item>
+    </string-array>
+
+    <string-array name="app_lock_timeout_values" translatable="false">
+        <item>5000</item>
+        <item>10000</item>
+        <item>30000</item>
+        <item>60000</item>
+        <item>300000</item>
+        <item>600000</item>
+        <item>1800000</item>
+    </string-array>
+
+    <string-array name="allowlist_hide_background_in_battery_usage" translatable="false">
+        <item>com.google.android.GoogleCamera</item>
     </string-array>
 </resources>
