@@ -26,7 +26,6 @@
     <string name="monet_engine_settings_summary">Color, Saturación y Brillo personalizados</string>
     <string name="accurate_shades_title">Utilizar tonos precisos</string>
     <string name="color_override_title">Selector de color personalizado</string>
-    <string name="color_override_summary">"Elija un color de acento personalizado para anular los colores elegidos por el motor monet"</string>
     <string name="invalid_color_input">¡Entrada de color inválida!</string>
     <string name="chroma_factor_title">Saturación</string>
     <string name="linear_lightness_title">Utilizar una escala de luminosidad personalizada</string>
