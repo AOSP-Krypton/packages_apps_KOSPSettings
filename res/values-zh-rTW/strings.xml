@@ -250,4 +250,8 @@
     <string name="app_lock_notifications_disabled_summary">請先選擇一個受保護應用</string>
     <string name="app_lock_biometrics_allowed_title">啟用生物識別</string>
     <string name="app_lock_footer_text">氣泡在超時後將會自動消失</string>
+        
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture_title">划動截圖</string>
+    <string name="three_finger_gesture_summary">三指下劃以擷取螢幕</string>
 </resources>
