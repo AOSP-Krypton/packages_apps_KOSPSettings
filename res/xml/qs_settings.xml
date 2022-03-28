@@ -50,6 +50,28 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/brightness_slider">
+
+        <com.krypton.settings.preference.SystemSettingListPreference
+            android:key="brightness_slider_position"
+            android:title="@string/brightness_slider_position_title"
+            android:summary="%s"
+            android:entries="@array/brightness_slider_position_entries"
+            android:entryValues="@array/brightness_slider_position_values"
+            android:defaultValue="0" />
+
+        <com.krypton.settings.preference.SystemSettingSwitchPreference
+            android:key="qqs_show_brightness"
+            android:title="@string/qqs_show_brightness_title"
+            android:defaultValue="false" />
+
+        <com.krypton.settings.preference.SystemSettingSwitchPreference
+            android:key="show_auto_brightness_button"
+            android:title="@string/show_auto_brightness_button_title"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/miscellaneous_category_title" >
 
         <!-- QS Battery estimates -->

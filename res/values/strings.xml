@@ -90,7 +90,7 @@
 
     <!-- QS Panel -->
     <string name="qs_settings_title">QS Panel</string>
-    <string name="qs_settings_summary">Media artwork, Footer text</string>
+    <string name="qs_settings_summary">Media artwork, Brightness slider, Footer text</string>
 
     <!-- Media artwork -->
     <string name="media_category">Media notification</string>
@@ -99,6 +99,14 @@
     <string name="artwork_media_background_enable_blur_title">Blur media media artwork background</string>
     <string name="artwork_media_background_blur_radius_title">Blur amount for media artwork</string>
     <string name="artwork_media_background_alpha_title">Transparency of media artwork</string>
+
+    <!-- Brightness slider -->
+    <string name="brightness_slider">Brightness slider</string>
+    <string name="qqs_show_brightness_title">Show brightness slider in qqs</string>
+    <string name="brightness_slider_position_title">Brightness slider position</string>
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
+    <string name="show_auto_brightness_button_title">Show auto brightness button</string>
 
     <!-- Disable QS -->
     <string name="disable_qs_title">Hide QS in secure lockscreen</string>
