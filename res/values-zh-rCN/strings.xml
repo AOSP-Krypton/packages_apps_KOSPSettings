@@ -262,4 +262,8 @@
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture_title">划动截屏</string>
     <string name="three_finger_gesture_summary">三指下划以截取屏幕</string>
+
+    <!-- Hidden apps -->
+    <string name="hidden_apps_title">隐藏应用</string>
+    <string name="hidden_apps_summary">选择需要从启动器中隐藏的应用程序。需要重新启动启动器以生效。</string>
 </resources>
