@@ -37,4 +37,12 @@
         android:defaultValue="0"
         settings:controller="com.krypton.settings.miscellaneous.NavBarInversePreferenceController" />
 
+    <!-- Hidden apps -->
+    <Preference
+        android:key="hidden_apps"
+        android:title="@string/hidden_apps_title"
+        android:summary="@string/hidden_apps_summary"
+        android:persistent="false"
+        android:fragment="com.krypton.settings.miscellaneous.HiddenAppSettingsFragment" />
+
 </PreferenceScreen>
