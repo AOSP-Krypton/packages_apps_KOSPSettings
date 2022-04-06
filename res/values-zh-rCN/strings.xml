@@ -16,7 +16,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Krypton Settings Title and Description -->
     <string name="krypton_settings_title">Krypton 设置</string>
-    <string name="krypton_settings_summary">主题，状态栏，快速设置，锁屏</string>
+    <string name="krypton_settings_summary">主题，状态栏，磁贴面板，锁屏</string>
 
     <!-- Theme settings -->
     <string name="theme_settings_title">主题</string>
@@ -88,7 +88,7 @@
     <string name="use_old_mobiletype_summary">在信号强度上方显示数据类型图标</string>
 
     <!-- QS Panel -->
-    <string name="qs_settings_title">快速设置</string>
+    <string name="qs_settings_title">磁贴面板</string>
     <string name="qs_settings_summary">音乐封面，亮度滑块，页脚文本</string>
 
     <!-- Media artwork -->
@@ -101,24 +101,24 @@
 
     <!-- Brightness slider -->
     <string name="brightness_slider">亮度滑块</string>
-    <string name="qqs_show_brightness_title">在下拉快速设置面板中显示亮度滑块</string>
+    <string name="qqs_show_brightness_title">在下拉磁贴面板中显示亮度滑块</string>
     <string name="brightness_slider_position_title">亮度滑块位置</string>
     <string name="top">顶部</string>
     <string name="bottom">底部</string>
     <string name="show_auto_brightness_button_title">自动亮度按钮</string>
 
     <!-- Disable QS -->
-    <string name="disable_qs_title">隐藏快速设置</string>
-    <string name="disable_qs_summary">如果设备已锁定，将隐藏快速设置。但不会禁用通知气泡。</string>
+    <string name="disable_qs_title">隐藏磁贴面板</string>
+    <string name="disable_qs_summary">如果设备已锁定，将隐藏磁贴面板。但不会禁用通知气泡。</string>
 
     <!-- QS Battery estimates -->
     <string name="qs_show_battery_estimate_title">电量估计</string>
-    <string name="qs_show_battery_estimate_summary_on">在快速设置中显示电量估计</string>
-    <string name="qs_show_battery_estimate_summary_off">在快速设置中隐藏电量估计</string>
+    <string name="qs_show_battery_estimate_summary_on">在磁贴面板上方显示电量估计</string>
+    <string name="qs_show_battery_estimate_summary_off">在磁贴面板上方隐藏电量估计</string>
 
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">页脚文本</string>
-    <string name="qs_footer_text_string_title">自定义快速设置下方的文本</string>
+    <string name="qs_footer_text_string_title">磁贴面板右下方文本</string>
     <string name="qs_footer_text_string_summary">为空将默认使用 KOSP</string>
 
     <!-- Lockscreen settings -->
@@ -181,7 +181,7 @@
 
     <!-- Tiles on secure keyguard -->
     <string name="use_tiles_on_secure_keyguard_title">禁用开关</string>
-    <string name="use_tiles_on_secure_keyguard_summary">在锁屏界面使用快速设置中按钮时将需要解锁手机</string>
+    <string name="use_tiles_on_secure_keyguard_summary">在锁屏界面使用磁贴时将需要解锁手机</string>
 
     <!-- NavBar Inverse -->
     <string name="navigation_bar_inverse_title">反转导航栏</string>
