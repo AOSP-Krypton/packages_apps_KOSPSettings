@@ -57,7 +57,7 @@
     <!-- Network traffic -->
     <string name="network_traffic_category_title">Скорость интернета</string>
     <string name="network_traffic_intro_text">
-        Показывает текущую скорость интернета в статусбаре.
+        Показывает текущую скорость сетевого трафика в статусбаре.
         Монитор показывает скорость динамически, так что она чередуется между
         скоростью загрузки и скачивания каждую секунду
     </string>
@@ -65,7 +65,7 @@
     <string name="statusbar_network_traffic_threshold_tx_title">Порог автоматического скрытия для исходящего трафика</string>
     <string name="statusbar_network_traffic_threshold_rx_title">Порог автоматического скрытия для входящего трафика</string>
     <string name="statusbar_network_traffic_unit_text_size_title">Размер иконки скорости интернета</string>
-    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Размер цифр монитора скорости интернета</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Размер цифр скорости интернета</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Масштаб</string>
 
     <!-- Battery -->
@@ -124,7 +124,7 @@
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">Экран блокировки</string>
-    <string name="lockscreen_settings_summary">Информация о зарядке, Жесты, Мерцание граней</string>
+    <string name="lockscreen_settings_summary">Информация о зарядке, Жесты, Пульсация граней</string>
 
     <!-- Lockscreen battery info -->
     <string name="lockscreen_charging_info_title">Показывать информацию о зарядке на экране блокировки</string>
