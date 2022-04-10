@@ -16,7 +16,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Krypton settings -->
     <string name="krypton_settings_title">Настройки Krypton</string>
-    <string name="krypton_settings_summary">Тема, Статусбар, Панель Быстрых Настроек, Экран Блокировки</string>
+    <string name="krypton_settings_summary">Тема, Статусбар, Панель Быстрых Настроек, Экран блокировки</string>
     <string name="menu_key_krypton" translatable="false">top_level_krypton</string>
 
     <!-- Theme settings -->
@@ -25,7 +25,7 @@
 
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Движок Monet</string>
-    <string name="monet_engine_settings_summary">Кастомный цвет, красочность, яркость</string>
+    <string name="monet_engine_settings_summary">Кастомный цвет, насыщенность, яркость</string>
     <string name="accurate_shades_title">Использовать точные оттенки</string>
     <string name="color_override_title">Выбор цветового акцента</string>
     <string name="color_override_default_summary">Сейчас используется цвет на основе обоев</string>
@@ -33,7 +33,7 @@
         Выбранный цвет: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Оставьте поле пустым, чтобы использовать цвет на основе обоев
     </string>
     <string name="invalid_color_input">Неверный ввод цвета!</string>
-    <string name="chroma_factor_title">Красочность</string>
+    <string name="chroma_factor_title">Насыщенность</string>
     <string name="linear_lightness_title">Использовать пользовательскую шкалу яркости</string>
     <string name="white_luminance_title">Яркость</string>
 
@@ -57,15 +57,15 @@
     <!-- Network traffic -->
     <string name="network_traffic_category_title">Скорость интернета</string>
     <string name="network_traffic_intro_text">
-        Показывает текущую скорость сетевого трафика в статусбаре.
-        Иконка показывает скорость динамически, так что она чередуется между
+        Показывает текущую скорость интернета в статусбаре.
+        Монитор показывает скорость динамически, так что она чередуется между
         скоростью загрузки и скачивания каждую секунду
     </string>
     <string name="enable_network_traffic">Включить отображение скорости интернета</string>
     <string name="statusbar_network_traffic_threshold_tx_title">Порог автоматического скрытия для исходящего трафика</string>
     <string name="statusbar_network_traffic_threshold_rx_title">Порог автоматического скрытия для входящего трафика</string>
     <string name="statusbar_network_traffic_unit_text_size_title">Размер иконки скорости интернета</string>
-    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Размер цифр скорости интернета</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Размер цифр монитора скорости интернета</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Масштаб</string>
 
     <!-- Battery -->
@@ -114,8 +114,8 @@
 
     <!-- QS Battery estimates -->
     <string name="qs_show_battery_estimate_title">Оценка заряда батареи</string>
-    <string name="qs_show_battery_estimate_summary_on">Включено отображение до скольки примерно хватит зарядки в шторке</string>
-    <string name="qs_show_battery_estimate_summary_off">Отключено отображение до скольки примерно хватит зарядки в шторке</string>
+    <string name="qs_show_battery_estimate_summary_on">Включено отображение примерного времени работы от батареи в шторке</string>
+    <string name="qs_show_battery_estimate_summary_off">Отключено отображение примерного времени работы от батареи в шторке</string>
 
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">Отображать мелкий текст внизу шторки</string>
@@ -185,7 +185,7 @@
     <string name="use_tiles_on_secure_keyguard_summary">Просить разблокировать при нажатии на "Интернет"/"Bluetooth" но не при нажатии на "Фонарик"/"Энергосбережение" и тп.</string>
 
     <!-- NavBar Inverse -->
-    <string name="navigation_bar_inverse_title">Инвертировать трёхкнопочную панель навигации</string>
+    <string name="navigation_bar_inverse_title">Инвертировать панель навигации</string>
 
     <!-- LiveDisplay -->
     <string name="live_display_summary">Оптимизируйте экран в зависимости от времени суток и условий окружающей среды, чтобы улучшить читаемость и снизить нагрузку на глаза.</string>
@@ -256,9 +256,9 @@
           Подробное уведомление для выбранных приложений будет скрыто.
           Всплывающие пуш-уведомления будут также автоматически отключены.
      </string>
-    <string name="app_lock_notifications_disabled_summary">Для начала выберите приложение для защиты</string>
+    <string name="app_lock_notifications_disabled_summary">Сначала выберите приложения которые хотите защитить!</string>
     <string name="app_lock_biometrics_allowed_title">Включить разблокировку приложений по отпечатку</string>
-    <string name="app_lock_footer_text">Bubbles будут автоматически отклонены после тайм-аута</string>
+    <string name="app_lock_footer_text">"Разговоры" также будут автоматически скрыты через некоторое время</string>
 
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture_title">Свайп для скриншота</string>
