@@ -16,6 +16,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Krypton settings -->
     <string name="krypton_settings_title">Настройки Krypton</string>
+    <string name="krypton_settings_summary">Тема, Статусбар, Панель Быстрых Настроек, Экран Блокировки</string>
+    <string name="menu_key_krypton" translatable="false">top_level_krypton</string>
 
     <!-- Theme settings -->
     <string name="theme_settings_title">Тема</string>
@@ -23,9 +25,13 @@
 
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Движок Monet</string>
-    <string name="monet_engine_settings_summary">Собственный цвет, красочность, яркость</string>
+    <string name="monet_engine_settings_summary">Кастомный цвет, красочность, яркость</string>
     <string name="accurate_shades_title">Использовать точные оттенки</string>
-    <string name="color_override_title">Пользовательский выбор цвета</string>
+    <string name="color_override_title">Выбор цветового акцента</string>
+    <string name="color_override_default_summary">Сейчас используется цвет на основе обоев</string>
+    <string name="custom_color_override_summary_placeholder">
+        Выбранный цвет: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Оставьте поле пустым чтобы использовать цвет на основе обоев
+    </string>
     <string name="invalid_color_input">Неверный ввод цвета!</string>
     <string name="chroma_factor_title">Красочность</string>
     <string name="linear_lightness_title">Использовать пользовательскую шкалу яркости</string>
@@ -37,8 +43,8 @@
     <string name="theme_customization_icon_pack_title">Набор иконок</string>
 
     <!-- Custom font -->
-    <string name="custom_font_preference_title">Выберите собственный шрифт</string>
-    <string name="custom_font_preference_footer_message">Перезагрузитесь после выбора шрифта, чтобы он вступил в силу.</string>
+    <string name="custom_font_preference_title">Выбор кастомного шрифта</string>
+    <string name="custom_font_preference_footer_message">Перезагрузитесь после выбора шрифта, чтобы он начал работать</string>
     <string name="cannot_resolve_activity">Не удалось найти подходящее активити для выполнения этого действия!</string>
     <string name="invalid_font_file">Файл шрифта не имеет допустимой таблицы постскриптума</string>
     <string name="failed_to_update_font">Не удалось обновить шрифт</string>
@@ -46,45 +52,61 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">Статусбар</string>
-    <string name="statusbar_settings_summary">Сетевой трафик, стиль батареи, количество уведомлений</string>
+    <string name="statusbar_settings_summary">Скорость интернета, Стиль батареи, Количество уведомлений</string>
 
     <!-- Network traffic -->
-    <string name="network_traffic_category_title">Сетевой трафик</string>
+    <string name="network_traffic_category_title">Скорость интернета</string>
     <string name="network_traffic_intro_text">
         Показывает текущую скорость сетевого трафика в статусбаре.
-        Монитор показывает скорость динамически, так что она чередуется между
+        Иконка показывает скорость динамически, так что она чередуется между
         скоростью загрузки и скачивания каждую секунду
     </string>
-    <string name="enable_network_traffic">Включить монитор сетевого трафика</string>
-    <string name="statusbar_network_traffic_threshold_tx_title">Порог автоматического скрытия для выгрузки</string>
-    <string name="statusbar_network_traffic_threshold_rx_title">Порог автоматического скрытия для загрузки</string>
-    <string name="statusbar_network_traffic_unit_text_size_title">Размер текста блока сетевого трафика</string>
-    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Масштабный коэффициент текста скорости сетевого трафика</string>
+    <string name="enable_network_traffic">Включить отображение скорости интернета</string>
+    <string name="statusbar_network_traffic_threshold_tx_title">Порог автоматического скрытия для исходящего трафика</string>
+    <string name="statusbar_network_traffic_threshold_rx_title">Порог автоматического скрытия для входящего трафика</string>
+    <string name="statusbar_network_traffic_unit_text_size_title">Размер иконки скорости интернета</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Размер цифр скорости интернета</string>
     <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Масштаб</string>
 
     <!-- Battery -->
     <string name="statusbar_battery_category_title">Батарея</string>
-    <string name="statusbar_battery_style_title">Стиль значка батареи</string>
-    <string name="battery_style_portrait">Портрет</string>
+    <string name="statusbar_battery_style_title">Стиль иконки батареи</string>
+    <string name="battery_style_portrait">Батарея</string>
     <string name="battery_style_circle">Круг</string>
-    <string name="battery_style_text">Текст</string>
-    <string name="statusbar_battery_show_percent_inside_title">Показать процент заряда батареи внутри значка</string>
+    <string name="battery_style_text">Проценты</string>
+    <string name="statusbar_battery_show_percent_inside_title">Показать процент заряда батареи внутри иконки</string>
 
     <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons">Значки комбинированных сигналов</string>
-    <string name="combined_status_bar_signal_icons_summary">Включить комбинированные значки сигналов в строке состояния. Требуется перезапуск или перезагрузка SystemUI</string>
+    <string name="combined_status_bar_signal_icons">Одна иконка сети</string>
+    <string name="combined_status_bar_signal_icons_summary">Отображение только иконки WiFi или сети в зависимости от подключения. Требуется перезагрузка смартфона или SystemUI</string>
+
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">Иконка 4G</string>
+    <string name="show_fourg_icon_summary">Показывать иконку 4G вместо LTE</string>
+
+    <!-- Old mobile type icons -->
+    <string name="use_old_mobiletype_title">Маленькая иконка типа подключения</string>
+    <string name="use_old_mobiletype_summary">Показывать иконку типа подключения к сети наверху иконки качества сигнала</string>
 
     <!-- QS Panel -->
     <string name="qs_settings_title">Панель быстрых настроек</string>
-    <string name="qs_settings_summary">Медиа-обложка, Текст нижнего колонтитула</string>
+    <string name="qs_settings_summary">Обложка медиаплеера, Ползунок яркости, Кастомный текст</string>
 
     <!-- Media artwork -->
-    <string name="media_category">Медиа уведомления</string>
-    <string name="artwork_media_background_title">Фон медиа уведомления</string>
-    <string name="artwork_media_background_summary">Установить медиа-арт в качестве фона для уведомлений</string>
-    <string name="artwork_media_background_enable_blur_title">Размытие фона медиа-арта</string>
-    <string name="artwork_media_background_blur_radius_title">Степень размытия для медиа-арта</string>
-    <string name="artwork_media_background_alpha_title">Прозрачность медиа-арта</string>
+    <string name="media_category">Медиаплеер</string>
+    <string name="artwork_media_background_title">Фон плеера в шторке</string>
+    <string name="artwork_media_background_summary">Установить обложку в качестве фона для плеера</string>
+    <string name="artwork_media_background_enable_blur_title">Размытие обложки</string>
+    <string name="artwork_media_background_blur_radius_title">Степень размытия обложки</string>
+    <string name="artwork_media_background_alpha_title">Прозрачность обложки</string>
+
+    <!-- Brightness slider -->
+    <string name="brightness_slider">Ползунок яркости</string>
+    <string name="qqs_show_brightness_title">Показывать ползунок ярксоти в шторке</string>
+    <string name="brightness_slider_position_title">Положение ползунка яркости</string>
+    <string name="top">Сверху</string>
+    <string name="bottom">Снизу</string>
+    <string name="show_auto_brightness_button_title">Показывать кнопку автояркости</string>
 
     <!-- Disable QS -->
     <string name="disable_qs_title">Скрыть быстрые настройки на безопасном экране блокировки</string>
@@ -92,37 +114,37 @@
 
     <!-- QS Battery estimates -->
     <string name="qs_show_battery_estimate_title">Оценка заряда батареи</string>
-    <string name="qs_show_battery_estimate_summary_on">Показать оценку заряда батареи в быстрых настройках</string>
-    <string name="qs_show_battery_estimate_summary_off">Скрыть оценку заряда батареи в быстрых настройках</string>
+    <string name="qs_show_battery_estimate_summary_on">Включено отображение до скольки примерно хватит зарядки в шторке</string>
+    <string name="qs_show_battery_estimate_summary_off">Отключено отображение до скольки примерно хватит зарядки в шторке</string>
 
     <!-- QS footer text -->
-    <string name="qs_footer_text_show_title">Показать текст нижнего колонтитула быстрых настроек</string>
-    <string name="qs_footer_text_string_title">Настроить текст нижнего колонтитула</string>
-    <string name="qs_footer_text_string_summary">Установить пустым для KOSP по умолчанию</string>
+    <string name="qs_footer_text_show_title">Отображать мелкий текст внизу шторки</string>
+    <string name="qs_footer_text_string_title">Кастомный текст в шторке</string>
+    <string name="qs_footer_text_string_summary">Оставте пустым для отображения "KOSP"</string>
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">Экран блокировки</string>
-    <string name="lockscreen_settings_summary">Информация о зарядке, жесты, боковая подсветка</string>
+    <string name="lockscreen_settings_summary">Информация о зарядке, Жесты, Мерцание граней</string>
 
     <!-- Lockscreen battery info -->
     <string name="lockscreen_charging_info_title">Показывать информацию о зарядке на экране блокировки</string>
-    <string name="lockscreen_charging_info_summary">Показывает температуру, ток зарядки и многое другое при подключении к сети</string>
+    <string name="lockscreen_charging_info_summary">Показывает температуру, ток зарядки и т.п. при зарядке</string>
 
-    <string name="screen_off_fod_title"> Экран отпечатка пальца выключен</string>
-    <string name="screen_off_fod_summary">Включить экран отпечатка пальца, даже когда дисплей выключен</string>
+    <string name="screen_off_fod_title">Датчик отпечатка на выключеном экране</string>
+    <string name="screen_off_fod_summary">Активация датчика отпечатка на выключеном экране (без иконки)</string>
 
-    <string name="udfps_haptic_feedback_title">Воспроизведение тактильной обратной связи при нажатии на udfps</string>
+    <string name="udfps_haptic_feedback_title">Вибрация при нажатии на датчик отпечатка пальца</string>
 
     <!-- Edge light -->
-    <string name="edge_light_title">Боковая подсветка</string>
-    <string name="enable_edge_light">Включить боковую подсветку</string>
-    <string name="edge_light_intro_text">Отображать анимацию по краям экрана при пульсации</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Всегда срабатывать по импульсу</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Показывать ли боковую подсветку всякий раз, когда отображается внешний дисплей, а не только для уведомлений</string>
-    <string name="edge_light_repeat_animation_title">Повторять анимацию</string>
-    <string name="edge_light_repeat_animation_summary_on">Повторять до таймаута</string>
+    <string name="edge_light_title">Пульсация граней</string>
+    <string name="enable_edge_light">Включить пульсацию граней</string>
+    <string name="edge_light_intro_text">Отображает анимацию по краям экрана при уведомлениях</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Всегда срабатывать</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Воспроизводить анимацию даже когда AOD включён и не только для уведомлений</string>
+    <string name="edge_light_repeat_animation_title">Повтор анимации</string>
+    <string name="edge_light_repeat_animation_summary_on">Повторять несколько раз</string>
     <string name="edge_light_repeat_animation_summary_off">Показать только один раз</string>
-    <string name="edge_light_color_mode_title">Цветовой режим боковой подсветки</string>
+    <string name="edge_light_color_mode_title">Цвет пульсации</string>
     <string name="accent_color">Акцентный цвет (по умолчанию)</string>
     <string name="notification_color">Цвет уведомления</string>
     <string name="wallpaper_color">Цвет обоев</string>
@@ -130,21 +152,21 @@
     <string name="edge_light_custom_color_title">Свой цвет</string>
 
     <!--Double Tap to Sleep Lockscreen-->
-    <string name="double_tap_sleep_lockscreen_title">Двойной тап, чтобы усыпить</string>
-    <string name="double_tap_sleep_lockscreen_summary">Двойной тап в любом месте на экране блокировки, чтобы усыпить</string>
+    <string name="double_tap_sleep_lockscreen_title">Двойной тап для выключения экрана</string>
+    <string name="double_tap_sleep_lockscreen_summary">Дважды тапните в любом месте на экране блокировки чтобы выключить экран</string>
 
     <!-- Double Tap to Sleep Statusbar -->
     <string name="statusbar_gesture_title">Жесты</string>
-    <string name="double_tap_sleep_gesture_title">Двойной тап, чтобы усыпить</string>
-    <string name="double_tap_sleep_gesture_summary">Дважды нажмите в любом месте строки состояния, чтобы перевести устройство в спящий режим.</string>
+    <string name="double_tap_sleep_gesture_title">Двойной тап для выключения экрана</string>
+    <string name="double_tap_sleep_gesture_summary">Дважды тапните в любом месте статусбара чтобы выключить экран</string>
 
-    <string name="miscellaneous_category_title">Разное</string>
+    <string name="miscellaneous_category_title">Другое</string>
 
     <!-- Location privacy indicator -->
-    <string name="location_privacy_indicator_title">Показать индикатор конфиденциальности для местоположения</string>
+    <string name="location_privacy_indicator_title">Показывать индикатор конфиденциальности (зелёная точка) при использовании местоположения</string>
 
     <!-- Miscellaneous -->
-    <string name="miscellaneous_settings_summary">звук скриншота, качелька громкости</string>
+    <string name="miscellaneous_settings_summary">Звук скриншота, Качелька громкости</string>
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">Звук скриншота</string>
@@ -156,21 +178,24 @@
 
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Счетчик уведомлений</string>
-    <string name="status_bar_notif_count_summary">Показать количество ожидающих уведомлений</string>
+    <string name="status_bar_notif_count_summary">Показать количество уведомлений в статусбаре</string>
 
     <!-- Tiles on secure keyguard -->
-    <string name="use_tiles_on_secure_keyguard_title">Требовать разблокировку для использования чувствительных плиток</string>
-    <string name="use_tiles_on_secure_keyguard_summary">Запрос на разблокировку экрана при использовании чувствительных плиток</string>
+    <string name="use_tiles_on_secure_keyguard_title">Запрашивать разблокировку для использования "значимых" плиток в шторке</string>
+    <string name="use_tiles_on_secure_keyguard_summary">Просить разблокировать при нажатии на "Интернет"/"Bluetooth" но не при нажатии на "Фонарик"/"Энэргосбережение" и т.п.</string>
+
+    <!-- NavBar Inverse -->
+    <string name="navigation_bar_inverse_title">Инвертировать трёхкнопочную навигационную панель</string>
 
     <!-- LiveDisplay -->
     <string name="live_display_summary">Оптимизируйте экран в зависимости от времени суток и условий окружающей среды, чтобы улучшить читаемость и снизить нагрузку на глаза.</string>
-    <string name="live_display_mode">Режим отображения</string>
+    <string name="live_display_mode">Режим эрана</string>
     <string name="live_display_color_temperature_title">Цветовая температура</string>
     <string name="live_display_color_temperature_summary">День: <xliff:g id="day_temperature">%1$d</xliff:g>K  Ночь: <xliff:g id="night_temperature">%2$d</xliff:g>K</string>
     <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
     <string name="live_display_day">День</string>
     <string name="live_display_night">Ночь</string>
-    <string name="live_display_outdoor_mode_title">Авторежим на улице</string>
+    <string name="live_display_outdoor_mode_title">Авторежим "на улице"</string>
     <string name="live_display_outdoor_mode_summary">Автоматическое увеличение яркости и насыщенности при ярком солнечном свете</string>
     <string name="live_display_low_power_title">Снизить энергопотребление</string>
     <string name="live_display_low_power_summary">Отрегулируйте дисплей для минимального энергопотребления без снижения производительности</string>
@@ -214,5 +239,32 @@
     <string name="adj_saturation_title">Насыщенность</string>
     <string name="adj_intensity_title">Интенсивность</string>
     <string name="adj_contrast_title">Контрастность</string>
-	
+    
+    <!-- App lock -->
+    <string name="app_lock_title">App Lock</string>
+    <string name="app_lock_summary_singular">1 приложение защищено</string>
+    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> приложения/ий защищено</string>
+    <string name="app_lock_authentication_dialog_title">Разблокируйте для входа в настройки App Lock</string>
+    <string name="enable_debugging">Включить режим отладки</string>
+    <string name="disable_debugging">Выключить режим отладки</string>
+    <string name="app_lock_packages_title">Защищённые приложения</string>
+    <string name="app_lock_packages_summary">Выберите приложения которые будут требовать аунтификации по отпечатку или др.</string>
+    <string name="app_lock_timeout_title">Таймаут автоматической блокировки</string>
+    <string name="app_lock_timeout_summary">Количество времени, которое должно пройти чтобы разблокированное приложение опять заблокировалось</string>
+    <string name="app_lock_notifications_title">Скрытие уведомлений</string>
+    <string name="app_lock_notifications_summary">
+          Подробное уведомление для выбранных приложений будет скрыто.
+          Всплывающие пуш-уведомления будут так же автоматически отключены.
+     </string>
+    <string name="app_lock_notifications_disabled_summary">Для начала выберите приложение для защиты</string>
+    <string name="app_lock_biometrics_allowed_title">Включить разблокировку приложений по отпечатку</string>
+    <string name="app_lock_footer_text">Bubbles будут автоматически отклонены после тайм-аута</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture_title">Свайп для скриншота</string>
+    <string name="three_finger_gesture_summary">Свайпните вниз по экрану тремя пальцами чтобы сделать скриншот</string>
+
+    <!-- Hidden apps -->
+    <string name="hidden_apps_title">Скрытые приложения</string>
+    <string name="hidden_apps_summary">Приложения которые должны быть скрыты в лаунчере. Требуется перезапуск для применения изменений</string>
 </resources>
