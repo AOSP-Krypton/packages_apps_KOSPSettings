@@ -30,7 +30,7 @@
     <string name="color_override_title">Выбор цветового акцента</string>
     <string name="color_override_default_summary">Сейчас используется цвет на основе обоев</string>
     <string name="custom_color_override_summary_placeholder">
-        Выбранный цвет: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Оставьте поле пустым чтобы использовать цвет на основе обоев
+        Выбранный цвет: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Оставьте поле пустым, чтобы использовать цвет на основе обоев
     </string>
     <string name="invalid_color_input">Неверный ввод цвета!</string>
     <string name="chroma_factor_title">Красочность</string>
@@ -120,7 +120,7 @@
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">Отображать мелкий текст внизу шторки</string>
     <string name="qs_footer_text_string_title">Кастомный текст в шторке</string>
-    <string name="qs_footer_text_string_summary">Оставте пустым для отображения "KOSP"</string>
+    <string name="qs_footer_text_string_summary">Оставьте пустым для отображения "KOSP"</string>
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">Экран блокировки</string>
@@ -158,7 +158,7 @@
     <!-- Double Tap to Sleep Statusbar -->
     <string name="statusbar_gesture_title">Жесты</string>
     <string name="double_tap_sleep_gesture_title">Двойной тап для выключения экрана</string>
-    <string name="double_tap_sleep_gesture_summary">Дважды тапните в любом месте статусбара чтобы выключить экран</string>
+    <string name="double_tap_sleep_gesture_summary">Дважды тапните в любом месте статусбара, чтобы выключить экран</string>
 
     <string name="miscellaneous_category_title">Другое</string>
 
@@ -182,10 +182,10 @@
 
     <!-- Tiles on secure keyguard -->
     <string name="use_tiles_on_secure_keyguard_title">Запрашивать разблокировку для использования "значимых" плиток в шторке</string>
-    <string name="use_tiles_on_secure_keyguard_summary">Просить разблокировать при нажатии на "Интернет"/"Bluetooth" но не при нажатии на "Фонарик"/"Энэргосбережение" и т.п.</string>
+    <string name="use_tiles_on_secure_keyguard_summary">Просить разблокировать при нажатии на "Интернет"/"Bluetooth" но не при нажатии на "Фонарик"/"Энергосбережение" и тп.</string>
 
     <!-- NavBar Inverse -->
-    <string name="navigation_bar_inverse_title">Инвертировать трёхкнопочную навигационную панель</string>
+    <string name="navigation_bar_inverse_title">Инвертировать трёхкнопочную панель навигации</string>
 
     <!-- LiveDisplay -->
     <string name="live_display_summary">Оптимизируйте экран в зависимости от времени суток и условий окружающей среды, чтобы улучшить читаемость и снизить нагрузку на глаза.</string>
@@ -248,13 +248,13 @@
     <string name="enable_debugging">Включить режим отладки</string>
     <string name="disable_debugging">Выключить режим отладки</string>
     <string name="app_lock_packages_title">Защищённые приложения</string>
-    <string name="app_lock_packages_summary">Выберите приложения которые будут требовать аунтификации по отпечатку или др.</string>
+    <string name="app_lock_packages_summary">Выберите приложения, которые будут требовать аунтентификацию по отпечатку или др.</string>
     <string name="app_lock_timeout_title">Таймаут автоматической блокировки</string>
-    <string name="app_lock_timeout_summary">Количество времени, которое должно пройти чтобы разблокированное приложение опять заблокировалось</string>
+    <string name="app_lock_timeout_summary">Количество времени, которое должно пройти, чтобы разблокированное приложение опять заблокировалось</string>
     <string name="app_lock_notifications_title">Скрытие уведомлений</string>
     <string name="app_lock_notifications_summary">
           Подробное уведомление для выбранных приложений будет скрыто.
-          Всплывающие пуш-уведомления будут так же автоматически отключены.
+          Всплывающие пуш-уведомления будут также автоматически отключены.
      </string>
     <string name="app_lock_notifications_disabled_summary">Для начала выберите приложение для защиты</string>
     <string name="app_lock_biometrics_allowed_title">Включить разблокировку приложений по отпечатку</string>
@@ -262,7 +262,7 @@
 
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture_title">Свайп для скриншота</string>
-    <string name="three_finger_gesture_summary">Свайпните вниз по экрану тремя пальцами чтобы сделать скриншот</string>
+    <string name="three_finger_gesture_summary">Свайпните вниз по экрану тремя пальцами, чтобы сделать скриншот</string>
 
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Скрытые приложения</string>
