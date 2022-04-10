@@ -185,7 +185,7 @@
     <string name="use_tiles_on_secure_keyguard_summary">Просить разблокировать при нажатии на "Интернет"/"Bluetooth" но не при нажатии на "Фонарик"/"Энергосбережение" и тп.</string>
 
     <!-- NavBar Inverse -->
-    <string name="navigation_bar_inverse_title">Инвертировать трехкнопочную панель навигации</string>
+    <string name="navigation_bar_inverse_title">Инвертировать трёхкнопочную панель навигации</string>
 
     <!-- LiveDisplay -->
     <string name="live_display_summary">Оптимизируйте экран в зависимости от времени суток и условий окружающей среды, чтобы улучшить читаемость и снизить нагрузку на глаза.</string>
