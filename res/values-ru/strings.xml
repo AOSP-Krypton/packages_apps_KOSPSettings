@@ -195,7 +195,7 @@
     <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
     <string name="live_display_day">День</string>
     <string name="live_display_night">Ночь</string>
-    <string name="live_display_outdoor_mode_title">Авторежим "на улице"</string>
+    <string name="live_display_outdoor_mode_title">Автоматически включать режим "на улице"</string>
     <string name="live_display_outdoor_mode_summary">Автоматическое увеличение яркости и насыщенности при ярком солнечном свете</string>
     <string name="live_display_low_power_title">Снизить энергопотребление</string>
     <string name="live_display_low_power_summary">Отрегулируйте дисплей для минимального энергопотребления без снижения производительности</string>
