@@ -101,7 +101,7 @@
 
     <!-- Brightness slider -->
     <string name="brightness_slider">亮度滑塊</string>
-    <string name="qqs_show_brightness_title">在下拉磁貼面板中顯示亮度滑塊</string>
+    <string name="qqs_show_brightness_title">在下拉磁貼面板中顯示</string>
     <string name="brightness_slider_position_title">亮度滑塊位置</string>
     <string name="top">頂部</string>
     <string name="bottom">底部</string>
@@ -265,5 +265,5 @@
 
     <!-- Hidden apps -->
     <string name="hidden_apps_title">隱藏應用</string>
-    <string name="hidden_apps_summary">選擇需要從啟動器中隱藏的應用程式。需要重新啟動啟動器以生效。</string>
+    <string name="hidden_apps_summary">選擇需要從啟動器中隱藏的應用程式</string>
 </resources>
