@@ -16,11 +16,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Krypton Settings Title and Description -->
     <string name="krypton_settings_title">Krypton 設定</string>
-    <string name="krypton_settings_summary">主題，狀態列，磁貼面板，鎖屏</string>
+    <string name="krypton_settings_summary">主題、狀態列、磁貼面板、鎖定螢幕</string>
 
     <!-- Theme settings -->
     <string name="theme_settings_title">主題</string>
-    <string name="theme_settings_summary">Monet，字型，圖示包</string>
+    <string name="theme_settings_summary">Monet、字型、圖示包</string>
 
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Monet 引擎</string>
@@ -51,7 +51,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">狀態列</string>
-    <string name="statusbar_settings_summary">流量指示，電池樣式，通知計數</string>
+    <string name="statusbar_settings_summary">流量指示、电池样式、通知计数</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">流量指示器</string>
@@ -89,7 +89,7 @@
 
     <!-- QS Panel -->
     <string name="qs_settings_title">磁貼面板</string>
-    <string name="qs_settings_summary">音樂封面，亮度滑塊，頁尾文字</string>
+    <string name="lockscreen_settings_summary">充电信息、手势、通知光效</string>
 
     <!-- Media artwork -->
     <string name="media_category">音樂通知</string>
@@ -101,7 +101,7 @@
 
     <!-- Brightness slider -->
     <string name="brightness_slider">亮度滑塊</string>
-    <string name="qqs_show_brightness_title">在下拉磁貼面板中顯示亮度滑塊</string>
+    <string name="qqs_show_brightness_title">在下拉磁貼面板中顯示</string>
     <string name="brightness_slider_position_title">亮度滑塊位置</string>
     <string name="top">頂部</string>
     <string name="bottom">底部</string>
@@ -165,7 +165,7 @@
     <string name="location_privacy_indicator_title">位置指示器</string>
 
     <!-- Miscellaneous -->
-    <string name="miscellaneous_settings_summary">音量鍵，截圖提示音，滑動截圖</string>
+    <string name="miscellaneous_settings_summary">隐藏应用、截图提示音、反转导航栏</string>
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">截圖提示音</string>
@@ -265,5 +265,5 @@
 
     <!-- Hidden apps -->
     <string name="hidden_apps_title">隱藏應用</string>
-    <string name="hidden_apps_summary">選擇需要從啟動器中隱藏的應用程式。需要重新啟動啟動器以生效。</string>
+    <string name="hidden_apps_summary">選擇需要從啟動器中隱藏的應用程式</string>
 </resources>
