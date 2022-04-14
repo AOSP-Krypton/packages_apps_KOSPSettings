@@ -16,11 +16,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Krypton Settings Title and Description -->
     <string name="krypton_settings_title">Krypton 设置</string>
-    <string name="krypton_settings_summary">主题，状态栏，磁贴面板，锁屏</string>
+    <string name="krypton_settings_summary">主题、状态栏、磁贴面板、锁定屏幕</string>
 
     <!-- Theme settings -->
     <string name="theme_settings_title">主题</string>
-    <string name="theme_settings_summary">Monet，字体，图标包</string>
+    <string name="theme_settings_summary">Monet、字体、图标包</string>
 
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Monet 引擎</string>
@@ -51,7 +51,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">状态栏</string>
-    <string name="statusbar_settings_summary">流量指示，电池样式，通知计数</string>
+    <string name="statusbar_settings_summary">流量指示、电池样式、通知计数</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">流量指示器</string>
@@ -123,7 +123,7 @@
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">锁屏</string>
-    <string name="lockscreen_settings_summary">充电信息，手势，通知光效</string>
+    <string name="lockscreen_settings_summary">充电信息、手势、通知光效</string>
 
     <!-- Lockscreen battery info -->
     <string name="lockscreen_charging_info_title">充电信息</string>
@@ -165,7 +165,7 @@
     <string name="location_privacy_indicator_title">位置指示器</string>
 
     <!-- Miscellaneous -->
-    <string name="miscellaneous_settings_summary">音量键，截图提示音，滑动截屏</string>
+    <string name="miscellaneous_settings_summary">隐藏应用、截图提示音、反转导航栏</string>
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">截图提示音</string>
