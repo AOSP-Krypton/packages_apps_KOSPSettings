@@ -118,7 +118,7 @@
 
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">页脚文本</string>
-    <string name="qs_footer_text_string_title">磁贴面板右下方文本</string>
+    <string name="qs_footer_text_string_title">磁贴面板左下方文本</string>
     <string name="qs_footer_text_string_summary">为空将默认使用 KOSP</string>
 
     <!-- Lockscreen settings -->
