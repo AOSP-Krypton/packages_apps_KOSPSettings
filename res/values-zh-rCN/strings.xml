@@ -243,7 +243,7 @@
     <string name="app_lock_title">应用锁</string>
     <string name="app_lock_summary_singular">1 个受保护的应用</string>
     <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> 个受保护的应用</string>
-    <string name="app_lock_authentication_dialog_title">解锁</string>
+    <string name="app_lock_authentication_dialog_title">应用锁</string>
     <string name="enable_debugging">启用调试</string>
     <string name="disable_debugging">禁用调试</string>
     <string name="app_lock_packages_title">受保护的应用</string>
@@ -266,4 +266,5 @@
     <!-- Hidden apps -->
     <string name="hidden_apps_title">隐藏应用</string>
     <string name="hidden_apps_summary">选择需要从启动器中隐藏的应用程序</string>
+    <string name="hidden_app_authentication_dialog_title">隐藏应用</string>
 </resources>
