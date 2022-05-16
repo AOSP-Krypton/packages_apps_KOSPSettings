@@ -16,19 +16,19 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Krypton Settings Title and Description -->
     <string name="krypton_settings_title">Paramètres Krypton</string>
-    <string name="krypton_settings_summary">Thème, Barre d'état, Réglages rapides, Écran de verrouillage</string>
+    <string name="krypton_settings_summary">Thème, Barre d\'état, Réglages rapides, Écran de verrouillage</string>
     <string name="menu_key_krypton" translatable="false">top_level_krypton</string>
 
     <!-- Theme settings -->
     <string name="theme_settings_title">Thème</string>
-    <string name="theme_settings_summary">Monet, Police, Pack d'icônes</string>
+    <string name="theme_settings_summary">Monet, Police, Pack d\'icônes</string>
 
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Moteur Monet</string>
     <string name="monet_engine_settings_summary">Couleur personnalisée, Couleur, Luminosité</string>
     <string name="accurate_shades_title">Utilisez des nuances précises</string>
     <string name="color_override_title">Sélecteur de couleurs personnalisé</string>
-    <string name="color_override_default_summary">Utiliser la couleur du fond d'écran</string>
+    <string name="color_override_default_summary">Utiliser la couleur du fond d\'écran</string>
     <string name="custom_color_override_summary_placeholder">
         Couleur choisie : <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Définissez une valeur vide pour utiliser la couleur du papier peint.
     </string>
@@ -40,53 +40,53 @@
     <!-- Title of the setting which enables overlays to customize headline and body fonts. -->
     <string name="theme_customization_font_title">Titre / Style de police</string>
     <!-- Title of the setting which enables overlays to customize the system wide icon pack. -->
-    <string name="theme_customization_icon_pack_title">Pack d'icônes</string>
+    <string name="theme_customization_icon_pack_title">Pack d\'icônes</string>
 
     <!-- Custom font -->
     <string name="custom_font_preference_title">Sélectionnez une police personnalisée</string>
     <string name="custom_font_preference_footer_message">Redémarrez votre téléphone après avoir sélectionné une police pour que celle-ci puisse prendre effet</string>
     <string name="cannot_resolve_activity">Impossible de trouver une activité appropriée pour effectuer cette action !</string>
-    <string name="invalid_font_file">Le fichier de police n'a pas de table postscript valide</string>
+    <string name="invalid_font_file">Le fichier de police n\'a pas de table postscript valide</string>
     <string name="failed_to_update_font">Échec de la mise à jour de la police</string>
     <string name="failed_to_copy_file_to_cache">Impossible de copier la police dans le cache</string>
 
     <!-- Statusbar settings -->
-    <string name="statusbar_settings_title">Barre d'état</string>
+    <string name="statusbar_settings_title">Barre d\'état</string>
     <string name="statusbar_settings_summary">Trafic réseau, Style de batterie, Nombre de notifications</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">Trafic réseau</string>
     <string name="network_traffic_intro_text">
-        Affiche la vitesse actuelle du trafic réseau dans la barre d'état.
-        Le moniteur affiche la vitesse de manière dynamique de sorte qu'elle alterne entre
-        vitesse d'émission et de réception chaque seconde
+        Affiche la vitesse actuelle du trafic réseau dans la barre d\'état.
+        Le moniteur affiche la vitesse de manière dynamique de sorte qu\'elle alterne entre
+        vitesse d\'émission et de réception chaque seconde
     </string>
     <string name="enable_network_traffic">Activer le moniteur de trafic réseau</string>
-    <string name="statusbar_network_traffic_threshold_tx_title">Masquer automatiquement le seuil d'émission</string>
+    <string name="statusbar_network_traffic_threshold_tx_title">Masquer automatiquement le seuil d\'émission</string>
     <string name="statusbar_network_traffic_threshold_rx_title">Masquer automatiquement le seuil de réception</string>
-    <string name="statusbar_network_traffic_unit_text_size_title">Taille du texte de l'unité de trafic réseau</string>
-    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Facteur d'échelle du texte du taux de trafic réseau</string>
-    <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Facteur d'échelle</string>
+    <string name="statusbar_network_traffic_unit_text_size_title">Taille du texte de l\'unité de trafic réseau</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Facteur d\'échelle du texte du taux de trafic réseau</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Facteur d\'échelle</string>
 
     <!-- Battery -->
     <string name="statusbar_battery_category_title">Batterie</string>
-    <string name="statusbar_battery_style_title">Style d'icône de batterie</string>
+    <string name="statusbar_battery_style_title">Style d\'icône de batterie</string>
     <string name="battery_style_portrait">Portrait</string>
     <string name="battery_style_circle">Cercle</string>
     <string name="battery_style_text">Texte</string>
-    <string name="statusbar_battery_show_percent_inside_title">Afficher le pourcentage de batterie à l'intérieur de l'icône</string>
+    <string name="statusbar_battery_show_percent_inside_title">Afficher le pourcentage de batterie à l\'intérieur de l\'icône</string>
 
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Icônes de signaux combinés</string>
-    <string name="combined_status_bar_signal_icons_summary">Activer les icônes de signaux combinés dans la barre d'état. Nécessite un redémarrage système ou un redémarrage de SystemUI</string>
+    <string name="combined_status_bar_signal_icons_summary">Activer les icônes de signaux combinés dans la barre d\'état. Nécessite un redémarrage système ou un redémarrage de SystemUI</string>
 
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">Icône 4G</string>
-    <string name="show_fourg_icon_summary">Afficher l'icône 4G dans l'icône du signal à la place de LTE</string>
+    <string name="show_fourg_icon_summary">Afficher l\'icône 4G dans l\'icône du signal à la place de LTE</string>
 
     <!-- Old mobile type icons -->
     <string name="use_old_mobiletype_title">Petite icône de type mobile</string>
-    <string name="use_old_mobiletype_summary">Afficher l'icône du type de mobile en haut de l'indicateur de signal</string>
+    <string name="use_old_mobiletype_summary">Afficher l\'icône du type de mobile en haut de l\'indicateur de signal</string>
 
     <!-- QS Panel -->
     <string name="qs_settings_title">Réglages rapides</string>
@@ -109,8 +109,8 @@
     <string name="show_auto_brightness_button_title">Afficher le bouton de luminosité automatique</string>
 
     <!-- Disable QS -->
-    <string name="disable_qs_title">Masquer les paramètres rapides de l'écran de verrouillage</string>
-    <string name="disable_qs_summary">Masquer les paramètres rapides si l'appareil est verrouillé. Ne désactive pas la nuance des notifications</string>
+    <string name="disable_qs_title">Masquer les paramètres rapides de l\'écran de verrouillage</string>
+    <string name="disable_qs_summary">Masquer les paramètres rapides si l\'appareil est verrouillé. Ne désactive pas la nuance des notifications</string>
 
     <!-- QS Battery estimates -->
     <string name="qs_show_battery_estimate_title">Estimations de la batterie</string>
@@ -127,25 +127,25 @@
     <string name="lockscreen_settings_summary">Informations de charge, Gestes, Éclairage de bord</string>
 
     <!-- Lockscreen battery info -->
-    <string name="lockscreen_charging_info_title">Afficher les informations de charge sur l'écran de verrouillage</string>
+    <string name="lockscreen_charging_info_title">Afficher les informations de charge sur l\'écran de verrouillage</string>
     <string name="lockscreen_charging_info_summary">Affiche la température, le courant de charge et bien plus lorsque le chargeur est branché</string>
 
-    <string name="screen_off_fod_title">Capteur d'empreintes digitales lorsque l'écran est éteint</string>
-    <string name="screen_off_fod_summary">Activer le capteur d'empreintes digitales lorsque l'écran est éteint (pas d'icône)</string>
+    <string name="screen_off_fod_title">Capteur d\'empreintes digitales lorsque l\'écran est éteint</string>
+    <string name="screen_off_fod_summary">Activer le capteur d\'empreintes digitales lorsque l\'écran est éteint (pas d\'icône)</string>
 
-    <string name="udfps_haptic_feedback_title">Vibration lorsque vous touchez le capteur d'empreintes digitales</string>
+    <string name="udfps_haptic_feedback_title">Vibration lorsque vous touchez le capteur d\'empreintes digitales</string>
 
     <!-- Edge light -->
     <string name="edge_light_title">Éclairage de bord</string>
-    <string name="enable_edge_light">Activer l'éclairage de bord</string>
-    <string name="edge_light_intro_text">Afficher une animation le long des bords de l'écran lors de la pulsation</string>
+    <string name="enable_edge_light">Activer l\'éclairage de bord</string>
+    <string name="edge_light_intro_text">Afficher une animation le long des bords de l\'écran lors de la pulsation</string>
     <string name="edge_light_always_trigger_on_pulse_title">Toujours déclencher sur impulsion</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Jouer l'animation même lorsque l'éclaire de bord est activé et pas seulement pour les notifications</string>
-    <string name="edge_light_repeat_animation_title">Répéter l'animation</string>
-    <string name="edge_light_repeat_animation_summary_on">Répéter jusqu'à l'expiration du délai</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Jouer l\'animation même lorsque l\'éclaire de bord est activé et pas seulement pour les notifications</string>
+    <string name="edge_light_repeat_animation_title">Répéter l\'animation</string>
+    <string name="edge_light_repeat_animation_summary_on">Répéter jusqu\'à l\'expiration du délai</string>
     <string name="edge_light_repeat_animation_summary_off">Afficher une seule fois</string>
-    <string name="edge_light_color_mode_title">Mode de couleur de l'éclairage de bord</string>
-    <string name="accent_color">Couleur d'accentuation (par défaut)</string>
+    <string name="edge_light_color_mode_title">Mode de couleur de l\'éclairage de bord</string>
+    <string name="accent_color">Couleur d\'accentuation (par défaut)</string>
     <string name="notification_color">Couleur des notifications</string>
     <string name="wallpaper_color">Couleur du papier peint</string>
     <string name="custom_color">Couleur personnalisée</string>
@@ -153,24 +153,24 @@
 
     <!--Double Tap to Sleep Lockscreen-->
     <string name="double_tap_sleep_lockscreen_title">Appuyez deux fois pour verrouiller</string>
-    <string name="double_tap_sleep_lockscreen_summary">Appuyez deux fois n'importe où sur l'écran pour verrouiller</string>
+    <string name="double_tap_sleep_lockscreen_summary">Appuyez deux fois n\'importe où sur l\'écran pour verrouiller</string>
 
     <!-- Double Tap to Sleep Statusbar -->
     <string name="statusbar_gesture_title">Gestes</string>
     <string name="double_tap_sleep_gesture_title">Appuyez deux fois pour verrouiller</string>
-    <string name="double_tap_sleep_gesture_summary">Appuyez deux fois n'importe où sur la barre d'état pour verrouiller</string>
+    <string name="double_tap_sleep_gesture_summary">Appuyez deux fois n\'importe où sur la barre d\'état pour verrouiller</string>
 
     <string name="miscellaneous_category_title">Divers</string>
 
     <!-- Location privacy indicator -->
-    <string name="location_privacy_indicator_title">Afficher l'indicateur de confidentialité pour l'emplacement</string>
+    <string name="location_privacy_indicator_title">Afficher l\'indicateur de confidentialité pour l\'emplacement</string>
 
     <!-- Miscellaneous -->
-    <string name="miscellaneous_settings_summary">Son de capture d'écran, bascule du volume</string>
+    <string name="miscellaneous_settings_summary">Son de capture d\'écran, bascule du volume</string>
 
     <!-- Screenshot shutter -->
-    <string name="screenshot_shutter_sound_title">Son lors de la capture d'écran</string>
-    <string name="screenshot_shutter_sound_summary">Activer le son et les vibrations lors de la capture d'écran</string>
+    <string name="screenshot_shutter_sound_title">Son lors de la capture d\'écran</string>
+    <string name="screenshot_shutter_sound_summary">Activer le son et les vibrations lors de la capture d\'écran</string>
 
     <!-- Volume key music control -->
     <string name="volume_button_music_control_title">Sauter des pistes avec les boutons de volume</string>
@@ -182,14 +182,14 @@
 
     <!-- Tiles on secure keyguard -->
     <string name="use_tiles_on_secure_keyguard_title">Demande de déverrouillage pour utiliser des tuiles sensibles</string>
-    <string name="use_tiles_on_secure_keyguard_summary">Demander de déverrouiller l'écran de verrouillage lors de l'utilisation de tuiles sensibles</string>
+    <string name="use_tiles_on_secure_keyguard_summary">Demander de déverrouiller l\'écran de verrouillage lors de l\'utilisation de tuiles sensibles</string>
 
     <!-- NavBar Inverse -->
     <string name="navigation_bar_inverse_title">Inverser la barre de navigation à 3 boutons</string>
 
     <!-- LiveDisplay -->
-    <string name="live_display_summary">Optimisez votre écran en fonction de l'heure de la journée et des conditions ambiantes pour améliorer la lisibilité et réduire la fatigue oculaire</string>
-    <string name="live_display_mode">Mode d'affichage</string>
+    <string name="live_display_summary">Optimisez votre écran en fonction de l\'heure de la journée et des conditions ambiantes pour améliorer la lisibilité et réduire la fatigue oculaire</string>
+    <string name="live_display_mode">Mode d\'affichage</string>
     <string name="live_display_color_temperature_title">Température de couleur</string>
     <string name="live_display_color_temperature_summary">Jour : <xliff:g id="day_temperature">%1$d</xliff:g>K  Nuit : <xliff:g id="night_temperature">%2$d</xliff:g>K</string>
     <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
@@ -197,10 +197,10 @@
     <string name="live_display_night">Nuit</string>
     <string name="live_display_outdoor_mode_title">Mode extérieur automatique</string>
     <string name="live_display_outdoor_mode_summary">Augmente automatiquement la luminosité et la saturation en plein soleil</string>
-    <string name="live_display_low_power_title">Réduire la consommation d'énergie</string>
-    <string name="live_display_low_power_summary">Ajustez l'affichage pour une consommation d'énergie la plus faible sans dégradation</string>
+    <string name="live_display_low_power_title">Réduire la consommation d\'énergie</string>
+    <string name="live_display_low_power_summary">Ajustez l\'affichage pour une consommation d\'énergie la plus faible sans dégradation</string>
     <string name="live_display_enhance_color_title">Améliorer les couleurs</string>
-    <string name="live_display_enhance_color_summary">Améliorer l'éclat des couleurs des tons chair, des paysages et d'autres images</string>
+    <string name="live_display_enhance_color_summary">Améliorer l\'éclat des couleurs des tons chair, des paysages et d\'autres images</string>
     <string name="live_display_color_profile_title">Profil de couleur</string>
     <string name="live_display_color_profile_standard_title">Standard</string>
     <string name="live_display_color_profile_standard_summary">Couleurs précises et blancs éclatants</string>
@@ -215,54 +215,54 @@
     <string name="live_display_color_profile_photography_title">Photographie</string>
     <string name="live_display_color_profile_photography_summary">Reproduction parfaite des couleurs pour les photos</string>
     <string name="live_display_color_profile_basic_title">Basique</string>
-    <string name="live_display_color_profile_basic_summary">Utiliser l'affichage non calibré</string>
+    <string name="live_display_color_profile_basic_summary">Utiliser l\'affichage non calibré</string>
     <string name="live_display_color_profile_adaptive_title">Adaptatif</string>
-    <string name="live_display_color_profile_adaptive_summary">Les couleurs s'adaptent aux conditions ambiantes</string>
+    <string name="live_display_color_profile_adaptive_summary">Les couleurs s\'adaptent aux conditions ambiantes</string>
     <string name="live_display_color_profile_reading_title">Lecture</string>
     <string name="live_display_color_profile_reading_summary">Des couleurs plus chaudes pour moins de fatigue oculaire</string>
     <string name="live_display_color_profile_srgb_title">sRVB</string>
-    <string name="live_display_color_profile_srgb_summary">Couleurs fidèles à l'espace colorimétrique sRVB</string>
+    <string name="live_display_color_profile_srgb_summary">Couleurs fidèles à l\'espace colorimétrique sRVB</string>
     <string name="live_display_color_profile_dci_p3_title">DCI-P3</string>
-    <string name="live_display_color_profile_dci_p3_summary">Couleurs fidèles à l'espace colorimétrique DCI-P3</string>
+    <string name="live_display_color_profile_dci_p3_summary">Couleurs fidèles à l\'espace colorimétrique DCI-P3</string>
     <string name="live_display_reading_mode_title">Mode de lecture</string>
     <string name="live_display_reading_mode_summary">Mode niveaux de gris pour une lecture à long terme</string>
     <string name="color_calibration_title">Calibrage des couleurs</string>
-    <string name="color_calibration_summary">Calibrer les couleurs à l'écran</string>
+    <string name="color_calibration_summary">Calibrer les couleurs à l\'écran</string>
     <string name="color_red_title">Rouge</string>
     <string name="color_green_title">Vert</string>
     <string name="color_blue_title">Bleu</string>
 
     <!-- LiveDisplay : Picture Adjustment -->
-    <string name="picture_adjustment_title">Ajustement de l'image</string>
-    <string name="picture_adjustment_summary">Ajustez la teinte, la saturation, l'intensité et le contraste</string>
+    <string name="picture_adjustment_title">Ajustement de l\'image</string>
+    <string name="picture_adjustment_summary">Ajustez la teinte, la saturation, l\'intensité et le contraste</string>
     <string name="adj_hue_title">Teinte</string>
     <string name="adj_saturation_title">Saturation</string>
     <string name="adj_intensity_title">Intensité</string>
     <string name="adj_contrast_title">Contraste</string>
 
     <!-- App lock -->
-    <string name="app_lock_title">Verrou d'application</string>
+    <string name="app_lock_title">Verrou d\'application</string>
     <string name="app_lock_summary_singular">1 application est protégée</string>
     <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> les applications sont protégées</string>
     <string name="app_lock_authentication_dialog_title">Ouvrir</string>
     <string name="enable_debugging">Activer le débogage</string>
     <string name="disable_debugging">Désactiver le débogage</string>
     <string name="app_lock_packages_title">Applications protégées</string>
-    <string name="app_lock_packages_summary">Sélectionnez les applications à protéger avec la biométrie ou les informations d'identification de l'appareil</string>
+    <string name="app_lock_packages_summary">Sélectionnez les applications à protéger avec la biométrie ou les informations d\'identification de l\'appareil</string>
     <string name="app_lock_timeout_title">Délai de verrouillage automatique</string>
     <string name="app_lock_timeout_summary">Durée après laquelle une application déverrouillée en arrière-plan doit être verrouillée</string>
     <string name="app_lock_notifications_title">Réduire les notifications</string>
     <string name="app_lock_notifications_summary">
-          Le contenu des notifications sera masqué et réduit pour les applications sélectionnées lorsqu'elles seront verrouillées.
-          Les notifications d'avertissement seront automatiquement désactivées.
+          Le contenu des notifications sera masqué et réduit pour les applications sélectionnées lorsqu\'elles seront verrouillées.
+          Les notifications d\'avertissement seront automatiquement désactivées.
      </string>
-    <string name="app_lock_notifications_disabled_summary">Protégez d'abord une application</string>
+    <string name="app_lock_notifications_disabled_summary">Protégez d\'abord une application</string>
     <string name="app_lock_biometrics_allowed_title">Activer la biométrie pour le déverrouillage</string>
-    <string name="app_lock_footer_text">Les bulles seront automatiquement rejetées après le délai d'attente</string>
+    <string name="app_lock_footer_text">Les bulles seront automatiquement rejetées après le délai d\'attente</string>
 
     <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture_title">Balayez pour prendre une capture d'écran</string>
-    <string name="three_finger_gesture_summary">Balayez vers le bas avec trois doigts pour prendre une capture d'écran</string>
+    <string name="three_finger_gesture_title">Balayez pour prendre une capture d\'écran</string>
+    <string name="three_finger_gesture_summary">Balayez vers le bas avec trois doigts pour prendre une capture d\'écran</string>
 
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Applications cachées</string>
