@@ -78,7 +78,7 @@
 
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons">Одна иконка сети</string>
-    <string name="combined_status_bar_signal_icons_summary">Отображение только иконки WiFi или сети в зависимости от подключения. Требуется перезагрузка смартфона или SystemUI</string>
+    <string name="combined_status_bar_signal_icons_summary">Отображение только иконки WiFi или сети в зависимости от подключения. Требуется перезагрузка смартфона или интерфейса</string>
 
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">Иконка 4G</string>
@@ -130,8 +130,8 @@
     <string name="lockscreen_charging_info_title">Показывать информацию о зарядке на экране блокировки</string>
     <string name="lockscreen_charging_info_summary">Показывает температуру, ток зарядки и т.п. при зарядке</string>
 
-    <string name="screen_off_fod_title">Датчик отпечатка на выключеном экране</string>
-    <string name="screen_off_fod_summary">Активация датчика отпечатка на выключеном экране (без иконки)</string>
+    <string name="screen_off_fod_title">Датчик отпечатка на выключенном экране</string>
+    <string name="screen_off_fod_summary">Активация датчика отпечатка на выключенном экране (без иконки)</string>
 
     <string name="udfps_haptic_feedback_title">Вибрация при нажатии на датчик отпечатка пальца</string>
 
@@ -153,7 +153,7 @@
 
     <!--Double Tap to Sleep Lockscreen-->
     <string name="double_tap_sleep_lockscreen_title">Двойной тап для выключения экрана</string>
-    <string name="double_tap_sleep_lockscreen_summary">Дважды тапните в любом месте на экране блокировки чтобы выключить экран</string>
+    <string name="double_tap_sleep_lockscreen_summary">Дважды тапните в любом месте на экране блокировки, чтобы выключить экран</string>
 
     <!-- Double Tap to Sleep Statusbar -->
     <string name="statusbar_gesture_title">Жесты</string>
@@ -256,7 +256,7 @@
           Подробное уведомление для выбранных приложений будет скрыто.
           Всплывающие пуш-уведомления будут также автоматически отключены.
      </string>
-    <string name="app_lock_notifications_disabled_summary">Сначала выберите приложения которые хотите защитить!</string>
+    <string name="app_lock_notifications_disabled_summary">Сначала выберите приложения, которые хотите защитить!</string>
     <string name="app_lock_biometrics_allowed_title">Включить разблокировку приложений по отпечатку</string>
     <string name="app_lock_footer_text">"Разговоры" также будут автоматически скрыты через некоторое время</string>
 
@@ -266,5 +266,6 @@
 
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Скрытые приложения</string>
-    <string name="hidden_apps_summary">Приложения которые должны быть скрыты в лаунчере. Требуется перезапуск для применения изменений</string>
+    <string name="hidden_apps_summary">Приложения, которые должны быть скрыты в лаунчере. Требуется перезапуск для применения изменений.</string>
+    <string name="hidden_app_authentication_dialog_title">Разблокировать, чтобы скрыть приложения</string>
 </resources>
