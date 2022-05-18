@@ -14,51 +14,39 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.security.applock
+package com.krypton.settings.miscellaneous
 
 import android.app.Activity
-import android.app.AppLockManager
 import android.content.Context
 import android.content.Intent
 import android.os.UserHandle
 
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
-import androidx.lifecycle.Lifecycle.Event
-import androidx.lifecycle.LifecycleEventObserver
-import androidx.lifecycle.LifecycleOwner
 import androidx.preference.Preference
-import androidx.preference.PreferenceScreen
 
 import com.android.internal.widget.LockPatternUtils
 import com.android.settings.R
+import com.android.settings.core.BasePreferenceController
 import com.android.settings.core.SubSettingLauncher
 import com.android.settings.password.ConfirmDeviceCredentialActivity
-import com.android.settings.security.SecuritySettings
-import com.android.settingslib.core.lifecycle.Lifecycle
 import com.android.settingslib.transition.SettingsTransitionHelper.TransitionType
-import com.android.settings.core.BasePreferenceController
 
-class AppLockSettingsPreferenceController(
+class HiddenAppSettingsPreferenceController(
     context: Context,
-    private val host: SecuritySettings?,
-    lifecycle: Lifecycle?,
-) : BasePreferenceController(context, KEY),
-        LifecycleEventObserver {
+    private val host: MiscellaneousSettingsFragment?,
+) : BasePreferenceController(context, KEY) {
 
     private val lockPatternUtils = LockPatternUtils(context)
-    private val appLockManager = context.getSystemService(AppLockManager::class.java)
-    private var preference: Preference? = null
     private val securityPromptLauncher: ActivityResultLauncher<Intent>?
 
     init {
-        lifecycle?.addObserver(this)
         securityPromptLauncher = host?.registerForActivityResult(
             StartActivityForResult()
         ) {
             if (it?.resultCode == Activity.RESULT_OK) {
                 SubSettingLauncher(mContext)
-                    .setDestination(AppLockSettingsFragment::class.qualifiedName)
+                    .setDestination(HiddenAppSettingsFragment::class.qualifiedName)
                     .setSourceMetricsCategory(host.metricsCategory)
                     .setTransitionType(TransitionType.TRANSITION_SLIDE)
                     .addFlags(
@@ -70,47 +58,16 @@ class AppLockSettingsPreferenceController(
         }
     }
 
-    override fun getAvailabilityStatus() =
-        if (lockPatternUtils.isSecure(UserHandle.myUserId()))
-            AVAILABLE
-        else
-            DISABLED_DEPENDENT_SETTING
-
-    override fun onStateChanged(owner: LifecycleOwner, event: Event) {
-        if (event == Event.ON_START) {
-            preference?.let {
-                updateState(it)
-            }
-        }
-    }
-
-    override fun displayPreference(screen: PreferenceScreen) {
-        super.displayPreference(screen)
-        preference = screen.findPreference(preferenceKey)
-    }
-
-    override fun updateState(preference: Preference) {
-        if (getAvailabilityStatus() == AVAILABLE) {
-            preference.setEnabled(true)
-            preference.summary = getSummaryForListSize(appLockManager.getPackages().size)
-        } else {
-            preference.setEnabled(false)
-            preference.summary = mContext.getString(R.string.disabled_because_no_backup_security)
-        }
-    }
-
-    private fun getSummaryForListSize(size: Int): CharSequence? =
-        when {
-            size == 0 -> null
-            size == 1 -> mContext.getString(R.string.app_lock_summary_singular)
-            else -> mContext.getString(R.string.app_lock_summary_plural, size)
-        }
+    override fun getAvailabilityStatus() = AVAILABLE
 
     override fun handlePreferenceTreeClick(preference: Preference): Boolean {
-        if (preference.key == KEY && securityPromptLauncher != null) {
+        if (preference.key == KEY &&
+                securityPromptLauncher != null &&
+                lockPatternUtils.isSecure(UserHandle.myUserId())
+        ) {
             securityPromptLauncher.launch(
                 ConfirmDeviceCredentialActivity.createIntent(
-                    mContext.getString(R.string.app_lock_authentication_dialog_title),
+                    mContext.getString(R.string.hidden_app_authentication_dialog_title),
                     null /* details */,
                 )
             )
@@ -120,6 +77,6 @@ class AppLockSettingsPreferenceController(
     }
 
     companion object {
-        private const val KEY = "app_lock"
+        private const val KEY = "hidden_apps"
     }
 }

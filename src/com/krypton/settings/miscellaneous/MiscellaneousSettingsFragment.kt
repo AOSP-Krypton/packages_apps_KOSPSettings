@@ -16,8 +16,11 @@
 
 package com.krypton.settings.miscellaneous
 
+import android.content.Context
+
 import com.android.settings.R
 import com.android.settings.search.BaseSearchIndexProvider
+import com.android.settingslib.core.AbstractPreferenceController
 import com.android.settingslib.search.SearchIndexable
 import com.krypton.settings.KryptonDashboardFragment
 
@@ -28,10 +31,31 @@ class MiscellaneousSettingsFragment : KryptonDashboardFragment() {
 
     override protected fun getLogTag() = TAG
 
+    override protected fun createPreferenceControllers(
+        context: Context
+    ): List<AbstractPreferenceController> = buildPreferenceControllers(
+        context,
+        this /* host */,
+    )
+
     companion object {
         private const val TAG = "MiscellaneousSettingsFragment"
 
         @JvmField
-        val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.miscellaneous_settings)
+        val SEARCH_INDEX_DATA_PROVIDER = object : BaseSearchIndexProvider(R.xml.miscellaneous_settings) {
+            override fun createPreferenceControllers(
+                context: Context
+            ): List<AbstractPreferenceController> = buildPreferenceControllers(
+                context,
+                null /* host */,
+            )
+        }
+
+        private fun buildPreferenceControllers(
+            context: Context,
+            host: MiscellaneousSettingsFragment?,
+        ): List<AbstractPreferenceController> = listOf(
+            HiddenAppSettingsPreferenceController(context, host)
+        )
     }
 }

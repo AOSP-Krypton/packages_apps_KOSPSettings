@@ -16,11 +16,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Krypton Settings Title and Description -->
     <string name="krypton_settings_title">Krypton 设置</string>
-    <string name="krypton_settings_summary">主题，状态栏，磁贴面板，锁屏</string>
+    <string name="krypton_settings_summary">主题、状态栏、磁贴面板、锁定屏幕</string>
 
     <!-- Theme settings -->
     <string name="theme_settings_title">主题</string>
-    <string name="theme_settings_summary">Monet，字体，图标包</string>
+    <string name="theme_settings_summary">Monet、字体、图标包</string>
 
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Monet 引擎</string>
@@ -51,7 +51,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">状态栏</string>
-    <string name="statusbar_settings_summary">流量指示，电池样式，通知计数</string>
+    <string name="statusbar_settings_summary">流量指示、电池样式、通知计数</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">流量指示器</string>
@@ -101,7 +101,7 @@
 
     <!-- Brightness slider -->
     <string name="brightness_slider">亮度滑块</string>
-    <string name="qqs_show_brightness_title">在下拉磁贴面板中显示亮度滑块</string>
+    <string name="qqs_show_brightness_title">在下拉磁贴面板中显示</string>
     <string name="brightness_slider_position_title">亮度滑块位置</string>
     <string name="top">顶部</string>
     <string name="bottom">底部</string>
@@ -118,12 +118,12 @@
 
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">页脚文本</string>
-    <string name="qs_footer_text_string_title">磁贴面板右下方文本</string>
+    <string name="qs_footer_text_string_title">磁贴面板左下方文本</string>
     <string name="qs_footer_text_string_summary">为空将默认使用 KOSP</string>
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">锁屏</string>
-    <string name="lockscreen_settings_summary">充电信息，手势，通知光效</string>
+    <string name="lockscreen_settings_summary">充电信息、手势、通知光效</string>
 
     <!-- Lockscreen battery info -->
     <string name="lockscreen_charging_info_title">充电信息</string>
@@ -165,7 +165,7 @@
     <string name="location_privacy_indicator_title">位置指示器</string>
 
     <!-- Miscellaneous -->
-    <string name="miscellaneous_settings_summary">音量键，截图提示音，滑动截屏</string>
+    <string name="miscellaneous_settings_summary">隐藏应用、截图提示音、反转导航栏</string>
 
     <!-- Screenshot shutter -->
     <string name="screenshot_shutter_sound_title">截图提示音</string>
@@ -243,7 +243,7 @@
     <string name="app_lock_title">应用锁</string>
     <string name="app_lock_summary_singular">1 个受保护的应用</string>
     <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> 个受保护的应用</string>
-    <string name="app_lock_authentication_dialog_title">解锁</string>
+    <string name="app_lock_authentication_dialog_title">应用锁</string>
     <string name="enable_debugging">启用调试</string>
     <string name="disable_debugging">禁用调试</string>
     <string name="app_lock_packages_title">受保护的应用</string>
@@ -265,5 +265,6 @@
 
     <!-- Hidden apps -->
     <string name="hidden_apps_title">隐藏应用</string>
-    <string name="hidden_apps_summary">选择需要从启动器中隐藏的应用程序。需要重新启动启动器以生效。</string>
+    <string name="hidden_apps_summary">选择需要从启动器中隐藏的应用程序</string>
+    <string name="hidden_app_authentication_dialog_title">隐藏应用</string>
 </resources>
