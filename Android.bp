@@ -1,0 +1,37 @@
+filegroup {
+    name: "FlamingoSettings_srcs",
+    srcs: [
+        "src/**/*.java",
+        "src/**/*.kt",
+    ],
+}
+
+genrule {
+    name: "FlamingoSettings_res",
+    tools: [
+        "soong_zip",
+    ],
+    srcs: [
+        "res/**/*",
+    ],
+    out: [
+        "FlamingoSettings_res.zip",
+    ],
+    cmd: "INPUTS=($(in)) && "
+        + "RES_DIR=$$(dirname $$(dirname $${INPUTS[0]})) && "
+        + "$(location soong_zip) -o $(out) -C $$RES_DIR -D $$RES_DIR"
+}
+
+filegroup {
+    name: "FlamingoSettings_manifest",
+    srcs: [
+        "AndroidManifest.xml",
+    ],
+}
+
+filegroup {
+    name: "FlamingoSettings_proguard_flags",
+    srcs: [
+        "proguard.flags",
+    ],
+}
