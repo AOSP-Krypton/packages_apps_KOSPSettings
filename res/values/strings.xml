@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2022 FlamingoOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <!-- Flamingo settings -->
+    <string name="flamingo_settings_title">Flamingo settings</string>
+    <string name="flamingo_settings_summary">Lockscreen, QS panel, Statusbar, Theme</string>
+    <string name="menu_key_flamingo" translatable="false">top_level_flamingo</string>
+
+    <!-- Lockscreen settings -->
+    <string name="lockscreen_settings_title">Lockscreen settings</string>
+
+    <!-- Miscellaneous settings -->
+    <string name="miscellaneous_settings_title">Miscellaneous settings</string>
+
+    <!-- QS panel settings -->
+    <string name="qs_panel_settings_title">QS panel settings</string>
+
+    <!-- Statusbar settings -->
+    <string name="statusbar_settings_title">Statsubar settings</string>
+
+    <!-- Theme settings -->
+    <string name="theme_settings_title">Theme settings</string>
+
+</resources>
