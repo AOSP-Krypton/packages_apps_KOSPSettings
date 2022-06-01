@@ -47,5 +47,12 @@
         android:title="@string/hide_qs_title"
         android:summary="@string/hide_qs_summary"
         android:defaultValue="false" />
+    
+    <com.flamingo.support.preference.SystemSettingPrimarySwitchPreference
+        android:key="edge_light_enabled"
+        android:title="@string/edge_light_title"
+        android:defaultValue="false"
+        android:fragment="com.flamingo.settings.lockscreen.EdgeLightSettings"
+        settings:observe="true" />
 
 </PreferenceScreen>
