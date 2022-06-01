@@ -24,4 +24,9 @@
         android:summary="@string/monet_engine_settings_summary"
         android:fragment="com.flamingo.settings.theme.MonetEngineSettings" />
 
+    <!-- Icon pack -->
+    <ListPreference
+        android:key="icon_pack_preference"
+        android:title="@string/icon_pack_preference_title" />
+
 </PreferenceScreen>
