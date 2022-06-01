@@ -93,6 +93,11 @@
     <string name="bottom">Bottom</string>
     <string name="show_auto_brightness_button_title">Show auto brightness button</string>
 
+    <!-- QS Battery estimates -->
+    <string name="qs_show_battery_estimate_title">Battery estimates</string>
+    <string name="qs_show_battery_estimate_summary_on">Show battery estimates in QS</string>
+    <string name="qs_show_battery_estimate_summary_off">Hide battery estimates in QS</string>
+
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">Statsubar settings</string>
 
