@@ -25,4 +25,30 @@
         android:fragment="com.flamingo.settings.statusbar.NetworkTrafficMonitorSettings"
         settings:observe="true" />
 
+    <PreferenceCategory
+        android:title="@string/statusbar_battery_category_title">
+
+        <!-- Battery style -->
+        <com.flamingo.support.preference.SystemSettingListPreference
+            android:key="status_bar_battery_style"
+            android:title="@string/statusbar_battery_style_title"
+            android:summary="%s"
+            android:entries="@array/statusbar_battery_styles"
+            android:entryValues="@array/statusbar_battery_style_values"
+            android:defaultValue="0" />
+
+        <!-- Show battery percent -->
+        <com.flamingo.support.preference.SystemSettingSwitchPreference
+            android:key="status_bar_show_battery_percent"
+            android:title="@string/battery_percentage_description"
+            android:defaultValue="false" />
+
+        <!-- Show battery percent inside -->
+        <com.flamingo.support.preference.SystemSettingSwitchPreference
+            android:key="status_bar_show_battery_percent_inside"
+            android:title="@string/statusbar_battery_show_percent_inside_title"
+            android:dependency="status_bar_show_battery_percent"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
