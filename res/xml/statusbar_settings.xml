@@ -60,6 +60,13 @@
             android:key="enable_location_privacy_indicator"
             android:title="@string/location_privacy_indicator_title"
             android:defaultValue="false" />
+
+        <!-- Combined signal icons -->
+        <com.flamingo.support.preference.SecureSettingSwitchPreference
+            android:key="show_combined_status_bar_signal_icons"
+            android:title="@string/combined_status_bar_signal_icons"
+            android:summary="@string/combined_status_bar_signal_icons_summary"
+            settings:controller="com.flamingo.settings.statusbar.CombinedSignalIconPreferenceController" />
     </PreferenceCategory>
 
 </PreferenceScreen>
