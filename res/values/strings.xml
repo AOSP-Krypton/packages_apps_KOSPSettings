@@ -27,6 +27,10 @@
     <string name="lockscreen_charging_info_title">Show charging info in lockscreen</string>
     <string name="lockscreen_charging_info_summary">Shows temperature, charging current and more while plugged in</string>
 
+    <!--Double Tap to Sleep Lockscreen-->
+    <string name="double_tap_sleep_lockscreen_title">Double tap to sleep</string>
+    <string name="double_tap_sleep_lockscreen_summary">Double tap anywhere on the lockscreeen to sleep</string>
+
     <!-- Miscellaneous settings -->
     <string name="miscellaneous_settings_title">Miscellaneous settings</string>
 
