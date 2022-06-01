@@ -34,4 +34,15 @@
         android:key="font_preference"
         android:title="@string/font_preference_title"/>
 
+    <!-- Custom font -->
+    <Preference
+        android:key="custom_font_preference"
+        android:title="@string/custom_font_preference_title" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="custom_font_preference_footer"
+        android:title="@string/custom_font_preference_footer_message"
+        android:selectable="false"
+        settings:searchable="false" />
+
 </PreferenceScreen>

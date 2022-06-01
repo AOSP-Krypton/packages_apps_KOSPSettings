@@ -173,6 +173,14 @@
     <!-- Font -->
     <string name="font_preference_title">Headline / Body font</string>
 
+    <!-- Custom font -->
+    <string name="custom_font_preference_title">Custom Headline / Body font</string>
+    <string name="custom_font_preference_footer_message">Reboot after selecting a font to take effect</string>
+    <string name="cannot_resolve_activity">Unable to find a suitable activity to perform this action!</string>
+    <string name="invalid_font_file">Font file does not have valid postscript table</string>
+    <string name="failed_to_update_font">Failed to update font</string>
+    <string name="failed_to_copy_file_to_cache">Failed to copy font to cache</string>
+
     <!-- LiveDisplay -->
     <string name="live_display_summary">Optimize your screen based on time of day and ambient conditions to improve readability and reduce eyestrain</string>
     <string name="live_display_mode">Display mode</string>

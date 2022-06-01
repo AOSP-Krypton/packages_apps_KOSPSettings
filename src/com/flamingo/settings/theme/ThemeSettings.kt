@@ -59,6 +59,7 @@ class ThemeSettings : FlamingoDashboardFragment() {
 
         private const val ICON_PACK_PREFERENCE_KEY = "icon_pack_preference"
         private const val FONT_PREFERENCE_KEY = "font_preference"
+        private const val CUSTOM_FONT_PREFERENCE_KEY = "custom_font_preference"
 
         private fun buildPreferenceControllers(
             context: Context,
@@ -97,6 +98,12 @@ class ThemeSettings : FlamingoDashboardFragment() {
                     context,
                     FONT_PREFERENCE_KEY,
                     mapOf(OVERLAY_CATEGORY_FONT to TARGET_ANDROID),
+                ),
+                CustomFontPreferenceController(
+                    context,
+                    CUSTOM_FONT_PREFERENCE_KEY,
+                    host,
+                    lifecycle,
                 )
             )
         }
