@@ -103,6 +103,9 @@
     <string name="qs_footer_text_string_title">Customize footer text</string>
     <string name="qs_footer_text_string_summary">Set to empty for default \"Flamingo OS\"</string>
 
+    <!-- Tiles on secure keyguard -->
+    <string name="secure_keyguard_tiles_title">Require user unlocking to use sensitive tiles</string>
+
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">Statsubar settings</string>
 

@@ -95,6 +95,11 @@
             android:summary="@string/qs_footer_text_string_summary"
             android:dependency="qs_footer_text_show"
             settings:controller="com.flamingo.settings.qs.QSFooterTextPreferenceController" />
+
+        <com.flamingo.support.preference.SecureSettingSwitchPreference
+            android:key="disable_secure_tiles_on_lockscreen"
+            android:title="@string/secure_keyguard_tiles_title"
+            android:defaultValue="true" />
      </PreferenceCategory>
 
 </PreferenceScreen>
