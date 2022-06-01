@@ -69,6 +69,11 @@
     <string name="volume_button_music_control_title">Skip tracks with volume buttons</string>
     <string name="volume_button_music_control_summary">Long press volume up for skipping to the next track and vice-versa</string>
 
+    <!-- Hidden apps -->
+    <string name="hidden_apps_title">Hidden apps</string>
+    <string name="hidden_apps_summary">Applications that should be hidden from launcher</string>
+    <string name="hidden_app_authentication_dialog_title">Unlock to hide apps</string>
+
     <!-- QS panel settings -->
     <string name="qs_panel_settings_title">QS panel settings</string>
 

@@ -16,8 +16,11 @@
 
 package com.flamingo.settings.miscellaneous
 
+import android.content.Context
+
 import com.android.settings.R
 import com.android.settings.search.BaseSearchIndexProvider
+import com.android.settingslib.core.AbstractPreferenceController
 import com.android.settingslib.search.SearchIndexable
 import com.flamingo.settings.FlamingoDashboardFragment
 
@@ -28,10 +31,33 @@ class MiscellaneousSettings : FlamingoDashboardFragment() {
 
     override protected fun getLogTag() = TAG
 
+    override protected fun createPreferenceControllers(
+        context: Context
+    ): List<AbstractPreferenceController> = buildPreferenceControllers(
+        context,
+        this /* host */,
+    )
+
     companion object {
-        private const val TAG = "MiscellaneousSettings"
+        private const val TAG = "MiscellaneousSettingsFragment"
+
+        private const val HIDDEN_APPS_PREFERENCE_KEY = "hidden_apps"
 
         @JvmField
-        val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.miscellaneous_settings)
+        val SEARCH_INDEX_DATA_PROVIDER = object : BaseSearchIndexProvider(R.xml.miscellaneous_settings) {
+            override fun createPreferenceControllers(
+                context: Context
+            ): List<AbstractPreferenceController> = buildPreferenceControllers(
+                context,
+                null /* host */,
+            )
+        }
+
+        private fun buildPreferenceControllers(
+            context: Context,
+            host: MiscellaneousSettings?,
+        ): List<AbstractPreferenceController> = listOf(
+            HiddenAppSettingsPreferenceController(context, HIDDEN_APPS_PREFERENCE_KEY, host)
+        )
     }
 }
