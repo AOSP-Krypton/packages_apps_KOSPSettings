@@ -31,6 +31,10 @@
     <string name="double_tap_sleep_lockscreen_title">Double tap to sleep</string>
     <string name="double_tap_sleep_lockscreen_summary">Double tap anywhere on the lockscreeen to sleep</string>
 
+    <!-- Screen off udfps -->
+    <string name="screen_off_udfps_title">Screen off UDFPS</string>
+    <string name="screen_off_udfps_summary">Detect fingerprint even when screen is off</string>
+
     <!-- Miscellaneous settings -->
     <string name="miscellaneous_settings_title">Miscellaneous settings</string>
 
