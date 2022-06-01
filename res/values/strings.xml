@@ -138,6 +138,10 @@
     <string name="combined_status_bar_signal_icons">Combined signal icons</string>
     <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons in status bar. Restart SystemUI or system for changes to take effect</string>
 
+     <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Notification count</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications at the bottom right corner of statusbar notification icon</string>
+
     <!-- Theme settings -->
     <string name="theme_settings_title">Theme settings</string>
 

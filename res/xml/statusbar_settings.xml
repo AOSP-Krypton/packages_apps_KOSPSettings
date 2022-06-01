@@ -67,6 +67,13 @@
             android:title="@string/combined_status_bar_signal_icons"
             android:summary="@string/combined_status_bar_signal_icons_summary"
             settings:controller="com.flamingo.settings.statusbar.CombinedSignalIconPreferenceController" />
+
+        <!-- Notification Counter -->
+        <com.flamingo.support.preference.SystemSettingSwitchPreference
+            android:key="status_bar_notif_count"
+            android:title="@string/status_bar_notif_count_title"
+            android:summary="@string/status_bar_notif_count_summary"
+            settings:controller="com.flamingo.settings.statusbar.NotificationCountPreferenceController" />
     </PreferenceCategory>
 
 </PreferenceScreen>
