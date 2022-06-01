@@ -131,6 +131,9 @@
     <string name="battery_style_text">Text</string>
     <string name="statusbar_battery_show_percent_inside_title">Show battery percent inside icon</string>
 
+    <!-- Location privacy indicator -->
+    <string name="location_privacy_indicator_title">Show privacy indicator for location</string>
+
     <!-- Theme settings -->
     <string name="theme_settings_title">Theme settings</string>
 
