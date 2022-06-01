@@ -81,6 +81,20 @@
             android:summaryOn="@string/qs_show_battery_estimate_summary_on"
             android:summaryOff="@string/qs_show_battery_estimate_summary_off"
             android:defaultValue="false" />
+
+        <!-- QS footer text toggle -->
+        <com.flamingo.support.preference.SystemSettingSwitchPreference
+            android:key="qs_footer_text_show"
+            android:title="@string/qs_footer_text_show_title"
+            android:defaultValue="false" />
+
+        <!-- QS footer text string -->
+        <com.flamingo.support.preference.SystemSettingEditTextPreference
+            android:key="qs_footer_text_string"
+            android:title="@string/qs_footer_text_string_title"
+            android:summary="@string/qs_footer_text_string_summary"
+            android:dependency="qs_footer_text_show"
+            settings:controller="com.flamingo.settings.qs.QSFooterTextPreferenceController" />
      </PreferenceCategory>
 
 </PreferenceScreen>
