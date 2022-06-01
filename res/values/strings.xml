@@ -170,6 +170,9 @@
     <!-- Icon pack -->
     <string name="icon_pack_preference_title">Icon pack</string>
 
+    <!-- Font -->
+    <string name="font_preference_title">Headline / Body font</string>
+
     <!-- LiveDisplay -->
     <string name="live_display_summary">Optimize your screen based on time of day and ambient conditions to improve readability and reduce eyestrain</string>
     <string name="live_display_mode">Display mode</string>

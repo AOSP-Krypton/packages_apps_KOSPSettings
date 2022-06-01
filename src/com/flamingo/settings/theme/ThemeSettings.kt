@@ -49,6 +49,7 @@ class ThemeSettings : FlamingoDashboardFragment() {
         private const val OVERLAY_CATEGORY_ICON_SETTINGS = "android.theme.customization.icon_pack.settings"
         private const val OVERLAY_CATEGORY_ICON_LAUNCHER = "android.theme.customization.icon_pack.launcher"
         private const val OVERLAY_CATEGORY_ICON_THEME_PICKER = "android.theme.customization.icon_pack.themepicker"
+        private const val OVERLAY_CATEGORY_FONT = "android.theme.customization.font"
 
         private const val TARGET_ANDROID = "android"
         private const val TARGET_SYSUI = "com.android.systemui"
@@ -57,6 +58,7 @@ class ThemeSettings : FlamingoDashboardFragment() {
         private const val TARGET_THEME_PICKER = "com.android.wallpaper"
 
         private const val ICON_PACK_PREFERENCE_KEY = "icon_pack_preference"
+        private const val FONT_PREFERENCE_KEY = "font_preference"
 
         private fun buildPreferenceControllers(
             context: Context,
@@ -90,6 +92,11 @@ class ThemeSettings : FlamingoDashboardFragment() {
                             put(OVERLAY_CATEGORY_ICON_THEME_PICKER, TARGET_THEME_PICKER)
                         }
                     }.toMap(),
+                ),
+                ThemeOverlayPreferenceController(
+                    context,
+                    FONT_PREFERENCE_KEY,
+                    mapOf(OVERLAY_CATEGORY_FONT to TARGET_ANDROID),
                 )
             )
         }
