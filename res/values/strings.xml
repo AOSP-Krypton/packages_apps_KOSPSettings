@@ -35,6 +35,9 @@
     <string name="screen_off_udfps_title">Screen off UDFPS</string>
     <string name="screen_off_udfps_summary">Detect fingerprint even when screen is off</string>
 
+    <!-- Udfps haptic feedback -->
+    <string name="udfps_haptic_feedback_title">Provide haptic feedback on pressing udfps view</string>
+
     <!-- Miscellaneous settings -->
     <string name="miscellaneous_settings_title">Miscellaneous settings</string>
 

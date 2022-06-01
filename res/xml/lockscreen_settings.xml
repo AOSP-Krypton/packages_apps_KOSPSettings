@@ -36,4 +36,10 @@
         android:defaultValue="false"
         settings:controller="com.flamingo.settings.lockscreen.ScreenOffUdfpsPreferenceController" />
 
+    <com.flamingo.support.preference.SystemSettingSwitchPreference
+        android:key="enable_udfps_start_haptic_feedback"
+        android:title="@string/udfps_haptic_feedback_title"
+        android:defaultValue="true"
+        settings:controller="com.flamingo.settings.lockscreen.UdfpsHapticFeedbackPreferenceController" />
+
 </PreferenceScreen>
