@@ -17,4 +17,12 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/statusbar_settings_title">
 
+    <!-- Network traffic -->
+    <com.flamingo.support.preference.SystemSettingPrimarySwitchPreference
+        android:key="network_traffic_enabled"
+        android:title="@string/network_traffic_category_title"
+        android:defaultValue="false"
+        android:fragment="com.flamingo.settings.statusbar.NetworkTrafficMonitorSettings"
+        settings:observe="true" />
+
 </PreferenceScreen>
