@@ -61,6 +61,10 @@
     <!-- Miscellaneous settings -->
     <string name="miscellaneous_settings_title">Miscellaneous settings</string>
 
+    <!-- Screenshot sound -->
+    <string name="screenshot_shutter_sound_title">Screenshot sound</string>
+    <string name="screenshot_shutter_sound_summary">Enable screenshot sound and vibration</string>
+
     <!-- QS panel settings -->
     <string name="qs_panel_settings_title">QS panel settings</string>
 
