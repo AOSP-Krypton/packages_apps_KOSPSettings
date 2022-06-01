@@ -42,4 +42,10 @@
         android:defaultValue="true"
         settings:controller="com.flamingo.settings.lockscreen.UdfpsHapticFeedbackPreferenceController" />
 
+    <com.flamingo.support.preference.SecureSettingSwitchPreference
+        android:key="secure_lockscreen_qs_disabled"
+        android:title="@string/hide_qs_title"
+        android:summary="@string/hide_qs_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>

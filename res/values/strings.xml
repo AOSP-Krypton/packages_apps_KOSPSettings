@@ -38,6 +38,10 @@
     <!-- Udfps haptic feedback -->
     <string name="udfps_haptic_feedback_title">Provide haptic feedback on pressing udfps view</string>
 
+    <!-- Hide QS -->
+    <string name="hide_qs_title">Hide QS in secure lockscreen</string>
+    <string name="hide_qs_summary">Hides QS if device is locked. Notification shade can still be pulled down, but QS won\'t be visible</string>
+
     <!-- Miscellaneous settings -->
     <string name="miscellaneous_settings_title">Miscellaneous settings</string>
 
