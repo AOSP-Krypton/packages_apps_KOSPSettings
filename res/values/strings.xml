@@ -142,6 +142,10 @@
     <string name="status_bar_notif_count_title">Notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications at the bottom right corner of statusbar notification icon</string>
 
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">4G icon</string>
+    <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
+
     <!-- Theme settings -->
     <string name="theme_settings_title">Theme settings</string>
 
