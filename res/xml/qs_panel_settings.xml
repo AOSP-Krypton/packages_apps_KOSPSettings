@@ -17,4 +17,36 @@
     xmlns:settings="http://schemas.android.com/apk/res-auto"
     android:title="@string/qs_panel_settings_title">
 
+    <PreferenceCategory
+        android:title="@string/media_category" >
+
+        <com.flamingo.support.preference.SystemSettingSwitchPreference
+            android:key="artwork_media_background"
+            android:title="@string/artwork_media_background_title"
+            android:summary="@string/artwork_media_background_summary"
+            android:defaultValue="false" />
+
+        <com.flamingo.support.preference.SystemSettingSwitchPreference
+            android:key="artwork_media_background_enable_blur"
+            android:title="@string/artwork_media_background_enable_blur_title"
+            android:dependency="artwork_media_background"
+            android:defaultValue="false" />
+
+        <com.flamingo.support.preference.SystemSettingSeekBarPreference
+            android:key="artwork_media_background_blur_radius"
+            android:title="@string/artwork_media_background_blur_radius_title"
+            android:dependency="artwork_media_background_enable_blur"
+            android:defaultValue="1"
+            android:max="25"
+            settings:min="1" />
+
+        <com.flamingo.support.preference.SystemSettingSeekBarPreference
+            android:key="artwork_media_background_alpha"
+            android:title="@string/artwork_media_background_alpha_title"
+            android:dependency="artwork_media_background"
+            android:defaultValue="255"
+            android:max="255"
+            settings:min="0" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
