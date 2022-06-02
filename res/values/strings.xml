@@ -22,6 +22,7 @@
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">Lockscreen settings</string>
+    <string name="lockscreen_settings_summary">DT2S, Screen off UDFPS, Secure QS, Edge light</string>
 
     <!-- Lockscreen battery info -->
     <string name="lockscreen_charging_info_title">Show charging info in lockscreen</string>
@@ -60,6 +61,7 @@
 
     <!-- Miscellaneous settings -->
     <string name="miscellaneous_settings_title">Miscellaneous settings</string>
+    <string name="miscellaneous_settings_summary">Screenshot sound, Volume key music control, Hidden launcher apps</string>
 
     <!-- Screenshot sound -->
     <string name="screenshot_shutter_sound_title">Screenshot sound</string>
@@ -76,6 +78,7 @@
 
     <!-- QS panel settings -->
     <string name="qs_panel_settings_title">QS panel settings</string>
+    <string name="qs_panel_settings_summary">Media artwork, Brightness slider, QS battery estimates, QS footer text</string>
 
      <!-- Media artwork -->
     <string name="media_category">Media notification</string>
@@ -108,6 +111,7 @@
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">Statsubar settings</string>
+    <string name="statusbar_settings_summary">Network traffic, Battery styles, Combined signal icons, Notification count</string>
 
     <!-- Network traffic -->
     <string name="network_traffic_category_title">Network traffic</string>
@@ -152,6 +156,7 @@
 
     <!-- Theme settings -->
     <string name="theme_settings_title">Theme settings</string>
+    <string name="theme_settings_summary">Monet engine, Icon pack, Fonts</string>
 
     <!-- Monet engine -->
     <string name="monet_engine_settings_title">Monet engine</string>

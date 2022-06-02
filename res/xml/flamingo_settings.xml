@@ -21,6 +21,7 @@
     <Preference
         android:key="lockscreen_settings"
         android:title="@string/lockscreen_settings_title"
+        android:summary="@string/lockscreen_settings_summary"
         android:icon="@drawable/ic_lockscreen"
         android:fragment="com.flamingo.settings.lockscreen.LockscreenSettings" />
 
@@ -28,6 +29,7 @@
     <Preference
         android:key="miscellaneous_settings"
         android:title="@string/miscellaneous_settings_title"
+        android:summary="@string/miscellaneous_settings_summary"
         android:icon="@drawable/ic_miscellaneous"
         android:fragment="com.flamingo.settings.miscellaneous.MiscellaneousSettings" />
 
@@ -35,6 +37,7 @@
     <Preference
         android:key="qs_settings"
         android:title="@string/qs_panel_settings_title"
+        android:summary="@string/qs_panel_settings_summary"
         android:icon="@drawable/ic_qs"
         android:fragment="com.flamingo.settings.qs.QSPanelSettings" />
 
@@ -42,6 +45,7 @@
     <Preference
         android:key="statusbar_settings"
         android:title="@string/statusbar_settings_title"
+        android:summary="@string/statusbar_settings_summary"
         android:icon="@drawable/ic_statusbar"
         android:fragment="com.flamingo.settings.statusbar.StatusbarSettings" />
 
@@ -49,6 +53,7 @@
     <Preference
         android:key="theme_settings"
         android:title="@string/theme_settings_title"
+        android:summary="@string/theme_settings_summary"
         android:icon="@drawable/ic_palette"
         android:fragment="com.flamingo.settings.theme.ThemeSettings" />
 
