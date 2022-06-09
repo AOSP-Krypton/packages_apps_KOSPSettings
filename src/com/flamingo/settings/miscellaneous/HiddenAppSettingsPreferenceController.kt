@@ -46,34 +46,40 @@ class HiddenAppSettingsPreferenceController(
             StartActivityForResult()
         ) {
             if (it?.resultCode == Activity.RESULT_OK) {
-                SubSettingLauncher(mContext)
-                    .setDestination(HiddenAppSettingsFragment::class.qualifiedName)
-                    .setSourceMetricsCategory(host.metricsCategory)
-                    .setTransitionType(TransitionType.TRANSITION_SLIDE)
-                    .addFlags(
-                        Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS or
-                            Intent.FLAG_ACTIVITY_NEW_TASK
-                    )
-                    .launch()
+                switchToFragment(host)
             }
         }
+    }
+
+    private fun switchToFragment(host: MiscellaneousSettings) {
+        SubSettingLauncher(mContext)
+            .setDestination(HiddenAppSettingsFragment::class.qualifiedName)
+            .setSourceMetricsCategory(host.metricsCategory)
+            .setTransitionType(TransitionType.TRANSITION_SLIDE)
+            .addFlags(
+                Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS or
+                    Intent.FLAG_ACTIVITY_NEW_TASK
+            )
+            .launch()
     }
 
     override fun getAvailabilityStatus() = AVAILABLE
 
     override fun handlePreferenceTreeClick(preference: Preference): Boolean {
-        if (preference.key == preferenceKey &&
-                securityPromptLauncher != null &&
-                lockPatternUtils.isSecure(UserHandle.myUserId())
-        ) {
-            securityPromptLauncher.launch(
-                ConfirmDeviceCredentialActivity.createIntent(
-                    mContext.getString(R.string.hidden_app_authentication_dialog_title),
-                    null /* details */,
+        return if (preference.key == preferenceKey) {
+            if (lockPatternUtils.isSecure(UserHandle.myUserId())) {
+                securityPromptLauncher?.launch(
+                    ConfirmDeviceCredentialActivity.createIntent(
+                        mContext.getString(R.string.hidden_app_authentication_dialog_title),
+                        null /* details */,
+                    )
                 )
-            )
-            return true
+            } else if (host != null) {
+                switchToFragment(host)
+            }
+            true
+        } else {
+            super.handlePreferenceTreeClick(preference)
         }
-        return super.handlePreferenceTreeClick(preference)
     }
 }
