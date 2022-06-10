@@ -30,7 +30,7 @@
     <string name="color_override_title">Выбор цветового акцента</string>
     <string name="color_override_default_summary">Сейчас используется цвет на основе обоев</string>
     <string name="custom_color_override_summary_placeholder">
-        Выбранный цвет: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Оставьте поле пустым, чтобы использовать цвет на основе обоев
+        Выбранный цвет: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>Оставьте поле пустым, чтобы использовать цвет на основе обоев
     </string>
     <string name="invalid_color_input">Неверный ввод цвета!</string>
     <string name="chroma_factor_title">Насыщенность</string>
@@ -159,7 +159,6 @@
     <string name="statusbar_gesture_title">Жесты</string>
     <string name="double_tap_sleep_gesture_title">Двойной тап для выключения экрана</string>
     <string name="double_tap_sleep_gesture_summary">Дважды тапните в любом месте статусбара, чтобы выключить экран</string>
-
     <string name="miscellaneous_category_title">Другое</string>
 
     <!-- Location privacy indicator -->
@@ -241,8 +240,7 @@
     <string name="adj_contrast_title">Контрастность</string>
     
     <!-- App lock -->
-    <string name="app_lock_title">App Lock</string>
-    <string name="app_lock_summary_singular">1 приложение защищено</string>
+    <string name="app_lock_title">App Lock</string>    <string name="app_lock_summary_singular">1 приложение защищено</string>
     <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> приложения/ий защищено</string>
     <string name="app_lock_authentication_dialog_title">Разблокируйте для входа в настройки App Lock</string>
     <string name="enable_debugging">Включить режим отладки</string>
