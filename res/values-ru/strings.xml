@@ -240,7 +240,8 @@
     <string name="adj_contrast_title">Контрастность</string>
     
     <!-- App lock -->
-    <string name="app_lock_title">App Lock</string>    <string name="app_lock_summary_singular">1 приложение защищено</string>
+    <string name="app_lock_title">App Lock</string>
+    <string name="app_lock_summary_singular">1 приложение защищено</string>
     <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> приложения/ий защищено</string>
     <string name="app_lock_authentication_dialog_title">Разблокируйте для входа в настройки App Lock</string>
     <string name="enable_debugging">Включить режим отладки</string>
