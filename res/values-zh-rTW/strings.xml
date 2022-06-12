@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2022 FlamingoOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Flamingo settings -->
+    <string name="flamingo_settings_title">Flamingo 設定</string>
+    <string name="flamingo_settings_summary">鎖屏介面、磁貼面板、狀態列、主題</string>
+
+    <!-- Lockscreen settings -->
+    <string name="lockscreen_settings_title">鎖屏</string>
+    <string name="lockscreen_settings_summary">雙擊息屏、息屏指紋、鎖定磁貼、通知光效</string>
+
+    <!-- Lockscreen battery info -->
+    <string name="lockscreen_charging_info_title">充電資訊</string>
+    <string name="lockscreen_charging_info_summary">充電時在鎖屏介面顯示溫度、型別等資訊</string>
+
+    <!--Double Tap to Sleep Lockscreen-->
+    <string name="double_tap_sleep_lockscreen_title">雙擊息屏</string>
+    <string name="double_tap_sleep_lockscreen_summary">雙擊鎖屏介面上的任意位置來關閉螢幕</string>
+
+    <!-- Screen off udfps -->
+    <string name="screen_off_udfps_title">息屏指紋</string>
+    <string name="screen_off_udfps_summary">螢幕關閉時也可使用指紋解鎖</string>
+
+    <!-- Udfps haptic feedback -->
+    <string name="udfps_haptic_feedback_title">觸控指紋圖案時震動</string>
+
+    <!-- Hide QS -->
+    <string name="hide_qs_title">隱藏磁貼</string>
+    <string name="hide_qs_summary">如果裝置已鎖定，將隱藏磁貼按鈕。面板仍可被拉下，但不會顯示按鈕。</string>
+
+    <!-- Edge light -->
+    <string name="edge_light_title">通知光效</string>
+    <string name="enable_edge_light">啟用通知光效</string>
+    <string name="edge_light_intro_text">收到訊息時在螢幕邊緣顯示光效</string>
+    <string name="edge_light_always_trigger_on_pulse_title">隨時顯示</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">無論如何都顯示通知光效</string>
+    <string name="edge_light_repeat_animation_title">重複動畫</string>
+    <string name="edge_light_repeat_animation_summary_on">直到超時</string>
+    <string name="edge_light_repeat_animation_summary_off">僅一次</string>
+    <string name="edge_light_color_mode_title">光效顏色</string>
+    <string name="accent_color">強調色（預設）</string>
+    <string name="notification_color">通知色</string>
+    <string name="wallpaper_color">桌布色</string>
+    <string name="custom_color">自定義</string>
+    <string name="edge_light_custom_color_title">自定義顏色</string>
+
+    <!-- Miscellaneous settings -->
+    <string name="miscellaneous_settings_title">雜項</string>
+    <string name="miscellaneous_settings_summary">截圖音、音樂控制、隱藏應用</string>
+
+    <!-- Screenshot sound -->
+    <string name="screenshot_shutter_sound_title">截圖提示音</string>
+    <string name="screenshot_shutter_sound_summary">啟用截圖提示音和震動</string>
+
+    <!-- Volume key music control -->
+    <string name="volume_button_music_control_title">音量鍵切換音樂</string>
+    <string name="volume_button_music_control_summary">長按音量加/減切換到上/下一曲目</string>
+
+    <!-- Hidden apps -->
+    <string name="hidden_apps_title">隱藏應用</string>
+    <string name="hidden_apps_summary">選擇需要從啟動器中隱藏的應用程式</string>
+    <string name="hidden_app_authentication_dialog_title">隱藏應用</string>
+
+    <!-- QS panel settings -->
+    <string name="qs_panel_settings_title">磁貼面板</string>
+    <string name="qs_panel_settings_summary">音樂封面、亮度滑塊、電池餘量、頁尾文字</string>
+
+     <!-- Media artwork -->
+    <string name="media_category">音樂通知</string>
+    <string name="artwork_media_background_title">顯示封面</string>
+    <string name="artwork_media_background_summary">將專輯封面作為音樂通知欄的背景</string>
+    <string name="artwork_media_background_enable_blur_title">背景模糊</string>
+    <string name="artwork_media_background_blur_radius_title">背景模糊量</string>
+    <string name="artwork_media_background_alpha_title">背景透明度</string>
+
+    <!-- Brightness slider -->
+    <string name="brightness_slider">亮度滑塊</string>
+    <string name="qqs_show_brightness_title">在下拉磁貼面板中顯示</string>
+    <string name="brightness_slider_position_title">亮度滑塊位置</string>
+    <string name="top">頂部</string>
+    <string name="bottom">底部</string>
+    <string name="show_auto_brightness_button_title">自動亮度按鈕</string>
+
+    <!-- QS Battery estimates -->
+    <string name="qs_show_battery_estimate_title">電量估計</string>
+    <string name="qs_show_battery_estimate_summary_on">在磁貼面板上方顯示電量估計</string>
+    <string name="qs_show_battery_estimate_summary_off">在磁貼面板上方隱藏電量估計</string>
+
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">頁尾文字</string>
+    <string name="qs_footer_text_string_title">磁貼面板左下方文字</string>
+    <string name="qs_footer_text_string_summary">為空將預設使用 \"Flamingo OS\"</string>
+
+    <!-- Tiles on secure keyguard -->
+    <string name="secure_keyguard_tiles_title">在鎖屏介面使用磁貼時將需要解鎖手機</string>
+
+    <!-- Statusbar settings -->
+    <string name="statusbar_settings_title">狀態列</string>
+    <string name="statusbar_settings_summary">流量指示、電池樣式、訊號圖示、通知計數</string>
+
+    <!-- Network traffic -->
+    <string name="network_traffic_category_title">流量指示器</string>
+    <string name="network_traffic_intro_text">
+        在狀態列中顯示當前的網路流量速度。
+        指示器將在狀態列中動態顯示當前上傳和下載速度。
+        數值每秒重新整理一次。
+    </string>
+    <string name="enable_network_traffic">流量指示器</string>
+    <string name="statusbar_network_traffic_threshold_tx_title">上傳速度自動隱藏閾值</string>
+    <string name="statusbar_network_traffic_threshold_rx_title">下載速度自動隱藏閾值</string>
+    <string name="statusbar_network_traffic_unit_text_size_title">指示器字型大小</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_title">根據網路速度改變字型大小</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">網速字型比例</string>
+
+    <!-- Battery -->
+    <string name="statusbar_battery_category_title">電池</string>
+    <string name="statusbar_battery_style_title">圖示樣式</string>
+    <string name="battery_style_portrait">方形</string>
+    <string name="battery_style_circle">圓形</string>
+    <string name="battery_style_text">文字</string>
+    <string name="statusbar_battery_show_percent_inside_title">圖示內顯示電量百分比</string>
+
+    <!-- Location privacy indicator -->
+    <string name="location_privacy_indicator_title">位置指示器</string>
+
+    <!-- Combined signal icons in status bar -->
+    <string name="combined_status_bar_signal_icons">訊號圖示</string>
+    <string name="combined_status_bar_signal_icons_summary">開啟後將在 WiFi 開啟時自動隱藏訊號圖示，需要重啟系統介面</string>
+
+     <!-- Notification count -->
+    <string name="status_bar_notif_count_title">通知計數</string>
+    <string name="status_bar_notif_count_summary">顯示待處理的通知數量</string>
+
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">4G 圖示</string>
+    <string name="show_fourg_icon_summary">使用資料時顯示 4G 而不是 LTE 圖示</string>
+
+    <!-- Old mobile type icons -->
+    <string name="use_old_mobiletype_title">小型資料圖示</string>
+    <string name="use_old_mobiletype_summary">在訊號強度上方顯示資料型別圖示</string>
+
+    <!-- Theme settings -->
+    <string name="theme_settings_title">主題</string>
+    <string name="theme_settings_summary">Monet、圖示包、字型</string>
+
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Monet 引擎</string>
+    <string name="monet_engine_settings_summary">自定義顏色、色彩、亮度</string>
+    <string name="accurate_shades_title">調整介面色調</string>
+    <string name="color_override_title">自定義顏色</string>
+    <string name="color_override_default_summary">使用桌布顏色</string>
+    <string name="custom_color_override_summary_placeholder">
+        已選擇: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>。 設為空值來使用桌布顏色。
+    </string>
+    <string name="invalid_color_input">顏色輸入錯誤!</string>
+    <string name="chroma_factor_title">色彩</string>
+    <string name="linear_lightness_title">調整介面亮度</string>
+    <string name="white_luminance_title">亮度</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_preference_title">圖示包</string>
+
+    <!-- Font -->
+    <string name="font_preference_title">字型</string>
+
+    <!-- Custom font -->
+    <string name="custom_font_preference_title">自定義字型</string>
+    <string name="custom_font_preference_footer_message">自定義後需要重啟生效</string>
+    <string name="cannot_resolve_activity">無法執行此操作！</string>
+    <string name="invalid_font_file">字型檔案沒有有效的 PostScript 表</string>
+    <string name="failed_to_update_font">更新字型失敗</string>
+    <string name="failed_to_copy_file_to_cache">無法將字型複製到快取</string>
+
+    <!-- LiveDisplay -->
+    <string name="live_display_summary">基於當前時間和環境條件來最佳化您的螢幕以改善可讀性和減少視疲勞</string>
+    <string name="live_display_mode">顯示模式</string>
+    <string name="live_display_color_temperature_title">色溫</string>
+    <string name="live_display_color_temperature_summary">白天: <xliff:g id="day_temperature">%1$d</xliff:g>K  夜晚: <xliff:g id="night_temperature">%2$d</xliff:g>K</string>
+    <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
+    <string name="live_display_day">白天</string>
+    <string name="live_display_night">夜晚</string>
+    <string name="live_display_outdoor_mode_title">自動戶外模式</string>
+    <string name="live_display_outdoor_mode_summary">在強烈的陽光下自動增加螢幕亮度和飽和度</string>
+    <string name="live_display_low_power_title">降低耗電</string>
+    <string name="live_display_low_power_summary">在不降低亮度的情況下調整螢幕使耗電最低</string>
+    <string name="live_display_enhance_color_title">增強色彩</string>
+    <string name="live_display_enhance_color_summary">為膚色、風景和其他影象提升色彩飽和度</string>
+    <string name="live_display_color_profile_title">顏色配置檔案</string>
+    <string name="live_display_color_profile_standard_title">標準</string>
+    <string name="live_display_color_profile_standard_summary">準確的顏色和明亮的白色</string>
+    <string name="live_display_color_profile_natural_title">自然</string>
+    <string name="live_display_color_profile_natural_summary">寫實的顏色和膚色</string>
+    <string name="live_display_color_profile_dynamic_title">動態</string>
+    <string name="live_display_color_profile_dynamic_summary">增強的顏色和明亮的白色</string>
+    <string name="live_display_color_profile_cinema_title">影院</string>
+    <string name="live_display_color_profile_cinema_summary">針對影片的完美色彩重現</string>
+    <string name="live_display_color_profile_astronomy_title">天文</string>
+    <string name="live_display_color_profile_astronomy_summary">夜視的深紅色</string>
+    <string name="live_display_color_profile_photography_title">攝影</string>
+    <string name="live_display_color_profile_photography_summary">針對照片的完美色彩重現</string>
+    <string name="live_display_color_profile_basic_title">基礎</string>
+    <string name="live_display_color_profile_basic_summary">使用未校準的顯示配置</string>
+    <string name="live_display_color_profile_adaptive_title">自適應</string>
+    <string name="live_display_color_profile_adaptive_summary">顏色根據環境條件自適應</string>
+    <string name="live_display_color_profile_reading_title">閱讀</string>
+    <string name="live_display_color_profile_reading_summary">使用暖色調以減少視疲勞</string>
+    <string name="live_display_color_profile_srgb_title">sRGB</string>
+    <string name="live_display_color_profile_srgb_summary">顏色校準到 sRGB 色彩空間</string>
+    <string name="live_display_color_profile_dci_p3_title">DCI-P3</string>
+    <string name="live_display_color_profile_dci_p3_summary">顏色校準到 DCI-P3 色彩空間</string>
+    <string name="live_display_reading_mode_title">閱讀模式</string>
+    <string name="live_display_reading_mode_summary">適合長時間閱讀的灰度模式</string>
+    <string name="color_calibration_title">顏色校準</string>
+    <string name="color_calibration_summary">校準螢幕顏色</string>
+    <string name="color_red_title">紅</string>
+    <string name="color_green_title">綠</string>
+    <string name="color_blue_title">藍</string>
+
+
+    <!-- LiveDisplay : Picture Adjustment -->
+    <string name="picture_adjustment_title">圖片調整</string>
+    <string name="picture_adjustment_summary">調整色相、飽和度、亮度和對比度</string>
+    <string name="adj_hue_title">色相</string>
+    <string name="adj_saturation_title">飽和度</string>
+    <string name="adj_intensity_title">亮度</string>
+    <string name="adj_contrast_title">對比度</string>
+
+    <!-- App lock -->
+    <string name="app_lock_title">應用鎖</string>
+    <string name="app_lock_summary_singular">1 個受保護的應用</string>
+    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> 個受保護的應用</string>
+    <string name="app_lock_authentication_dialog_title">應用鎖</string>
+    <string name="enable_debugging">啟用除錯</string>
+    <string name="disable_debugging">禁用除錯</string>
+    <string name="app_lock_packages_title">受保護的應用</string>
+    <string name="app_lock_packages_summary">選擇要用指紋解鎖或裝置憑證保護的應用程式</string>
+    <string name="app_lock_timeout_title">自動鎖定超時</string>
+    <string name="app_lock_timeout_summary">解鎖的應用到後臺後被鎖定的延遲</string>
+    <string name="app_lock_notifications_title">摺疊通知</string>
+    <string name="app_lock_notifications_summary">
+          當選定的應用程式被鎖定時，通知內容將被隱藏和摺疊。
+          浮動通知將被自動禁用。
+     </string>
+    <string name="app_lock_notifications_disabled_summary">請先選擇一個受保護應用</string>
+    <string name="app_lock_biometrics_allowed_title">啟用生物識別</string>
+    <string name="app_lock_footer_text">氣泡在超時後將會自動消失</string>
+
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture_title">划動截圖</string>
+    <string name="three_finger_gesture_summary">三指下劃以擷取螢幕</string>
+
+    <!-- Status bar Icon Manager -->
+    <string name="icon_manager_title">圖示管理</string>
+    <string name="icon_manager_summary">開啟或關閉任意狀態列圖示</string>
+
+    <!-- Double Tap to Sleep Statusbar -->
+    <string name="statusbar_gesture_title">手勢</string>
+    <string name="double_tap_sleep_gesture_title">雙擊鎖屏</string>
+    <string name="double_tap_sleep_gesture_summary">雙擊主介面或鎖定介面的狀態列以關閉螢幕</string>
+
+    <string name="statusbar_icon_title">狀態列圖示</string>
+
+</resources>
