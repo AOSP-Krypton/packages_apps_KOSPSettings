@@ -106,7 +106,7 @@
     <string name="qs_footer_text_string_summary">為空將預設使用 \"Flamingo OS\"</string>
 
     <!-- Tiles on secure keyguard -->
-    <string name="secure_keyguard_tiles_title">在鎖屏介面使用磁貼時將需要解鎖手機</string>
+    <string name="secure_keyguard_tiles_title">安全磁貼</string>
 
     <!-- Statusbar settings -->
     <string name="statusbar_settings_title">狀態列</string>
