@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2022 FlamingoOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Flamingo settings -->
+    <string name="flamingo_settings_title">Configurações Flamingo</string>
+    <string name="flamingo_settings_summary">Tela de Bloqueio, Painel QS, Barra de Status, Temas</string>
+    <!-- Lockscreen settings -->
+    <string name="lockscreen_settings_title">Configurações de tela de bloqueio</string>
+    <string name="lockscreen_settings_summary">DT2S, FOD com tela desligada, QS Seguro, luz de borda</string>
+    <!-- Lockscreen battery info -->
+    <string name="lockscreen_charging_info_title">Mostrar informações de carregamento na tela de bloqueio</string>
+    <string name="lockscreen_charging_info_summary">Mostra temperatura, carga atual e mais enquanto estiver conectado</string>
+    <!--Double Tap to Sleep Lockscreen-->
+    <string name="double_tap_sleep_lockscreen_title">Toque duplo para desligar a tela</string>
+    <string name="double_tap_sleep_lockscreen_summary">Toque duas vezes em qualquer lugar da tela de bloqueio para dormir</string>
+    <!-- Screen off udfps -->
+    <string name="screen_off_udfps_title">FOD com a tela desligada</string>
+    <string name="screen_off_udfps_summary">Detectar impressão digital mesmo com a tela desligada</string>
+    <!-- Udfps haptic feedback -->
+    <string name="udfps_haptic_feedback_title">Fornece feedback tátil ao pressionar a visualização do FOD</string>
+    <!-- Hide QS -->
+    <string name="hide_qs_title">Ocultar configurações rápidas na tela de bloqueio segura</string>
+    <string name="hide_qs_summary">Oculta as configurações rápidas se o dispositivo estiver bloqueado. A aba de notificações ainda pode ser puxada para baixo, mas as configurações rápidas não serão visíveis</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Luz de borda</string>
+    <string name="enable_edge_light">Ativar luz de borda</string>
+    <string name="edge_light_intro_text">Exibir uma animação ao longo das bordas da tela quando pulsando</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Sempre disparar no pulso</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Mostrar a luz de borda sempre que a tela ambiente é exibida e não apenas para notificações</string>
+    <string name="edge_light_repeat_animation_title">Repetir animação</string>
+    <string name="edge_light_repeat_animation_summary_on">Repetir até o tempo limite</string>
+    <string name="edge_light_repeat_animation_summary_off">Mostrar apenas uma vez</string>
+    <string name="edge_light_color_mode_title">Modo da luz de borda</string>
+    <string name="accent_color">Cor de realce (Padrão)</string>
+    <string name="notification_color">Cor da notificação</string>
+    <string name="wallpaper_color">Cor do papel de parede</string>
+    <string name="custom_color">Cor personalizada</string>
+    <string name="edge_light_custom_color_title">Cor personalizada</string>
+    <!-- Miscellaneous settings -->
+    <string name="miscellaneous_settings_title">Configurações diversas</string>
+    <string name="miscellaneous_settings_summary">Som de captura de tela, controle de música da tecla de volume, aplicativos ocultos do launcher</string>
+    <!-- Screenshot sound -->
+    <string name="screenshot_shutter_sound_title">Som de captura</string>
+    <string name="screenshot_shutter_sound_summary">Ativar som e vibração de captura de tela</string>
+    <!-- Volume key music control -->
+    <string name="volume_button_music_control_title">Ignorar faixas com botões de volume</string>
+    <string name="volume_button_music_control_summary">Pressione e segure o volume para cima para pular para a próxima faixa e vice-versa</string>
+    <!-- Hidden apps -->
+    <string name="hidden_apps_title">Aplicativos ocultos</string>
+    <string name="hidden_apps_summary">Aplicativos que devem ser ocultados do launcher</string>
+    <string name="hidden_app_authentication_dialog_title">Desbloquear para ocultar apps</string>
+    <!-- QS panel settings -->
+    <string name="qs_panel_settings_title">Configurações do painel QS</string>
+    <string name="qs_panel_settings_summary">Arte de mídia, controle de brilho, estimativa de bateria nas configurações rápidas, texto de rodapé QS</string>
+    <!-- Media artwork -->
+    <string name="media_category">Notificação de mídia</string>
+    <string name="artwork_media_background_title">Fundo de mídia da arte</string>
+    <string name="artwork_media_background_summary">Definir arte de mídia como fundo de mídia de notificação</string>
+    <string name="artwork_media_background_enable_blur_title">Desfocar fundo de arte de mídia</string>
+    <string name="artwork_media_background_blur_radius_title">Valor de desfoque para arte de mídia</string>
+    <string name="artwork_media_background_alpha_title">Transparência da arte de mídia</string>
+    <!-- Brightness slider -->
+    <string name="brightness_slider">Controle de brilho</string>
+    <string name="qqs_show_brightness_title">Mostrar controle deslizante de brilho nas qs</string>
+    <string name="brightness_slider_position_title">Posição do controle deslizante</string>
+    <string name="top">Superior</string>
+    <string name="bottom">Inferior</string>
+    <string name="show_auto_brightness_button_title">Mostrar botão de brilho automático</string>
+    <!-- QS Battery estimates -->
+    <string name="qs_show_battery_estimate_title">Estimativa de bateria</string>
+    <string name="qs_show_battery_estimate_summary_on">Mostrar estimativas de bateria nas configurações rápidas</string>
+    <string name="qs_show_battery_estimate_summary_off">Ocultar estimativas de bateria nas configurações rápidas</string>
+    <!-- QS footer text -->
+    <string name="qs_footer_text_show_title">Exibir texto de rodapé das configurações rápidas</string>
+    <string name="qs_footer_text_string_title">Personalizar o texto do rodapé</string>
+    <string name="qs_footer_text_string_summary">Definir como vazio para o padrão \"Flamingo OS\"</string>
+    <!-- Tiles on secure keyguard -->
+    <string name="secure_keyguard_tiles_title">Exigir o desbloqueio do celular para usar blocos sensíveis</string>
+    <!-- Statusbar settings -->
+    <string name="statusbar_settings_title">Configurações da Statsubar</string>
+    <string name="statusbar_settings_summary">Consumo de rede, estilo de bateria, ícones combinados de sinal, contagem de notificações</string>
+    <!-- Network traffic -->
+    <string name="network_traffic_category_title">Consumo da rede</string>
+    <string name="network_traffic_intro_text">        Mostra a velocidade de ceonsumo de rede atual na barra de status.
+        O monitor mostra a velocidade dinamicamente que alterna entre
+        upload e download a cada segundo
+    </string>
+    <string name="enable_network_traffic">Ativar monitor de consumo na rede</string>
+    <string name="statusbar_network_traffic_threshold_tx_title">Ocultar automaticamente quando não houver upload</string>
+    <string name="statusbar_network_traffic_threshold_rx_title">Ocultar automaticamente quando não houver Download</string>
+    <string name="statusbar_network_traffic_unit_text_size_title">Tamanho da fonte no consumo de rede</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_title">Tamanho do texto do consumo de rede na barra de status</string>
+    <string name="statusbar_network_traffic_rate_text_scale_factor_dialog_title">Fator de escala</string>
+    <!-- Battery -->
+    <string name="statusbar_battery_category_title">Bateria</string>
+    <string name="statusbar_battery_style_title">Estilo do ícone bateria</string>
+    <string name="battery_style_portrait">Retrato</string>
+    <string name="battery_style_circle">Círculo</string>
+    <string name="battery_style_text">Texto</string>
+    <string name="statusbar_battery_show_percent_inside_title">Mostrar porcentagem da bateria dentro do ícone</string>
+    <!-- Location privacy indicator -->
+    <string name="location_privacy_indicator_title">Mostrar indicador de privacidade para a localização</string>
+    <!-- Combined signal icons in status bar -->
+    <string name="combined_status_bar_signal_icons">Ícones de sinal combinados</string>
+    <string name="combined_status_bar_signal_icons_summary">Ativar ícones de sinal combinados na barra de status. Reinicie o SystemUI ou o sistema para que as alterações entrem em vigor</string>
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Contagem de notificações</string>
+    <string name="status_bar_notif_count_summary">Mostrar o número de notificações pendentes no canto inferior direito do ícone de notificação da barra de status</string>
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">Ícone 4G</string>
+    <string name="show_fourg_icon_summary">Exibir ícone 4G no ícone de sinal substituindo o LTE</string>
+    <!-- Old mobile type icons -->
+    <string name="use_old_mobiletype_title">Simbolo de rede pequeno</string>
+    <string name="use_old_mobiletype_summary">Mostrar o ícone de rede no topo do indicador de sinal</string>
+    <!-- Theme settings -->
+    <string name="theme_settings_title">Configurações de tema</string>
+    <string name="theme_settings_summary">Interface monet, pacote de ícones e fontes</string>
+    <!-- Monet engine -->
+    <string name="monet_engine_settings_title">Interface monet</string>
+    <string name="monet_engine_settings_summary">Cor personalizada, coloração, brilho</string>
+    <string name="accurate_shades_title">Usar tons precisos</string>
+    <string name="color_override_title">Seletor de cores personalizado</string>
+    <string name="color_override_default_summary">Usar cor de destaque baseado no papel de parede</string>
+    <string name="custom_color_override_summary_placeholder">        Cor escolhida: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Defina um valor vazio para usar a cor do papel de parede.
+    </string>
+    <string name="invalid_color_input">Opção de cor invalida!</string>
+    <string name="chroma_factor_title">Coloração</string>
+    <string name="linear_lightness_title">Usar escala de brilho personalizada </string>
+    <string name="white_luminance_title">Brilho</string>
+    <!-- Icon pack -->
+    <string name="icon_pack_preference_title">Pacote de ícones</string>
+    <!-- Font -->
+    <string name="font_preference_title">Título / Fonte do Sistema</string>
+    <!-- Custom font -->
+    <string name="custom_font_preference_title">Cabeçalho / Fonte do sistema personalizada</string>
+    <string name="custom_font_preference_footer_message">Reinicie após selecionar uma fonte para ter efeito</string>
+    <string name="cannot_resolve_activity">Não é possível encontrar uma atividade adequada para executar esta ação!</string>
+    <string name="invalid_font_file">Arquivo de fonte não tem uma tabela postscript válida</string>
+    <string name="failed_to_update_font">Falha ao atualizar a fonte</string>
+    <string name="failed_to_copy_file_to_cache">Falha ao copiar fonte para cache</string>
+    <!-- LiveDisplay -->
+    <string name="live_display_summary">Otimiza sua tela com base na hora do dia e condições do ambiente para melhorar a legibilidade e reduzir o cansaço visual</string>
+    <string name="live_display_mode">Modo de tela</string>
+    <string name="live_display_color_temperature_title">Temperatura da cor</string>
+    <string name="live_display_color_temperature_summary">Dia: <xliff:g id="day_temperature">%1$d</xliff:g>K Noite: <xliff:g id="night_temperature">%2$d</xliff:g>K</string>
+    <string name="live_display_color_temperature_label"><xliff:g id="degrees">%1$d</xliff:g>K</string>
+    <string name="live_display_day">Dia</string>
+    <string name="live_display_night">Noite</string>
+    <string name="live_display_outdoor_mode_title">Modo externo automático</string>
+    <string name="live_display_outdoor_mode_summary">Aumentar o brilho e saturação automaticamente sob luz solar intensa</string>
+    <string name="live_display_low_power_title">Reduzir consumo de energia</string>
+    <string name="live_display_low_power_summary">Ajustar a tela para menor consumo de energia sem degradação</string>
+    <string name="live_display_enhance_color_title">Realçar cores</string>
+    <string name="live_display_enhance_color_summary">Melhorar a vivacidade das cores de tons de pele, cenário e outras imagens</string>
+    <string name="live_display_color_profile_title">Perfil de cor</string>
+    <string name="live_display_color_profile_standard_title">Padrão</string>
+    <string name="live_display_color_profile_standard_summary">Cores precisas e brancos brilhantes</string>
+    <string name="live_display_color_profile_natural_title">Natural</string>
+    <string name="live_display_color_profile_natural_summary">Cores e tons de pele realistas</string>
+    <string name="live_display_color_profile_dynamic_title">Dinâmico</string>
+    <string name="live_display_color_profile_dynamic_summary">Cores precisas e brancos brilhantes</string>
+    <string name="live_display_color_profile_cinema_title">Cinema</string>
+    <string name="live_display_color_profile_cinema_summary">Reprodução de cor perfeita para vídeo</string>
+    <string name="live_display_color_profile_astronomy_title">Astronomia</string>
+    <string name="live_display_color_profile_astronomy_summary">Vermelho profundo para preservar a visão noturna</string>
+    <string name="live_display_color_profile_photography_title">Fotografia</string>
+    <string name="live_display_color_profile_photography_summary">Reprodução de cor perfeita para fotos</string>
+    <string name="live_display_color_profile_basic_title">Básico</string>
+    <string name="live_display_color_profile_basic_summary">Usar tela não calibrada</string>
+    <string name="live_display_color_profile_adaptive_title">Adaptativo</string>
+    <string name="live_display_color_profile_adaptive_summary">As cores se adaptam às condições do ambiente</string>
+    <string name="live_display_color_profile_reading_title">Leitura</string>
+    <string name="live_display_color_profile_reading_summary">Cores mais quentes para menos fadiga ocular</string>
+    <string name="live_display_color_profile_srgb_title">sRGB</string>
+    <string name="live_display_color_profile_srgb_summary">Cores precisas para o espaço de cores sRGB</string>
+    <string name="live_display_color_profile_dci_p3_title">DCI-P3</string>
+    <string name="live_display_color_profile_dci_p3_summary">Cores precisas para o espaço de cores DCI-P3</string>
+    <string name="live_display_reading_mode_title">Modo leitura</string>
+    <string name="live_display_reading_mode_summary">Modo cinza para leitura a longo prazo</string>
+    <string name="color_calibration_title">Calibração de cores</string>
+    <string name="color_calibration_summary">Calibrar cores na tela</string>
+    <string name="color_red_title">Vermelho</string>
+    <string name="color_green_title">Verde</string>
+    <string name="color_blue_title">Azul</string>
+    <!-- LiveDisplay : Picture Adjustment -->
+    <string name="picture_adjustment_title">Ajuste de imagem</string>
+    <string name="picture_adjustment_summary">Ajustar tonalidade, saturação, contraste e intensidade</string>
+    <string name="adj_hue_title">Tonalidade</string>
+    <string name="adj_saturation_title">Saturação</string>
+    <string name="adj_intensity_title">Intensidade</string>
+    <string name="adj_contrast_title">Contraste</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Bloqueio de apps</string>
+    <string name="app_lock_summary_singular">1 aplicativo protegido</string>
+    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> aplicativos estão protegidos</string>
+    <string name="app_lock_authentication_dialog_title">Desbloquear</string>
+    <string name="enable_debugging">Ativar depuração</string>
+    <string name="disable_debugging">Desativar depuração</string>
+    <string name="app_lock_packages_title">Aplicativos com proteção</string>
+    <string name="app_lock_packages_summary">Selecione os aplicativos para proteger com dados biométricos ou credenciais do dispositivo</string>
+    <string name="app_lock_timeout_title">Tempo limite para bloqueio automático</string>
+    <string name="app_lock_timeout_summary">Duração do tempo depois do qual um aplicativo desbloqueado em segundo plano deve ser bloqueado</string>
+    <string name="app_lock_notifications_title">Fechar notificações</string>
+    <string name="app_lock_notifications_summary">          O conteúdo das notificações serão ocultadas e recolhidas para os aplicativos selecionados quando forem bloqueados.
+          Notificações pop-up serão desativadas automaticamente.
+     </string>
+    <string name="app_lock_notifications_disabled_summary">Proteja um aplicativo primeiro</string>
+    <string name="app_lock_biometrics_allowed_title">Habilitar dados biométricos para desbloquear</string>
+    <string name="app_lock_footer_text">Balões serão automaticamente dispensados após o tempo limite</string>
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture_title">Deslizar para capturar tela</string>
+    <string name="three_finger_gesture_summary">Deslize para baixo com três dedos para capturar a tela</string>
+    <!-- Status bar Icon Manager -->
+    <string name="icon_manager_title">Gerenciador de ícones</string>
+    <string name="icon_manager_summary">Controle de visibilidade dos ícones da barra de status</string>
+    <!-- Double Tap to Sleep Statusbar -->
+    <string name="statusbar_gesture_title">Gestos</string>
+    <string name="double_tap_sleep_gesture_title">Toque duplo para desligar a tela</string>
+    <string name="double_tap_sleep_gesture_summary">Toque duas vezes em qualquer lugar da barra de status para desligar a tela</string>
+    <string name="statusbar_icon_title">Ícones</string>
+</resources>
