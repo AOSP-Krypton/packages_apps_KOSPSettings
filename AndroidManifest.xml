@@ -28,7 +28,7 @@
             <meta-data android:name="com.android.settings.summary"
                 android:resource="@string/flamingo_settings_summary" />
             <meta-data android:name="com.android.settings.icon"
-                android:resource="@mipmap/ic_launcher_settings" />
+                android:resource="@drawable/ic_flamingo" />
             <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
                 android:value="@string/menu_key_flamingo" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
