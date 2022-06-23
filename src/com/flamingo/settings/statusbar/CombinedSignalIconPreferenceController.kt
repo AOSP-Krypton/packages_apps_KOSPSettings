@@ -28,14 +28,14 @@ import com.android.settings.core.BasePreferenceController
 import com.android.settingslib.RestrictedLockUtilsInternal
 import com.android.settingslib.Utils
 import com.flamingo.support.preference.SecureSettingSwitchPreference
+import com.flamingo.settings.getBoolSysUIResource
 
 class CombinedSignalIconPreferenceController(
     context: Context,
     key: String,
 ) : BasePreferenceController(context, key) {
 
-    private val defaultEnabled = com.flamingo.settings.Utils.getBoolSysUIResource(
-        context, CONFIG_RESOURCE_NAME)
+    private val defaultEnabled = getBoolSysUIResource(context, CONFIG_RESOURCE_NAME)
 
     override fun getAvailabilityStatus(): Int {
         val unavailable = Utils.isWifiOnly(mContext) ||

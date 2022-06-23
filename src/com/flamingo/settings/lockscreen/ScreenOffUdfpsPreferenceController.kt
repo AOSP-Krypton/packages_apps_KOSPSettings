@@ -19,7 +19,7 @@ package com.flamingo.settings.lockscreen
 import android.content.Context
 
 import com.android.settings.core.BasePreferenceController
-import com.flamingo.settings.Utils
+import com.flamingo.settings.hasUDFPS
 
 class ScreenOffUdfpsPreferenceController(
     context: Context,
@@ -27,7 +27,7 @@ class ScreenOffUdfpsPreferenceController(
 ) : BasePreferenceController(context, key) {
 
     override fun getAvailabilityStatus(): Int =
-        if (Utils.hasUDFPS(mContext)) {
+        if (hasUDFPS(mContext)) {
             AVAILABLE
         } else {
             UNSUPPORTED_ON_DEVICE

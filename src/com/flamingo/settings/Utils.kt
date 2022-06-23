@@ -18,36 +18,34 @@ package com.flamingo.settings
 
 import android.content.Context
 
-object Utils {
-    private const val BOOL_RES_TYPE = "bool"
-    private const val SYSTEMUI_PACKAGE = "com.android.systemui"
+private const val BOOL_RES_TYPE = "bool"
+private const val SYSTEMUI_PACKAGE = "com.android.systemui"
 
-    /**
-     * Checks if the device has udfps.
-     * @param context context for obtaining an instance FingerprintManager service.
-     * @return true if udfps is present.
-     */
-    @Suppress("DEPRECATION")
-    fun hasUDFPS(context: Context): Boolean {
-        val fingerprintManager = context.getSystemService(android.hardware.fingerprint.FingerprintManager::class.java)
-        return fingerprintManager.sensorPropertiesInternal.any { it.isAnyUdfpsType() }
-    }
+/**
+ * Checks if the device has udfps.
+ * @param context context for obtaining an instance FingerprintManager service.
+ * @return true if udfps is present.
+ */
+@Suppress("DEPRECATION")
+fun hasUDFPS(context: Context): Boolean {
+    val fingerprintManager = context.getSystemService(android.hardware.fingerprint.FingerprintManager::class.java)
+    return fingerprintManager.sensorPropertiesInternal.any { it.isAnyUdfpsType() }
+}
 
-    /**
-     * Get value of a systemui resource.
-     *
-     * @param context context for obtaining for resources for systemui.
-     * @param resName the name of the resource.
-     * @param def the default value to return if resource is not found.
-     */
-    fun getBoolSysUIResource(
-        context: Context,
-        resName: String,
-        def: Boolean = false
-    ): Boolean {
-        val res = context.packageManager.getResourcesForApplication(SYSTEMUI_PACKAGE)
-        return res.getIdentifier(resName, BOOL_RES_TYPE, SYSTEMUI_PACKAGE)
-            .takeIf { resId -> resId != 0 }
-            ?.let { res.getBoolean(it) } ?: def
-    }
+/**
+ * Get value of a systemui resource.
+ *
+ * @param context context for obtaining for resources for systemui.
+ * @param resName the name of the resource.
+ * @param def the default value to return if resource is not found.
+ */
+fun getBoolSysUIResource(
+    context: Context,
+    resName: String,
+    def: Boolean = false
+): Boolean {
+    val res = context.packageManager.getResourcesForApplication(SYSTEMUI_PACKAGE)
+    return res.getIdentifier(resName, BOOL_RES_TYPE, SYSTEMUI_PACKAGE)
+        .takeIf { resId -> resId != 0 }
+        ?.let { res.getBoolean(it) } ?: def
 }

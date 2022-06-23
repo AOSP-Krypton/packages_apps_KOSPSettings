@@ -24,7 +24,7 @@ import androidx.preference.Preference
 import androidx.preference.SwitchPreference
 
 import com.android.settings.core.BasePreferenceController
-import com.flamingo.settings.Utils
+import com.flamingo.settings.getBoolSysUIResource
 import com.flamingo.support.preference.SystemSettingSwitchPreference
 
 class NotificationCountPreferenceController(
@@ -32,7 +32,7 @@ class NotificationCountPreferenceController(
     key: String,
 ) : BasePreferenceController(context, key) {
 
-    private val defaultEnabled = Utils.getBoolSysUIResource(context, CONFIG_RESOURCE_NAME)
+    private val defaultEnabled = getBoolSysUIResource(context, CONFIG_RESOURCE_NAME)
 
     override fun getAvailabilityStatus(): Int = AVAILABLE
 
