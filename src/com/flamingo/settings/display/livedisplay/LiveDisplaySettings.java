@@ -258,6 +258,10 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
             advancedPrefs.removePreference(mDisplayColor);
             mDisplayColor = null;
         }
+
+        if (advancedPrefs != null && advancedPrefs.getPreferenceCount() == 0) {
+            removePreference(KEY_CATEGORY_ADVANCED);
+        }
     }
 
     @Override
