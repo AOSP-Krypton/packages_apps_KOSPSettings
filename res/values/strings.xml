@@ -110,7 +110,7 @@
     <string name="secure_keyguard_tiles_title">Require user unlocking to use sensitive tiles</string>
 
     <!-- Statusbar settings -->
-    <string name="statusbar_settings_title">Statsubar settings</string>
+    <string name="statusbar_settings_title">Statusbar settings</string>
     <string name="statusbar_settings_summary">Network traffic, Battery styles, Combined signal icons, Notification count</string>
 
     <!-- Network traffic -->
