@@ -67,11 +67,10 @@
     <string name="qs_panel_settings_summary">Arte de mídia, controle de brilho, estimativa de bateria nas configurações rápidas, texto de rodapé QS</string>
     <!-- Media artwork -->
     <string name="media_category">Notificação de mídia</string>
-    <string name="artwork_media_background_title">Fundo de mídia da arte</string>
-    <string name="artwork_media_background_summary">Definir arte de mídia como fundo de mídia de notificação</string>
-    <string name="artwork_media_background_enable_blur_title">Desfocar fundo de arte de mídia</string>
-    <string name="artwork_media_background_blur_radius_title">Valor de desfoque para arte de mídia</string>
-    <string name="artwork_media_background_alpha_title">Transparência da arte de mídia</string>
+    <string name="media_artwork_enabled_title">Fundo de mídia da arte</string>
+    <string name="media_artwork_enabled_summary">Definir arte de mídia como fundo de mídia de notificação</string>
+    <string name="media_artwork_blur_enabled_title">Desfocar fundo de arte de mídia</string>
+    <string name="media_artwork_blur_radius_title">Valor de desfoque para arte de mídia</string>
     <!-- Brightness slider -->
     <string name="brightness_slider">Controle de brilho</string>
     <string name="qqs_show_brightness_title">Mostrar controle deslizante de brilho nas qs</string>
