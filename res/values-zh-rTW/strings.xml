@@ -85,7 +85,8 @@
     <string name="media_artwork_enabled_summary">將專輯封面作為音樂通知欄的背景</string>
     <string name="media_artwork_blur_enabled_title">背景模糊</string>
     <string name="media_artwork_blur_radius_title">背景模糊量</string>
-
+    <string name="media_artwork_fade_percent_title">背景淡化量</string>
+    
     <!-- Brightness slider -->
     <string name="brightness_slider">亮度滑塊</string>
     <string name="qqs_show_brightness_title">在下拉磁貼面板中顯示</string>
