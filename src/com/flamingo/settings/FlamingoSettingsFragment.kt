@@ -32,7 +32,7 @@ class FlamingoSettingsFragment : FlamingoDashboardFragment() {
     companion object {
         private const val TAG = "FlamingoSettingsFragment"
 
-        private const val CATEGORY_FLAMINGO = "com.android.settings.category.ia.flamingo"
+        const val CATEGORY_FLAMINGO = "com.android.settings.category.ia.flamingo"
 
         @JvmField
         val SEARCH_INDEX_DATA_PROVIDER = BaseSearchIndexProvider(R.xml.flamingo_settings)
