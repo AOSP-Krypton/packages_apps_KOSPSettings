@@ -17,33 +17,28 @@
 package com.flamingo.settings.statusbar
 
 import android.content.Context
-import android.os.UserHandle
-import android.os.UserManager
 import android.provider.Settings
+import android.os.UserHandle
 
 import androidx.preference.Preference
 import androidx.preference.SwitchPreference
 
 import com.android.settings.core.BasePreferenceController
-import com.android.settingslib.RestrictedLockUtilsInternal
 import com.android.settingslib.Utils
 import com.flamingo.support.preference.SecureSettingSwitchPreference
 import com.flamingo.settings.getBoolSysUIResource
+
+private const val CONFIG_RESOURCE_NAME = "flag_combined_status_bar_signal_icons"
 
 class CombinedSignalIconPreferenceController(
     context: Context,
     key: String,
 ) : BasePreferenceController(context, key) {
 
-    private val defaultEnabled = getBoolSysUIResource(context, CONFIG_RESOURCE_NAME)
+    private val defaultValue = if (getBoolSysUIResource(context, CONFIG_RESOURCE_NAME)) 1 else 0
 
     override fun getAvailabilityStatus(): Int {
-        val unavailable = Utils.isWifiOnly(mContext) ||
-            !mContext.getSystemService(UserManager::class.java).isAdminUser() ||
-            RestrictedLockUtilsInternal.hasBaseUserRestriction(mContext,
-                UserManager.DISALLOW_CONFIG_MOBILE_NETWORKS,
-                UserHandle.myUserId())
-        return if (unavailable) {
+        return if (Utils.isWifiOnly(mContext)) {
             UNSUPPORTED_ON_DEVICE
         } else {
             AVAILABLE
@@ -52,15 +47,12 @@ class CombinedSignalIconPreferenceController(
 
     override fun updateState(preference: Preference) {
         (preference as SwitchPreference).setChecked(
-            Settings.Secure.getIntForUser(mContext.contentResolver,
+            Settings.Secure.getIntForUser(
+                mContext.contentResolver,
                 Settings.Secure.SHOW_COMBINED_STATUS_BAR_SIGNAL_ICONS,
-                if (defaultEnabled) 1 else 0,
+                defaultValue,
                 UserHandle.USER_CURRENT,
             ) == 1
         )
-    }
-
-    companion object {
-        private const val CONFIG_RESOURCE_NAME = "flag_combined_status_bar_signal_icons"
     }
 }
