@@ -289,4 +289,12 @@
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">Tap to show info</string>
 
+    <!-- Developer info -->
+    <string name="device_maintainer">Device maintainer</string>
+    <string name="device_maintainer_name" translatable="false"></string>
+
+    <!-- Flamingo version -->
+    <string name="flamingo_version">Flamingo version</string>
+    <string name="no_application_found_to_open_link">No application found to open link</string>
+
 </resources>
