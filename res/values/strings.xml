@@ -274,4 +274,16 @@
 
     <string name="statusbar_icon_title">Icons</string>
 
+    <!-- GmsCompat -->
+    <string name="sandboxed_google_play">Sandboxed Google Play</string>
+    <string name="sandboxed_google_play_work_profile">Sandboxed Google Play (work profile)</string>
+
+    <string name="privileged_euicc_management_title">Enable privileged eSIM management</string>
+    <string name="privileged_euicc_management_summary">Requires Sandboxed Google Play installation</string>
+
+    <!-- Storage scopes -->
+    <string name="storage_scopes">Storage Scopes</string>
+    <string name="allow_access_to_obb_directory_title">Allow access to Android/obb folder</string>
+    <string name="allow_access_to_obb_directory_summary">Required for installation of some large apps (mostly games) that use OBB expansion files</string>
+
 </resources>
