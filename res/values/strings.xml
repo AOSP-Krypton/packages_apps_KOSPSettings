@@ -297,4 +297,7 @@
     <string name="flamingo_version">Flamingo version</string>
     <string name="no_application_found_to_open_link">No application found to open link</string>
 
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+
 </resources>
