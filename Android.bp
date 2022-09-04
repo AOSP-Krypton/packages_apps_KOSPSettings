@@ -4,6 +4,9 @@ filegroup {
         "src/**/*.java",
         "src/**/*.kt",
     ],
+    exclude_srcs: [
+        "src/com/google/android/settings/**/*.kt",
+    ],
 }
 
 genrule {
