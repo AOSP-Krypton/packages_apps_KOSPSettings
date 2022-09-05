@@ -393,4 +393,7 @@
     <string name="prevent_ringing_option_cycle_summary">On (cycle through modes)</string>
     <string name="prevent_ringing_option_normal">Normal</string>
 
+    <!-- Per-app volume control -->
+    <string name="app_volume">App volume</string>
+
 </resources>
