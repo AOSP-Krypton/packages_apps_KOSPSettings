@@ -44,3 +44,11 @@ java_import {
     jars: ["libs/powerusagefeaturegoogle.jar"],
     sdk_version: "current",
 }
+
+prebuilt_etc {
+    name: "privapp_whitelist_settings_flamingo",
+    system_ext_specific: true,
+    sub_dir: "permissions",
+    src: "privapp-permissions-settings.flamingo.xml",
+    filename_from_src: true,
+}
