@@ -2,6 +2,7 @@
 <permissions>
     <privapp-permissions package="com.android.settings">
         <permission name="android.permission.MANAGE_APP_LOCK" />
+        <permission name="android.permission.RESET_BATTERY_STATS"/>
         <permission name="android.permission.UPDATE_FONTS" />
         <permission name="lineageos.permission.MANAGE_LIVEDISPLAY" />
     </privapp-permissions>
