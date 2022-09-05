@@ -394,4 +394,6 @@
     <string name="torch_long_press_power_text">Long press for torch only works when screen is off.\nLong pressing again when flashlight is on will turn it off, even if screen is on.</string>
     <string name="power_menu_summary_long_press_for_torch">Toggle flashlight</string>
 
+    <!-- Volume panel position -->
+    <string name="volume_panel_position_title">Volume panel on left</string>
 </resources>
