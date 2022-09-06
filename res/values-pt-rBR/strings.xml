@@ -113,7 +113,7 @@
     <!-- Location privacy indicator -->
     <string name="location_privacy_indicator_title">Mostrar indicador de privacidade para a localização</string>
     <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons">Ícones de sinal combinados</string>
+    <string name="combined_status_bar_signal_icons_title">Ícones de sinal combinados</string>
     <string name="combined_status_bar_signal_icons_summary">Ativar ícones de sinal combinados na barra de status. Reinicie o SystemUI ou o sistema para que as alterações entrem em vigor</string>
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Contagem de notificações</string>

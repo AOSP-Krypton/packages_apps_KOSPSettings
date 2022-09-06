@@ -69,10 +69,9 @@
 
         <!-- Combined signal icons -->
         <com.flamingo.support.preference.SecureSettingSwitchPreference
-            android:key="show_combined_status_bar_signal_icons"
-            android:title="@string/combined_status_bar_signal_icons"
-            android:summary="@string/combined_status_bar_signal_icons_summary"
-            settings:controller="com.flamingo.settings.statusbar.CombinedSignalIconPreferenceController" />
+            android:key="combined_status_bar_signal_icons"
+            android:title="@string/combined_status_bar_signal_icons_title"
+            android:summary="@string/combined_status_bar_signal_icons_summary" />
 
 	<!-- 4G icon  -->
         <com.flamingo.support.preference.SystemSettingSwitchPreference

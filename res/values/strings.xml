@@ -139,7 +139,7 @@
     <string name="location_privacy_indicator_title">Show privacy indicator for location</string>
 
     <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons">Combined signal icons</string>
+    <string name="combined_status_bar_signal_icons_title">Combined signal icons</string>
     <string name="combined_status_bar_signal_icons_summary">Enable combined signal icons in status bar. Restart SystemUI or system for changes to take effect</string>
 
      <!-- Notification count -->

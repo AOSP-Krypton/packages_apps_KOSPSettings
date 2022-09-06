@@ -138,7 +138,7 @@
     <string name="location_privacy_indicator_title">位置指示器</string>
 
     <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons">訊號圖示</string>
+    <string name="combined_status_bar_signal_icons_title">訊號圖示</string>
     <string name="combined_status_bar_signal_icons_summary">開啟後將在 WiFi 開啟時自動隱藏訊號圖示，需要重啟系統介面</string>
 
      <!-- Notification count -->
