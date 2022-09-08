@@ -18,39 +18,6 @@
     android:title="@string/qs_panel_settings_title">
 
     <PreferenceCategory
-        android:title="@string/media_category">
-
-        <com.flamingo.support.preference.SystemSettingSwitchPreference
-            android:key="media_artwork_enabled"
-            android:title="@string/media_artwork_enabled_title"
-            android:summary="@string/media_artwork_enabled_summary"
-            android:defaultValue="false" />
-
-        <com.flamingo.support.preference.SystemSettingSeekBarPreference
-            android:key="media_artwork_fade_percent"
-            android:title="@string/media_artwork_fade_percent_title"
-            android:dependency="media_artwork_enabled"
-            android:defaultValue="30"
-            android:max="100"
-            settings:min="0" />
-
-        <com.flamingo.support.preference.SystemSettingSwitchPreference
-            android:key="media_artwork_blur_enabled"
-            android:title="@string/media_artwork_blur_enabled_title"
-            android:dependency="media_artwork_enabled"
-            android:defaultValue="false" />
-
-        <com.flamingo.support.preference.SystemSettingSeekBarPreference
-            android:key="media_artwork_blur_radius"
-            android:title="@string/media_artwork_blur_radius_title"
-            android:dependency="media_artwork_blur_enabled"
-            android:defaultValue="1"
-            android:max="25"
-            settings:min="1" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/brightness_slider">
 
         <com.flamingo.support.preference.SystemSettingListPreference

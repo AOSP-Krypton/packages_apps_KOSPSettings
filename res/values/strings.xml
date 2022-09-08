@@ -80,14 +80,6 @@
     <string name="qs_panel_settings_title">QS panel settings</string>
     <string name="qs_panel_settings_summary">Media artwork, Brightness slider, QS battery estimates, QS footer text</string>
 
-    <!-- Media artwork -->
-    <string name="media_category">Media notification</string>
-    <string name="media_artwork_enabled_title">Artwork media background</string>
-    <string name="media_artwork_enabled_summary">Use media artwork as the media notification background</string>
-    <string name="media_artwork_blur_enabled_title">Blur media artwork background</string>
-    <string name="media_artwork_blur_radius_title">Blur amount for media artwork</string>
-    <string name="media_artwork_fade_percent_title">Fade amount for media artwork</string>
-
     <!-- Brightness slider -->
     <string name="brightness_slider">Brightness slider</string>
     <string name="qqs_show_brightness_title">Show brightness slider in qqs</string>
@@ -134,9 +126,6 @@
     <string name="battery_style_circle">Circle</string>
     <string name="battery_style_text">Text</string>
     <string name="statusbar_battery_show_percent_inside_title">Show battery percent inside icon</string>
-
-    <!-- Location privacy indicator -->
-    <string name="location_privacy_indicator_title">Show privacy indicator for location</string>
 
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons_title">Combined signal icons</string>

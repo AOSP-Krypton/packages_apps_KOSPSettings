@@ -65,12 +65,6 @@
     <!-- QS panel settings -->
     <string name="qs_panel_settings_title">Configurações do painel QS</string>
     <string name="qs_panel_settings_summary">Arte de mídia, controle de brilho, estimativa de bateria nas configurações rápidas, texto de rodapé QS</string>
-    <!-- Media artwork -->
-    <string name="media_category">Notificação de mídia</string>
-    <string name="media_artwork_enabled_title">Fundo de mídia da arte</string>
-    <string name="media_artwork_enabled_summary">Definir arte de mídia como fundo de mídia de notificação</string>
-    <string name="media_artwork_blur_enabled_title">Desfocar fundo de arte de mídia</string>
-    <string name="media_artwork_blur_radius_title">Valor de desfoque para arte de mídia</string>
     <!-- Brightness slider -->
     <string name="brightness_slider">Controle de brilho</string>
     <string name="qqs_show_brightness_title">Mostrar controle deslizante de brilho nas qs</string>
@@ -110,8 +104,6 @@
     <string name="battery_style_circle">Círculo</string>
     <string name="battery_style_text">Texto</string>
     <string name="statusbar_battery_show_percent_inside_title">Mostrar porcentagem da bateria dentro do ícone</string>
-    <!-- Location privacy indicator -->
-    <string name="location_privacy_indicator_title">Mostrar indicador de privacidade para a localização</string>
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons_title">Ícones de sinal combinados</string>
     <string name="combined_status_bar_signal_icons_summary">Ativar ícones de sinal combinados na barra de status. Reinicie o SystemUI ou o sistema para que as alterações entrem em vigor</string>

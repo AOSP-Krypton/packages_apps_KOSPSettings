@@ -78,14 +78,6 @@
     <!-- QS panel settings -->
     <string name="qs_panel_settings_title">磁貼面板</string>
     <string name="qs_panel_settings_summary">音樂封面、亮度滑塊、電池餘量、頁尾文字</string>
-
-     <!-- Media artwork -->
-    <string name="media_category">音樂通知</string>
-    <string name="media_artwork_enabled_title">顯示封面</string>
-    <string name="media_artwork_enabled_summary">將專輯封面作為音樂通知欄的背景</string>
-    <string name="media_artwork_blur_enabled_title">背景模糊</string>
-    <string name="media_artwork_blur_radius_title">背景模糊量</string>
-    <string name="media_artwork_fade_percent_title">背景淡化量</string>
     
     <!-- Brightness slider -->
     <string name="brightness_slider">亮度滑塊</string>
@@ -133,9 +125,6 @@
     <string name="battery_style_circle">圓形</string>
     <string name="battery_style_text">文字</string>
     <string name="statusbar_battery_show_percent_inside_title">圖示內顯示電量百分比</string>
-
-    <!-- Location privacy indicator -->
-    <string name="location_privacy_indicator_title">位置指示器</string>
 
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons_title">訊號圖示</string>
