@@ -26,9 +26,6 @@
     <!--Double Tap to Sleep Lockscreen-->
     <string name="double_tap_sleep_lockscreen_title">Toque duplo para desligar a tela</string>
     <string name="double_tap_sleep_lockscreen_summary">Toque duas vezes em qualquer lugar da tela de bloqueio para dormir</string>
-    <!-- Screen off udfps -->
-    <string name="screen_off_udfps_title">FOD com a tela desligada</string>
-    <string name="screen_off_udfps_summary">Detectar impressão digital mesmo com a tela desligada</string>
     <!-- Udfps haptic feedback -->
     <string name="udfps_haptic_feedback_title">Fornece feedback tátil ao pressionar a visualização do FOD</string>
     <!-- Hide QS -->

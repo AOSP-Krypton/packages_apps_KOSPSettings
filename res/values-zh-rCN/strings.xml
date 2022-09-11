@@ -31,10 +31,6 @@
     <string name="double_tap_sleep_lockscreen_title">双击息屏</string>
     <string name="double_tap_sleep_lockscreen_summary">双击锁屏界面上的任意位置来关闭屏幕</string>
 
-    <!-- Screen off udfps -->
-    <string name="screen_off_udfps_title">息屏指纹</string>
-    <string name="screen_off_udfps_summary">屏幕关闭时也可使用指纹解锁</string>
-
     <!-- Udfps haptic feedback -->
     <string name="udfps_haptic_feedback_title">触摸指纹图案时震动</string>
 
