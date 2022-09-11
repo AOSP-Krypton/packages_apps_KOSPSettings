@@ -22,7 +22,7 @@
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">Lockscreen settings</string>
-    <string name="lockscreen_settings_summary">DT2S, Screen off UDFPS, Secure QS, Edge light</string>
+    <string name="lockscreen_settings_summary">DT2S, Secure QS, Edge light</string>
 
     <!-- Lockscreen battery info -->
     <string name="lockscreen_charging_info_title">Show charging info in lockscreen</string>
@@ -74,7 +74,7 @@
 
     <!-- QS panel settings -->
     <string name="qs_panel_settings_title">QS panel settings</string>
-    <string name="qs_panel_settings_summary">Media artwork, Brightness slider, QS battery estimates, QS footer text</string>
+    <string name="qs_panel_settings_summary">Brightness slider, QS battery estimates, QS footer text</string>
 
     <!-- Brightness slider -->
     <string name="brightness_slider">Brightness slider</string>
