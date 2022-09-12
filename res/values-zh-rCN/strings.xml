@@ -21,7 +21,7 @@
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">锁屏</string>
-    <string name="lockscreen_settings_summary">双击息屏、息屏指纹、锁定磁贴、通知光效</string>
+    <string name="lockscreen_settings_summary">双击息屏、安全磁贴、通知光效</string>
 
     <!-- Lockscreen battery info -->
     <string name="lockscreen_charging_info_title">充电信息</string>
@@ -36,7 +36,7 @@
 
     <!-- Hide QS -->
     <string name="hide_qs_title">隐藏磁贴</string>
-    <string name="hide_qs_summary">如果设备已锁定，将隐藏磁贴按钮。面板仍可被拉下，但不会显示按钮。</string>
+    <string name="hide_qs_summary">若设备已锁定，则隐藏磁贴。面板仍可被拉下，但不会显示按钮。</string>
 
     <!-- Edge light -->
     <string name="edge_light_title">通知光效</string>
@@ -91,7 +91,7 @@
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">页脚文本</string>
     <string name="qs_footer_text_string_title">磁贴面板左下方文本</string>
-    <string name="qs_footer_text_string_summary">为空将默认使用 \"Flamingo OS\"</string>
+    <string name="qs_footer_text_string_summary">为空则使用 \"Flamingo OS\"</string>
 
     <!-- Tiles on secure keyguard -->
     <string name="secure_keyguard_tiles_title">安全磁贴</string>
@@ -124,7 +124,7 @@
 
     <!-- Combined signal icons in status bar -->
     <string name="combined_status_bar_signal_icons_title">信号图标</string>
-    <string name="combined_status_bar_signal_icons_summary">开启后将在 WiFi 开启时自动隐藏信号图标，需要重启系统界面</string>
+    <string name="combined_status_bar_signal_icons_summary">启用后将在 WiFi 开启时自动隐藏信号图标，需要重启系统界面</string>
 
      <!-- Notification count -->
     <string name="status_bar_notif_count_title">通知计数</string>
@@ -132,10 +132,10 @@
 
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G 图标</string>
-    <string name="show_fourg_icon_summary">使用数据时显示 4G 而不是 LTE 图标</string>
+    <string name="show_fourg_icon_summary">使用数据时显示 4G 图标而不是 LTE</string>
 
     <!-- Old mobile type icons -->
-    <string name="use_old_mobiletype_title">小型数据图标</string>
+    <string name="use_old_mobiletype_title">迷你数据图标</string>
     <string name="use_old_mobiletype_summary">在信号强度上方显示数据类型图标</string>
 
     <!-- Theme settings -->
@@ -259,4 +259,135 @@
 
     <string name="statusbar_icon_title">状态栏图标</string>
 
+    <!-- GmsCompat -->
+    <string name="sandboxed_google_play">Google Play 沙盒</string>
+    <string name="sandboxed_google_play_work_profile">Google Play 沙盒 (工作资料)</string>
+
+    <string name="privileged_euicc_management_title">启用 eSIM 管理</string>
+    <string name="privileged_euicc_management_summary">需要安装 Google Play 沙盒</string>
+
+    <!-- Storage scopes -->
+    <string name="storage_scopes">分区存储</string>
+    <string name="allow_access_to_obb_directory_title">允许访问 Android/obb 文件夹</string>
+    <string name="allow_access_to_obb_directory_summary">在安装一些使用 OBB 扩展文件的大型应用程序（游戏等）时需要</string>
+
+    <!-- String for removal of sensitive info on about, depending on tap -->
+    <string name="device_info_protected_single_press">点击显示信息</string>
+
+    <!-- Developer info -->
+    <string name="device_maintainer">设备维护者</string>
+
+    <!-- Flamingo version -->
+    <string name="flamingo_version">Flamingo 版本</string>
+    <string name="no_application_found_to_open_link">未安装可打开此链接的应用</string>
+
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+
+    <!-- In-call feedback -->
+    <string name="incall_feeedback_vibrate_title">接通时震动</string>
+
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">充电时保持开启</string>
+    <string name="doze_on_charge_summary">充电时保持息屏显示开启</string>
+
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] --> 
+    <string name="duration_less_than_one_minute">少于一分钟</string> 
+
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">今天 %1$s</string>
+
+    <!-- Annoying Notifs -->
+    <string name="notification_sound_vib_screen_on_title">通知提醒</string>
+    <string name="notification_sound_vib_screen_on_summary">屏幕开启时收到通知将播放提示音并震动</string>
+
+    <!-- Volume link notification -->
+    <string name="volume_link_notification_title">绑定铃声和通知提示音</string>
+
+    <!-- Sound: Title for the option managing ring volume. When unlinked [CHAR LIMIT=30] -->
+    <string name="ring_volume_unlinked_option_title">铃声音量</string>
+
+    <!-- Fullscreen gestures -->
+    <string name="other_controls_title">其他设置</string>
+    <string name="fullscreen_gestures_title">全面屏手势</string>
+    <string name="fullscreen_gestures_summary">隐藏屏幕下方小白条</string>
+
+    <!-- Gesture navbar length -->
+    <string name="gesture_navbar_length_title">小白条长度</string>
+    <string name="short_label">短</string>
+    <string name="long_label">长</string>
+
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">环境显示定时</string>
+    <string name="always_on_display_schedule_sunset">日落</string>
+    <string name="always_on_display_schedule_sunrise">日出</string>
+    <string name="always_on_display_schedule_mixed_sunset">从日落到某个时段开启</string>
+    <string name="always_on_display_schedule_mixed_sunrise">从日出到某个时段开启</string>
+
+    <!-- One shot automatic brightness -->
+    <string name="auto_brightness_one_shot_title">一次性亮度</string>
+    <string name="auto_brightness_one_shot_summary">亮度将在屏幕打开瞬间进行调整</string>
+
+    <!-- Min / max refresh rate -->
+    <string name="min_refresh_rate_title">最低刷新率</string>
+    <string name="max_refresh_rate_title">最高刷新率</string>
+
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">响铃震动</string>
+    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da">dzzz-da</string>
+    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="pattern_custom">自定义</string>
+    <string name="custom_vibration_pattern_title">自定义模式</string>
+    <string name="custom_vibration_pattern_summary">设置一个自定义震动模式</string>
+
+    <!-- Wifi Password Copy -->
+    <string name="copied_to_clipboard">已复制到剪切板</string>
+    <string name="longpress_to_clipboard">长按复制</string>
+
+    <!-- Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">隐藏网络</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">你的手机热点名字不会出现在可用的 WLAN 网络列表中</string>
+    <plurals name="wifi_hotspot_auto_off_timeout">
+        <item quantity="other">若无设备连接，将在 <xliff:g id="DURATION">%1$d</xliff:g>分钟后 关闭热点</item>
+        <item quantity="one">若无设备连接，将在 <xliff:g id="DURATION">%1$d</xliff:g>分钟后 关闭热点</item>
+    </plurals>
+    <string name="wifi_hotspot_auto_off_timeout_never">永不关闭</string>
+    <string name="wifi_hotspot_client_manager_title">已连接的设备</string>
+    <string name="wifi_hotspot_client_manager_summary">列出并管理连接到热点的设备，并设置最大客户端连接数量限制</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">列出连接到热点的设备</string>
+    <string name="wifi_hotspot_client_limit_title">连接设备上限</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">最多 <xliff:g id="device_num">%1$d</xliff:g> 个设备连接到热点</item>
+        <item quantity="one">最多 <xliff:g id="device_num">%1$d</xliff:g> 个设备连接到热点</item>
+    </plurals>
+    <string name="wifi_hotspot_blocked_clients_list_title">黑名单设备</string>
+    <string name="wifi_hotspot_connected_clients_list_title">已连接的设备</string>
+    <string name="wifi_hotspot_block_client_dialog_title">黑名单设备</string>
+    <string name="wifi_hotspot_block_client_dialog_text">此操作将会断开 \"<xliff:g id="device_name">%1$s</xliff:g>\" 与此设备的连接并加入黑名单</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">解禁设备</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">设备 \"<xliff:g id="device_name">%1$s</xliff:g>\" 将可连接此设备热点</string>
+    <string name="wifi_hotspot_client_manager_footer_text">目前没有任何客户端连接到此设备。当存在时，已连接和被阻止的设备将在此列出。</string>
+
+    <!-- Cycle through ringer modes gesture -->
+    <string name="prevent_ringing_option_cycle">循环播放</string>
+    <string name="prevent_ringing_option_cycle_summary">启用 (循环播放模式)</string>
+    <string name="prevent_ringing_option_normal">正常</string>
+
+    <!-- Per-app volume control -->
+    <string name="app_volume">应用音量</string>
+
+    <!-- Torch gesture -->
+    <string name="gesture_double_tap_power_summary_disabled">因手电筒手势启用而被禁用</string>
+    <string name="double_tap_power_for_torch_title">切换手电筒</string>
+    <string name="double_tap_power_for_torch_summary_enabled">快速双击电源键来切换手电筒</string>
+    <string name="double_tap_power_for_torch_summary_disabled">因快启相机手势启用而被禁用</string>
+    <string name="power_menu_long_press_for_torch">长按切换手电筒</string>
+    <string name="torch_long_press_power_text">长按切换手电筒只在屏幕关闭时有效。当手电筒打开时，再次长按手电筒将关闭它，即使屏幕打开。</string>
+    <string name="power_menu_summary_long_press_for_torch">切换手电筒</string>
+
+    <!-- Volume panel position -->
+    <string name="volume_panel_position_title">音量面板居左</string>
 </resources>
