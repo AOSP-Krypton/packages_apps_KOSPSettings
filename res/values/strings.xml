@@ -32,9 +32,6 @@
     <string name="double_tap_sleep_lockscreen_title">Double tap to sleep</string>
     <string name="double_tap_sleep_lockscreen_summary">Double tap anywhere on the lockscreeen to sleep</string>
 
-    <!-- Udfps haptic feedback -->
-    <string name="udfps_haptic_feedback_title">Provide haptic feedback on pressing udfps view</string>
-
     <!-- Hide QS -->
     <string name="hide_qs_title">Hide QS in secure lockscreen</string>
     <string name="hide_qs_summary">Hides QS if device is locked. Notification shade can still be pulled down, but QS won\'t be visible</string>
