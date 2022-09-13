@@ -20,6 +20,7 @@ import android.content.Context
 import android.content.om.IOverlayManager
 import android.content.om.OverlayInfo
 import android.content.pm.PackageManager
+import android.content.pm.PackageManager.ApplicationInfoFlags
 import android.os.RemoteException
 import android.os.ServiceManager
 import android.os.UserHandle
@@ -131,18 +132,22 @@ class ThemeOverlayPreferenceController(
         try {
             categoryPackageMap.forEach { category, target ->
                 val overlays = overlayManager.getOverlayInfosForTarget(
-                        target, UserHandle.USER_SYSTEM) as List<OverlayInfo>
+                    target,
+                    UserHandle.USER_SYSTEM
+                ) as List<OverlayInfo>
                 overlays.filter {
                     // Filter based on category.
                     it.category == category
-                }.forEach {
+                }.forEach { overlay ->
                     try {
-                        val label = packageManager.getApplicationInfo(it.packageName,
-                            0).loadLabel(packageManager).toString()
-                        if (!filteredInfos.containsKey(label)) {
-                            filteredInfos.put(label, mutableListOf(it))
-                        } else {
-                            filteredInfos[label]!!.add(it)
+                        val label = packageManager.getApplicationInfo(
+                            overlay.packageName,
+                            ApplicationInfoFlags.of(PackageManager.GET_META_DATA.toLong())
+                        ).loadLabel(packageManager).toString()
+                        filteredInfos[label]?.let {
+                            it.add(overlay)
+                        } ?: run {
+                            filteredInfos[label] = mutableListOf(overlay)
                         }
                     } catch (_: PackageManager.NameNotFoundException) {}
                 }
