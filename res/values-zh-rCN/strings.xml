@@ -226,8 +226,6 @@
 
     <!-- App lock -->
     <string name="app_lock_title">应用锁</string>
-    <string name="app_lock_summary_singular">1 个受保护的应用</string>
-    <string name="app_lock_summary_plural"><xliff:g example="2" id="Number of applications">%1$d</xliff:g> 个受保护的应用</string>
     <string name="app_lock_authentication_dialog_title">应用锁</string>
     <string name="enable_debugging">启用调试</string>
     <string name="disable_debugging">禁用调试</string>
