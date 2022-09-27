@@ -50,6 +50,12 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="com.flamingo.settings.security.applock.AppLockSubSettings"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:taskAffinity="com.android.settings.applock"
+            android:launchMode="singleTask" />
+
         <!--<receiver android:name="com.google.android.settings.routines.RoutinesActionBroadcastReceiver"
                   android:permission="com.google.android.settings.routines.ROUTINES_ACTIONS"
                   android:exported="true">
