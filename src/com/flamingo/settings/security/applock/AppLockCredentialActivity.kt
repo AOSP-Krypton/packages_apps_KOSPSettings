@@ -52,7 +52,7 @@ class AppLockCredentialActivity : FragmentActivity() {
     private lateinit var appLockManager: AppLockManager
 
     private var packageName: String? = null
-    private var title: String? = null
+    private var label: String? = null
     private var userId: Int = USER_NULL
     private var biometricFragment: BiometricFragment? = null
     private var goingToBackground = false
@@ -110,7 +110,7 @@ class AppLockCredentialActivity : FragmentActivity() {
             return
         }
 
-        title = intent.getStringExtra(AppLockManager.EXTRA_PACKAGE_LABEL)
+        label = intent.getStringExtra(AppLockManager.EXTRA_PACKAGE_LABEL)
 
         userId = intent.getIntExtra(Intent.EXTRA_USER_ID, USER_NULL)
         if (userId == USER_NULL) {
@@ -123,15 +123,16 @@ class AppLockCredentialActivity : FragmentActivity() {
             AppLockManager.EXTRA_ALLOW_BIOMETRICS,
             AppLockManager.DEFAULT_BIOMETRICS_ALLOWED
         )
-        var authenticators = Authenticators.DEVICE_CREDENTIAL
+        var allowedAuthenticators = Authenticators.DEVICE_CREDENTIAL
         if (biometricsAllowed) {
-            authenticators = authenticators or Authenticators.BIOMETRIC_STRONG
+            allowedAuthenticators = allowedAuthenticators or Authenticators.BIOMETRIC_STRONG
         }
 
-        val promptInfo = PromptInfo().also {
-            it.title = getString(com.android.internal.R.string.unlock_application, title)
-            it.isDisallowBiometricsIfPolicyExists = true
-            it.authenticators = authenticators
+        val promptInfo = PromptInfo().apply {
+            title = getString(com.android.internal.R.string.unlock_application, label)
+            isDisallowBiometricsIfPolicyExists = true
+            authenticators = allowedAuthenticators
+            isAllowBackgroundAuthentication = true
         }
 
         if (isBiometricAllowed()) {
