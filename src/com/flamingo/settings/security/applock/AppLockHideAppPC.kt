@@ -29,24 +29,22 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-private const val KEY = "redact_notifications"
+private const val KEY = "hide_from_launcher"
 
-class AppLockNotificationRedactionPC(
+class AppLockHideAppPC(
     context: Context,
     private val packageName: String,
     private val coroutineScope: CoroutineScope
 ) : FlamingoTogglePreferenceController(context, KEY) {
 
     private val appLockManager = context.getSystemService(AppLockManager::class.java)
-    private var shouldRedactNotification = AppLockManager.DEFAULT_REDACT_NOTIFICATION
+    private var hideFromLauncher = AppLockManager.DEFAULT_HIDE_IN_LAUNCHER
     private var preference: Preference? = null
 
     init {
         coroutineScope.launch {
-            shouldRedactNotification = withContext(Dispatchers.Default) {
-                appLockManager.packageData.find {
-                    it.packageName == packageName
-                }?.shouldRedactNotification == true
+            hideFromLauncher = withContext(Dispatchers.Default) {
+                appLockManager.hiddenPackages.any { it == packageName }
             }
             preference?.let {
                 updateState(it)
@@ -56,12 +54,12 @@ class AppLockNotificationRedactionPC(
 
     override fun getAvailabilityStatus() = AVAILABLE
 
-    override fun isChecked() = shouldRedactNotification
+    override fun isChecked() = hideFromLauncher
 
     override fun setChecked(checked: Boolean): Boolean {
-        shouldRedactNotification = checked
+        hideFromLauncher = checked
         coroutineScope.launch(Dispatchers.Default) {
-            appLockManager.setShouldRedactNotification(packageName, checked)
+            appLockManager.setPackageHidden(packageName, hideFromLauncher)
         }
         return true
     }

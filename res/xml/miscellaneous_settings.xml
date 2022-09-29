@@ -31,11 +31,4 @@
         android:summary="@string/volume_button_music_control_summary"
         android:defaultValue="false" />
 
-    <!-- Hidden apps -->
-    <Preference
-        android:key="hidden_apps"
-        android:title="@string/hidden_apps_title"
-        android:summary="@string/hidden_apps_summary"
-        android:persistent="false" />
-
 </PreferenceScreen>

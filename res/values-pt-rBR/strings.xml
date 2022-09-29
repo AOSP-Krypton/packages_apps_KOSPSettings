@@ -55,10 +55,6 @@
     <!-- Volume key music control -->
     <string name="volume_button_music_control_title">Ignorar faixas com botões de volume</string>
     <string name="volume_button_music_control_summary">Pressione e segure o volume para cima para pular para a próxima faixa e vice-versa</string>
-    <!-- Hidden apps -->
-    <string name="hidden_apps_title">Aplicativos ocultos</string>
-    <string name="hidden_apps_summary">Aplicativos que devem ser ocultados do launcher</string>
-    <string name="hidden_app_authentication_dialog_title">Desbloquear para ocultar apps</string>
     <!-- QS panel settings -->
     <string name="qs_panel_settings_title">Configurações do painel QS</string>
     <string name="qs_panel_settings_summary">Arte de mídia, controle de brilho, estimativa de bateria nas configurações rápidas, texto de rodapé QS</string>

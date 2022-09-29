@@ -64,11 +64,6 @@
     <string name="volume_button_music_control_title">Skip tracks with volume buttons</string>
     <string name="volume_button_music_control_summary">Long press volume up for skipping to the next track and vice-versa</string>
 
-    <!-- Hidden apps -->
-    <string name="hidden_apps_title">Hidden apps</string>
-    <string name="hidden_apps_summary">Applications that should be hidden from launcher</string>
-    <string name="hidden_app_authentication_dialog_title">Unlock to hide apps</string>
-
     <!-- QS panel settings -->
     <string name="qs_panel_settings_title">QS panel settings</string>
     <string name="qs_panel_settings_summary">Brightness slider, QS battery estimates, QS footer text</string>
@@ -240,6 +235,10 @@
     <string name="app_lock_biometrics_allowed_title">Enable biometrics for unlocking</string>
     <string name="app_lock_footer_text">Bubbles will be automatically dismissed after timeout</string>
     <string name="enable_protection">Enable protection</string>
+    <string name="hide_from_launcher_title">Hide from launcher</string>
+    <string name="hide_from_launcher_summary">
+        Prevent this application from showing up in launcher. Requires a launcher restart for changes to take effect.
+    </string>
 
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture_title">Swipe to screenshot</string>

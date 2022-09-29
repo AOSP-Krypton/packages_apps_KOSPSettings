@@ -66,11 +66,6 @@
     <string name="volume_button_music_control_title">音量键切换音乐</string>
     <string name="volume_button_music_control_summary">长按音量加/减切换到上/下一曲目</string>
 
-    <!-- Hidden apps -->
-    <string name="hidden_apps_title">隐藏应用</string>
-    <string name="hidden_apps_summary">选择需要从启动器中隐藏的应用程序</string>
-    <string name="hidden_app_authentication_dialog_title">隐藏应用</string>
-
     <!-- QS panel settings -->
     <string name="qs_panel_settings_title">磁贴面板</string>
     <string name="qs_panel_settings_summary">音乐封面、亮度滑块、电池余量、页脚文本</string>
