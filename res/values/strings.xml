@@ -54,7 +54,7 @@
 
     <!-- Miscellaneous settings -->
     <string name="miscellaneous_settings_title">Miscellaneous settings</string>
-    <string name="miscellaneous_settings_summary">Screenshot sound, Volume key music control, Hidden launcher apps</string>
+    <string name="miscellaneous_settings_summary">Screenshot sound, Volume key music control</string>
 
     <!-- Screenshot sound -->
     <string name="screenshot_shutter_sound_title">Screenshot sound</string>

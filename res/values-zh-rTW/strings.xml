@@ -56,7 +56,7 @@
 
     <!-- Miscellaneous settings -->
     <string name="miscellaneous_settings_title">雜項</string>
-    <string name="miscellaneous_settings_summary">截圖音、音樂控制、隱藏應用</string>
+    <string name="miscellaneous_settings_summary">截圖音、音樂控制</string>
 
     <!-- Screenshot sound -->
     <string name="screenshot_shutter_sound_title">截圖提示音</string>
