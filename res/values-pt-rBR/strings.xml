@@ -26,8 +26,6 @@
     <!--Double Tap to Sleep Lockscreen-->
     <string name="double_tap_sleep_lockscreen_title">Toque duplo para desligar a tela</string>
     <string name="double_tap_sleep_lockscreen_summary">Toque duas vezes em qualquer lugar da tela de bloqueio para dormir</string>
-    <!-- Udfps haptic feedback -->
-    <string name="udfps_haptic_feedback_title">Fornece feedback tátil ao pressionar a visualização do FOD</string>
     <!-- Hide QS -->
     <string name="hide_qs_title">Ocultar configurações rápidas na tela de bloqueio segura</string>
     <string name="hide_qs_summary">Oculta as configurações rápidas se o dispositivo estiver bloqueado. A aba de notificações ainda pode ser puxada para baixo, mas as configurações rápidas não serão visíveis</string>

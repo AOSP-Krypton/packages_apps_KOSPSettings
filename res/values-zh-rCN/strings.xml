@@ -31,9 +31,6 @@
     <string name="double_tap_sleep_lockscreen_title">双击息屏</string>
     <string name="double_tap_sleep_lockscreen_summary">双击锁屏界面上的任意位置来关闭屏幕</string>
 
-    <!-- Udfps haptic feedback -->
-    <string name="udfps_haptic_feedback_title">触摸指纹图案时震动</string>
-
     <!-- Hide QS -->
     <string name="hide_qs_title">隐藏磁贴</string>
     <string name="hide_qs_summary">若设备已锁定，则隐藏磁贴。面板仍可被拉下，但不会显示按钮。</string>
