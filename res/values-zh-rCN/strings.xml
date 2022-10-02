@@ -256,11 +256,6 @@
     <string name="privileged_euicc_management_title">启用 eSIM 管理</string>
     <string name="privileged_euicc_management_summary">需要安装 Google Play 沙盒</string>
 
-    <!-- Storage scopes -->
-    <string name="storage_scopes">分区存储</string>
-    <string name="allow_access_to_obb_directory_title">允许访问 Android/obb 文件夹</string>
-    <string name="allow_access_to_obb_directory_summary">在安装一些使用 OBB 扩展文件的大型应用程序（游戏等）时需要</string>
-
     <!-- String for removal of sensitive info on about, depending on tap -->
     <string name="device_info_protected_single_press">点击显示信息</string>
 
