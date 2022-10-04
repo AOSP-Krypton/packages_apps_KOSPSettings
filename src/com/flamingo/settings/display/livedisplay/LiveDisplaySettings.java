@@ -58,6 +58,7 @@ import com.flamingo.settings.ResourceUtils;
 
 import com.flamingo.settings.preference.CustomDialogPreference;
 
+import static com.android.internal.lineage.hardware.LiveDisplayManager.FEATURE_ANTI_FLICKER;
 import static com.android.internal.lineage.hardware.LiveDisplayManager.FEATURE_CABC;
 import static com.android.internal.lineage.hardware.LiveDisplayManager.FEATURE_COLOR_ADJUSTMENT;
 import static com.android.internal.lineage.hardware.LiveDisplayManager.FEATURE_COLOR_ENHANCEMENT;
@@ -80,6 +81,7 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
 
     private static final String KEY_LIVE_DISPLAY = "live_display";
     private static final String KEY_LIVE_DISPLAY_AUTO_OUTDOOR_MODE = "display_auto_outdoor_mode";
+    private static final String KEY_LIVE_DISPLAY_ANTI_FLICKER = "display_anti_flicker";
     private static final String KEY_LIVE_DISPLAY_READING_ENHANCEMENT = "display_reading_mode";
     private static final String KEY_LIVE_DISPLAY_LOW_POWER = "display_low_power";
     private static final String KEY_LIVE_DISPLAY_COLOR_ENHANCE = "display_color_enhance";
@@ -105,6 +107,7 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
 
     private ListPreference mLiveDisplay;
 
+    private SwitchPreference mAntiFlicker;
     private SwitchPreference mColorEnhancement;
     private SwitchPreference mLowPower;
     private SwitchPreference mOutdoorMode;
@@ -257,6 +260,13 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
                 !mConfig.hasFeature(FEATURE_COLOR_ADJUSTMENT)) {
             advancedPrefs.removePreference(mDisplayColor);
             mDisplayColor = null;
+        }
+
+        mAntiFlicker = findPreference(KEY_LIVE_DISPLAY_ANTI_FLICKER);
+        if (liveDisplayPrefs != null && mAntiFlicker != null &&
+                !mHardware.isSupported(LineageHardwareManager.FEATURE_ANTI_FLICKER)) {
+            liveDisplayPrefs.removePreference(mAntiFlicker);
+            mAntiFlicker = null;
         }
 
         if (advancedPrefs != null && advancedPrefs.getPreferenceCount() == 0) {
@@ -482,6 +492,9 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
                     com.android.internal.R.bool.config_enableLiveDisplay)) {
                 result.add(KEY_LIVE_DISPLAY_TEMPERATURE);
                 result.add(KEY_LIVE_DISPLAY);
+            }
+            if (!config.hasFeature(FEATURE_ANTI_FLICKER)) {
+                result.add(KEY_LIVE_DISPLAY_ANTI_FLICKER);
             }
             return result;
         }
