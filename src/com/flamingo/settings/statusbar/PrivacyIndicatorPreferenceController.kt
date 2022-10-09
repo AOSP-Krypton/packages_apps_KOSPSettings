@@ -17,7 +17,9 @@
 package com.flamingo.settings.statusbar
 
 import android.content.Context
+import android.os.UserHandle
 import android.provider.DeviceConfig
+import android.provider.Settings
 
 import com.flamingo.settings.FlamingoTogglePreferenceController
 
@@ -26,20 +28,25 @@ class PrivacyIndicatorPreferenceController(
     preferenceKey: String,
 ) : FlamingoTogglePreferenceController(context, preferenceKey) {
 
-    override fun getAvailabilityStatus() = AVAILABLE
-
-    override fun isChecked() = DeviceConfig.getBoolean(
+    private val defaultValue = DeviceConfig.getBoolean(
         DeviceConfig.NAMESPACE_PRIVACY,
         preferenceKey,
         true
     )
 
-    override fun setChecked(checked: Boolean): Boolean {
-        return DeviceConfig.setProperty(
-            DeviceConfig.NAMESPACE_PRIVACY,
-            preferenceKey,
-            checked.toString(),
-            false /* makeDefault */
-        )
-    }
+    override fun getAvailabilityStatus() = AVAILABLE
+
+    override fun isChecked() = Settings.Secure.getIntForUser(
+        mContext.contentResolver,
+        preferenceKey,
+        if (defaultValue) 1 else 0,
+        UserHandle.USER_CURRENT
+    ) == 1
+
+    override fun setChecked(checked: Boolean) = Settings.Secure.putIntForUser(
+        mContext.contentResolver,
+        preferenceKey,
+        if (checked) 1 else 0,
+        UserHandle.USER_CURRENT
+    )
 }

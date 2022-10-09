@@ -103,13 +103,13 @@
 
         <!-- Mic / camera -->
         <SwitchPreference
-            android:key="camera_mic_icons_enabled"
+            android:key="mic_camera_privacy_indicators_enabled"
             android:title="@string/camera_mic_icons_title"
             settings:controller="com.flamingo.settings.statusbar.PrivacyIndicatorPreferenceController" />
 
         <!-- Location -->
         <SwitchPreference
-            android:key="location_indicators_enabled"
+            android:key="location_privacy_indicator_enabled"
             android:title="@string/location_indicators_title"
             settings:controller="com.flamingo.settings.statusbar.PrivacyIndicatorPreferenceController" />
 
