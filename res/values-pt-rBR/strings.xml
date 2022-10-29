@@ -109,19 +109,7 @@
     <string name="use_old_mobiletype_summary">Mostrar o ícone de rede no topo do indicador de sinal</string>
     <!-- Theme settings -->
     <string name="theme_settings_title">Configurações de tema</string>
-    <string name="theme_settings_summary">Interface monet, pacote de ícones e fontes</string>
-    <!-- Monet engine -->
-    <string name="monet_engine_settings_title">Interface monet</string>
-    <string name="monet_engine_settings_summary">Cor personalizada, coloração, brilho</string>
-    <string name="accurate_shades_title">Usar tons precisos</string>
-    <string name="color_override_title">Seletor de cores personalizado</string>
-    <string name="color_override_default_summary">Usar cor de destaque baseado no papel de parede</string>
-    <string name="custom_color_override_summary_placeholder">        Cor escolhida: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Defina um valor vazio para usar a cor do papel de parede.
-    </string>
-    <string name="invalid_color_input">Opção de cor invalida!</string>
-    <string name="chroma_factor_title">Coloração</string>
-    <string name="linear_lightness_title">Usar escala de brilho personalizada </string>
-    <string name="white_luminance_title">Brilho</string>
+    <string name="theme_settings_summary">Pacote de ícones e fontes</string>
     <!-- Icon pack -->
     <string name="icon_pack_preference_title">Pacote de ícones</string>
     <!-- Font -->

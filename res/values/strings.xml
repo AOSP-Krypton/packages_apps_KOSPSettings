@@ -138,21 +138,7 @@
 
     <!-- Theme settings -->
     <string name="theme_settings_title">Theme settings</string>
-    <string name="theme_settings_summary">Monet engine, Icon pack, Fonts</string>
-
-    <!-- Monet engine -->
-    <string name="monet_engine_settings_title">Monet engine</string>
-    <string name="monet_engine_settings_summary">Custom color, colorfulness, brightness</string>
-    <string name="accurate_shades_title">Use accurate shades</string>
-    <string name="color_override_title">Custom color picker</string>
-    <string name="color_override_default_summary">Using wallpaper color</string>
-    <string name="custom_color_override_summary_placeholder">
-        Choosen color: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>. Set an empty value to use wallpaper color.
-    </string>
-    <string name="invalid_color_input">Invalid color input!</string>
-    <string name="chroma_factor_title">Colorfulness</string>
-    <string name="linear_lightness_title">Use custom lightness scale</string>
-    <string name="white_luminance_title">Brightness</string>
+    <string name="theme_settings_summary">Icon pack, Fonts</string>
 
     <!-- Icon pack -->
     <string name="icon_pack_preference_title">Icon pack</string>

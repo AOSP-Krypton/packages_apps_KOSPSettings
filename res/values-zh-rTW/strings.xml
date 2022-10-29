@@ -132,21 +132,7 @@
 
     <!-- Theme settings -->
     <string name="theme_settings_title">主題</string>
-    <string name="theme_settings_summary">Monet、圖示包、字型</string>
-
-    <!-- Monet engine -->
-    <string name="monet_engine_settings_title">Monet 引擎</string>
-    <string name="monet_engine_settings_summary">自定義顏色、色彩、亮度</string>
-    <string name="accurate_shades_title">調整介面色調</string>
-    <string name="color_override_title">自定義顏色</string>
-    <string name="color_override_default_summary">使用桌布顏色</string>
-    <string name="custom_color_override_summary_placeholder">
-        已選擇: <xliff:g example="#FF0000" id="Color">%1$s</xliff:g>。 設為空值來使用桌布顏色。
-    </string>
-    <string name="invalid_color_input">顏色輸入錯誤!</string>
-    <string name="chroma_factor_title">色彩</string>
-    <string name="linear_lightness_title">調整介面亮度</string>
-    <string name="white_luminance_title">亮度</string>
+    <string name="theme_settings_summary">圖示包、字型</string>
 
     <!-- Icon pack -->
     <string name="icon_pack_preference_title">圖示包</string>
