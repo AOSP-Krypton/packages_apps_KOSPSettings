@@ -388,4 +388,9 @@
     <!-- LC3 codec -->
     <string name="bluetooth_lc3_codec">LC3</string>
 
+    <!-- Storage scopes -->
+    <string name="storage_scopes">Storage Scopes</string>
+    <string name="allow_access_to_obb_directory_title">Allow access to Android/obb folder</string>
+    <string name="allow_access_to_obb_directory_summary">Required for installation of some large apps (mostly games) that use OBB expansion files</string>
+
 </resources>
