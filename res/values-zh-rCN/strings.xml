@@ -130,6 +130,11 @@
     <string name="use_old_mobiletype_title">迷你数据图标</string>
     <string name="use_old_mobiletype_summary">在信号强度上方显示数据类型图标</string>
 
+    <!-- Statusbar Privacy -->
+    <string name="privacy">隐私</string>
+    <string name="camera_mic_icons_title">摄像头和麦克风指示</string>
+    <string name="location_indicators_title">位置指示</string>
+
     <!-- Theme settings -->
     <string name="theme_settings_title">主题</string>
     <string name="theme_settings_summary">图标包、字体</string>
@@ -158,6 +163,8 @@
     <string name="live_display_night">夜晚</string>
     <string name="live_display_outdoor_mode_title">自动户外模式</string>
     <string name="live_display_outdoor_mode_summary">在强烈的阳光下自动增加屏幕亮度和饱和度</string>
+    <string name="live_display_anti_flicker_title">防闪烁</string>
+    <string name="live_display_anti_flicker_summary">防止屏幕大面积闪烁，减少低光照条件下的眼睛疲劳。它可能会降低色彩准确性，并影响某些内容的显示方式。</string>
     <string name="live_display_low_power_title">降低耗电</string>
     <string name="live_display_low_power_summary">在不降低亮度的情况下调整屏幕使耗电最低</string>
     <string name="live_display_enhance_color_title">增强色彩</string>
@@ -211,10 +218,10 @@
     <string name="app_lock_packages_summary">选择要用指纹解锁或设备凭证保护的应用程序</string>
     <string name="app_lock_timeout_title">自动锁定超时</string>
     <string name="app_lock_timeout_summary">解锁的应用到后台后被锁定的延迟</string>
-    <string name="app_lock_notifications_title">折叠通知</string>
+    <string name="app_lock_notifications_title">缩短通知</string>
     <string name="app_lock_notifications_summary">
           当选定的应用程序被锁定时，通知内容将被隐藏和折叠。
-          浮动通知将被自动禁用。
+          现有的通知以及新的通知将被缩短。
      </string>
     <string name="app_lock_notifications_disabled_summary">请先选择一个受保护应用</string>
     <string name="app_lock_biometrics_allowed_title">启用生物识别</string>
@@ -223,6 +230,14 @@
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture_title">划动截屏</string>
     <string name="three_finger_gesture_summary">三指下划以截取屏幕</string>
+    <string name="enable_protection">启用保护</string>
+    <string name="hide_from_launcher_title">从启动器隐藏</string>
+    <string name="hide_from_launcher_summary">
+        防止此应用程序显示在启动器中。需要重新启动启动器以生效。
+    </string>
+
+    <!-- Nav bar inversion -->
+    <string name="nav_bar_inverse_title">左右互换</string>
 
     <!-- Status bar Icon Manager -->
     <string name="icon_manager_title">图标管理</string>
@@ -361,4 +376,18 @@
 
     <!-- Volume panel position -->
     <string name="volume_panel_position_title">音量面板居左</string>
+
+    <!-- Other sensors permission preference -->
+    <string name="auto_grant_OTHER_SENSORS_permission_title">默认允许应用使用传感器权限</string>
+    <string name="auto_grant_OTHER_SENSORS_permission_summary_on">传感器是一个非标准的权限，如果它被拒绝，应用程序可能会出现问题。</string>
+    <string name="auto_grant_OTHER_SENSORS_permission_summary_off">当应用程序试图访问传感器时，将显示一个权限提示。请注意，在允许使用传感器权限后，一些应用程序可能需要手动重新启动。</string>
+
+    <!-- LC3 codec -->
+    <string name="bluetooth_lc3_codec">LC3</string>
+
+    <!-- Storage scopes -->
+    <string name="storage_scopes">分区存储</string>
+    <string name="allow_access_to_obb_directory_title">允许访问 Android/obb 文件夹</string>
+    <string name="allow_access_to_obb_directory_summary">在安装一些使用 OBB 扩展文件的大型应用程序（通常是游戏）时需要。</string>
+
 </resources>
