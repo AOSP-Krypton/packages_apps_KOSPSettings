@@ -393,4 +393,8 @@
     <string name="allow_access_to_obb_directory_title">Allow access to Android/obb folder</string>
     <string name="allow_access_to_obb_directory_summary">Required for installation of some large apps (mostly games) that use OBB expansion files</string>
 
+    <!-- Screen off UDFPS -->
+    <string name="screen_off_udfps_title">Screen off UDFPS</string>
+    <string name="screen_off_udfps_summary">Keep UDFPS enabled when the screen is off</string>
+
 </resources>

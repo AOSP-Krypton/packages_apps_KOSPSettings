@@ -42,4 +42,11 @@
         android:fragment="com.flamingo.settings.lockscreen.EdgeLightSettings"
         settings:observe="true" />
 
+    <com.flamingo.support.preference.SecureSettingSwitchPreference
+        android:key="screen_off_udfps_enabled"
+        android:title="@string/screen_off_udfps_title"
+        android:summary="@string/screen_off_udfps_summary"
+        android:defaultValue="false"
+        settings:controller="com.flamingo.settings.lockscreen.ScreenOffUdfpsPreferenceController" />
+
 </PreferenceScreen>
