@@ -31,4 +31,12 @@
         android:summary="@string/volume_button_music_control_summary"
         android:defaultValue="false" />
 
+    <!-- Cutout force fullscreen -->
+    <Preference
+        android:key="cutout_force_fullscreen"
+        android:title="@string/cutout_force_fullscreen_title"
+        android:summary="@string/cutout_force_fullscreen_summary"
+        android:fragment="com.flamingo.settings.miscellaneous.CutoutForceFullscreenSettings"
+        settings:controller="com.flamingo.settings.miscellaneous.CutoutForceFullscreenPC" />
+
 </PreferenceScreen>

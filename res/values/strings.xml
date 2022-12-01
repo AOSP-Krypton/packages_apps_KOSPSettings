@@ -397,4 +397,8 @@
     <string name="screen_off_udfps_title">Screen off UDFPS</string>
     <string name="screen_off_udfps_summary">Keep UDFPS enabled when the screen is off</string>
 
+    <string name="cutout_force_fullscreen_title">Force fullscreen in apps</string>
+    <string name="cutout_force_fullscreen_summary">Override display cutout and force fullscreen on a per app basis</string>
+    <string name="select_apps">Select apps</string>
+
 </resources>
