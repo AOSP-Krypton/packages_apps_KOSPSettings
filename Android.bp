@@ -1,11 +1,22 @@
 filegroup {
     name: "FlamingoSettings_srcs",
     srcs: [
-        "src/**/*.java",
-        "src/**/*.kt",
+        "src/com/flamingo/**/*.java",
+        "src/com/flamingo/**/*.kt",
     ],
-    exclude_srcs: [
-        "src/com/google/android/settings/**/*.kt",
+    visibility: [
+        "//packages/apps/Settings",
+    ],
+}
+
+filegroup {
+    name: "GoogleSettings_srcs",
+    srcs: [
+        "src/com/google/**/*.java",
+        "src/com/google/**/*.kt",
+    ],
+    visibility: [
+        "//packages/apps/Settings",
     ],
 }
 
@@ -22,13 +33,29 @@ genrule {
     ],
     cmd: "INPUTS=($(in)) && "
         + "RES_DIR=$$(dirname $$(dirname $${INPUTS[0]})) && "
-        + "$(location soong_zip) -o $(out) -C $$RES_DIR -D $$RES_DIR"
+        + "$(location soong_zip) -o $(out) -C $$RES_DIR -D $$RES_DIR",
+    visibility: [
+        "//packages/apps/Settings",
+    ],
 }
 
 filegroup {
     name: "FlamingoSettings_manifest",
     srcs: [
         "AndroidManifest.xml",
+    ],
+    visibility: [
+        "//packages/apps/Settings",
+    ],
+}
+
+filegroup {
+    name: "GoogleSettings_manifest",
+    srcs: [
+        "AndroidManifest-google.xml",
+    ],
+    visibility: [
+        "//packages/apps/Settings",
     ],
 }
 
@@ -37,12 +64,18 @@ filegroup {
     srcs: [
         "proguard.flags",
     ],
+    visibility: [
+        "//packages/apps/Settings",
+    ],
 }
 
 java_import {
     name: "powerusagefeaturegoogle",
     jars: ["libs/powerusagefeaturegoogle.jar"],
     sdk_version: "current",
+    visibility: [
+        "//packages/apps/Settings",
+    ],
 }
 
 prebuilt_etc {
@@ -51,4 +84,46 @@ prebuilt_etc {
     sub_dir: "permissions",
     src: "privapp-permissions-settings.flamingo.xml",
     filename_from_src: true,
+    visibility: [
+        "//packages/apps/Settings",
+    ],
+}
+
+soong_config_module_type {
+    name: "flamingo_settings_java_defaults",
+    module_type: "java_defaults",
+    config_namespace: "flamingo",
+    bool_variables: ["GAPPS_BUILD"],
+    properties: [
+        "srcs",
+        "static_libs",
+        "additional_manifests",
+    ],
+}
+
+flamingo_settings_java_defaults {
+    name: "flamingo_settings_core_defaults",
+    soong_config_variables: {
+        GAPPS_BUILD: {
+            srcs: [
+                ":FlamingoSettings_srcs",
+                ":GoogleSettings_srcs",
+            ],
+            static_libs: [
+                "powerusagefeaturegoogle",
+            ],
+            additional_manifests: [
+                ":FlamingoSettings_manifest",
+                ":GoogleSettings_manifest",
+            ],
+            conditions_default: {
+                srcs: [
+                    ":FlamingoSettings_srcs",
+                ],
+                additional_manifests: [
+                    ":FlamingoSettings_manifest",
+                ],
+            },
+        },
+    },
 }
