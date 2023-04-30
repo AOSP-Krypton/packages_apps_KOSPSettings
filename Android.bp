@@ -110,6 +110,12 @@ kosp_settings_java_defaults {
                 ":GoogleSettings_srcs",
             ],
             static_libs: [
+                "androidx.fragment_fragment",
+                "androidx.fragment_fragment-ktx",
+                "androidx.preference_preference-ktx",
+                "kotlinx_coroutines_android",
+                "kotlinx_coroutines",
+                "vendor_support",
                 "powerusagefeaturegoogle",
             ],
             additional_manifests: [
@@ -119,6 +125,14 @@ kosp_settings_java_defaults {
             conditions_default: {
                 srcs: [
                     ":KOSPSettings_srcs",
+                ],
+                static_libs: [
+                    "androidx.fragment_fragment",
+                    "androidx.fragment_fragment-ktx",
+                    "androidx.preference_preference-ktx",
+                    "kotlinx_coroutines_android",
+                    "kotlinx_coroutines",
+                    "vendor_support",
                 ],
                 additional_manifests: [
                     ":KOSPSettings_manifest",
