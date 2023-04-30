@@ -4,6 +4,9 @@ filegroup {
         "src/com/kosp/**/*.java",
         "src/com/kosp/**/*.kt",
     ],
+    exclude_srcs: [
+        "src/com/kosp/**/applock/*.kt",
+    ],
     visibility: [
         "//packages/apps/Settings",
     ],
