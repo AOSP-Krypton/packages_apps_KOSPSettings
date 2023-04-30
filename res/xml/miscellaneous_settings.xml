@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2022 FlamingoOS Project
+<!-- Copyright (C) 2021-2023 AOSP-Krypton Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,14 +18,14 @@
     android:title="@string/miscellaneous_settings_title">
 
     <!-- Screenshot sound -->
-    <com.flamingo.support.preference.SystemSettingSwitchPreference
+    <com.kosp.support.preference.SystemSettingSwitchPreference
         android:key="screenshot_shutter_sound"
         android:title="@string/screenshot_shutter_sound_title"
         android:summary="@string/screenshot_shutter_sound_summary"
         android:defaultValue="true" />
 
     <!-- Volume key music control -->
-    <com.flamingo.support.preference.SystemSettingSwitchPreference
+    <com.kosp.support.preference.SystemSettingSwitchPreference
         android:key="volume_button_music_control"
         android:title="@string/volume_button_music_control_title"
         android:summary="@string/volume_button_music_control_summary"
@@ -36,7 +36,7 @@
         android:key="cutout_force_fullscreen"
         android:title="@string/cutout_force_fullscreen_title"
         android:summary="@string/cutout_force_fullscreen_summary"
-        android:fragment="com.flamingo.settings.miscellaneous.CutoutForceFullscreenSettings"
-        settings:controller="com.flamingo.settings.miscellaneous.CutoutForceFullscreenPC" />
+        android:fragment="com.kosp.settings.miscellaneous.CutoutForceFullscreenSettings"
+        settings:controller="com.kosp.settings.miscellaneous.CutoutForceFullscreenPC" />
 
 </PreferenceScreen>

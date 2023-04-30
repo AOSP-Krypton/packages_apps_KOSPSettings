@@ -1,4 +1,4 @@
 # Keep all Fragments in this package, which are used by reflection.
--keep public class com.flamingo.settings.** extends androidx.fragment.app.Fragment
+-keep public class com.kosp.settings.** extends androidx.fragment.app.Fragment
 
 -keep class com.google.android.settings.** { *; }

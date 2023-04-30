@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2022 FlamingoOS Project
+<!-- Copyright (C) 2021-2023 AOSP-Krypton Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,10 +15,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Flamingo settings -->
-    <string name="flamingo_settings_title">Flamingo settings</string>
-    <string name="flamingo_settings_summary">Lockscreen, QS panel, Statusbar, Theme</string>
-    <string name="menu_key_flamingo" translatable="false">top_level_flamingo</string>
+    <!-- KOSP settings -->
+    <string name="kosp_settings_title">KOSP settings</string>
+    <string name="kosp_settings_summary">Lockscreen, QS panel, Statusbar, Theme</string>
+    <string name="menu_key_kosp" translatable="false">top_level_kosp</string>
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">Lockscreen settings</string>
@@ -84,7 +84,7 @@
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">Show QS footer text</string>
     <string name="qs_footer_text_string_title">Customize footer text</string>
-    <string name="qs_footer_text_string_summary">Set to empty for default \"Flamingo OS\"</string>
+    <string name="qs_footer_text_string_summary">Set to empty for default \"KOSP\"</string>
 
     <!-- Tiles on secure keyguard -->
     <string name="secure_keyguard_tiles_title">Require user unlocking to use sensitive tiles</string>
@@ -265,8 +265,8 @@
     <string name="device_maintainer">Device maintainer</string>
     <string name="device_maintainer_name" translatable="false"></string>
 
-    <!-- Flamingo version -->
-    <string name="flamingo_version">Flamingo version</string>
+    <!-- KOSP version -->
+    <string name="kosp_version">KOSP version</string>
     <string name="no_application_found_to_open_link">No application found to open link</string>
 
     <!-- App details: open play store link if app is user installed -->

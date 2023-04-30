@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2022 FlamingoOS Project
+<!-- Copyright (C) 2021-2023 AOSP-Krypton Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Flamingo settings -->
-    <string name="flamingo_settings_title">Flamingo 設定</string>
-    <string name="flamingo_settings_summary">鎖屏介面、磁貼面板、狀態列、主題</string>
+    <!-- KOSP settings -->
+    <string name="kosp_settings_title">KOSP 設定</string>
+    <string name="kosp_settings_summary">鎖屏介面、磁貼面板、狀態列、主題</string>
 
     <!-- Lockscreen settings -->
     <string name="lockscreen_settings_title">鎖屏</string>
@@ -83,7 +83,7 @@
     <!-- QS footer text -->
     <string name="qs_footer_text_show_title">頁尾文字</string>
     <string name="qs_footer_text_string_title">磁貼面板左下方文字</string>
-    <string name="qs_footer_text_string_summary">為空則使用 \"Flamingo OS\"</string>
+    <string name="qs_footer_text_string_summary">為空則使用 \"KOSP\"</string>
 
     <!-- Tiles on secure keyguard -->
     <string name="secure_keyguard_tiles_title">安全磁貼</string>
@@ -263,8 +263,8 @@
     <!-- Developer info -->
     <string name="device_maintainer">裝置維護者</string>
 
-    <!-- Flamingo version -->
-    <string name="flamingo_version">Flamingo 版本</string>
+    <!-- KOSP version -->
+    <string name="kosp_version">KOSP 版本</string>
     <string name="no_application_found_to_open_link">未安裝可開啟此連結的應用</string>
 
     <!-- App details: open play store link if app is user installed -->

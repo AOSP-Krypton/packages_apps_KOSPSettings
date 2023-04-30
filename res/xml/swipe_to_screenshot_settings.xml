@@ -28,6 +28,6 @@
         android:title="@string/three_finger_gesture_title"
         android:summary="@string/three_finger_gesture_summary"
         settings:keywords="@string/keywords_gesture"
-        settings:controller="com.flamingo.settings.gestures.SwipeToScreenshotPreferenceController" />
+        settings:controller="com.kosp.settings.gestures.SwipeToScreenshotPreferenceController" />
 
 </PreferenceScreen>

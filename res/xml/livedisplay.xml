@@ -32,28 +32,28 @@
             android:persistent="false" />
 
     <!-- Manual temperature selection -->
-    <com.flamingo.settings.display.livedisplay.DisplayTemperature
+    <com.kosp.settings.display.livedisplay.DisplayTemperature
             android:key="live_display_color_temperature"
             android:title="@string/live_display_color_temperature_title"
             android:dialogTitle="@*android:string/live_display_title"
             android:persistent="false" />
 
     <!-- Outdoor mode / SRE -->
-    <com.flamingo.support.preference.SystemSettingSwitchPreference
+    <com.kosp.support.preference.SystemSettingSwitchPreference
             android:key="display_auto_outdoor_mode"
             android:title="@string/live_display_outdoor_mode_title"
             android:summary="@string/live_display_outdoor_mode_summary"
             android:defaultValue="@*android:bool/config_defaultAutoOutdoorMode" />
 
     <!-- Anti flicker mode / DC dimming -->
-    <com.flamingo.support.preference.SystemSettingSwitchPreference
+    <com.kosp.support.preference.SystemSettingSwitchPreference
             android:key="display_anti_flicker"
             android:title="@string/live_display_anti_flicker_title"
             android:summary="@string/live_display_anti_flicker_summary"
             android:defaultValue="false" />
 
     <!-- Reading mode -->
-    <com.flamingo.support.preference.SystemSettingSwitchPreference
+    <com.kosp.support.preference.SystemSettingSwitchPreference
             android:key="display_reading_mode"
             android:title="@string/live_display_reading_mode_title"
             android:summary="@string/live_display_reading_mode_summary"
@@ -64,7 +64,7 @@
             android:title="@string/advanced_settings">
 
         <!-- RGB display color adjustments -->
-        <com.flamingo.settings.display.livedisplay.DisplayColor
+        <com.kosp.settings.display.livedisplay.DisplayColor
                 android:key="color_calibration"
                 android:title="@string/color_calibration_title"
                 android:dialogTitle="@string/color_calibration_title"
@@ -72,7 +72,7 @@
                 android:persistent="false"/>
 
         <!-- HSIC display color adjustments -->
-        <com.flamingo.settings.display.livedisplay.PictureAdjustment
+        <com.kosp.settings.display.livedisplay.PictureAdjustment
                 android:key="picture_adjustment"
                 android:title="@string/picture_adjustment_title"
                 android:dialogTitle="@string/picture_adjustment_title"
@@ -80,14 +80,14 @@
                 android:persistent="false"/>
 
         <!-- Adaptive backlight -->
-        <com.flamingo.support.preference.SystemSettingSwitchPreference
+        <com.kosp.support.preference.SystemSettingSwitchPreference
                 android:key="display_low_power"
                 android:title="@string/live_display_low_power_title"
                 android:summary="@string/live_display_low_power_summary"
                 android:defaultValue="@*android:bool/config_defaultCABC" />
 
         <!-- Color enhancement -->
-        <com.flamingo.support.preference.SystemSettingSwitchPreference
+        <com.kosp.support.preference.SystemSettingSwitchPreference
                 android:key="display_color_enhance"
                 android:title="@string/live_display_enhance_color_title"
                 android:summary="@string/live_display_enhance_color_summary"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2022 FlamingoOS Project
+<!-- Copyright (C) 2021-2023 AOSP-Krypton Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
     <PreferenceCategory
         android:title="@string/brightness_slider">
 
-        <com.flamingo.support.preference.SystemSettingListPreference
+        <com.kosp.support.preference.SystemSettingListPreference
             android:key="brightness_slider_position"
             android:title="@string/brightness_slider_position_title"
             android:summary="%s"
@@ -28,12 +28,12 @@
             android:entryValues="@array/brightness_slider_position_values"
             android:defaultValue="0" />
 
-        <com.flamingo.support.preference.SystemSettingSwitchPreference
+        <com.kosp.support.preference.SystemSettingSwitchPreference
             android:key="qqs_show_brightness"
             android:title="@string/qqs_show_brightness_title"
             android:defaultValue="false" />
 
-        <com.flamingo.support.preference.SystemSettingSwitchPreference
+        <com.kosp.support.preference.SystemSettingSwitchPreference
             android:key="show_auto_brightness_button"
             android:title="@string/show_auto_brightness_button_title"
             android:defaultValue="false" />
@@ -43,7 +43,7 @@
         android:title="@string/miscellaneous_settings_title" >
 
         <!-- QS Battery estimates -->
-        <com.flamingo.support.preference.SystemSettingSwitchPreference
+        <com.kosp.support.preference.SystemSettingSwitchPreference
             android:key="qs_show_battery_estimate"
             android:title="@string/qs_show_battery_estimate_title"
             android:summaryOn="@string/qs_show_battery_estimate_summary_on"
@@ -51,20 +51,20 @@
             android:defaultValue="false" />
 
         <!-- QS footer text toggle -->
-        <com.flamingo.support.preference.SystemSettingSwitchPreference
+        <com.kosp.support.preference.SystemSettingSwitchPreference
             android:key="qs_footer_text_show"
             android:title="@string/qs_footer_text_show_title"
             android:defaultValue="false" />
 
         <!-- QS footer text string -->
-        <com.flamingo.support.preference.SystemSettingEditTextPreference
+        <com.kosp.support.preference.SystemSettingEditTextPreference
             android:key="qs_footer_text_string"
             android:title="@string/qs_footer_text_string_title"
             android:summary="@string/qs_footer_text_string_summary"
             android:dependency="qs_footer_text_show"
-            settings:controller="com.flamingo.settings.qs.QSFooterTextPreferenceController" />
+            settings:controller="com.kosp.settings.qs.QSFooterTextPreferenceController" />
 
-        <com.flamingo.support.preference.SecureSettingSwitchPreference
+        <com.kosp.support.preference.SecureSettingSwitchPreference
             android:key="disable_secure_tiles_on_lockscreen"
             android:title="@string/secure_keyguard_tiles_title"
             android:defaultValue="true" />

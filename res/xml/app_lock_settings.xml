@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2022 FlamingoOS Project
+<!-- Copyright (C) 2021-2023 AOSP-Krypton Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
         android:key="app_lock_packages"
         android:title="@string/app_lock_packages_title"
         android:summary="@string/app_lock_packages_summary"
-        android:fragment="com.flamingo.settings.security.applock.AppLockPackageListFragment" />
+        android:fragment="com.kosp.settings.security.applock.AppLockPackageListFragment" />
 
     <ListPreference
         android:key="app_lock_timeout"
@@ -31,7 +31,7 @@
         android:entryValues="@array/app_lock_timeout_values"
         android:defaultValue="0"
         android:persistent="false"
-        settings:controller="com.flamingo.settings.security.applock.AppLockTimeoutPreferenceController" />
+        settings:controller="com.kosp.settings.security.applock.AppLockTimeoutPreferenceController" />
 
     <SwitchPreference
         android:key="app_lock_biometrics_allowed"

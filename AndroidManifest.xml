@@ -9,20 +9,20 @@
     <uses-permission android:name="lineageos.permission.MANAGE_LIVEDISPLAY" />
 
     <application>
-         <activity android:name="com.flamingo.settings.FlamingoSettingsActivity"
+         <activity android:name="com.kosp.settings.KOSPSettingsActivity"
                 android:exported="false">
             <intent-filter>
-                <action android:name="com.android.settings.FLAMINGO_SETTINGS" />
+                <action android:name="com.android.settings.KOSP_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
-                android:value="@string/menu_key_flamingo" />
+                android:value="@string/menu_key_kosp" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.flamingo.settings.FlamingoSettingsFragment" />
+                android:value="com.kosp.settings.KOSPSettingsFragment" />
         </activity>
 
         <activity
-            android:name="com.flamingo.settings.display.livedisplay.LiveDisplaySettingsActivity"
+            android:name="com.kosp.settings.display.livedisplay.LiveDisplaySettingsActivity"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.android.settings.LIVEDISPLAY_SETTINGS" />
@@ -31,10 +31,10 @@
             <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
                 android:value="@string/menu_key_display" />
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.flamingo.settings.display.livedisplay.LiveDisplaySettings" />
+                android:value="com.kosp.settings.display.livedisplay.LiveDisplaySettings" />
         </activity>
 
-        <activity android:name="com.flamingo.settings.security.applock.AppLockCredentialActivity"
+        <activity android:name="com.kosp.settings.security.applock.AppLockCredentialActivity"
             android:exported="false"
             android:permission="android.permission.MANAGE_APP_LOCK"
             android:excludeFromRecents="true"
@@ -48,7 +48,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.flamingo.settings.security.applock.AppLockSubSettings"
+        <activity android:name="com.kosp.settings.security.applock.AppLockSubSettings"
             android:exported="false"
             android:excludeFromRecents="true"
             android:taskAffinity="com.android.settings.applock"

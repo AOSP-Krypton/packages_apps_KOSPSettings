@@ -1,8 +1,8 @@
 filegroup {
-    name: "FlamingoSettings_srcs",
+    name: "KOSPSettings_srcs",
     srcs: [
-        "src/com/flamingo/**/*.java",
-        "src/com/flamingo/**/*.kt",
+        "src/com/kosp/**/*.java",
+        "src/com/kosp/**/*.kt",
     ],
     visibility: [
         "//packages/apps/Settings",
@@ -21,7 +21,7 @@ filegroup {
 }
 
 genrule {
-    name: "FlamingoSettings_res",
+    name: "KOSPSettings_res",
     tools: [
         "soong_zip",
     ],
@@ -29,7 +29,7 @@ genrule {
         "res/**/*",
     ],
     out: [
-        "FlamingoSettings_res.zip",
+        "KOSPSettings_res.zip",
     ],
     cmd: "INPUTS=($(in)) && "
         + "RES_DIR=$$(dirname $$(dirname $${INPUTS[0]})) && "
@@ -40,7 +40,7 @@ genrule {
 }
 
 filegroup {
-    name: "FlamingoSettings_manifest",
+    name: "KOSPSettings_manifest",
     srcs: [
         "AndroidManifest.xml",
     ],
@@ -60,7 +60,7 @@ filegroup {
 }
 
 filegroup {
-    name: "FlamingoSettings_proguard_flags",
+    name: "KOSPSettings_proguard_flags",
     srcs: [
         "proguard.flags",
     ],
@@ -79,10 +79,10 @@ java_import {
 }
 
 prebuilt_etc {
-    name: "privapp_whitelist_settings_flamingo",
+    name: "privapp_whitelist_settings_kosp",
     system_ext_specific: true,
     sub_dir: "permissions",
-    src: "privapp-permissions-settings.flamingo.xml",
+    src: "privapp-permissions-settings.kosp.xml",
     filename_from_src: true,
     visibility: [
         "//packages/apps/Settings",
@@ -90,9 +90,9 @@ prebuilt_etc {
 }
 
 soong_config_module_type {
-    name: "flamingo_settings_java_defaults",
+    name: "kosp_settings_java_defaults",
     module_type: "java_defaults",
-    config_namespace: "flamingo",
+    config_namespace: "kosp",
     bool_variables: ["GAPPS_BUILD"],
     properties: [
         "srcs",
@@ -101,27 +101,27 @@ soong_config_module_type {
     ],
 }
 
-flamingo_settings_java_defaults {
-    name: "flamingo_settings_core_defaults",
+kosp_settings_java_defaults {
+    name: "kosp_settings_core_defaults",
     soong_config_variables: {
         GAPPS_BUILD: {
             srcs: [
-                ":FlamingoSettings_srcs",
+                ":KOSPSettings_srcs",
                 ":GoogleSettings_srcs",
             ],
             static_libs: [
                 "powerusagefeaturegoogle",
             ],
             additional_manifests: [
-                ":FlamingoSettings_manifest",
+                ":KOSPSettings_manifest",
                 ":GoogleSettings_manifest",
             ],
             conditions_default: {
                 srcs: [
-                    ":FlamingoSettings_srcs",
+                    ":KOSPSettings_srcs",
                 ],
                 additional_manifests: [
-                    ":FlamingoSettings_manifest",
+                    ":KOSPSettings_manifest",
                 ],
             },
         },
